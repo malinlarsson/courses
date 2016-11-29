@@ -46,6 +46,14 @@ with a loop instead
 As you saw in the lecture this is far less efficient and not by any
 means easier to type and we hence tend avoid loops when possible. 
 
+After this exercise you should know:
+- What are the most common loop structures in R
+- Some common alternatives to using loops in R
+- How one can convert a short script to a function.
+- Use that new function in R.
+-  
+
+
 ## Exercises: Loop structures<a id="orgheadline1"></a>
 
 1.  Create a 100000 by 10 matrix with the numbers 1:1000000. Make a
@@ -168,7 +176,7 @@ means easier to type and we hence tend avoid loops when possible.
         for (i in 1:ncol(df)) {
             if (is.numeric(df[,i])) {
                 sum.vec[i] <- mean(df[,i])
-            } else {
+				} else {
                 sum.vec[i] <- sum(nchar(df[,i]))
             }
         }
@@ -178,5 +186,7 @@ means easier to type and we hence tend avoid loops when possible.
 	</details>
 <br>
 
-5.  In all loops that we tried out we have created the  variable where
+5.  Read up on the ifelse function and try to see if you can use this instead of your complex loop
+
+6.  In all loops that we tried out we have created the  variable where
     the output is saved outside the loop. Why is this?
