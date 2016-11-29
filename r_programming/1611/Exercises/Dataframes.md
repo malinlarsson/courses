@@ -424,7 +424,7 @@ factor even though we just gave it a character vector.
     </details>
 <br>
 5.  There is a data frame of car information that comes with the base
-    installation of R. Have a look at this data by typing.
+    installation of R. Have a look at this data by typing `mtcars`.
     <details>
     <summary>:key: Click to see how</summary>
     <pre>
