@@ -1,6 +1,8 @@
-
-
-# Repeat structures in R
+---
+layout: default
+title:  'Repeats in R'
+---
+# Repeats in R
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -13,7 +15,6 @@
 </ul>
 </div>
 </div>
-
 
 # Introduction<a id="orgheadline2"></a>
 
@@ -36,7 +37,7 @@ In many other and languages as well as in R you can also create this
 with a loop instead
 
     for (i in vec.a) {
-        vec.a[i] <- vec.a[i] * 2
+        v[i] <- vec.a[i] * 2
         }
     vec.a
 
