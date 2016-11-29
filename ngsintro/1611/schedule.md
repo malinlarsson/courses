@@ -7,7 +7,7 @@ title:  'Schedule'
 
 **Monday 28/11**  
 Room: KB.J3.02 [KBF31](http://www.umu.se/om-universitetet/kartor/campus-karta-stor/?id=95) (Linnaeus väg 6)  
-**09.00-09.15** Registration and Welcome, presentation of SciLifeLab (Elina Staaf)  
+**09.00-09.15** [Registration and Welcome, presentation of SciLifeLab](slides/Intro_NGS_data_Umea_161128_ES_161123_v2.pptx) (Elina Staaf)  
 **09.15-10.00** [Lecture: Introduction to Linux](slides/dahlo-linux.pdf) (Martin Dahlö)  
 **10.00-12.00** [Exercise: Introduction to Linux](labs/linux-intro) (Martin Dahlö, Valentin Georgiev, Jeanette Tångrot, Joakim Bygdell)  
 **12.00-13.00** Lunch  
@@ -20,7 +20,7 @@ Room: [NA326](http://www.umu.se/om-universitetet/kartor/campus-karta-stor/?id=58
 **09.30-11.00** [Exercise: File types in bioinformatics](labs/filetypes) (Martin Dahlö, Valentin Georgiev, Jeanette Tångrot, Joakim Bygdell)  
 **11.00-12.00** Lecture: NGS and bioinformatics analysis pipelines (Adam Ameur)  
 **12.00-13.00** Lunch  
-**13:00-15:00** Lecture: Next Generation Sequencing Overview (Olga Vinnere Pettersson)  
+**13:00-15:00** [Lecture: Next Generation Sequencing Overview](slides/Sequencing_OVP2016_b.pptx) (Olga Vinnere Pettersson)  
 **15:00-17:00** Project discussions (Olga Vinnere Pettersson, Adam Ameur, TBA)  
 
 **Wednesday 30/11**  
