@@ -67,24 +67,43 @@ means easier to type and we hence tend avoid loops when possible.
         head(for.sum)
     
         [1] 4500010 4500020 4500030 4500040 4500050 4500060
-    
-        app.sum <- apply(X, MARGIN = 1, sum)
+	</pre>
+	</details>
+<br>
+    <details>
+	<summary>:key: Click to see Apply</summary>
+	<pre>
+		app.sum <- apply(X, MARGIN = 1, sum)
         head(app.sum)
     
         [1] 4500010 4500020 4500030 4500040 4500050 4500060
-    
-        rowSums.sum <- rowSums(X)
+
+	</pre>
+	</details>
+<br>
+	<details>
+	<summary>:key: Click to see RowSums</summary>
+	<pre>	
+		rowSums.sum <- rowSums(X)
         head(rowSums.sum)
     
         [1] 4500010 4500020 4500030 4500040 4500050 4500060
     
-        identical(for.sum, app.sum)
+	</pre>
+	</details>
+<br>
+	<details>
+	<summary>:key: Click to see how to check if methods are generating the same res.</summary>
+	<pre>
+		
+		identical(for.sum, app.sum)
         identical(for.sum, rowSums.sum)
         identical(for.sum, as.integer(rowSums.sum))
     
         [1] TRUE
         [1] FALSE
         [1] TRUE
+
 	</pre>
 	</details>
 <br>
@@ -109,6 +128,7 @@ means easier to type and we hence tend avoid loops when possible.
 	</pre>
 	</details>
 <br>
+
 3.  Create a data frame that contains 3 columns, 2 numeric and 1
     character vector. The length of the vectors does not matter. Make a
     loop structure that have the ability to report without you giving
@@ -136,6 +156,7 @@ means easier to type and we hence tend avoid loops when possible.
 	</pre>
 	</details>
 <br>
+
 4.  Convert the code to count characters and estimate means that you
     created under question 3. The function should take a single data
     frame as argument.
@@ -156,5 +177,6 @@ means easier to type and we hence tend avoid loops when possible.
 	</pre>
 	</details>
 <br>
+
 5.  In all loops that we tried out we have created the  variable where
     the output is saved outside the loop. Why is this?
