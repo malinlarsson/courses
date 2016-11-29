@@ -392,7 +392,7 @@ y <- c(1, 5, 11)
     z.mean <- mean(z)  
     length(z.mean)  
 	
-	[1] 3  
+	[1] 1  
 	</pre>
 	</details>
 <br>
