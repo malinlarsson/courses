@@ -98,12 +98,12 @@ to a vector otherwise it will still be a matrix.
 
 ## Exercise: Working with matrices in R<a id="orgheadline2"></a>
 
-Create a matrix containing 1:10 as shown for the matrix X above. 
+Create a matrix containing 1:12 as shown for the matrix X above. 
 
-1.  <details>
+1.  What is the length and the mode of the matrix?
+    <details>
     <summary>:key: Click to see how</summary>
     <pre>
-    What is the length and the mode of the matrix?
     
         mode(X)
         length(X)
@@ -159,7 +159,6 @@ Create a matrix containing 1:10 as shown for the matrix X above.
         [5,]    0    0    0
     </pre>
     </details>
-
 <br>
 5.  Replace all values the first two columns in your matrix with "NA".
     <details>
@@ -632,6 +631,7 @@ factor even though we just gave it a character vector.
     </pre>
     </details>
 <br>
+
 # Lists<a id="orgheadline7"></a>
 
 The last data structure that we will explore is lists, which are a
@@ -1005,6 +1005,7 @@ the list u.2.
     </pre>
     </details>
 <br>
+
 ## Extra exercises
 1. Design a S3 class that should hold information on human
    proteins. The data needed for each protein is:
