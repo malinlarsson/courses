@@ -25,17 +25,17 @@ Room: [NA326](http://www.umu.se/om-universitetet/kartor/campus-karta-stor/?id=58
 
 **Wednesday 30/11**  
 Room: KB.J3.02 [KBF31](http://www.umu.se/om-universitetet/kartor/campus-karta-stor/?id=95)   
-**09.00-10.00** Lecture: National Bioinformatics Infrastructure Sweden; Introduction to NGS data analysis (Jeanette Tångrot)  
+**09.00-10.00** [Lecture: National Bioinformatics Infrastructure Sweden; Introduction to NGS data analysis](slides/NBIS_o_NGSdata_HT2016.pdf) (Jeanette Tångrot)  
 **10:00-11.00** Lecture: Alignment with BWA; Data Processing with Picard; Variant Calling with GATK; SAM/BAM and VCF Formats (Pall Olason)   
-**11.00-12.00** Exercise: Alignment with BWA; Data Processing with Picard; Variant Calling with GATK; SAM/BAM and VCF Formats part I (Pall Olason, Jeanette Tångrot, Allison Churcher, Firoj Mahmud)  
+**11.00-12.00** [Exercise: Alignment with BWA; Data Processing with Picard; Variant Calling with GATK; SAM/BAM and VCF Formats part I](labs/resequencing-analysis) (Pall Olason, Jeanette Tångrot, Allison Churcher, Firoj Mahmud)  
 **12.00-13.00** Lunch  
-**13.00-17.00** Exercise: Alignment with BWA; Data Processing with Picard; Variant Calling with GATK; SAM/BAM and VCF Formats part I (Pall Olason, Jeanette Tångrot, Allison Churcher, Firoj Mahmud)  
+**13.00-17.00** [Exercise: Alignment with BWA; Data Processing with Picard; Variant Calling with GATK; SAM/BAM and VCF Formats part I](labs/resequencing-analysis) (Pall Olason, Jeanette Tångrot, Allison Churcher, Firoj Mahmud)  
 
 **18:00-** Course dinner at TBA  
 
 **Thursday 01/12**  
 Room: [NA326](http://www.umu.se/om-universitetet/kartor/campus-karta-stor/?id=584)  
-**09:00-12.00** Exercise: Alignment with BWA; Data Processing with Picard; Variant Calling with GATK; SAM/BAM and VCF Formats part II (Jeanette Tångrot, Allison Churcher, Firoj Mahmud)  
+**09:00-12.00** [Exercise: Alignment with BWA; Data Processing with Picard; Variant Calling with GATK; SAM/BAM and VCF Formats part II](labs/resequencing-analysis) (Jeanette Tångrot, Allison Churcher, Firoj Mahmud)  
 **12.00-13.00** Lunch  
 **13.00-14:00** [Lecture: RNA sequencing, transcriptome and expression quantification](slides/RNA-seq.pdf) (Olga Dethlefsen)  
 **14.00-17:00** [Exercise: RNA sequencing, transcriptome and expression quantification part I](labs/rnaseq_161129) (Olga Dethlefsen, Jeanette Tångrot, Allison Churcher, Andreas Schneider)  

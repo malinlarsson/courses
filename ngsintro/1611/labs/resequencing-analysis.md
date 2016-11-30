@@ -22,7 +22,7 @@ We have reserved half a node for each student during this course.
 By now, you are probably already familiar with the procedure:
 
 ```bash
-salloc -A g2016017 -t 08:00:00 -p core -n 8 --no-shell --reservation=g2016017_wednesday
+salloc -A g2016028 -t 08:00:00 -p core -n 8 --no-shell --reservation=g2016028_WED
 ```
 
 Make sure you ony do this once, otherwise you will take away resources from the other course participants! 
