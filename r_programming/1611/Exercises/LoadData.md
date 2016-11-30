@@ -215,6 +215,7 @@ command will read in a file from a web server.
 	 </pre>
 	 </details>
 <br>
+
 	<details>
 	<summary>:key: Click to see how</summary>
 	<pre>
