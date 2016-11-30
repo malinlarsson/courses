@@ -1,8 +1,8 @@
 ---
 layout: default
-title:  'Repeats in R'
+title:  'Loops in R'
 ---
-# Repeats in R
+# Loops in R
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -137,11 +137,11 @@ After this exercise you should know:
 	</details>
 <br>
 
-3.  Create a data frame that contains 3 columns, 2 numeric and 1
-    character vector. The length of the vectors does not matter. Make a
-    loop structure that have the ability to report without you giving
-    the column numbers report the total number of characters if the it
-    is a character vector and report the mean if it is a numeric vector.
+3.  Create a data frame with two numeric and one character
+    vector. Write a loop that loops over the columns and reports the
+    mean of the column if it is numeric and the total number of
+    characters if it’s a character vector.
+	
 	<details>
 	<summary>:key: Click to see how</summary>
 	<pre>
@@ -165,9 +165,10 @@ After this exercise you should know:
 	</details>
 <br>
 
-4.  Convert the code to count characters and estimate means that you
-    used under question 3. The function should take a single data
-    frame as argument.
+4.  In question 3 you generated a loop to go over a data frame. Try to
+    convert this code to a function in R. The function should take a
+    single data frame name as argument.
+	
 	<details>
 	<summary>:key: Click to see how</summary>
 	<pre>
@@ -186,13 +187,14 @@ After this exercise you should know:
 	</details>
 <br>
 
-5.  Read up on the ifelse function and try to see if you can use this
+5.  Read up on the ifelse function in R.  and try to see if you can use this
     to answer question 3 with this function.
 
 6.  In all loops that we tried out we have created the variable where
     the output is saved outside the loop. Why is this?
 
-7.  At the lecture an approach to calculate factorials were
+7.  **Advanced exercise**
+	At the lecture an approach to calculate factorials were
     implemented using recursion (function calling itself). Here we
     instead will have a go at generating Fibonacci numbers. A
     fibonacci number is part of a series of number with the following
