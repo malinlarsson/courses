@@ -57,9 +57,9 @@ After this exercise you should know:
 ## Exercises: Loop structures<a id="orgheadline1"></a>
 
 1.  Create a 100000 by 10 matrix with the numbers 1:1000000. Make a
-    for-loop that calculates the median for each row of the
+    for-loop that calculates the sum for each row of the
     matrix. Verify that your results are consistent with what you
-    obtain with the apply function to calculate row means as well as
+    obtain with the apply function to calculate row sums as well as
     with the built-in rowSums function. These functions were discussed
     in the lecture "Elements of the programming language - part 2"
 	<details>
