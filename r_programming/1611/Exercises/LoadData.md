@@ -163,7 +163,7 @@ disk, instead one can read data from online resources. The following
 command will read in a file from a web server.
 
     url = 'http://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.data'
-    abalone = read.table(aburl, header = F , sep = ',') 
+    abalone = read.table(url, header = F , sep = ',') 
     head(abalone)
 
       V1    V2    V3    V4     V5     V6     V7    V8 V9
