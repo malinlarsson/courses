@@ -18,7 +18,7 @@ Room: KB.J3.02 [KBF31](http://www.umu.se/om-universitetet/kartor/campus-karta-st
 Room: [NA326](http://www.umu.se/om-universitetet/kartor/campus-karta-stor/?id=584)  
 **09.00-09.30** [Lecture: File types in bioinformatics](slides/dahlo-filetypes.pdf) (Martin Dahlö)  
 **09.30-11.00** [Exercise: File types in bioinformatics](labs/filetypes) (Martin Dahlö, Valentin Georgiev, Jeanette Tångrot, Joakim Bygdell)  
-**11.00-12.00** Lecture: NGS and bioinformatics analysis pipelines (Adam Ameur)  
+**11.00-12.00** [Lecture: NGS and bioinformatics analysis pipelines](slides/SciLife_Bioinfo_course_dec2016_Adam.pdf) (Adam Ameur)  
 **12.00-13.00** Lunch  
 **13:00-15:00** [Lecture: Next Generation Sequencing Overview](slides/Sequencing_OVP2016_b.pptx) (Olga Vinnere Pettersson)  
 **15:00-17:00** Project discussions (Olga Vinnere Pettersson, Adam Ameur, TBA)  
