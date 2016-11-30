@@ -158,9 +158,9 @@ delimited file and will use the first row of the data as colnames
     AT1G01060.1   3.216031  4.004846  3.589534   3.7045434  2.642360  6.2703380
     AT1G01070.1   8.230858 17.871625 14.924906   7.9996663  8.824486 13.8554244
 
-One does however, as you saw on todays lecture have to have all data
-as a file an the local disk, instead one can read data available
-online. The following command will read in a file from a web server.
+One does however not have to have all data as a file an the local
+disk, instead one can read data from online resources. The following
+command will read in a file from a web server.
 
     url = 'http://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.data'
     abalone = read.table(aburl, header = F , sep = ',') 
