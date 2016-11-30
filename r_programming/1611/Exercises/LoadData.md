@@ -52,7 +52,7 @@ your character vector named words available in R your session.
 Download the file book chapter from this [link](../files/book_chapter.txt). Read the manual for
 scan and read the text file named book\_chapter.txt into R, first as
 vector and then as a list, with each word in the chapter saved as a
-entry in the vector or list.
+entry in the vector or as a single vector in a list.
 <details>
 <summary>:key: Click to see how</summary>
 <pre>
