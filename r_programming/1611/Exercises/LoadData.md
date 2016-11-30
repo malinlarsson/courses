@@ -47,9 +47,9 @@ your character vector named words available in R your session.
 
     words <- scan(what = character())
 
-### Exersises
+### Exercises
 
-Download the file book chapter from this link. Read the manual for
+Download the file book chapter from this [link](../files/book_chapter.txt). Read the manual for
 scan and read the text file named book\_chapter.txt into R, first as
 vector and then as a list, with each word in the chapter saved as a
 entry in the vector or list.
@@ -142,7 +142,7 @@ columns of equal length that are separated with a common string
 eg. tab, comma, semicolon etc. 
 
 In this code block with first import the data from normalized.txt from
-a file (that you can get here) and accept the defaults for all other
+a file (that you can get [here](../files/normalized.txt)) and accept the defaults for all other
 arguments in the function. With this settings R will read it as a tab
 delimited file and will use the first row of the data as colnames
 (header) and the first column as rownames.
@@ -176,13 +176,14 @@ command will read in a file from a web server.
 
 ### Exercises
 
-1.  Download the file example.data to your computer and import it to R
-    using the read.table function. This files consist of gene
-    expression values. Once you have the object in R validate that it
-    looks okay and export it using the write.table function. Encode
-    all NA values as "missing", at export.
-	<details>
-	<summary>:key: Click to see how</summary>
+1.  Download the file [example.data](../files/example.data) to your
+    computer and import it to R using the read.table function. This
+    files consist of gene expression values. Once you have the object
+    in R validate that it looks okay and export it using the
+    write.table function. Encode all NA values as "missing", at
+    export.  
+	<details> 
+	<summary>:key: Click to see how</summary> 
 	<pre>
     
         ed <- read.table("example.data", sep = ":")

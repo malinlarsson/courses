@@ -166,7 +166,7 @@ After this exercise you should know:
 <br>
 
 4.  Convert the code to count characters and estimate means that you
-    created under question 3. The function should take a single data
+    used under question 3. The function should take a single data
     frame as argument.
 	<details>
 	<summary>:key: Click to see how</summary>
@@ -186,7 +186,25 @@ After this exercise you should know:
 	</details>
 <br>
 
-5.  Read up on the ifelse function and try to see if you can use this instead of your complex loop
+5.  Read up on the ifelse function and try to see if you can use this
+    to answer question 3 with this function.
 
-6.  In all loops that we tried out we have created the  variable where
+6.  In all loops that we tried out we have created the variable where
     the output is saved outside the loop. Why is this?
+
+7.  At the lecture an approach to calculate factorials were
+    implemented using recursion (function calling itself). Here we
+    instead will have a go at generating Fibonacci numbers. A
+    fibonacci number is part of a series of number with the following
+    properties:
+	
+	The first two numbers in the Fibonacci sequence are either 1 and
+    1, or 0 and 1, depending on the chosen starting point of the
+    sequence, and each subsequent number is the sum of the previous
+    two. Hence:
+	
+	0, 1, 1, 2, 3, 5, 8, 13, 21, ...
+	or
+	1, 1, 2, 3, 5, 8, 13, 21, ...
+
+	Try to generate such a series using a recursive approach
