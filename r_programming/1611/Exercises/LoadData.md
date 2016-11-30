@@ -9,11 +9,8 @@ title:  'Loading data'
 <ul>
 <li><a href="#orgheadline4">1. Introduction</a>
 <ul>
-<li><a href="#orgheadline1">1.1. Scan</a></li>
-<li><a href="#orgheadline3">1.2. The read.table command</a>
-<ul>
-<li><a href="#orgheadline2">1.2.1. Analysing genome annotation in R using read.table</a></li>
-</ul>
+<li><a href="#orgheadline1">1.1. The scan function</a></li>
+<li><a href="#orgheadline3">1.2. The read.table function</a>
 </li>
 </ul>
 </li>
@@ -37,7 +34,7 @@ R. After this exercise you will know how to:
 -   Read data from online resource
 -   Write data to a file
 
-## Scan<a id="orgheadline1"></a>
+## The scan function<a id="orgheadline1"></a>
 
 The function scan() can be used both to read data from files and
 directly from keyboard. The function is very flexible and have many
@@ -49,6 +46,8 @@ been typed press enter twice to get back to your R prompt and have
 your character vector named words available in R your session.
 
     words <- scan(what = character())
+
+### Exersises
 
 Download the file book chapter from this link. Read the manual for
 scan and read the text file named book\_chapter.txt into R, first as
@@ -76,7 +75,7 @@ entry in the vector or list.
 Check that your newly created objects contain the correct information
 and have been saved as you have intended eg. each entry of the vector
 or the list should contain a single word. Once your convinced that you
-have a sound word vector and list. Do the following exercises.
+have a sound word vector and list.
 
 1.  Identify the longest word in your vector.
 	<details>
@@ -134,7 +133,7 @@ have a sound word vector and list. Do the following exercises.
 	</details>
 <br>
 
-## The read.table command<a id="orgheadline3"></a>
+## The read.table function<a id="orgheadline3"></a>
 
 This is the by far most common way to get data into R. As the function
 creates a data frame at import it will only work for data set that
@@ -174,6 +173,8 @@ online. The following command will read in a file from a web server.
     4  M 0.440 0.365 0.125 0.5160 0.2155 0.1140 0.155 10
     5  I 0.330 0.255 0.080 0.2050 0.0895 0.0395 0.055  7
     6  I 0.425 0.300 0.095 0.3515 0.1410 0.0775 0.120  8
+
+### Exercises
 
 1.  Download the file example.data to your computer and import it to R
     using the read.table function. This files consist of gene
@@ -233,7 +234,7 @@ online. The following command will read in a file from a web server.
 	</details>
 <br>
 
-### Analysing genome annotation in R using read.table<a id="orgheadline2"></a>
+3. Analysing genome annotation in R using read.table
 
 For this exercise we will load a GTF file into R and calculate some
 basic summary statistics from the file. In the first part we will use
@@ -307,27 +308,27 @@ A valid GTF file should contain the following tab delimited fields
 <tbody>
 <tr>
 <td class="org-right">1</td>
-<td class="org-left">transcribed\_unprocessed\_pseudogene</td>
+<td class="org-left">transcribed_unprocessed_pseudogene</td>
 <td class="org-left">gene</td>
 <td class="org-right">11869</td>
 <td class="org-right">14409</td>
 <td class="org-left">.</td>
 <td class="org-left">+</td>
 <td class="org-left">.</td>
-<td class="org-left">gene\_id; "ENSG00000223972";</td>
+<td class="org-left">gene_id; "ENSG00000223972";</td>
 </tr>
 
 
 <tr>
 <td class="org-right">1</td>
-<td class="org-left">processed\_transcript</td>
+<td class="org-left">processed_transcript</td>
 <td class="org-left">transcript</td>
 <td class="org-right">11869</td>
 <td class="org-right">14409</td>
 <td class="org-left">.</td>
 <td class="org-left">+</td>
 <td class="org-left">.</td>
-<td class="org-left">gene\_id; "ENSG00000223972";</td>
+<td class="org-left">gene_id; "ENSG00000223972";</td>
 </tr>
 </tbody>
 </table>
