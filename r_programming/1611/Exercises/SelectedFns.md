@@ -23,24 +23,22 @@ users coming from different disciplines. In particular, we will:
 -   Learn more about setting up a statistical analyses workflow by
     fitting a linear model to example data.
 
-## Exercise FNS1. Create and work with sets<a id="orgheadline4"></a>
+## Exercise 1. Create and work with sets<a id="orgheadline4"></a>
 
 1. Open R-studio and create three sets of genes: 
-   G1 = {'ANK-1', 'ANK-c', 'GALNTL-1'}; 
-   G2 = {'ANK-1', 'FMA', 'RHO', 'GRP'}; 
-   G3 = {'GALNTL-1', 'ANK-c', 'HQX'}. 
+   G1 <- {'ANK-1', 'ANK-c', 'GALNTL-1'}   
+   G2 <- {'ANK-1', 'FMA', 'RHO', 'GRP'}   
+   G3 <- {'GALNTL-1', 'ANK-c', 'HQX'}.   
    Visualise membership relations between all elements of the sets
    using Venn diagram. Use package *venn*.
    <details>
    <summary>:key: Click to see how</summary>
    <pre>
-
 	library('venn')
-	G1 = c('ANK-1', 'ANK-c', 'GALNTL-1')
-	G2 = c('ANK-1', 'FMA', 'RHO', 'GRP')
-	G3 = c('GALNTL-1', 'ANK-c', 'HQX')
-	venn(list(G1=G1, G2=G2, G3=G3))
-
+	G1 <- c('ANK-1', 'ANK-c', 'GALNTL-1')
+	G2 <- c('ANK-1', 'FMA', 'RHO', 'GRP')
+	G3 <- c('GALNTL-1', 'ANK-c', 'HQX')
+	venn(list(G1 = G1, G2 = G2, G3 = G3))
    </pre>
    </details>
 <br>
@@ -55,28 +53,24 @@ users coming from different disciplines. In particular, we will:
    <details>
    <summary>:key: Click to see how</summary>
    <pre>
-   
     union(G1, G3)
     union(intersect(G1, G2), intersect(G2, G3))
     setdiff(G2, G3)
     setequal(union(G1, G2), intersect(G2, G3))
     is.element(c('ANK-c', 'GALNTL-1'), intersect(G1, G3))
-  
    </pre>
    </details>
 <br>
 
-## Exercise FNS2. Define and work with polynomials<a id="orgheadline5"></a>
+## Exercise 2. Define and work with polynomials<a id="orgheadline5"></a>
 1. Define the following polynomials p1 and p2: $5x^3 + 4x^2 + 7$ and
    $2x^2 + 3x - 11$.
    <details>
    <summary>:key: Click to see how</summary>
    <pre>
-
 	library(polynom)
 	p1 <- polynomial(c(7, 0, 4, 5))
 	p2 <- polynomial(c(-11, 3, 2)) 
-
    </pre>
    </details>
 <br>
@@ -85,10 +79,8 @@ users coming from different disciplines. In particular, we will:
    <details>
    <summary>:key: Click to see how</summary>
    <pre>
-
 	library(polynom)
 	p3 <- poly.calc(c(-3, 4, 7))
- 
    </pre>
    </details>
 <br>
@@ -98,9 +90,7 @@ users coming from different disciplines. In particular, we will:
    <details>
    <summary>:key: Click to see how</summary>
    <pre>
-
 	p4 <- poly.calc(c(-3, 24, 7), c(7, -9, 4))
-
    </pre>
    </details>
 <br>
@@ -110,10 +100,8 @@ users coming from different disciplines. In particular, we will:
    <details>
    <summary>:key: Click to see how</summary>
    <pre>
- 
-	 plot(p4, ylim=c(-1, 8))
-	 #The maximum is between 6 and 8.
-  
+    plot(p4, ylim=c(-1, 8))
+    #The maximum is between 6 and 8.
    </pre>
    </details>
 <br>
@@ -129,19 +117,17 @@ users coming from different disciplines. In particular, we will:
    <details>
    <summary>:key: Click to see how</summary>
    <pre>
-
 	p1 + p3
 	p4 / p2
 	integral(p4, c(-10, 0))
 	deriv(deriv(p1))
 	GCD(p1, p2)
 	LCM(p1, p2 + p3)
-
    </pre>
    </details>
 <br>
 
-## Exercise FNS3. Formulas<a id="orgheadline7"></a>
+## Exercise 3. Formulas<a id="orgheadline7"></a>
 Observe that there is a convenient way of validating your formulas:
 
 ```r  
@@ -165,7 +151,6 @@ terms
   <details>
   <summary>:key: Click to see how</summary>
   <pre>
-
 	y ~ var1 + var2
 	y ~ +0 + height
 	frm <- formula(y ~ (b + c + d) %in% a)
@@ -173,18 +158,16 @@ terms
 	terms <- attr(terms.formula(frm), "term.labels")
 	y ~ a * (b + c + d)
 	y ~ a * (b + c + d) - c
-	
    </pre>
    </details>
 <br>
 
-## Exercise FNS4. Define and work with functions<a id="orgheadline8"></a>
+## Exercise 4. Define and work with functions<a id="orgheadline8"></a>
 1. Define function: $f(x) = 2x^3 + 3x^2 + sin(x/2) + 7$ and finds its
    value for $x = 42$.
    <details>
    <summary>:key: Click to see how</summary>
    <pre>
-
 	f <- function(x) {
 		y = 2*x^3 + 3*x^2 + sin(x/2) + 7
 		return(y)
@@ -192,7 +175,6 @@ terms
 	f(42)
 
 	f(42) = 153476
-
    </pre>
    </details>
 <br>
@@ -202,10 +184,9 @@ terms
    <details>
    <summary>:key: Click to see how</summary>
    <pre>
-   
     uniroot(f, lower=-10, upper=10)
     curve(f, from=-10, to=10)
- 
+	
     One zero: $f(-2.16) = 5.24\times10^{-5}$
    </pre>
    </details>
@@ -220,9 +201,9 @@ terms
     D(expression(2*x^3 + 3*x^2 + sin(x/2) + 7), name='x')
 	deriv(~2*x^3 + 3*x^2 + sin(x/2) + 7, 'x')
  
-	 The resulting derivatives are the same, just written in different
-	 ways. *D()* takes an expression as argument and it returns an
-	 expression while *deriv()* works on formulas.
+    The resulting derivatives are the same, just written in different
+    ways. *D()* takes an expression as argument and it returns an
+    expression while *deriv()* works on formulas.
    </pre>
    </details>
 <br>
@@ -248,16 +229,14 @@ terms
    <details>
    <summary>:key: Click to see how</summary>
    <pre>
-
     integrate(f, lower = 1, upper = 7)
 
     1588 with absolute error < 1.8e-11
-
    </pre>
    </details>
 <br>
 
-## Exercise FNS5. Statistical tests<a id="orgheadline9"></a>
+## Exercise 5. Statistical tests<a id="orgheadline9"></a>
 
 1. Draw $N=30$ random observations from $N(0,1)$ (normal distribution
    with mean=0 and std. dev.=1) and $N=38$ random observations from
@@ -283,7 +262,7 @@ terms
    </details>
 <br>
 
-## Exercise FNS6. Linear model and diagnostics<a id="orgheadline9"></a>
+## Exercise 6. Linear model and diagnostics<a id="orgheadline9"></a>
 1. Package *UsingR* contains a data with fat measurements in 252
    males.
    - load the dataset (install the package if necessary),
@@ -299,7 +278,6 @@ terms
    <details>
    <summary>:key: Click to see how</summary>
    <pre>
-
 	library('UsingR')
 	data('fat')
 	?fat
@@ -311,6 +289,5 @@ terms
 	model2 <- lm(body.fat ~ age + weight + height + neck + hip,  data=fat2)
 	summary(model2)
 	plot(model2)
-
    </pre>
    </details>
