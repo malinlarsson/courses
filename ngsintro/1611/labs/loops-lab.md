@@ -137,14 +137,15 @@ $ echo $a squared is $(($a*$a))
 
 Give it a couple of tries on your own first. If you get completely stuck you can see a suggested solution below.
 
-<details>
-<summary>:key: Click to see how</summary> 
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Click to see how </button>
+<div id="demo" class="collapse">
 {% highlight bash %}$ x=4
 $ y=5
 $ z=10
 $ echo The volume of the rectangular cuboid with the sides $x,$y,$z is $(($x*$y*$z)).
 {% endhighlight %}
-</details> 
+</div>
+
 
 ## 5. Looping over lists
 First off, let's open another terminal to uppmax so that you have 2 of them open. 
@@ -203,8 +204,8 @@ Try looking the man page for the `sleep` command (`man sleep`) and figure out ho
 The point of using `sleep` is to tell the computer to wait for 1 second after printing the number, instead of rushing to the next iteration in the loop directly.
 Try to implement this on your own.
 
-<details>
-<summary>:key: Click to see how</summary> 
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Click to see how </button>
+<div id="demo" class="collapse">
 {% highlight bash %}# declare the values the loop will loop over
 for secondsToGo in {10..0};
 do
@@ -220,7 +221,8 @@ done
 # declare the start of a new year in a festive manner
 echo Happy New Year everyone!!
 {% endhighlight %}
-</details> 
+</div>
+
 <br><br>
 
 **Exercise 2**  
@@ -248,8 +250,8 @@ If not, look for another solution and try that one instead.
 
 Basic, without bonus points:
 
-<details>
-<summary>:key: Click to see how</summary> 
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Click to see how </button>
+<div id="demo" class="collapse">
 {% highlight bash %}# load the modules needed for samtools
 module load bioinfo-tools samtools/1.3
 
@@ -261,7 +263,7 @@ do
     samtools view -bS $file > $file.bam
 done
 {% endhighlight %}
-</details> 
+</div>
 <br><br>
 
 Advanced, with bonus points:
@@ -286,6 +288,11 @@ do
 done
 {% endhighlight %}
 </details> 
+
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Click to see how </button>
+<div id="demo" class="collapse">
+
+</div>
 <br><br>
 
 **Exercise 3**  
@@ -340,6 +347,11 @@ do
 done
 {% endhighlight %}
 </details> 
+
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Click to see how </button>
+<div id="demo" class="collapse">
+
+</div>
 <br><br>
 
 Advanced:
@@ -373,6 +385,11 @@ do
 done
 {% endhighlight %}
 </details> 
+
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Click to see how </button>
+<div id="demo" class="collapse">
+
+</div>
 <br><br>
 
 **Bonus exercise 1**  
@@ -415,6 +432,11 @@ done
 echo The factorial of $n is $factorial
 {% endhighlight %}
 </details> 
+
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Click to see how </button>
+<div id="demo" class="collapse">
+
+</div>
 <br><br>
 
 **Bonus exercise 2**  
@@ -463,6 +485,11 @@ do
 done
 {% endhighlight %}
 </details> 
+
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Click to see how </button>
+<div id="demo" class="collapse">
+
+</div>
 <br><br>
 
 
@@ -560,4 +587,9 @@ done
 rm tmp.sbatch
 </pre>
 </details> 
+
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Click to see how </button>
+<div id="demo" class="collapse">
+
+</div>
 <br><br>
