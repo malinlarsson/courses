@@ -85,7 +85,7 @@ users coming from different disciplines. In particular, we will:
 <br>
 
 3. Define a polynomial (p4) passing through the following points:
-   $A(-3,7)$, $B(24,-9)$, $C(7,4)$.
+   A(-3,7), B(24,-9), C(7,4).
    <details>
    <summary>:key: Click to see how</summary>
    <pre>
@@ -94,7 +94,7 @@ users coming from different disciplines. In particular, we will:
    </details>
 <br>
 
-4. Find approximate maximum (value) of the $p4$ polynomial using its
+4. Find approximate maximum (value) of the p4 polynomial using its
    visualisation. 
    <details>
    <summary>:key: Click to see how</summary>
@@ -106,13 +106,13 @@ users coming from different disciplines. In particular, we will:
 <br>
 
 5. Perform the following operations:
-   - Find the sum of $p1$ and $p3$.
-   - Divide $p4$ by $p2$.
-   - Find the area under $p4$ on the $[-10, 0]$ interval.
-   - Find the second order derivative of $p1$.
-   - Find the Greatest Common Divisor of $p1$ and $p2$.
-   - Find the Least Common Multiple of $p1$ and the sum of $p2$ and
-     $p3$. 
+   - Find the sum of p1 and p3.
+   - Divide p4 by p2.
+   - Find the area under p4 on the $[-10, 0]$ interval.
+   - Find the second order derivative of p1.
+   - Find the Greatest Common Divisor of p1 and p2.
+   - Find the Least Common Multiple of p1 and the sum of p2 and
+     p3. 
    <details>
    <summary>:key: Click to see how</summary>
    <pre>
@@ -140,7 +140,7 @@ terms
 ```
 Write formulas describing the following relations of y:  
 
-- depends on $var1$ and $var2$ but not on their interaction,  
+- depends on var1 and var2 but not on their interaction,  
 - depends on *height* but without the constant term,  
 - depends on interactions of 'a' with 'b' and 'a' with 'c' and 'a'  
   with 'd' but without additive effects,  
@@ -163,8 +163,8 @@ Write formulas describing the following relations of y:
 <br>
 
 ## Exercise 4. Define and work with functions<a id="orgheadline8"></a>
-1. Define function: $f(x) = 2x^3 + 3x^2 + sin(x/2) + 7$ and finds its
-   value for $x = 42$.
+1. Define function: f(x) = 2x^3 + 3x^2 + sin(x/2) + 7 and finds its
+   value for x = 42.
    <details>
    <summary>:key: Click to see how</summary>
    <pre>
@@ -192,7 +192,7 @@ Write formulas describing the following relations of y:
    </details>
 <br> 
 
-3. Find the first order derivative of $f(x)$ with respect to $x$. Use
+3. Find the first order derivative of f(x) with respect to x. Use
    both *D()* and *deriv()*. Are the resulting derivatives the same?
    What is the difference between the functions? 
    <details>
@@ -208,7 +208,7 @@ Write formulas describing the following relations of y:
    </details>
 <br>
 
-4. Evaluate the derivative from FNS4.3 at $x = {1, 3, 7}$. What values
+4. Evaluate the derivative from FNS4.3 at x = {1, 3, 7}. What values
    does it take at these points? 
    <details>
    <summary>:key: Click to see how</summary>
@@ -262,7 +262,7 @@ N(0.02,1.1).
 	
   - Before applying the test, one has to check whether its  
 	assumptions are valid. Here, we have to check the normality  
-	first.   	
+	first.  	
   </details>
 <br>
 
