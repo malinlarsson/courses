@@ -138,13 +138,14 @@ terms <- attr(terms.formula(frm), "term.labels")
 terms  
 # Here: y ~ v1:v + v2:v + v3:v  
 ```
-Write formulas describing the following relations of $y$:
-- depends on $var1$ and $var2$ but not on their interaction,
-- depends on *height* but without the constant term,
-- depends on interactions of 'a' with 'b' and 'a' with 'c' and 'a'
-  with 'd' but without additive effects,
+Write formulas describing the following relations of y:  
+
+- depends on $var1$ and $var2$ but not on their interaction,  
+- depends on *height* but without the constant term,  
+- depends on interactions of 'a' with 'b' and 'a' with 'c' and 'a'  
+  with 'd' but without additive effects,  
 - like above, but with additive effects of single variables,  
-- like above, but without the constant term and without the additive
+- like above, but without the constant term and without the additive  
   effect of 'c'.  
   
 <details>
