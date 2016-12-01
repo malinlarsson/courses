@@ -23,19 +23,18 @@ Make a data frame with
 First, look at the defaults: 
 
 - plot the data in the simplest possible way.
-
-<details>
-<summary>:key: Click to see how</summary>
-<pre>
-# 20 random datapoints
-x <- sample(c(1:25), size=20, replace=T)
-y <- rnorm(n=20, mean=0, sd=1) # sample from normal
-r <- rnorm(n=20, mean=0, sd=1) # radius from normal
-names <- paste("ind", 1:20, sep="") # assign some names
-data <- data.frame(cbind(X=x,Y=y, R=r), row.names=names)
-plot(data[,1:2])
-</pre>
-</details>
+  <details>
+  <summary>:key: Click to see how</summary>
+  <pre>
+  #20 random datapoints
+  x <- sample(c(1:25), size=20, replace=T)
+  y <- rnorm(n=20, mean=0, sd=1) # sample from normal
+  r <- rnorm(n=20, mean=0, sd=1) # radius from normal
+  names <- paste("ind", 1:20, sep="") # assign some names
+  data <- data.frame(cbind(X=x,Y=y, R=r), row.names=names)
+  plot(data[,1:2])
+  </pre>
+  </details>
 <br>
 
 # Generating plot step-by-step<a id="orgheadline3"></a>
@@ -44,25 +43,23 @@ automatically, the radius is not reflected on the plot in any way (3rd
 dimension).
 
 - build the plot from scratch, begin by displaying no points.
-
-<details>
-<summary>:key: Click to see how</summary>
-<pre>
-plot(data[,1:2], type='n')
-</pre>
-</details>
+  <details>
+  <summary>:key: Click to see how</summary>
+  <pre>
+  plot(data[,1:2], type='n')
+  </pre>
+  </details>
 <br>
 
 - we still got a box around the plot and axes, we do not want these
   either, remove these elements from the previous plot.
-
-<details>
-<summary>:key: Click to see how</summary>
-<pre>
-plot(data[,1:2], type='n',xaxt='n', yaxt='n', 
+  <details>
+  <summary>:key: Click to see how</summary>
+  <pre>
+  plot(data[,1:2], type='n',xaxt='n', yaxt='n', 
      xlab="", ylab="", frame.plot=F)
-</pre>
-</details>
+ </pre>
+ </details>
 <br>
 
 - create X and Y axis so that they cover the whole range of *x* and
@@ -70,145 +67,128 @@ plot(data[,1:2], type='n',xaxt='n', yaxt='n',
   axis, set 10 equidistant tickmarks and set labels to their values
   rounded to two decimals. Turn the labels, so that they are parallel
   to the OX axis.
-
-<details>
-<summary>:key: Click to see how</summary>
-<pre>
-# Create X axis
-coords.x <- seq(min(data$X),max(data$X), by=1)
-axis(side=1, # 1-left, 2-top, 3-right, 4-bottom
-     at=coords.x, # coordinates for tickmarks
-     cex.axis=.7 # make labels smaller
+  <details>
+  <summary>:key: Click to see how</summary>
+  <pre>
+  #Create X axis
+  coords.x <- seq(min(data$X),max(data$X), by=1)
+  axis(side=1, # 1-left, 2-top, 3-right, 4-bottom
+	  at=coords.x, # coordinates for tickmarks
+	  cex.axis=.7 # make labels smaller
      )
-# Create Y axis
-# we want 10 tickmarks along the data range
-coords.y <- seq(min(data$Y), max(data$Y), length.out=10)
-# and our labels will be the rounded values of y
-labels.y <- round(coords.y, digits=2)
-axis(side=2, 
-     at=coords.y,
-     labels=labels.y, # we want specific labels
-     las=2 # turn the text so it is parallel to OX
+  #Create Y axis
+  #we want 10 tickmarks along the data range
+  coords.y <- seq(min(data$Y), max(data$Y), length.out=10)
+  #and our labels will be the rounded values of y
+  labels.y <- round(coords.y, digits=2)
+  axis(side=2, 
+	  at=coords.y,
+	  labels=labels.y, # we want specific labels
+	  las=2 # turn the text so it is parallel to OX
      )
-</pre>
-</details>
+  </pre>
+  </details>
 <br>
 
 - plot auxiliary lines (a grid) so that it is easier to read the
   plot. There should be a grey dashed line from each tickmark on both
   axes.
-
-<details>
-<summary>:key: Click to see how</summary>
-<pre>
-abline(v=coords.x, col="darkgrey", lty=3)
-abline(h=coords.y, col="darkgrey", lty=3)
-# you could also use grid()
-</pre>
-</details>
+  <details>
+  <summary>:key: Click to see how</summary>
+  <pre>
+  abline(v=coords.x, col="darkgrey", lty=3)
+  abline(h=coords.y, col="darkgrey", lty=3)
+  #you could also use grid()
+  </pre>
+  </details>
 <br>
 
 - define a new *mycol* function that takes a color name and a
   transparency value as two arguments and returns the corresponding
   rgb color value. OPTIONAL -- if it seems to difficult, look up the
   answer.
-
-<details>
-<summary>:key: Click to see how</summary>
-<pre>
-# Function for adding transparency to a given color.
-mycol <- function(colname="olivedrab", transparency=.5) {
-  # convert color name to its RGB value and add the desired
-  # transparency
-  color <- c(as.vector(col2rgb(colname))/255, transparency)
-  # and make a new color from the above
-  color <- rgb(color[1], color[2], color[3], color[4])
-  return(color)
-}
-</pre>
-</details>
+  <details>
+  <summary>:key: Click to see how</summary>
+  <pre>
+  #Function for adding transparency to a given color.
+  mycol <- function(colname="olivedrab", transparency=.5) {
+		#convert color name to its RGB value and add the desired
+		#transparency
+			color <- c(as.vector(col2rgb(colname))/255, transparency)
+	  # and make a new color from the above
+		    color <- rgb(color[1], color[2], color[3], color[4])
+		return(color)
+   }
+   </pre>
+   </details>
 <br>
 
 - plot datapoints so that their size is proportional to $e^r$ where
   $r$ is the radius, points at even X should be round and blue and
   points at odd X square and grey.
-
-<details>
-<summary>:key: Click to see how</summary>
-<pre>
-# Plot radii
-points(data[data$X%%2 == 0,], pch=19, 
-       cex=exp(r), col=mycol("slateblue", .5))
-points(data[data$X%%2 != 0,], pch=15, 
-       cex=exp(r), col=mycol("grey", .5))
-</pre>
-</details>
+  <details>
+  <summary>:key: Click to see how</summary>
+  <pre>
+  #Plot radii
+  points(data[data$X%%2 == 0,], pch=19, 
+		cex=exp(r), col=mycol("slateblue", .5))
+	points(data[data$X%%2 != 0,], pch=15, 
+		cex=exp(r), col=mycol("grey", .5))
+   </pre>
+   </details>
 <br>
 
 - plot centers of the points as a cross: grey for blue/even points and
   red for grey/odd points.
-  
-<details>
-<summary>:key: Click to see how</summary>
-<pre>
-
-points(data[data$X%%2 == 0,], pch=3, cex=1, col="darkgrey")
-points(data[data$X%%2 != 0,], pch=3, cex=1, col="red")
-
-</pre>
-</details>
+  <details>
+  <summary>:key: Click to see how</summary>
+  <pre>
+  points(data[data$X%%2 == 0,], pch=3, cex=1, col="darkgrey")
+  points(data[data$X%%2 != 0,], pch=3, cex=1, col="red")
+  </pre>
+  </details>
 <br>
 
 - add grey text 'Center' at the center of the plot.
-
-<details>
-<summary>:key: Click to see how</summary>
-<pre>
-
-center.x <- mean(range(data[,1]))
-center.y <- mean(range(data[,2]))
-text(x=center.x, y=center.y, "Center", col="lightgrey")
-
-</pre>
-</details>
+  <details>
+  <summary>:key: Click to see how</summary>
+  <pre>
+  center.x <- mean(range(data[,1]))
+  center.y <- mean(range(data[,2]))
+  text(x=center.x, y=center.y, "Center", col="lightgrey")
+  </pre>
+  </details>
 <br>
 
 - add title 'Odds and Ends' and text 'X' and 'Y' on the margins of the
   appropriate axes.
-
-<details>
-<summary>:key: Click to see how</summary>
-<pre>
-
-title("Odds and Ends")
-mtext("Y", side=2, line=3, cex.lab=1,las=2, col="blue")
-mtext("X", side=1, line=3, cex.lab=1,las=1, col="blue")
-
-</pre>
-</details>
+  <details>
+  <summary>:key: Click to see how</summary>
+  <pre>
+  title("Odds and Ends")
+  mtext("Y", side=2, line=3, cex.lab=1,las=2, col="blue")
+  mtext("X", side=1, line=3, cex.lab=1,las=1, col="blue")
+  </pre>
+  </details>
 <br>
 
 - add a legend for 'odd' and 'even' points. Place it in the top-right
   corner.
+  <details>
+  <summary>:key: Click to see how</summary>
+  <pre>
 
-
-
-<details>
-<summary>:key: Click to see how</summary>
-<pre>
-
-legend('topright',
-       legend=c("odd", "even"), 
-       col=c(mycol("slateblue", .5), mycol("grey", .5)),
-       pch=c(19,15), 
-       cex=1,
-       pt.cex=1.2,
-       title="Legend",
-       bty='n'
+	legend('topright',
+		legend=c("odd", "even"), 
+		col=c(mycol("slateblue", .5), mycol("grey", .5)),
+		pch=c(19,15), 
+		cex=1,
+		pt.cex=1.2,
+		title="Legend",
+		bty='n'
        )
-
-</pre>
-</details>
+  </pre>
+  </details>
 <br>
 
 # Visualizing baby growth data on a WHO centile grid<a id="orgheadline4"></a>
