@@ -42,7 +42,7 @@ Room: [NA326](http://www.umu.se/om-universitetet/kartor/campus-karta-stor/?id=58
 
 **Friday 02/12**  
 Room: [NA326](http://www.umu.se/om-universitetet/kartor/campus-karta-stor/?id=584)  
-**09:00-12:00** Exercise: RNA sequencing, transcriptome and expression quantification part II (Olga Dethlefsen, Jeanette Tångrot, Allison Churcher, Andreas Schneider)  
+**09:00-12:00** [Exercise: RNA sequencing, transcriptome and expression quantification part II](labs/rnaseq_161129) (Olga Dethlefsen, Jeanette Tångrot, Allison Churcher, Andreas Schneider)  
 **12.00-13.00** Lunch   
 **13:00-14.00** Data management (Niclas Jareborg)     
-**14:00-15:00** Exercise: RNA sequencing, transcriptome and expression quantification part III (Olga Dethlefsen, Jeanette Tångrot, Allison Churcher, Andreas Schneider)  
+**14:00-15:00** [Exercise: RNA sequencing, transcriptome and expression quantification part III](labs/rnaseq_161129) (Olga Dethlefsen, Jeanette Tångrot, Allison Churcher, Andreas Schneider)  
