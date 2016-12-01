@@ -259,7 +259,7 @@ N(0.02,1.1).
   - Before applying the test, one has to check whether its  
 	assumptions are valid. Here, we have to check the normality  
 	first.  
-</details>
+	</details>
 <br>
 
 ## Exercise 6. Linear model and diagnostics<a id="orgheadline9"></a>
