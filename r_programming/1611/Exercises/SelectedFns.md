@@ -62,8 +62,8 @@ users coming from different disciplines. In particular, we will:
 <br>
 
 ## Exercise 2. Define and work with polynomials<a id="orgheadline5"></a>
-1. Define the following polynomials p1 and p2: $5x^3 + 4x^2 + 7$ and
-   $2x^2 + 3x - 11$.
+1. Define the following polynomials p1 and p2: 5x^3 + 4x^2 + 7 and
+   2x^2 + 3x - 11.
    <details>
    <summary>:key: Click to see how</summary>
    <pre>
@@ -145,7 +145,8 @@ Write formulas describing the following relations of $y$:
   with 'd' but without additive effects,
 - like above, but with additive effects of single variables,  
 - like above, but without the constant term and without the additive
-  effect of 'c'.
+  effect of 'c'.  
+  
 <details>
 <summary>:key: Click to see how</summary>
 <pre>
@@ -235,26 +236,28 @@ Write formulas describing the following relations of $y$:
 <br>
 
 ## Exercise 5. Statistical tests<a id="orgheadline9"></a>
-Draw $N=30$ random observations from $N(0,1)$ (normal distribution
-with mean=0 and std. dev.=1) and $N=38$ random observations from
-$N(0.02,1.1)$.
+Draw N=30 random observations from N(0,1) (normal distribution
+with mean=0 and std. dev.=1) and N=38 random observations from
+N(0.02,1.1).  
+
 - What statistical test(s) would you use to check whether the two
   samples come from the normal distribution?
 - Can we really say something about the samples' normality? Why?
 - What parametric test would you use to check whether both samples
   come from the distribution with the same mean?
 - What do you have to check before you apply the test?
-<details>
-<summary>:key: Click to see the answer</summary>
-- For example, one can plot a QQ plot for both samples. One can
-  also use Shapiro-Wilk test for normality. Can you think of any
-  more tests?
-- Well, here sample size is low, we may get false results!
-- For instance the Student's t-test. It is appropriate for sample
-  sizes below N=100. As a rule of thumb, N=30 is about sufficient.
-- Before applying the test, one has to check whether its
-  assumptions are valid. Here, we have to check the normality
-  first.
+
+  <details>
+  <summary>:key: Click to see the answer</summary>
+  - For example, one can plot a QQ plot for both samples. One can  
+	also use Shapiro-Wilk test for normality. Can you think of any  
+	more tests?  
+  - Well, here sample size is low, we may get false results!  
+  - For instance the Student's t-test. It is appropriate for sample  
+	sizes below N=100. As a rule of thumb, N=30 is about sufficient.  
+  - Before applying the test, one has to check whether its  
+	assumptions are valid. Here, we have to check the normality  
+	first.  
 </details>
 <br>
 
@@ -274,16 +277,16 @@ variable and variables: *age*, *weight*, *height*, *neck* and
 <details>
 <summary>:key: Click to see how</summary>
 <pre>
-   	library('UsingR')
-	data('fat')
-	?fat
-	model <- lm(body.fat ~ age + weight + height + neck + hip,  data=fat)
-	summary(model)
-	plot(model)
-	#Remove outliers
-	fat2 <- fat[-c(54, 39, 42), ]
-	model2 <- lm(body.fat ~ age + weight + height + neck + hip,  data=fat2)
-	summary(model2)
-	plot(model2)
+library('UsingR')
+data('fat')
+?fat
+model <- lm(body.fat ~ age + weight + height + neck + hip,  data=fat)
+summary(model)
+plot(model)
+#Remove outliers
+fat2 <- fat[-c(54, 39, 42), ]
+model2 <- lm(body.fat ~ age + weight + height + neck + hip,  data=fat2)
+summary(model2)
+plot(model2)
 </pre>
 </details>
