@@ -41,7 +41,7 @@ Step 8: Choose genome and assembly and the position you are interested in. Also
 
 Originally BEDTools was written to handle the tab delimited .bed format where each line describes a feature. The three first columns are required and are chromosome - start coord - end coord. The are 9 additional optional columns for more information about the feature. The format is more closely described in http://genome.ucsc.edu/FAQ/FAQformat. Currently BEDTools supports input data in more formats including .bam, .bed, .gff or vcf. The BEDTools suite includes a large number of different commands, but a good point to start is intersectBed that can be used to find the common regions between two files. To learn more about this and other commands use either the flag -h or read more on the online documentation http://bedtools.readthedocs.org/en/latest/.
 
-Task: As input use the .vcf file with your variants and the annotation track from the UCSC browser you downloaded in Extra 1. Or use the bed- file with RefSeq gene annotation in /proj/g2015031/labs/gatk/other/RefSeq_genes.bed. Play around with the different options and try to answer some questions. How many variants are located within genes? How many variants are not located within genes? How many genes have variants within them?  
+Task: As input use the .vcf file with your variants and the annotation track from the UCSC browser you downloaded in Extra 1. Or use the bed- file with RefSeq gene annotation in /proj/g2016008/labs/gatk/other/RefSeq_genes.bed. Play around with the different options and try to answer some questions. How many variants are located within genes? How many variants are not located within genes? How many genes have variants within them?  
 
 Useful hints:
 
