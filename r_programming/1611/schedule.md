@@ -50,7 +50,7 @@ Room: [Other side of BMC, A1:104b, ground floor until lunch then Trippelrummet](
 **12.00-13.00** Lunch at BMC restaurant  
 **13:00-16.00** [Graphics in R: ggplot2](Exercises/ggplot2) (Thomas Källman, Eva Freyhult, Moritz Buck)  
 
-**Extra Material**
+**Extra Material**  
 - [Color names list in R](files/Rcolor.pdf)  
 - [Visualizing data](files/rules_for_using_color.pdf)  
 - [Naming conventions in R](files/Rnaming.pdf)  
