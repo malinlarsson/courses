@@ -250,16 +250,20 @@ N(0.02,1.1).
 
   <details>
   <summary>:key: Click to see the answer</summary>
+  
   - For example, one can plot a QQ plot for both samples. One can  
 	also use Shapiro-Wilk test for normality. Can you think of any  
 	more tests?  
+  
   - Well, here sample size is low, we may get false results!  
+  
   - For instance the Student's t-test. It is appropriate for sample  
 	sizes below N=100. As a rule of thumb, N=30 is about sufficient.  
+	
   - Before applying the test, one has to check whether its  
 	assumptions are valid. Here, we have to check the normality  
-	first.  
-	</details>
+	first.   	
+  </details>
 <br>
 
 ## Exercise 6. Linear model and diagnostics<a id="orgheadline9"></a>
