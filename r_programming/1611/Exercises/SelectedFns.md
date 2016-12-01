@@ -24,8 +24,7 @@ users coming from different disciplines. In particular, we will:
     fitting a linear model to example data.
 
 ## Exercise 1. Create and work with sets<a id="orgheadline4"></a>
-
-1. Open R-studio and create three sets of genes: 
+1. Open R-studio and create three sets of genes:  
    G1 <- {'ANK-1', 'ANK-c', 'GALNTL-1'}   
    G2 <- {'ANK-1', 'FMA', 'RHO', 'GRP'}   
    G3 <- {'GALNTL-1', 'ANK-c', 'HQX'}.   
@@ -139,18 +138,17 @@ terms <- attr(terms.formula(frm), "term.labels")
 terms  
 # Here: y ~ v1:v + v2:v + v3:v  
 ```
-
-1. Write formulas describing the following relations of $y$:
-  - depends on $var1$ and $var2$ but not on their interaction,
-  - depends on *height* but without the constant term,
-  - depends on interactions of 'a' with 'b' and 'a' with 'c' and 'a'
-    with 'd' but without additive effects,
-  - like above, but with additive effects of single variables,
-  - like above, but without the constant term and without the additive
-    effect of 'c'.
-  <details>
-  <summary>:key: Click to see how</summary>
-  <pre>
+Write formulas describing the following relations of $y$:
+- depends on $var1$ and $var2$ but not on their interaction,
+- depends on *height* but without the constant term,
+- depends on interactions of 'a' with 'b' and 'a' with 'c' and 'a'
+  with 'd' but without additive effects,
+- like above, but with additive effects of single variables,  
+- like above, but without the constant term and without the additive
+  effect of 'c'.
+<details>
+<summary>:key: Click to see how</summary>
+<pre>
 	y ~ var1 + var2
 	y ~ +0 + height
 	frm <- formula(y ~ (b + c + d) %in% a)
@@ -158,8 +156,8 @@ terms
 	terms <- attr(terms.formula(frm), "term.labels")
 	y ~ a * (b + c + d)
 	y ~ a * (b + c + d) - c
-   </pre>
-   </details>
+</pre>
+</details>
 <br>
 
 ## Exercise 4. Define and work with functions<a id="orgheadline8"></a>
@@ -237,48 +235,46 @@ terms
 <br>
 
 ## Exercise 5. Statistical tests<a id="orgheadline9"></a>
-
-1. Draw $N=30$ random observations from $N(0,1)$ (normal distribution
-   with mean=0 and std. dev.=1) and $N=38$ random observations from
-   $N(0.02,1.1)$.
-   - What statistical test(s) would you use to check whether the two
-	 samples come from the normal distribution?
-   - Can we really say something about the samples' normality? Why?
-   - What parametric test would you use to check whether both samples
-	 come from the distribution with the same mean?
-   - What do you have to check before you apply the test?
-
-   <details>
-   <summary>:key: Click to see the answer</summary>
-   - For example, one can plot a QQ plot for both samples. One can
-     also use Shapiro-Wilk test for normality. Can you think of any
-     more tests?
-   - Well, here sample size is low, we may get false results!
-   - For instance the Student's t-test. It is appropriate for sample
-     sizes below N=100. As a rule of thumb, N=30 is about sufficient.
-   - Before applying the test, one has to check whether its
-     assumptions are valid. Here, we have to check the normality
-     first.
-   </details>
+Draw $N=30$ random observations from $N(0,1)$ (normal distribution
+with mean=0 and std. dev.=1) and $N=38$ random observations from
+$N(0.02,1.1)$.
+- What statistical test(s) would you use to check whether the two
+  samples come from the normal distribution?
+- Can we really say something about the samples' normality? Why?
+- What parametric test would you use to check whether both samples
+  come from the distribution with the same mean?
+- What do you have to check before you apply the test?
+<details>
+<summary>:key: Click to see the answer</summary>
+- For example, one can plot a QQ plot for both samples. One can
+  also use Shapiro-Wilk test for normality. Can you think of any
+  more tests?
+- Well, here sample size is low, we may get false results!
+- For instance the Student's t-test. It is appropriate for sample
+  sizes below N=100. As a rule of thumb, N=30 is about sufficient.
+- Before applying the test, one has to check whether its
+  assumptions are valid. Here, we have to check the normality
+  first.
+</details>
 <br>
 
 ## Exercise 6. Linear model and diagnostics<a id="orgheadline9"></a>
-1. Package *UsingR* contains a data with fat measurements in 252
-   males.
-   - load the dataset (install the package if necessary),
-   - read about the dataset in package help,
-   - construct a linear model with *body.fat* as the dependent
-     variable and variables: *age*, *weight*, *height*, *neck* and
-     *hip* as independent variables,
-   - perform model diagnostics,
-   - improve the model if necessary (hint: e.g. outliers),
-   - which variables are significant?
-   - how much of the variability can be explained by the model?
-   - how would you improve the model? Do this if you have time,
-   <details>
-   <summary>:key: Click to see how</summary>
-   <pre>
-	library('UsingR')
+Package *UsingR* contains a data with fat measurements in 252
+males.
+- load the dataset (install the package if necessary),
+- read about the dataset in package help,
+- construct a linear model with *body.fat* as the dependent
+variable and variables: *age*, *weight*, *height*, *neck* and
+*hip* as independent variables,
+- perform model diagnostics,
+- improve the model if necessary (hint: e.g. outliers),
+- which variables are significant?
+- how much of the variability can be explained by the model?
+- how would you improve the model? Do this if you have time,
+<details>
+<summary>:key: Click to see how</summary>
+<pre>
+   	library('UsingR')
 	data('fat')
 	?fat
 	model <- lm(body.fat ~ age + weight + height + neck + hip,  data=fat)
@@ -289,5 +285,5 @@ terms
 	model2 <- lm(body.fat ~ age + weight + height + neck + hip,  data=fat2)
 	summary(model2)
 	plot(model2)
-   </pre>
-   </details>
+</pre>
+</details>
