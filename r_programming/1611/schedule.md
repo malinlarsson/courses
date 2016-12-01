@@ -40,7 +40,7 @@ Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)
 **11:00-12:00** [Exercise: Functions in R](Exercises/SelectedFns) (Thomas Källman, Moritz Buck, Johan Viklund)  
 **12:00-13:00** Lunch at BMC restaurant  
 **13:00-15:00** [Exercise: Functions in R cted.](Exercises/SelectedFns) (Thomas Källman, Moritz Buck, Johan Viklund)  
-**15:00-17:00** [Exercise: Graphics in R cted.](Exercises/PlotsHandson) (Thomas Källman, Moritz Buck, Sebastian DiLorenzo)  
+**15:00-17:00** [Exercise: Graphics in R cted.](Exercises/PlotHandson) (Thomas Källman, Moritz Buck, Sebastian DiLorenzo)  
 
 **Friday**  
 Room: [Other side of BMC, A1:104b, ground floor until lunch then Trippelrummet](files/bmc_map.jpg)  
