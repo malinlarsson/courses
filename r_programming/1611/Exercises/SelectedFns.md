@@ -143,14 +143,15 @@ users coming from different disciplines. In particular, we will:
 
 ## Exercise FNS3. Formulas<a id="orgheadline7"></a>
 Observe that there is a convenient way of validating your formulas:
-```r
-# First, define the formula
-frm <- formula(y ~ (v1 + v2 + v3) %in% v)
-# Check the validity of the above
-terms <- attr(terms.formula(frm), "term.labels")
-# See all terms that will be added together
-terms
-# Here: y ~ v1:v + v2:v + v3:v
+
+```r  
+# First, define the formula  
+frm <- formula(y ~ (v1 + v2 + v3) %in% v)  
+# Check the validity of the above  
+terms <- attr(terms.formula(frm), "term.labels")  
+# See all terms that will be added together  
+terms  
+# Here: y ~ v1:v + v2:v + v3:v  
 ```
 
 1. Write formulas describing the following relations of $y$:
