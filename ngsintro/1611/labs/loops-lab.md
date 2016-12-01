@@ -146,6 +146,17 @@ $ echo The volume of the rectangular cuboid with the sides $x,$y,$z is $(($x*$y*
 {% endhighlight %}
 </details> 
 
+
+  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+  <div id="demo" class="collapse">
+{% highlight bash %}$ x=4
+$ y=5
+$ z=10
+$ echo The volume of the rectangular cuboid with the sides $x,$y,$z is $(($x*$y*$z)).
+{% endhighlight %}
+  </div>
+
+
 ## 5. Looping over lists
 First off, let's open another terminal to uppmax so that you have 2 of them open. 
 Scripting is a lot easier if you have one terminal on the command line ready to run commands and test things, and another one with a text editor where you write the actual code. 
