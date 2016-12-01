@@ -51,8 +51,8 @@ Room: [Other side of BMC, A1:104b, ground floor until lunch then Trippelrummet](
 **13:00-16.00** [Graphics in R: ggplot2](Exercises/ggplot2) (Thomas Källman, Eva Freyhult, Moritz Buck)  
 
 **Extra Material**
-- [Color names list in R](files/Rcolor.pdf)
-- [Visualizing data](files/rules_for_using_color.pdf)
-- [Naming conventions in R](files/Rnaming.pdf)
-- [Introduction to statistical tests in R](files/statests.pdf)
-- [Bioconductor examples](https://f1000research.com/channels/bioconductor)
+- [Color names list in R](files/Rcolor.pdf)  
+- [Visualizing data](files/rules_for_using_color.pdf)  
+- [Naming conventions in R](files/Rnaming.pdf)  
+- [Introduction to statistical tests in R](files/statests.pdf)  
+- [Bioconductor examples](https://f1000research.com/channels/bioconductor)  
