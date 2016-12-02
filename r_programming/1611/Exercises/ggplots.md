@@ -97,22 +97,23 @@ stat_density2d(data = coords,
 							geom_point(aes(x=lat, y=lon), data=coords, color='olivedrab')
 ```  
     
-	
-    # ICA & Coop
-    ica.kml <- getKMLcoordinates(kmlfile="ica_Uppsala.kml", ignoreAltitude=T)
-    tmp <- unlist(ica.kml)
-    ica.coords <- data.frame(lat=tmp[1:length(tmp) %% 2 == 0], lon=tmp[1:length(tmp) %% 2 == 1], type='ica')
-    coop.kml <- getKMLcoordinates(kmlfile="coop_Uppsala.kml", ignoreAltitude=T)
-    tmp <- unlist(coop.kml)
-    coop.coords <- data.frame(lat=tmp[1:length(tmp) %% 2 == 0], lon=tmp[1:length(tmp) %% 2 == 1], type='coop')
-    coords <- rbind(ica.coords, coop.coords)
-    google.map <- get_map(c(17.63,59.84), zoom=12)
-    voronoi <- deldir(coords)
-    
-    map <- ggmap(google.map)
-    map +
-      scale_fill_gradient(low = "green", high = "olivedrab", guide = FALSE) + 
-      scale_alpha(range = c(0, 0.1), guide = FALSE) + 
-      geom_segment(aes(x = y1, y = x1, xend = y2, yend = x2), 
-	  size = .4, linetype=1, data = voronoi$dirsgs, color= "olivedrab") + 
-      geom_point(aes(x=lon, y=lat, col=type), data=coords)
+```R	
+# ICA & Coop
+ica.kml <- getKMLcoordinates(kmlfile="ica_Uppsala.kml", ignoreAltitude=T)
+tmp <- unlist(ica.kml)
+ica.coords <- data.frame(lat=tmp[1:length(tmp) %% 2 == 0], lon=tmp[1:length(tmp) %% 2 == 1], type='ica')
+coop.kml <- getKMLcoordinates(kmlfile="coop_Uppsala.kml", ignoreAltitude=T)
+tmp <- unlist(coop.kml)
+coop.coords <- data.frame(lat=tmp[1:length(tmp) %% 2 == 0], lon=tmp[1:length(tmp) %% 2 == 1], type='coop')
+coords <- rbind(ica.coords, coop.coords)
+google.map <- get_map(c(17.63,59.84), zoom=12)
+voronoi <- deldir(coords)
+
+map <- ggmap(google.map)
+	         map +
+			 scale_fill_gradient(low = "green", high = "olivedrab", guide = FALSE) + 
+			 scale_alpha(range = c(0, 0.1), guide = FALSE) + 
+			 geom_segment(aes(x = y1, y = x1, xend = y2, yend = x2), 
+			 size = .4, linetype=1, data = voronoi$dirsgs, color= "olivedrab") + 
+			 geom_point(aes(x=lon, y=lat, col=type), data=coords)
+```

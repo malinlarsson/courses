@@ -48,7 +48,7 @@ Room: [Other side of BMC, A1:104b, ground floor until lunch then Trippelrummet](
 **10:00-11:00** Live presentation: Explanatory programming (Marcin Kierczak)  
 **11:00-12:00** Q&A session.  
 **12.00-13.00** Lunch at BMC restaurant  
-**13:00-16.00** [Graphics in R: ggplot2](Exercises/ggplot2) (Thomas Källman, Eva Freyhult, Moritz Buck)  
+**13:00-16.00** [Graphics in R: ggplot2](Exercises/ggplots) (Thomas Källman, Eva Freyhult, Moritz Buck)  
 
 **Extra Material**  
 - [Color names list in R](files/Rcolor.pdf)  
