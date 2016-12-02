@@ -46,56 +46,58 @@ working directory.
 [ica_Uppsala.kml](../files/ica_Uppsala.kml)  
 
 
-    # Load the libraries necessary for working with maps
-    library(ggmap)
-    library(maptools)
-    library(sp)
-    library(rgdal)
-    library(deldir)
+```R
+# Load the libraries necessary for working with maps
+library(ggmap)
+library(maptools)
+library(sp)
+library(rgdal)
+library(deldir)
     
-    # Download map of Uppsala from stamen maps
-    google.map <- get_map(c(17.63,59.84), zoom=12, maptype = 'toner')
+# Download map of Uppsala from stamen maps
+google.map <- get_map(c(17.63,59.84), zoom=12, maptype = 'toner')
     
-    # Lad the list of shops
-    data <- read.table("Bolaget.csv", header=T, sep=";", quote="")
+# Lad the list of shops
+data <- read.table("Bolaget.csv", header=T, sep=";", quote="")
     
-    # Narrow down the list to Uppsala only
-    data <- data[data$Address4 == "UPPSALA",]
+# Narrow down the list to Uppsala only
+		data <- data[data$Address4 == "UPPSALA",]
+		
+# The description in the file says the coords are in RT90 datum.
+# The map uses WGS84 thus we need a conversion:
+latlonRT90 <- data[,c('RT90x', 'RT90y')]
+colnames(latlonRT90) <- c('x','y')
+
+# EPSG codes for RT90 and WGS84 are 3021 and 4326. 
+# Here, we do the actual conversion
+tmp <- data.frame(coords.x = latlonRT90$y, coords.y = latlonRT90$x)
+coordinates(tmp)=~coords.x+coords.y
+proj4string(tmp)=CRS("+init=epsg:3021") 
+coords <- spTransform(tmp, CRS("+init=epsg:4326"))
+		
+# Create the data frame for ggplot2
+coords <- data.frame(lat=coords@coords[,1], lon=coords@coords[,2])
+
+# Do the Voronoi tesseleation
+voronoi <- deldir(coords)
+
+# Plot the map, shop density, shops as points and the tesselation lines.
+map <- ggmap(google.map)
+map +
+stat_density2d(data = coords, 
+	           aes(x = lat, y = lon,
+			   fill = ..level..,
+			   alpha = ..level..), 
+			   size = 0.01, bins = 50, 
+			   geom = "polygon") + 
+			   scale_fill_gradient(low = "green", high = "olivedrab", guide = FALSE) + 
+			   scale_alpha(range = c(0, 0.1), guide = FALSE) +
+			   geom_segment(aes(x = x1, y = y1, xend = x2, yend = y2), 
+			                size = .6, linetype=2, data = voronoi$dirsgs, color= "olivedrab") +
+							geom_point(aes(x=lat, y=lon), data=coords, color='olivedrab')
+```  
     
-    # The description in the file says the coords are in RT90 datum.
-    # The map uses WGS84 thus we need a conversion:
-    latlonRT90 <- data[,c('RT90x', 'RT90y')]
-    colnames(latlonRT90) <- c('x','y')
-    
-    # EPSG codes for RT90 and WGS84 are 3021 and 4326. 
-    # Here, we do the actual conversion
-    tmp <- data.frame(coords.x = latlonRT90$y, coords.y = latlonRT90$x)
-    coordinates(tmp)=~coords.x+coords.y
-    proj4string(tmp)=CRS("+init=epsg:3021") 
-    coords <- spTransform(tmp, CRS("+init=epsg:4326"))
-    
-    # Create the data frame for ggplot2
-    coords <- data.frame(lat=coords@coords[,1], lon=coords@coords[,2])
-    
-    # Do the Voronoi tesseleation
-    voronoi <- deldir(coords)
-    
-    # Plot the map, shop density, shops as points and the tesselation lines.
-    map <- ggmap(google.map)
-    map +
-        stat_density2d(data = coords, 
-                       aes(x = lat, y = lon,
-                           fill = ..level..,
-                           alpha = ..level..), 
-                           size = 0.01, bins = 50, 
-                           geom = "polygon") + 
-                           scale_fill_gradient(low = "green", high = "olivedrab", guide = FALSE) + 
-                           scale_alpha(range = c(0, 0.1), guide = FALSE) +
-                           geom_segment(aes(x = x1, y = y1, xend = x2, yend = y2), 
-						   size = .6, linetype=2, data = voronoi$dirsgs, color= "olivedrab") +
-                           geom_point(aes(x=lat, y=lon), data=coords, color='olivedrab')
-    
-    
+	
     # ICA & Coop
     ica.kml <- getKMLcoordinates(kmlfile="ica_Uppsala.kml", ignoreAltitude=T)
     tmp <- unlist(ica.kml)
