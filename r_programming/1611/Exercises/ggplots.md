@@ -40,10 +40,10 @@ obtain a fairly detailed understanding of what is going on. Read the
 help for some of the functions and try the plots with other arguments.
 
 Before you start you should download the following files to your
-working directory.
-[Bolaget.csv](../files/Bolaget.csv)
-[coop_Uppsala.kml](../files/coop_Uppsala.kml)
-[ica_Uppsala.kml](../files/ica_Uppsala.kml)
+working directory.  
+[Bolaget.csv](../files/Bolaget.csv)  
+[coop_Uppsala.kml](../files/coop_Uppsala.kml)  
+[ica_Uppsala.kml](../files/ica_Uppsala.kml)  
 
 
     # Load the libraries necessary for working with maps
@@ -91,7 +91,8 @@ working directory.
                            geom = "polygon") + 
                            scale_fill_gradient(low = "green", high = "olivedrab", guide = FALSE) + 
                            scale_alpha(range = c(0, 0.1), guide = FALSE) +
-                           geom_segment(aes(x = x1, y = y1, xend = x2, yend = y2), size = .6, linetype=2, data = voronoi$dirsgs, color= "olivedrab") +
+                           geom_segment(aes(x = x1, y = y1, xend = x2, yend = y2), 
+						   size = .6, linetype=2, data = voronoi$dirsgs, color= "olivedrab") +
                            geom_point(aes(x=lat, y=lon), data=coords, color='olivedrab')
     
     
@@ -110,5 +111,6 @@ working directory.
     map +
       scale_fill_gradient(low = "green", high = "olivedrab", guide = FALSE) + 
       scale_alpha(range = c(0, 0.1), guide = FALSE) + 
-      geom_segment(aes(x = y1, y = x1, xend = y2, yend = x2), size = .4, linetype=1, data = voronoi$dirsgs, color= "olivedrab") + 
+      geom_segment(aes(x = y1, y = x1, xend = y2, yend = x2), 
+	  size = .4, linetype=1, data = voronoi$dirsgs, color= "olivedrab") + 
       geom_point(aes(x=lon, y=lat, col=type), data=coords)

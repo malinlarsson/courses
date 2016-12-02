@@ -108,7 +108,7 @@ users coming from different disciplines. In particular, we will:
 5. Perform the following operations:
    - Find the sum of p1 and p3.
    - Divide p4 by p2.
-   - Find the area under p4 on the $[-10, 0]$ interval.
+   - Find the area under p4 on the [-10, 0] interval.
    - Find the second order derivative of p1.
    - Find the Greatest Common Divisor of p1 and p2.
    - Find the Least Common Multiple of p1 and the sum of p2 and
@@ -179,7 +179,7 @@ Write formulas describing the following relations of y:
    </details>
 <br>
 
-2. Find the $f(x)$ zeros on the $[-10, 10]$ interval, values at zeros
+2. Find the f(x) zeros on the [-10, 10] interval, values at zeros
    and plot the function for the same interval. 
    <details>
    <summary>:key: Click to see how</summary>
@@ -223,7 +223,7 @@ Write formulas describing the following relations of y:
    </details>
 <br>
 
-5. Perform numerical integration: $\int_1^7 f(x)$. 
+5. Perform numerical integration: \int_1^7 f(x). 
    - What is the value?
    - What is the absolute estimation error?
    <details>

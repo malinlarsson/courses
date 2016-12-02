@@ -728,7 +728,7 @@ the list u.2.
     <summary>:key: Click to see how</summary>
     <pre>
     
-        list.2 <- list(vec1 = c("hi", "ho", "merry", "christmas"), vec2 = 4:19, mat1 = matrix(100:81, nrow = 4))
+        list.2 <- list(vec1 = c("hi", "ho", "merry", "christmas"), vec2 = 4:19, mat1 = matrix(as.character(100:81), nrow = 4))
         list.2
     
         $vec1
