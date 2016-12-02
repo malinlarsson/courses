@@ -30,7 +30,7 @@ convient for certain types of plots many feel that the defaults
 colors, axis types etc looks better on ggplot2 compared to the base R
 and lattice libraries.
 
-# Execise<a id="orgheadline2"></a>
+# Exercise<a id="orgheadline2"></a>
 
 This exercise will not consist of any exercises for you to solve
 instead the code blocks below will read in data and generate map
