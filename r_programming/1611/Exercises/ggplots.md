@@ -45,6 +45,8 @@ working directory.
 [coop_Uppsala.kml](../files/coop_Uppsala.kml)  
 [ica_Uppsala.kml](../files/ica_Uppsala.kml)  
 
+If you can not load the library install it either via the menu of
+Rstudio or by typing `install.packages("ggmap")` in R.
 
 ```R
 # Load the libraries necessary for working with maps
