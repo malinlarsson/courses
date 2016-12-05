@@ -13,9 +13,9 @@ Held in Uppsala January 23-27, 2017.
 [Schedule](schedule)  
 
 ## Maps & Travel Info
-[Map over Uppsala](https://www.google.se/maps/@59.8557755,17.6369985,13.5z)
-[Map over Uppsala Biomedical Centre (BMC)](../common/images/bmc_map.jpg)
-[Travel Info](travel)
+[Map over Uppsala](https://www.google.se/maps/@59.8557755,17.6369985,13.5z)  
+[Map over Uppsala Biomedical Centre (BMC)](../common/images/bmc_map.jpg)  
+[Travel Info](travel)  
 
 ## Helpful Things
 [Linux cheat sheet](../common/images/linux-cheat-sheet.pdf)  
