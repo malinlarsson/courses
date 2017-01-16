@@ -41,7 +41,7 @@ Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)
 
 **Friday 27th**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
-**09:00-09:30** Lecture: Data management (Niclas Jareborg) 
+**09:00-09:30** Lecture: Data management (Niclas Jareborg)  
 **09:30-12:00** Exercise: RNA sequencing, transcriptome and expression quantification part II (Thomas Källman, Johan Reimegård, Moritz Buck, Manfred Grabherr)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13:00-15.00** Open discussions (Niclas Jareborg, Björn Nystedt, Olga Vinnere Pettersson, Adam Ameur, Manfred Grabherr)  
