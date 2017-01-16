@@ -37,7 +37,7 @@ Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)
 **09:00-12.00** Exercise: Alignment with BWA; Data Processing with Picard; Variant Calling with GATK; SAM/BAM and VCF Formats part II (Sebastian DiLorenzo, Åsa Björklund, Lucile Soler, Manfred Grabherr)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13.00-14:00** Lecture: RNA sequencing, transcriptome and expression quantification (Thomas Källman)  
-**14.00-17:00** Exercise: RNA sequencing, transcriptome and expression quantification part I (Thomas Källman, Johan Reimegård, Moritz Buck, Johan Reimegård))  
+**14.00-17:00** Exercise: RNA sequencing, transcriptome and expression quantification part I (Thomas Källman, Johan Reimegård, Moritz Buck, TBD)  
 
 **Friday 27th**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
