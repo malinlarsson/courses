@@ -9,18 +9,18 @@ title:  'Schedule'
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
 **09.00-09.15** Registration and Welcome, presentation of SciLifeLab (Elina Staaf)  
 **09.15-10.00** Lecture: Introduction to Linux (Martin Dahlö)  
-**10.00-12.00** Exercise: Introduction to Linux (Martin Dahlö, Johan Viklund, TBD, Manfred Grabherr)  
+**10.00-12.00** Exercise: Introduction to Linux (Martin Dahlö, TBD, TBD, Manfred Grabherr)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13.00-14.00** Lecture: Introduction to UPPMAX/UPPNEX (Martin Dahlö)  
-**14.00-17.00** Exercise: Introduction to UPPMAX/UPPNEX (Martin Dahlö, Mahesh Panchal, TBD, Johan Viklund)  
+**14.00-17.00** Exercise: Introduction to UPPMAX/UPPNEX (Martin Dahlö, Mahesh Panchal, TBD, TBD)  
 
 **Tuesday 24th**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
 **09.00-09.30** Lecture: File types in bioinformatics (Martin Dahlö)  
-**09.30-12.00** Exercise: File types in bioinformatics (Martin Dahlö)  
+**09.30-12.00** Exercise: File types in bioinformatics (Martin Dahlö, Manfred Grabherr, TBD, TBD)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13:00-14:00** Lecture: Advanced Linux usage (Martin Dahlö)  
-**14:00-17:00** Exercise: Advanced Linux usage (Martin Dahlö, Mahesh Panchal, Jacques Dainat, Johan Viklund)  
+**14:00-17:00** Exercise: Advanced Linux usage (Martin Dahlö, Mahesh Panchal, Jacques Dainat, TBD)  
 
 **Wednesday 25th**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
@@ -41,7 +41,8 @@ Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)
 
 **Friday 27th**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
-**09:00-12:00** Exercise: RNA sequencing, transcriptome and expression quantification part II (Thomas Källman, Johan Reimegård, Moritz Buck, Manfred Grabherr)  
+**09:00-09:30** Lecture: Data management (Niclas Jareborg) 
+**09:30-12:00** Exercise: RNA sequencing, transcriptome and expression quantification part II (Thomas Källman, Johan Reimegård, Moritz Buck, Manfred Grabherr)  
 **12.00-13.00** Lunch at BMC restaurant  
-**13:00-15.00** Data management and open discussions (Niclas Jareborg, Björn Nystedt, Olga Vinnere Pettersson, Adam Ameur, Manfred Grabherr)  
+**13:00-15.00** Open discussions (Niclas Jareborg, Björn Nystedt, Olga Vinnere Pettersson, Adam Ameur, Manfred Grabherr)  
 
