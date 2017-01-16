@@ -9,10 +9,10 @@ title:  'Schedule'
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
 **09.00-09.15** Registration and Welcome, presentation of SciLifeLab (Elina Staaf)  
 **09.15-10.00** Lecture: Introduction to Linux (Martin Dahlö)  
-**10.00-12.00** Exercise: Introduction to Linux (Martin Dahlö, Johan Viklund, Frederic Haziza, Manfred Grabherr)  
+**10.00-12.00** Exercise: Introduction to Linux (Martin Dahlö, Johan Viklund, TBD, Manfred Grabherr)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13.00-14.00** Lecture: Introduction to UPPMAX/UPPNEX (Martin Dahlö)  
-**14.00-17.00** Exercise: Introduction to UPPMAX/UPPNEX (Martin Dahlö, Mahesh Panchal, Frederic Haziza, Johan Viklund)  
+**14.00-17.00** Exercise: Introduction to UPPMAX/UPPNEX (Martin Dahlö, Mahesh Panchal, TBD, Johan Viklund)  
 
 **Tuesday 24th**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
