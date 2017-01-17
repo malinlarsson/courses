@@ -9,15 +9,15 @@ title:  'Schedule'
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
 **09.00-09.15** Registration and Welcome, presentation of SciLifeLab (Elina Staaf)  
 **09.15-10.00** Lecture: Introduction to Linux (Martin Dahlö)  
-**10.00-12.00** Exercise: Introduction to Linux (Martin Dahlö, Valentin Georgiev, TBD, Manfred Grabherr)  
+**10.00-12.00** Exercise: Introduction to Linux (Martin Dahlö, Valentin Georgiev, Jacques Dainat, Manfred Grabherr)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13.00-14.00** Lecture: Introduction to UPPMAX/UPPNEX (Martin Dahlö)  
-**14.00-17.00** Exercise: Introduction to UPPMAX/UPPNEX (Martin Dahlö, Mahesh Panchal, Valentin Georgiev, TBD)  
+**14.00-17.00** Exercise: Introduction to UPPMAX/UPPNEX (Martin Dahlö, Mahesh Panchal, Valentin Georgiev, Jacques Dainat)  
 
 **Tuesday 24th**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
 **09.00-09.30** Lecture: File types in bioinformatics (Martin Dahlö)  
-**09.30-12.00** Exercise: File types in bioinformatics (Martin Dahlö, Manfred Grabherr, Valentin Georgiev, TBD)  
+**09.30-12.00** Exercise: File types in bioinformatics (Martin Dahlö, Manfred Grabherr, Valentin Georgiev, Jacques Dainat)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13:00-14:00** Lecture: Advanced Linux usage (Martin Dahlö)  
 **14:00-17:00** Exercise: Advanced Linux usage (Martin Dahlö, Mahesh Panchal, Jacques Dainat, Valentin Georgiev)  
