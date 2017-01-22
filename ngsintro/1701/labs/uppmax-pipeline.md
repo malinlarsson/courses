@@ -205,7 +205,7 @@ It doesn't matter which format you choose, it's completely up to you, which ever
 Right, so now you know how to figure out how to run programs (just type the program name, followed by a -h or --help).
 Try doing a complete exome sequencing analysis, following the steps below.
 
-First, go to the exome directory in the lab directory that you copied to your glob in step 2 in this lab:
+First, go to the exome directory in the lab directory that you copied to your folder in step 2 in this lab:
 
 ```bash
 $ cd /proj/g2016035/nobackup/<username>/uppmax_pipeline_exercise/exomeSeq
