@@ -162,7 +162,7 @@ First off, let's open another terminal to uppmax so that you have 2 of them open
 Scripting is a lot easier if you have one terminal on the command line ready to run commands and test things, and another one with a text editor where you write the actual code. 
 That way you will never have to close down the text editor when you want to run the script you are writing on, and then open it up again when you want to continue editing the code. 
 So open a new terminal window, connect it to uppmax and then connect it to the node you have booked.
-Make sure both terminals are in the `~/glob/ngs-intro/loops` directory, and start editing a new file with nano where you write your script.
+Make sure both terminals are in the `/proj/g2016035/nobackup/<username>/loops` directory, and start editing a new file with nano where you write your script.
 Name the file whatever you want, but in the examples I will refer to it as `loop_01.sh`.
 Write your loops to this file (or create a new file for each new example) and test run it in the other terminal.
 
@@ -433,7 +433,7 @@ Now, let's combine everything you've learned so far in this course.
 Write a script that runs the pipeline from the [file types exercise](filetypes) for each fastq file in a specified directory, using the same reference genome as in the file type exercise.
 If that sounds too easy, make the script submit a slurm job for each sample that will run the pipeline for that sample on a calculation node (1 core, 5 minutes each).
 And if that is too easy, add that the pipeline will use the local hard drive on the calculation node for all files used in the analysis.
-When the analysis is done, only fastq files and sorted and indexed bam files should be in your glob folder.
+When the analysis is done, only fastq files and sorted and indexed bam files should be in your folder.
 Read more about the `$SNIC_TMP` variable in the [disk storage guide](http://www.uppmax.uu.se/support/user-guides/disk-storage-guide/) on the UPPMAX homepage.
 
 There is a bunch of fastq files in the directory `/proj/g2016035/nobackup/<username>/loops/fastq/` that is to be used for this exercise.
