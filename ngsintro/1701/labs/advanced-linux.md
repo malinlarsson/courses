@@ -64,14 +64,14 @@ $ salloc -A g2016028 -t 04:30:00 -p core --no-shell --reservation=g2016028_MON &
 make an empty directory we can work in and make a file.
 
 ```bash
-$ cd ~/glob/ngs-intro
+$ cd /proj/g2016035/nobackup/<username>
 $ mkdir advlinux
 $ cd advlinux
 $ touch  filename
 $ ls -lh
 total 0
  -rw-r--r-- 1 S_D staff 0B Sep 21 13:54 filename
- ```
+```
 
 (-lh means long and human readable, displaying more information about the files or directories in an humanly understandable format)
 
