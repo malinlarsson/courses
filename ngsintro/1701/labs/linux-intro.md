@@ -42,6 +42,8 @@ Now your screen should look something like this:
 # only run this command if the 'salloc' command below fails.
 $ interactive -A g2016035 -t 07:00:00 -p core -n 1
 ```
+**END NOTE**
+<br>
 
 Usually you would do most of the work in this lab directly on one of the login nodes at uppmax, but we have arranged for you to have one core each to avoid disturbances.
 This was covered briefly in the lecture notes.
