@@ -86,13 +86,13 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/courses/ngsintro/uppmax_pipeline_exercise/data ~/glob/ngs-intro/uppmax_pipeline_exercise
+$ cp -r /sw/courses/ngsintro/uppmax_pipeline_exercise/data /proj/g2016035/nobackup/<username>/uppmax_pipeline_exercise
 ```
 
-Have a look in `~/glob/ngs-intro/uppmax_pipeline_exercise`:
+Have a look in `/proj/g2016035/nobackup/<username>/uppmax_pipeline_exercise`:
 
 ```bash
-$ cd ~/glob/ngs-intro/uppmax_pipeline_exercise
+$ cd /proj/g2016035/nobackup/<username>/uppmax_pipeline_exercise
 
 $ ll
 ```
@@ -208,7 +208,7 @@ Try doing a complete exome sequencing analysis, following the steps below.
 First, go to the exome directory in the lab directory that you copied to your glob in step 2 in this lab:
 
 ```bash
-$ cd ~/glob/ngs-intro/uppmax_pipeline_exercise/exomeSeq
+$ cd /proj/g2016035/nobackup/<username>/uppmax_pipeline_exercise/exomeSeq
 ```
 
 In there you will find a folder called `raw_data`, containing a fastq file: `my_reads.rawdata.fastq` .
@@ -247,7 +247,7 @@ When you are sure a command works, you copy/paste it to the terminal with the sc
 Start writing you script with nano:
 
 ```bash
-$ cd ~/glob/ngs-intro/uppmax_pipeline_exercise/exomeSeq
+$ cd /proj/g2016035/nobackup/<username>/uppmax_pipeline_exercise/exomeSeq
 $ nano exome_analysis_script.sh
 ```
 
