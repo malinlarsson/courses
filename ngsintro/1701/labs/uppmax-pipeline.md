@@ -45,7 +45,7 @@ If it is running, skip this step and connect to that reservation.</font>
 
 ```bash
 # ONLY IF YOU DON'T ALREADY HAVE AN ACTIVE ALLOCATION SINCE BEFORE
-$ salloc -A g2016028 -t 04:30:00 -p core -n 1 --no-shell --reservation=g2016028_MON &
+$ salloc -A g2016035 -t 04:30:00 -p core -n 1 --no-shell --reservation=g2016035_MON &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
@@ -308,7 +308,7 @@ The next couple of rows will contain all the options you want to give SLURM:
 
 ```bash
 #!/bin/bash -l
-#SBATCH -A g2016028
+#SBATCH -A g2016035
 #SBATCH -t 00:05:00
 #SBATCH -p core
 ```
