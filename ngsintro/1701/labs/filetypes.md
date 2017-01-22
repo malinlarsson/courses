@@ -38,11 +38,20 @@ Now your screen should look something like this:
 
 ## 2. Getting a node of your own
 
+**NOTE:** As of Sunday night the reservations were not created, so the step below might not work. Give it a try, and if it complains about ```Requested reservation is invalid``` you can ask for a core using the **interactive** command instead. After that you can jump directly to *3. Copying files needed for laboratory*.
+
+```bash
+# only run this command if the 'salloc' command below fails.
+$ interactive -A g2016035 -t 07:00:00 -p core -n 1
+```
+**END NOTE**
+<br>
+
 Usually you would do most of the work in this lab directly on one of the login nodes at uppmax, but we have arranged for you to have one core each to avoid disturbances.
 This was covered briefly in the lecture notes.
 
 ```bash
-$ salloc -A g2016028 -t 02:00:00 -p core -n 1 --no-shell --reservation=g2016028_TUE &
+$ salloc -A g2016035 -t 02:00:00 -p core -n 1 --no-shell --reservation=g2016035_TUE &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
@@ -84,13 +93,13 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/courses/ngsintro/filetypes ~/glob/ngs-intro/
+$ cp -r /sw/courses/ngsintro/filetypes /proj/g2016035/nobackup/<username>/
 ```
 
-Have a look in **~/glob/ngs-intro/filetypes:**
+Have a look in **/proj/g2016035/nobackup/\<username\>/:**
 
 ```bash
-$ cd ~/glob/ngs-intro/filetypes
+$ cd /proj/g2016035/nobackup/<username>/filetypes
 $ tree
 ```
 
