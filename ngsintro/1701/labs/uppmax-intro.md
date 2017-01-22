@@ -28,15 +28,24 @@ Now your screen should look something like this:
 ![](files/uppmax-intro/just-logged-in.jpg)
 
 ## 2. Getting a node of your own (only if you canceled your job before lunch)
+**NOTE:** As of last night the reservations were not created, so the step below might not work. Give it a try, and if it complains about ```Requested reservation is invalid``` you can ask for a core using the **interactive** command instead. We'll cover that in more detail after lunch, so just type it for now and jump directly to *3. Copying files needed for laboratory*.
+
+```bash
+# only run this command if the 'salloc' command below fails.
+$ interactive -A g2016035 -t 07:00:00 -p core -n 1
+```
+**END NOTE**
+<br>
+
 Usually you would do most of the work in this lab directly on one of the login nodes at uppmax, but we have arranged for you to have one core each to avoid disturbances. This was covered briefly in the lecture notes.
 
 <font color='red'>Check with squeue -u username if you still have your reservation since before lunch running. If it is running, skip this step and connect to that reservation.</font>
 
-(We only have 20 reserved cores, so if someone has two, someone else will not get one..)
+(We only have 30 reserved cores, so if someone has two, someone else will not get one..)
 
 ```bash
 # ONLY IF YOU DON'T ALREADY HAVE AN ACTIVE ALLOCATION SINCE BEFORE
-$ salloc -A g2016028 -t 04:30:00 -p core -n 1 --no-shell --reservation=g2016028_MON &
+$ salloc -A g2016035 -t 04:30:00 -p core -n 1 --no-shell --reservation=g2016035_MON &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
@@ -69,13 +78,13 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/courses/ngsintro/uppmax_tutorial ~/glob/ngs-intro/
+$ cp -r /sw/courses/ngsintro/uppmax_tutorial /proj/g2016035/nobackup/<username>
 ```
 
-Have a look in **~/glob/ngs-intro/uppmax_tutorial**:
+Have a look in **/proj/g2016035/nobackup/\<username\>/uppmax_tutorial**:
 
 ```bash
-$ cd ~/glob/ngs-intro/uppmax_tutorial
+$ cd /proj/g2016035/nobackup/<username>/uppmax_tutorial
 
 $ ll
 ```
@@ -246,7 +255,7 @@ This will create a booking for you which has a higher priority than the jobs sub
 Try closing down your current session on the reserved node you connected to in the beginning of the lab by typing exit. Then make a new booking using interactive:
 
 ```bash
-$ interactive -A g2016028 -t 02:00:00 -p core
+$ interactive -A g2016035 -t 02:00:00 -p core
 ```
 
 Congratulations, you are now ready to be let loose on the cluster!
