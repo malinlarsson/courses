@@ -28,15 +28,25 @@ Now your screen should look something like this:
 ![](files/uppmax-intro/just-logged-in.jpg)
 
 ## 2. Getting a node of your own (only if you canceled your job before lunch)
+
+**NOTE:** As of Sunday night the reservations were not created, so the step below might not work. Give it a try, and if it complains about ```Requested reservation is invalid``` you can ask for a core using the **interactive** command instead. We'll cover that in more detail after lunch, so just type it for now and jump directly to *3. Copying files needed for laboratory*.
+
+```bash
+# only run this command if the 'salloc' command below fails.
+$ interactive -A g2016035 -t 07:00:00 -p core -n 1
+```
+**END NOTE**
+<br>
+
 Usually you would do most of the work in this lab directly on one of the login nodes at uppmax, but we have arranged for you to have one core each to avoid disturbances. This was covered briefly in the lecture notes.
 
 <font color='red'>Check with squeue -u username if you still have your reservation since before lunch running. If it is running, skip this step and connect to that reservation.</font>
 
-(We only have 20 reserved cores, so if someone has two, someone else will not get one..)
+(We only have 30 reserved cores, so if someone has two, someone else will not get one..)
 
 ```bash
 # ONLY IF YOU DON'T ALREADY HAVE AN ACTIVE ALLOCATION SINCE BEFORE
-$ salloc -A g2016028 -t 04:30:00 -p core -n 1 --no-shell --reservation=g2016028_TUE &
+$ salloc -A g2016035 -t 04:30:00 -p core -n 1 --no-shell --reservation=g2016035_TUE &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
@@ -76,13 +86,13 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/courses/ngsintro/loops/ ~/glob/ngs-intro/loops
+$ cp -r /sw/courses/ngsintro/loops/ /proj/g2016035/nobackup/<username>/loops
 ```
 
-Have a look in `~/glob/ngs-intro/loops`:
+Have a look in `/proj/g2016035/nobackup/<username>/loops`:
 
 ```bash
-$ cd ~/glob/ngs-intro/loops
+$ cd /proj/g2016035/nobackup/<username>/loops
 
 $ ll
 ```
@@ -232,7 +242,7 @@ Sam files take up ~4x more space on the hard drive compared to the same file in 
 If you have many sam files that needs converting you don't want to sit there and type all the commands by hand like some kind of animal.
 
 Write a script that converts all the sam files in a specified directory to bam files.
-Incidentally you can find 50 sam files in need of conversion in the folder called `sam` in the folder you copied to your glob folder earlier in this lab (`~/glob/ngs-intro/loops/sam/`).
+Incidentally you can find 50 sam files in need of conversion in the folder called `sam` in the folder you copied to your folder earlier in this lab (`/proj/g2016035/nobackup/<username>/loops/sam/`).
 Bonus points if you make the program take the specified directory as an argument, and another bonus point if you get the program to name the resulting bam file to the same name as the sam file but with a .bam ending instead.
 
 Remember that you have to load the samtools module to be able to run it. The way you get samtools to convert a sam file to a bam file is by typing the following command:
@@ -426,7 +436,7 @@ And if that is too easy, add that the pipeline will use the local hard drive on 
 When the analysis is done, only fastq files and sorted and indexed bam files should be in your glob folder.
 Read more about the `$SNIC_TMP` variable in the [disk storage guide](http://www.uppmax.uu.se/support/user-guides/disk-storage-guide/) on the UPPMAX homepage.
 
-There is a bunch of fastq files in the directory `~/glob/ngs-intro/loops/fastq/` that is to be used for this exercise.
+There is a bunch of fastq files in the directory `/proj/g2016035/nobackup/<username>/loops/fastq/` that is to be used for this exercise.
 
 
 Basic solution:
@@ -437,7 +447,7 @@ Basic solution:
 export PATH=$PATH:/sw/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
 
 # index the reference genome
-reference_indexer -r ~/glob/ngs-intro/filetypes/0_ref/ad2.fa
+reference_indexer -r /proj/g2016035/nobackup/\<username\>/filetypes/0_ref/ad2.fa
 
 # go to the input files
 cd $1
@@ -450,7 +460,7 @@ do
     file_basename=$(basename $file)
 
     # align the reads
-    align_reads -r ~/glob/ngs-intro/filetypes/0_ref/ad2.fa -i $file_basename -o $file_basename.sam
+    align_reads -r /proj/g2016035/nobackup/\<username\>/filetypes/0_ref/ad2.fa -i $file_basename -o $file_basename.sam
 
     # convert the sam file to a bam file
     sambam_tool -f bam -i $file_basename.sam -o $file_basename.bam
@@ -477,9 +487,9 @@ Advanced solution:
 export PATH=$PATH:/sw/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
 
 # index the reference genome once, only if needed
-if [ ! -f ~/glob/ngs-intro/filetypes/0_ref/ad2.fa.idx ];
+if [ ! -f /proj/g2016035/nobackup/\<username\>/filetypes/0_ref/ad2.fa.idx ];
 then
-    reference_indexer -r ~/glob/ngs-intro/filetypes/0_ref/ad2.fa
+    reference_indexer -r /proj/g2016035/nobackup/\<username\>/filetypes/0_ref/ad2.fa
 fi
 
 
@@ -507,7 +517,7 @@ do
 
     # print a temporary script file that will be submitted to slurm
     echo "#!/bin/bash -l
-#SBATCH -A g2016028
+#SBATCH -A g2016035
 #SBATCH -p core
 #SBATCH -n 1
 #SBATCH -t 00:05:00
@@ -521,7 +531,7 @@ export PATH=\$PATH:/sw/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
 # You have to escape the dollar sign in SNIC_TMP to keep bash from resolving
 # it to it's value in the submitter script already.
 echo "Copying data to node local hard drive"
-cp ~/glob/ngs-intro/filetypes/0_ref/ad2.fa* $file \$SNIC_TMP/
+cp /proj/g2016035/nobackup/\<username\>/filetypes/0_ref/ad2.fa* $file \$SNIC_TMP/
 
 # go the the nodes local hard drive
 echo "Changing directory to node local hard drive"
