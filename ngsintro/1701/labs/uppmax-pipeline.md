@@ -35,6 +35,7 @@ Now your screen should look something like this:
 ![](files/uppmax-pipeline/just-logged-in.jpg)
 
 ## 2. Getting a node of your own (only if you canceled your job before lunch)
+
 Usually you would do most of the work in this lab directly on one of the login nodes at uppmax, but we have arranged for you to have one core each to avoid disturbances.
 This was covered briefly in the lecture notes.
 
@@ -45,7 +46,7 @@ If it is running, skip this step and connect to that reservation.</font>
 
 ```bash
 # ONLY IF YOU DON'T ALREADY HAVE AN ACTIVE ALLOCATION SINCE BEFORE
-$ salloc -A g2016035 -t 04:30:00 -p core -n 1 --no-shell --reservation=g2016035_MON &
+$ salloc -A g2016035 -t 04:30:00 -p core -n 1 --no-shell --reservation=g2016035_1 &
 ```
 
 check which node you got (replace **username** with your uppmax user name)

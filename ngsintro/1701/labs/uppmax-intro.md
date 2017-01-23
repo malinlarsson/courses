@@ -28,14 +28,6 @@ Now your screen should look something like this:
 ![](files/uppmax-intro/just-logged-in.jpg)
 
 ## 2. Getting a node of your own (only if you canceled your job before lunch)
-**NOTE:** As of last night the reservations were not created, so the step below might not work. Give it a try, and if it complains about ```Requested reservation is invalid``` you can ask for a core using the **interactive** command instead. We'll cover that in more detail after lunch, so just type it for now and jump directly to *3. Copying files needed for laboratory*.
-
-```bash
-# only run this command if the 'salloc' command below fails.
-$ interactive -A g2016035 -t 07:00:00 -p core -n 1
-```
-**END NOTE**
-<br>
 
 Usually you would do most of the work in this lab directly on one of the login nodes at uppmax, but we have arranged for you to have one core each to avoid disturbances. This was covered briefly in the lecture notes.
 
@@ -45,7 +37,7 @@ Usually you would do most of the work in this lab directly on one of the login n
 
 ```bash
 # ONLY IF YOU DON'T ALREADY HAVE AN ACTIVE ALLOCATION SINCE BEFORE
-$ salloc -A g2016035 -t 04:30:00 -p core -n 1 --no-shell --reservation=g2016035_MON &
+$ salloc -A g2016035 -t 04:30:00 -p core -n 1 --no-shell --reservation=g2016035_1 &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
