@@ -7,7 +7,7 @@ title:  'Resequencing Analysis'
 # Resequencing Analysis
 
 The data we will work with comes from the 1000 Genomes Project.
-Because whole human genomes are very difficult to work with, we will use only a small portion of the human genome, a little over a megabase from chromosome 17.
+Because whole human genomes are time consuming to work with on account of their size, we will use only a small portion of the human genome, a little over a megabase from chromosome 17.
 Samtools have been used to extract the data from the 1000 Genomes ftp site for just this region from all of the individuals from the CEU (CEPH Europeans from Utah) population who were low coverage (2-4x average) whole genome shotgun sequenced.
 We have 81 low coverage Illumina sequences, plus 63 Illumina exomes, and 15 low coverage 454 samples.
 There are 55 of these samples that were done both ways.
@@ -16,13 +16,13 @@ We will walk through alignment, alignment processing and cleanup, quality recali
 
 In order to do these exercises, you will need to know a few things.
 
-## Book a node
+## Book your own node
 
 We have reserved half a node for each student during this course.
 By now, you are probably already familiar with the procedure:
 
 ```bash
-salloc -A g2016028 -t 08:00:00 -p core -n 8 --no-shell --reservation=g2016028_WED
+salloc -A g2016035 -t 04:00:00 -p core -n 8 --no-shell --reservation=g2016035_2
 ```
 
 Make sure you ony do this once, otherwise you will take away resources from the other course participants! 
