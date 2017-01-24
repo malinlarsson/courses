@@ -243,6 +243,12 @@ samtools view -bS sample_1.sam > sample_1.bam
 ```
 The `-b` option tells samtools to output bam format, and the `-S` option tells samtools that the input is in sam format.
 
+Due to a technical reason with linux and the module system, you will have to tell bash to 'invoke as a login shell' for the module command to work when being run as a script. The way to do this is to run the script using the `-l` option for bash, like this>
+
+```bash
+$ bash -l my_script.sh
+```
+
 Remember, Google is a good place to get help. If you get stuck, google "bash remove file ending" or "bash argument to script" and look for hits from Stackoverflow/Stackexchange or similar pages.
 There are always many different way to solve a problem.
 Try finding one you understand what they do and test if you can get them to work the way you want.
