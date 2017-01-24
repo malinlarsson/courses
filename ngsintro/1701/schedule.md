@@ -16,7 +16,7 @@ Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)
 
 **Tuesday 24th**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
-**09.00-09.30** Lecture: File types in bioinformatics (Jacques Dainat)  
+**09.00-09.30** [Lecture: File types in bioinformatics](slides/dahlo-filetypes.pdf) (Jacques Dainat)  
 **09.30-12.00** [Exercise: File types in bioinformatics](labs/filetypes) (Manfred Grabherr, Valentin Georgiev, Jacques Dainat)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13:00-14:00** [Lecture: Advanced Linux usage](slides/dahlo-advanced_linux_usage.pdf) (Martin Dahlö)  
