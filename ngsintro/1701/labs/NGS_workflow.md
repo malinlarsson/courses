@@ -7,7 +7,7 @@ title:  'NGS workflow'
 # NGS workflow
 
 The data we will work with comes from the 1000 Genomes Project.
-Because whole human genomes are time consuming to work, with on account of their size, we will use only a small portion of the human genome. To be more precise about a megabase from chromosome 17.
+Because whole human genomes are time consuming to work with on account of their size, we will use only a small portion of the human genome. To be more precise about a megabase from chromosome 17.
 Samtools has been used to extract this region of the data from the 1000 Genomes ftp site. It is a whole genome shotgun sequence from all of the individuals from the CEU (CEPH Europeans from Utah) population whose samples had low coverage (2-4x average).
 We have 81 low coverage Illumina sequences, 63 Illumina exomes and 15 low coverage 454 samples.
 55 of the samples exist in more than one datatype.
