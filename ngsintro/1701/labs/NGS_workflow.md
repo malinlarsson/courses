@@ -301,7 +301,8 @@ If you rename one the BAM and not the bai or vice versa you will cause problems 
 java -Xmx16g -jar $PICARD_HOME/picard.jar BuildBamIndex INPUT=<bam file>
 ```
 
-![](files/NGS_workflow/wf_localRealign.png)
+<img src="files/NGS_workflow/wf_localRealign.png" style="width: 100%"/>
+<!-- ![](files/NGS_workflow/wf_localRealign.png)-->
 
 ## Local Realignment
 
@@ -331,7 +332,8 @@ java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -I <input bam> -R <reference> 
 Note that we need to give it the intervals file we just made, and also specify a new output BAM (&lt;realigned bam&gt;).
 GATK is also clever and automatically indexes that BAM for us (you can type ls and look at the list of files to verify this).
 
-![](files/NGS_workflow/wf_markdup.png)
+<img src="files/NGS_workflow/wf_markdup.png" style="width: 90%"/>
+<!-- ![](files/NGS_workflow/wf_markdup.png) -->
 
 ##Marking and viewing duplicates
 
@@ -365,7 +367,8 @@ samtools view -f 1024 -c <bam file>
 
 Before we move forward, ask yourself why we used samtools to look at the BAMfile? Could we have looked at it with just less?
 
-![](files/NGS_workflow/wf_bqsr.png)
+<img src="files/NGS_workflow/wf_bqsr.png" style="width: 90%"/>
+<!-- ![](files/NGS_workflow/wf_bqsr.png) -->
 
 ## Base quality score recalibration
 
@@ -396,7 +399,8 @@ java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T PrintReads -BQSR <calibrati
 The &lt;input bam&gt; in this step is the same as the last step. As we have not changed the latest created BAM file. The &lt;output bam&gt; is new and will have the recalibrated qualities.
 The &lt;calibration table&gt; is the file we created in the previous step using BaseRecalibrator.
 
-![](files/NGS_workflow/wf_varcall.png)
+<img src="files/NGS_workflow/wf_varcall.png" style="width: 90%"/>
+<!-- ![](files/NGS_workflow/wf_varcall.png) -->
 
 ## Variant Calling
 
