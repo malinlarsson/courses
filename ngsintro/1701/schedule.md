@@ -27,14 +27,14 @@ Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)
 **09.00-11.00** Lecture: Next Generation Sequencing Overview (Olga Vinnere Pettersson)  
 **11:00-12.00** Lecture: NGS and bioinformatics analysis pipelines (Adam Ameur)  
 **12.00-13.00** Lunch at BMC restaurant  
-**13.00-14.00** Lecture: Alignment with BWA; Data Processing with Picard; Variant Calling with GATK; SAM/BAM and VCF Formats (Sebastian DiLorenzo)  
-**14.00-17.00** Exercise: Alignment with BWA; Data Processing with Picard; Variant Calling with GATK; SAM/BAM and VCF Formats part I (Sebastian DiLorenzo, Per Unneberg, Lucile Soler, Johan Reimegård)  
+**13.00-14.00** [Lecture: NGS workflow](slides/NGS_workflow.pdf) (Sebastian DiLorenzo)  
+**14.00-17.00** [Exercise: NGS workflow part I](labs/NGS_workflow) (Sebastian DiLorenzo, Per Unneberg, Lucile Soler, Johan Reimegård)  
 
 **18:00-** Course dinner at TBA  
 
 **Thursday 26th**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
-**09:00-12.00** Exercise: Alignment with BWA; Data Processing with Picard; Variant Calling with GATK; SAM/BAM and VCF Formats part II (Sebastian DiLorenzo, Martin Norling, Lucile Soler, Manfred Grabherr)  
+**09:00-12.00** [Exercise: NGS workflow part II](labs/NGS_workflow) (Sebastian DiLorenzo, Martin Norling, Lucile Soler, Manfred Grabherr)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13.00-14:00** Lecture: RNA sequencing, transcriptome and expression quantification (Thomas Källman)  
 **14.00-17:00** Exercise: RNA sequencing, transcriptome and expression quantification part I (Thomas Källman, Martin Norling, Moritz Buck, Manfred Grabherr)  
