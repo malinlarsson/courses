@@ -101,7 +101,7 @@ So that we don't clutter up the top level of our home folder we will make a subd
 mkdir ~/ngsworkflow
 ```
 
-##Running commands
+## Running commands
 
 Throughout the exercises, we will illustrate commands in the format:
 
