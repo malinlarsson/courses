@@ -28,7 +28,7 @@ salloc -A g2016035 -t 04:00:00 -p core -n 8 --no-shell --reservation=g2016035_3 
 Make sure you only do this once, otherwise other course participants will have a hard time booking theirs!
 Once your job allocation has been granted you can connect to the node you got using ssh, just like in the [Uppmax Introduction exercise](uppmax-intro) yesterday.
 
-I.e. use
+I.e. Use
 ```bash
 squeue -u <username>
 ```
@@ -38,11 +38,11 @@ to find out the name of your node, and then
 ssh -Y <nodename>
 ```
 
-To connect to the node.
+to connect to the node.
 
 ## Accessing programs
 
-First, we're going to run several programs that are installed in the module system.
+We're going to need several programs that are installed in the module system.
 To access the bioinformatics modules you first need to load the bioinfo-tools module:
 
 ```bash
@@ -112,12 +112,12 @@ If you don't know what parameter you should supply, please ask.
 
 ## General tips
 
-1. Use tab completion
+1. Use tab completion when possible.
 1. Running a command without parameters will, usually, return a default help message on how to run the command.
 1. Copying and pasting commands from the exercise to terminal can result in formatting errors. You will learn more by typing anyway :).
 1. To be more strict, use the complete path to files you are using.
 1. Once a command has resulted in successful completion, save it! You will redo the procedure again with another sample and this will save time.
-1. If you book a new node or log out of the node you will need to reload the tool modules.
+1. If you change the node you are working on you will need to reload the tool modules.
 1. Check that the output file exists and is a reasonable size after a command is completed as a quick way to see that nothing is wrong. A common mistake people make is to attempt to load input files that do not exist or create output files where they cannot write.
 1. Google errors, someone in the world has run into EXACTLY the same problem you had and asked about it on a forum somewhere.
 
@@ -198,7 +198,7 @@ We are skipping the quality control and trimming of reads for this exercise due 
 
 Let's start with aligning a chunk of whole genome shotgun data from individual NA06984. The command used is bwa mem, the ```-t 8``` signifies that we want it to use 8 threads/cores, which is what we have booked. This is followed by our reference genome and the forward and reverse read fastq files.
 
-Learn more about[bwa mem](http://bio-bwa.sourceforge.net/bwa.shtml) if you are interested.
+Learn more about [bwa mem](http://bio-bwa.sourceforge.net/bwa.shtml) if you are interested.
 
 ```bash
 bwa mem -t 8 ~/ngsworkflow/human_17_v37.fasta /sw/courses/ngsintro/gatk/fastq/wgs/NA06984.ILLUMINA.low_coverage.17q_1.fq /sw/courses/ngsintro/gatk/fastq/wgs/NA06984.ILLUMINA.low_coverage.17q_2.fq > ~/ngsworkflow/NA06984.ILLUMINA.low_coverage.17q.sam
@@ -361,7 +361,7 @@ If we just want a count of the marked reads, we can use the -c option.
 samtools view -f 1024 -c <bam file>
 ```
 
-Before we move forward, ask yourelf why we used samtools to look at the BAMfile? Could we have looked at it with just less?
+Before we move forward, ask yourself why we used samtools to look at the BAMfile? Could we have looked at it with just less?
 
 ![](files/NGS_workflow/wf_bqsr.png)
 
