@@ -299,7 +299,7 @@ GATK is also clever and automatically indexes that BAM for us (you can type ls a
 <img src="files/NGS_workflow/wf_markdup.png" style="width: 100%"/>
 <!-- ![](files/NGS_workflow/wf_markdup.png) -->
 
-##Marking and viewing duplicates
+## Marking and viewing duplicates
 
 Next, we're going to go back to Picard and mark duplicate reads:
 
