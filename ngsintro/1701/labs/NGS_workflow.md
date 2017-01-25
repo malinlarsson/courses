@@ -7,7 +7,7 @@ title:  'NGS workflow'
 # NGS workflow
 
 The data we will work with comes from the 1000 Genomes Project.
-Because whole human genomes are time consuming to work, with on account of their size, we will use only a small portion of the human genome. To be more precise about a megabase from chromosome 17.
+Because whole human genomes are time consuming to work with on account of their size, we will use only a small portion of the human genome. To be more precise about a megabase from chromosome 17.
 Samtools has been used to extract this region of the data from the 1000 Genomes ftp site. It is a whole genome shotgun sequence from all of the individuals from the CEU (CEPH Europeans from Utah) population whose samples had low coverage (2-4x average).
 We have 81 low coverage Illumina sequences, 63 Illumina exomes and 15 low coverage 454 samples.
 55 of the samples exist in more than one datatype.
@@ -41,6 +41,28 @@ ssh -Y <nodename>
 ```
 
 to connect to the node.
+
+## General tips
+
+1. Use tab completion when possible.
+1. Running a command without parameters will, usually, return a default help message on how to run the command.
+1. Copying and pasting commands from the exercise to terminal can result in formatting errors. You will learn more by typing anyway :).
+1. To be more strict, use the complete path to files you are using.
+1. Once a command has resulted in successful completion, save it! You will redo the procedure again with another sample and this will save time.
+1. If you change the node you are working on you will need to reload the tool modules. (see Accessing programs)
+1. Check that the output file exists and is a reasonable size after a command is completed as a quick way to see that nothing is wrong. A common mistake people make is to attempt to load input files that do not exist or create output files where they cannot write.
+1. Google errors, someone in the world has run into EXACTLY the same problem you had and asked about it on a forum somewhere.
+
+## Running commands
+
+Throughout the exercises, we will illustrate commands in the format:
+
+```bash
+command <parameter1> <parameter2> ...
+```
+
+This signifies that you should replace &lt;parameter&gt; with the correct parameter type, for example your input file name, output file name, directory name, etc.
+If you don't know what parameter you should supply, please ask.
 
 ## Accessing programs
 
@@ -76,69 +98,11 @@ Instead, you are going to write your output to your home directory.
 Remember that your home directory can be represented by the '~' character.
 (It is not good practice to keep large amounts of data in your home directory, usually you would work in your designated projects storage space.)
 
-<!-- This creates some complexity, because your input data and your output data are not in the same place.
-This is a common data processing problem, and one you should get used to dealing with.
-It does mean that you'll need to type a lot.
-
-Here are some tips for dealing with this:
-
-1. Remember where you are (your current working directory, `pwd`) and use relative or absolute paths as necessary to type the least.
-This is a quick but sloppy solution, and error prone, but if you are only doing something once, it works.
-We all do it sometimes.
-1. Use the full paths to everything, regardless of where you are actually working.
-This is the most time consuming, and requires that you remember where everything is, but it is also the safest, because you always know that you are telling the computer exactly where you want to read and write.
-This method is not dependent on keeping track of your current directory, because there are no relative paths, and you are much less likely to write output data to the wrong place by mistake.
-Any time you get to the point of writing code or batch scripts to automate your data processing, you should do this.
-For purposes of these exercises, it does not really matter which of these you do.
-This is part of learning to work on the command line.
-In the examples the full paths will be given, but there will be places where only the general syntax of the command will be given, and you will have to find the correct input for the situation.
-
-Also, remember that tab completion can be very helpful in typing paths to files, not just because it saves keystrokes but also because it validates that you have typed a valid path (if the file is not there, tab completion will not work). -->
-
 So that we don't clutter up the top level of our home folder we will make a subdirectory
 
 ```bash
 mkdir ~/ngsworkflow
 ```
-
-##Running commands
-
-Throughout the exercises, we will illustrate commands in the format:
-
-```bash
-command <parameter1> <parameter2> ...
-```
-
-This signifies that you should replace &lt;parameter&gt; with the correct parameter type, for example your input file name, output file name, directory name, etc.
-If you don't know what parameter you should supply, please ask.
-
-## General tips
-
-1. Use tab completion when possible.
-1. Running a command without parameters will, usually, return a default help message on how to run the command.
-1. Copying and pasting commands from the exercise to terminal can result in formatting errors. You will learn more by typing anyway :).
-1. To be more strict, use the complete path to files you are using.
-1. Once a command has resulted in successful completion, save it! You will redo the procedure again with another sample and this will save time.
-1. If you change the node you are working on you will need to reload the tool modules.
-1. Check that the output file exists and is a reasonable size after a command is completed as a quick way to see that nothing is wrong. A common mistake people make is to attempt to load input files that do not exist or create output files where they cannot write.
-1. Google errors, someone in the world has run into EXACTLY the same problem you had and asked about it on a forum somewhere.
-
-<!-- We do this for two reasons.
-First, as you all work, not everyone will create files with exactly the same names, so there is no way to make standard instructions for everyone.
-Second, you need to learn how to figure out what goes into these spaces.
-Usually, if you type a command without input parameters the documentation of the tool including possible input parameters will be displayed on the screen.
-
-That brings us to copying and pasting.
-It is possible to copy some of the commands out of this wiki and paste them into your terminal and make them work.
-This is not recommended.
-First, there can be formatting differences (especially how return characters are handled) between the browser and the terminal that make these commands not work properly.
-Second, and more important, when you are doing this on your own data, there will be no cutting and pasting.
-You will learn more by typing.
-Remember that tab completion will help you with this.
-
-NOTE - one you have typed the command for a step in the exercise below and seen that it works with your specifications, we recommend you to save the command in a plain text file. Plain text format will not cause formatting errors. You will perform the same procedure for at least two samples, so storing the commands in a text file will make the second analysis much faster.
-
-We will align our data to the reference using BWA, a popular aligner based on the Burrows-Wheeler transform. -->
 
 ## Indexing the reference genome
 
@@ -191,8 +155,8 @@ samtools faidx ~/ngsworkflow/human_17_v37.fasta
 java -Xmx16g -jar $PICARD_HOME/picard.jar CreateSequenceDictionary R=~/ngsworkflow/human_17_v37.fasta O=~/ngsworkflow/human_17_v37.dict
 ```
 
-
-![](files/NGS_workflow/wf_align.png)
+<img src="files/NGS_workflow/wf_align.png" style="width: 100%"/>
+<!-- ![](files/NGS_workflow/wf_align.png) -->
 
 ## Aligning the reads
 
@@ -301,7 +265,8 @@ If you rename one the BAM and not the bai or vice versa you will cause problems 
 java -Xmx16g -jar $PICARD_HOME/picard.jar BuildBamIndex INPUT=<bam file>
 ```
 
-![](files/NGS_workflow/wf_localRealign.png)
+<img src="files/NGS_workflow/wf_localRealign.png" style="width: 100%"/>
+<!-- ![](files/NGS_workflow/wf_localRealign.png)-->
 
 ## Local Realignment
 
@@ -331,9 +296,10 @@ java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -I <input bam> -R <reference> 
 Note that we need to give it the intervals file we just made, and also specify a new output BAM (&lt;realigned bam&gt;).
 GATK is also clever and automatically indexes that BAM for us (you can type ls and look at the list of files to verify this).
 
-![](files/NGS_workflow/wf_markdup.png)
+<img src="files/NGS_workflow/wf_markdup.png" style="width: 100%"/>
+<!-- ![](files/NGS_workflow/wf_markdup.png) -->
 
-##Marking and viewing duplicates
+## Marking and viewing duplicates
 
 Next, we're going to go back to Picard and mark duplicate reads:
 
@@ -365,7 +331,8 @@ samtools view -f 1024 -c <bam file>
 
 Before we move forward, ask yourself why we used samtools to look at the BAMfile? Could we have looked at it with just less?
 
-![](files/NGS_workflow/wf_bqsr.png)
+<img src="files/NGS_workflow/wf_bqsr.png" style="width: 100%"/>
+<!-- ![](files/NGS_workflow/wf_bqsr.png) -->
 
 ## Base quality score recalibration
 
@@ -396,7 +363,8 @@ java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T PrintReads -BQSR <calibrati
 The &lt;input bam&gt; in this step is the same as the last step. As we have not changed the latest created BAM file. The &lt;output bam&gt; is new and will have the recalibrated qualities.
 The &lt;calibration table&gt; is the file we created in the previous step using BaseRecalibrator.
 
-![](files/NGS_workflow/wf_varcall.png)
+<img src="files/NGS_workflow/wf_varcall.png" style="width: 100%"/>
+<!-- ![](files/NGS_workflow/wf_varcall.png) -->
 
 ## Variant Calling
 
