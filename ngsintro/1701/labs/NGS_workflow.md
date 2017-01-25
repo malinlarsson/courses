@@ -29,11 +29,13 @@ Make sure you only do this once, otherwise other course participants will have a
 Once your job allocation has been granted you can connect to the node you got using ssh, just like in the [Uppmax Introduction exercise](uppmax-intro) yesterday.
 
 I.e. Use
+
 ```bash
 squeue -u <username>
 ```
 
 to find out the name of your node, and then
+
 ```bash
 ssh -Y <nodename>
 ```
