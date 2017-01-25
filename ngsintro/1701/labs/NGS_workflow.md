@@ -191,7 +191,7 @@ samtools faidx ~/ngsworkflow/human_17_v37.fasta
 java -Xmx16g -jar $PICARD_HOME/picard.jar CreateSequenceDictionary R=~/ngsworkflow/human_17_v37.fasta O=~/ngsworkflow/human_17_v37.dict
 ```
 
-<img src="files/NGS_workflow/wf_align.png" style="width: 60%"/>
+<img src="files/NGS_workflow/wf_align.png" style="width: 80%"/>
 <!-- ![](files/NGS_workflow/wf_align.png) -->
 
 ## Aligning the reads
