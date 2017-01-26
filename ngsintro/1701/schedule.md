@@ -37,7 +37,7 @@ Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)
 **09:00-12.00** [Exercise: NGS workflow part II](labs/NGS_workflow) (Sebastian DiLorenzo, Martin Norling, Lucile Soler, Manfred Grabherr)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13.00-14:00** Lecture: RNA sequencing, transcriptome and expression quantification (Thomas Källman)  
-**14.00-17:00** Exercise: RNA sequencing, transcriptome and expression quantification part I (Thomas Källman, Martin Norling, Moritz Buck, Manfred Grabherr)  
+**14.00-17:00** [Exercise: RNA sequencing, transcriptome and expression quantification part I](labs/rnaseq_161129) (Thomas Källman, Martin Norling, Moritz Buck, Manfred Grabherr)  
 
 **Friday 27th**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
