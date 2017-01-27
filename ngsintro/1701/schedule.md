@@ -42,7 +42,7 @@ Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)
 **Friday 27th**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
 **09:00-10:00** Lecture: Data management (Niclas Jareborg)  
-**10:30-12:00** Exercise: RNA sequencing, transcriptome and expression quantification part II (Thomas Källman, Johan Reimegård, Moritz Buck, Manfred Grabherr)  
+**10:30-12:00** [Exercise: RNA sequencing, transcriptome and expression quantification part II](labs/rnaseq_161129) (Thomas Källman, Johan Reimegård, Moritz Buck, Manfred Grabherr)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13.00-13.20** Lecture: The Bioinformatics Infrastructure in Sweden (Björn Nystedt)    
 **13:20-15.00** Open discussions (Björn Nystedt, Olga Vinnere Pettersson, Adam Ameur, Manfred Grabherr)  
