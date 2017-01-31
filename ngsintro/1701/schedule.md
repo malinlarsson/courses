@@ -25,7 +25,7 @@ Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)
 **Wednesday 25th**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
 **09.00-11.00** Lecture: Next Generation Sequencing Overview (Olga Vinnere Pettersson)  
-**11:00-12.00** Lecture: NGS and bioinformatics analysis pipelines (Adam Ameur)  
+**11:00-12.00** [Lecture: NGS and bioinformatics analysis pipelines](slides/SciLife_Bioinfo_course_jan2017_Ameur.ppt) (Adam Ameur)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13.00-14.00** [Lecture: NGS workflow](slides/NGS_workflow.pdf) (Sebastian DiLorenzo)  
 **14.00-17.00** [Exercise: NGS workflow part I](labs/NGS_workflow) (Sebastian DiLorenzo, Per Unneberg, Lucile Soler, Johan Reimegård)  
@@ -41,9 +41,9 @@ Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)
 
 **Friday 27th**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
-**09:00-10:00** Lecture: Data management (Niclas Jareborg)  
+**09:00-10:00** [Lecture: Data management](slides/Jareborg_2017-01-27_Data_management_for_NGS_course.pdf) (Niclas Jareborg)  
 **10:30-12:00** [Exercise: RNA sequencing, transcriptome and expression quantification part II](labs/rnaseq_161129) (Thomas Källman, Johan Reimegård, Moritz Buck, Manfred Grabherr)  
 **12.00-13.00** Lunch at BMC restaurant  
-**13.00-13.20** Lecture: The Bioinformatics Infrastructure in Sweden (Björn Nystedt)    
+**13.00-13.20** [Lecture: The Bioinformatics Infrastructure in Sweden](slides/Nystedt_NBIS_27_Jan_NGScourse.pdf) (Björn Nystedt)    
 **13:20-15.00** Open discussions (Björn Nystedt, Olga Vinnere Pettersson, Adam Ameur, Manfred Grabherr)  
 
