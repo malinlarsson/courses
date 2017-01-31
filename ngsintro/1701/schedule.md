@@ -7,7 +7,7 @@ title:  'Schedule'
 
 **Monday 23rd**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
-**09.00-09.15** Registration and Welcome, presentation of SciLifeLab (Elina Staaf)  
+**09.00-09.15** [Registration and Welcome, presentation of SciLifeLab](slides/Staaf_Intro_NGS_data_Ua_VT17_170123.pdf) (Elina Staaf)  
 **09.15-10.00** [Lecture: Introduction to Linux](slides/dahlo-linux.pdf) (Martin Dahlö)  
 **10.00-12.00** [Exercise: Introduction to Linux](labs/linux-intro) (Valentin Georgiev, Jacques Dainat, Manfred Grabherr)  
 **12.00-13.00** Lunch at BMC restaurant  
