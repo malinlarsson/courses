@@ -7,72 +7,8 @@ title:  'UPPMAX Pipeline Tutorial'
 **NOTE:** in syntax examples, the dollar sign ($) is not to be printed.
 The dollar sign is usually an indicator that the text following it should be typed in a terminal window.
 
-## 1. Connecting to UPPMAX
-The first step of this lab is to open a ssh connection to UPPMAX.
-You will need a ssh program to do this:
-
-On Linux: it is included by default, named **Terminal**.
-
-On OSX: it is included by default, named **Terminal**.
-
-On Windows: [Google MobaXterm](http://bit.ly/19yaQOM) and download it.
-
-Fire up the available ssh program and enter the following (replace **username** with your uppmax user name).
--Y means that X-forwarding is activated on the connection, which means graphical data can be transmitted if a program requests it, i.e. programs can use a graphical user interface (GUI) if they want to.
-
-```bash
-$ ssh -Y username@milou.uppmax.uu.se
-```
-
-and give your password when prompted.
-As you type, nothing will show on screen.
-No stars, no dots.
-It is supposed to be that way.
-Just type the password and press enter, it will be fine.
-
-Now your screen should look something like this:
-
-![](files/uppmax-pipeline/just-logged-in.jpg)
-
-## 2. Getting a node of your own (only if you canceled your job before lunch)
-
-Usually you would do most of the work in this lab directly on one of the login nodes at uppmax, but we have arranged for you to have one core each to avoid disturbances.
-This was covered briefly in the lecture notes.
-
-<font color='red'>Check with squeue -u username if you still have your reservation since before lunch running.
-If it is running, skip this step and connect to that reservation.</font>
-
-(We only have 30 reserved cores, so if someone has two, someone else will not get one..)
-
-```bash
-# ONLY IF YOU DON'T ALREADY HAVE AN ACTIVE ALLOCATION SINCE BEFORE
-$ salloc -A g2016035 -t 04:30:00 -p core -n 1 --no-shell --reservation=g2016035_1 &
-```
-
-check which node you got (replace **username** with your uppmax user name)
-
-```bash
-$ squeue -u username
-```
-
-should look something like this
-
-![](files/uppmax-pipeline/allocation.png)
-
-where **q34** is the name of the node I got (yours will probably be different).
-Note the numbers in the Time column.
-They show for how long the job has been running.
-When it reaches the time limit you requested (4.5 hours in this case) the session will shut down, and you will lose all unsaved data.
-Connect to this node from within uppmax.
-
-```bash
-$ ssh -Y q34
-```
-
-**Note:** there is a uppmax specific tool called jobinfo that supplies the same kind of information as squeue that you can use as well (```$ jobinfo -u username```).
-
-## 3. Copying files needed for laboratory
-To be able to do parts of this lab, you will need some files.
+## 1. Copying files needed for laboratory
+To be able to do this lab, you will need some files.
 To avoid all the course participants editing the same file all at once, undoing each other's edits, each participant will get their own copy of the needed files.
 The files are located in the folder `/sw/courses/ngsintro/uppmax_pipeline_exercise/data`
 
@@ -87,13 +23,13 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/courses/ngsintro/uppmax_pipeline_exercise/data /proj/g2016035/nobackup/<username>/uppmax_pipeline_exercise
+$ cp -r /sw/courses/ngsintro/uppmax_pipeline_exercise/data /proj/g2017004/nobackup/<username>/uppmax_pipeline_exercise
 ```
 
-Have a look in `/proj/g2016035/nobackup/<username>/uppmax_pipeline_exercise`:
+Have a look in `/proj/g2017004/nobackup/<username>/uppmax_pipeline_exercise`:
 
 ```bash
-$ cd /proj/g2016035/nobackup/<username>/uppmax_pipeline_exercise
+$ cd /proj/g2017004/nobackup/<username>/uppmax_pipeline_exercise
 
 $ ll
 ```
@@ -209,7 +145,7 @@ Try doing a complete exome sequencing analysis, following the steps below.
 First, go to the exome directory in the lab directory that you copied to your folder in step 2 in this lab:
 
 ```bash
-$ cd /proj/g2016035/nobackup/<username>/uppmax_pipeline_exercise/exomeSeq
+$ cd /proj/g2017004/nobackup/<username>/uppmax_pipeline_exercise/exomeSeq
 ```
 
 In there you will find a folder called `raw_data`, containing a fastq file: `my_reads.rawdata.fastq` .
@@ -248,7 +184,7 @@ When you are sure a command works, you copy/paste it to the terminal with the sc
 Start writing you script with nano:
 
 ```bash
-$ cd /proj/g2016035/nobackup/<username>/uppmax_pipeline_exercise/exomeSeq
+$ cd /proj/g2017004/nobackup/<username>/uppmax_pipeline_exercise/exomeSeq
 $ nano exome_analysis_script.sh
 ```
 
@@ -309,7 +245,7 @@ The next couple of rows will contain all the options you want to give SLURM:
 
 ```bash
 #!/bin/bash -l
-#SBATCH -A g2016035
+#SBATCH -A g2017004
 #SBATCH -t 00:05:00
 #SBATCH -p core
 ```
@@ -327,6 +263,12 @@ $ sbatch exome_analysis_script.sh
 
 ## 7. RNAseq Analysis
 The next step is to do a complete RNAseq analysis.
+Go to the folder containing the data for this analysis:
+
+```bash
+$ cd /proj/g2017004/nobackup/<username>/uppmax_pipeline_exercise/rnaSeq
+```
+
 The steps involved start off just like the exome analysis, but has a few extra steps.
 The goal of this part is to successfully run the pipeline using the queue system.
 To do this, you must construct the commands for each step, combine them in a script, include the SLURM options, and submit it.
@@ -344,5 +286,3 @@ The program that does the differential expression analysis in this exercise is c
 
 **Hints:**
 The samples are filtered and aligned individually.
-For the really fast ones: Continue with this tutorial on [advanced Linux](advanced-linux) if you still have time left on the lab.
-Or just having a slow night at the hotel.
