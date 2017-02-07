@@ -24,7 +24,7 @@ Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)
 
 **Wednesday 25th**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
-**09.00-11.00** Lecture: Next Generation Sequencing Overview (Olga Vinnere Pettersson)  
+**09.00-11.00** [Lecture: Next Generation Sequencing Overview](slides/Sequencing_OVP2017_a.pdf) (Olga Vinnere Pettersson)  
 **11:00-12.00** [Lecture: NGS and bioinformatics analysis pipelines](slides/SciLife_Bioinfo_course_jan2017_Ameur.ppt) (Adam Ameur)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13.00-14.00** [Lecture: NGS workflow](slides/NGS_workflow.pdf) (Sebastian DiLorenzo)  
