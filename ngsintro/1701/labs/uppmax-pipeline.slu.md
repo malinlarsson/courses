@@ -35,7 +35,7 @@ $ ll
 ```
 If you see files, the copying was successful.
 
-## 4. Running dummy pipelines
+## 2. Running dummy pipelines
 Most of the work you will do in the future will be about running multiple programs after each other.
 This can be done manually, with you sitting by the computer and typing commands, waiting for them to finish, then start the next program.
 But what happens if the first program finished sometime during the night? You will not be there to start the next program, and the computer will stand idle until you have time to start the program.
@@ -172,7 +172,7 @@ In this pipeline, raw data gets filtered, the filtered data gets aligned, and th
 The intermediate steps are usually not interesting after you have reached the end of the pipeline.
 Then, only the raw data and the final result is important.
 
-## 5. Scripting a dummy pipeline
+## 3. Scripting a dummy pipeline
 To run the pipeline in a script, just do exactly as you just did, but write the exact same commands to a file instead of directly to the terminal.
 When you run the script, the computer will run the script one line at a time, until it reaches the end of the file.
 Just like you did manually in the previous step.
@@ -213,7 +213,7 @@ Solve the problem, try the script again, until it works.
 The real beauty of scripts is that they can be re-run really easily.
 Maybe you have to change a variable or option in one of the early steps of the pipeline, just do it and re-run the whole thing.
 
-## 6. Submitting a dummy pipeline
+## 4. Submitting a dummy pipeline
 The whole point with computer centres like UPPMAX is that you can run multiple programs at the same time to speed things up.
 To do this efficiently you will have to submit jobs to the queue system.
 As you saw in yesterdays exercise, it is ordinary shell scripts that you submit to the queue system, with a couple of extra options in the beginning.
@@ -261,7 +261,7 @@ To submit this script to the queue:
 $ sbatch exome_analysis_script.sh
 ```
 
-## 7. RNAseq Analysis
+## 5. RNAseq Analysis
 The next step is to do a complete RNAseq analysis.
 Go to the folder containing the data for this analysis:
 
