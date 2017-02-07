@@ -13,7 +13,7 @@ On Linux: it is included by default, named **Terminal**.
 
 On OSX: it is included by default, named **Terminal**.
 
-On Windows: [Google MobaXterm](http://bit.ly/19yaQOM) and download it.
+On Windows: [Google MobaXterm](http://bit.ly/19yaQOM) and download it, or [install Bash directly in Windows](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide).
 
 Fire up the available ssh program and enter the following (replace **username** with your uppmax user name). -Y means that X-forwarding is activated on the connection, which means graphical data can be transmitted if a program requests it, i.e. programs can use a graphical user interface (GUI) if they want to.
 
@@ -298,4 +298,4 @@ Other good things to look for could be:
 ### Time and space
 Remember the commands **uquota** (show how much of your storage space you are using) and **projinfo** (shows you how much of your allocated time you have used) from the lecture? Try running them and see how you are doing.
 
-For the fast ones: [Uppmax pipeline exercise](uppmax-pipeline) - This optional material will teach you the basics in creating pipelines. Continue with this if you finish the current lab ahead of time, or whenever you want.
+For the fast ones: Uppmax pipeline exercise - This optional material will teach you the basics in creating pipelines, and is available on the same homepage you found this document. Continue with this if you finish the current lab ahead of time, or whenever you want.
