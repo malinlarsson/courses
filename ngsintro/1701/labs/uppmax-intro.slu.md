@@ -89,14 +89,14 @@ For structures sake, first create a folder named as your username in the course'
 This can be done in 2 ways:
 
 ```bash
-$ mkdir /proj/g2016035/nobackup/<username>
-$ mkdir /proj/g2016035/nobackup/<username>/uppmax_tutorial
+$ mkdir /proj/g2017004/nobackup/<username>
+$ mkdir /proj/g2017004/nobackup/<username>/uppmax_tutorial
 ```
 
 or
 
 ```bash
-$ mkdir -p /proj/g2016035/nobackup/<username>/uppmax_tutorial
+$ mkdir -p /proj/g2017004/nobackup/<username>/uppmax_tutorial
 ```
 
 The reason for this is that Linux will not like it if you try to create the folder uppmax_tutorial inside a folder (the one named like your username) that does not exist yet.
