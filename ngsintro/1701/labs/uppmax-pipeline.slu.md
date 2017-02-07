@@ -81,7 +81,7 @@ $ echo $PATH
 
 ![](files/uppmax-pipeline/echoPathPostModuleLoad.png)
 
-To pretend that we are loading a module, instead of actually loading a module for them, we'll manually do what the module system would have done. We will just add a the directory containing my dummy scripts to the $PATH variable, and it will be like we loaded the module for them. Now, when we type the name of one of my scripts, the computer will look in all the directories specified in the $PATH variable, which now includes the location where i keep my scripts. The computer will now find programs named as my scripts are and it will run them.
+To pretend that we are loading a module, instead of actually loading a module for them, we'll manually do what the module system would have done. We will just add a the directory containing my dummy scripts to the $PATH variable, and it will be like we loaded the module for them. Now, when we type the name of one of my scripts, the computer will look in all the directories specified in the $PATH variable, which now includes the location where i keep my scripts. The computer will now find my scripts when i just type their name and it will run them.
 
 ```bash
 $ export PATH=$PATH:/sw/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
