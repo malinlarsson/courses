@@ -17,17 +17,16 @@ Room:
 **13.00-17.00** [Exercise: ](../labs/index) (Pär Engström, Johan Reimegård)  
   
 
-s
-**Wednesday 14th**  
+**Tuesday 14th**  
 Room:  
 **09:00-10.00** [Lecture: RNA-seq Quality Control](slides/not_available_yet.pdf) (Stefania Giacomello)  
 **10.15-11.00** [Lecture: Differential expression analysis](slides/not_available_yet.pdf) (Mikael Huss)  
 **11:00-12.00** [Lecture: miRNA analysis](slides/not_available_yet.pdf) (Jakub Orzechowski Westholm)  
 **12.00-13.00** Lunch  
-**13.00-17.00** [Exercise: ](../labs/index)(Mikael Huss, Leif Väremo, Åsa Björklund)  
+**13.00-17.00** [Exercise: ](../labs/index)(Mikael Huss, Åsa Björklund)  
 **18.00-20.00** Course dinner
 
-**Thursday 15th**  
+**Wednesday 15th**  
 Room:  
 **09.00-10.00** [Lecture: Gene-set analysis and data integration](slides/not_available_yet.pdf) (Leif Väremo)    
 **10:15-11:00** [Lecture: Single cell RNA-seq analysis](slides/not_available_yet.pdf) (Åsa Björklund)  
