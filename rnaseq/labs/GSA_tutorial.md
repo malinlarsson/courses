@@ -96,7 +96,7 @@ Now, try a new run of Enrichr, but this time on the top 200 genes (or choose you
 
 If you want to, also try out DAVID. Go to the [*Functional Annotation* page](https://david-d.ncifcrf.gov/summary.jsp) and make sure the Upload tab is visible. Paste the copied gene-list, select the correct identifier, and select whether this is a gene list or background (discuss with other students if you are not sure, or ask the instructors). Submit list.
 
-**Question:** Where all gene IDs recognized?
+**Question:** Were all gene IDs recognized?
 
 Explore the results. For instance, click on Functional Annotation Clustering at the bottom of the page. This shows related gene-sets clustered together in larger groups for a nicer overview.
 
@@ -110,7 +110,7 @@ Looking at only the top 100 genes (or genes with a adjusted p-value below some c
 library(piano) # Install the piano package (Bioconductor) if this command does not work
 ```
 
-First we need to construct our gene-set collection, we will be looking at so called Hallmark gene-sets from the MSigDB in this example. (See this [paper](http://www.cell.com/cell-systems/abstract/S2405-4712(15)00218-5)) Download the Hallmark gene-set collection from [here](http://software.broadinstitute.org/gsea/msigdb/download_file.jsp?filePath=/resources/msigdb/5.1/h.all.v5.1.symbols.gmt) Note that you need to sign up with an email adress to gain access. Visit [this link](http://software.broadinstitute.org/gsea/msigdb/collections.jsp#H) if the first link does not work.
+First we need to construct our gene-set collection, we will be looking at so called Hallmark gene-sets from the MSigDB in this example (see this [paper](http://www.cell.com/cell-systems/abstract/S2405-4712(15)00218-5)). Download the Hallmark gene-set collection from [here](http://software.broadinstitute.org/gsea/msigdb/download_file.jsp?filePath=/resources/msigdb/5.1/h.all.v5.1.symbols.gmt). Note that you need to sign up with an email adress to gain access. Visit [this link](http://software.broadinstitute.org/gsea/msigdb/collections.jsp#H) if the first link does not work.
 
 ``` r
 # Load the gene-set collection into piano format:
@@ -222,7 +222,7 @@ From here, you can dig in to the results on the gene-set level further and start
 
 ### Further reading
 
--   Piano webpage, with more information and link to publication: www.sysbio.se/piano
+-   Piano webpage, with more information and link to publication: <http://www.sysbio.se/piano>
 -   GSEA paper: <http://www.pnas.org/content/102/43/15545.full>
 -   A couple of reviews:
 -   <http://bib.oxfordjournals.org/content/9/3/189.full>
