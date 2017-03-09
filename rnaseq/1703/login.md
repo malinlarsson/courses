@@ -12,14 +12,14 @@ Held in Uppsala March 13-15, 2017.
 
 ###  On Tuesday
 
-    interactive -A g2016022 -t 6:00:00 -p core -n 4 --reservation g2016022_TUESDAY
+    interactive -A g2017003 -t 6:00:00 -p core -n 4 --reservation g2017003_1
 	
 ###  On Wednesday
 
-    interactive -A g2016022 -t 6:00:00 -p core -n 4 --reservation g2016022_WEDNESDAY
+    interactive -A g2017003 -t 6:00:00 -p core -n 4 --reservation g2017003_2
 	
 ###  On Thursday
 
-    interactive -A g2016022 -t 6:00:00 -p core -n 4 --reservation g2016022_THURSDAY
+    interactive -A g2017003 -t 6:00:00 -p core -n 4 --reservation g2017003_3
 	
 	
