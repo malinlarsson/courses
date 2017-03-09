@@ -9,30 +9,30 @@ title:  'Schedule'
 
 **Monday 13th**  
 Room:  
-**09.00-09.15** [Lecture:Generall Introduction](slides/not_available_yet.pdf) (Johan Reimegård/Björn Nystedt)  
-**09.15-10.15** [Lecture:RNA-seq introduction](slides/not_available_yet.pdf) (Johan Reimegård)  
-**10.30-11.15** [Lecture: Short read mapping programs](slides/RNA-not_available_yet.pdf) (Pär Engström)  
-**11.15-12.00** [Lecture: Short read assembly](slides/not_available_yet.pdf) (Johan Reimegård)  
+**09.00-09.15** [Lecture:Generall Introduction](slides/not_yet_available.pdf) (Johan Reimegård/Björn Nystedt)  
+**09.15-10.15** [Lecture:RNA-seq introduction](slides/not_yet_available.pdf) (Johan Reimegård)  
+**10.30-11.15** [Lecture: Short read mapping programs](slides/not_yet_available.pdf) (Pär Engström)  
+**11.15-12.00** [Lecture: Short read assembly](slides/not_yet_available.pdf) (Johan Reimegård)  
 **12.00-13.00** Lunch  
 **13.00-17.00** [Exercise: ](../labs/index) (Pär Engström, Johan Reimegård, Åsa Björklund)  
   
 
 **Tuesday 14th**  
 Room:  
-**09:00-10.00** [Lecture: RNA-seq Quality Control](slides/not_available_yet.pdf) (Stefania Giacomello)  
-**10.15-11.00** [Lecture: Differential expression analysis](slides/not_available_yet.pdf) (Mikael Huss)  
-**11:00-12.00** [Lecture: miRNA analysis](slides/not_available_yet.pdf) (Jakub Orzechowski Westholm)  
+**09:00-10.00** [Lecture: RNA-seq Quality Control](slides/not_yet_available.pdf) (Stefania Giacomello)  
+**10.15-11.00** [Lecture: Differential expression analysis](slides/not_yet_available.pdf) (Mikael Huss)  
+**11:00-12.00** [Lecture: miRNA analysis](slides/not_yet_available.pdf) (Jakub Orzechowski Westholm)  
 **12.00-13.00** Lunch  
 **13.00-17.00** [Exercise: ](../labs/index)(Mikael Huss, Stefania Giacomello, Jakub Orzechowski Westholm)  
 **18.00-20.00** Course dinner
 
 **Wednesday 15th**  
 Room:  
-**09.00-10.00** [Lecture: Gene-set analysis and data integration](slides/not_available_yet.pdf) (Leif Väremo)    
-**10:15-11:00** [Lecture: Single cell RNA-seq analysis](slides/not_available_yet.pdf) (Åsa Björklund)  
-**11:00-12:00** [Lecture: Long read analysis](slides/not_available_yet.pdf) (Adam Ameur)  
+**09.00-10.00** [Lecture: Gene-set analysis and data integration](slides/not_yet_available.pdf) (Leif Väremo)    
+**10:15-11:00** [Lecture: Single cell RNA-seq analysis](slides/not_yet_available.pdf) (Åsa Björklund)  
+**11:00-12:00** [Lecture: Long read analysis](slides/not_yet_available.pdf) (Adam Ameur)  
 **12.00-13.00** Lunch  
 **13.00-16.00** [Exercise: ](../labs/index) (Åsa Björklund, Leif Väremo, Johan Reimegård)  
-**16.00-17.00** [Lecture: Summary of the week ](slides/Summary.pdf) (Johan Reimegård)  
+**16.00-17.00** [Lecture: Summary of the week ](slides/not_yet_available.pdf) (Johan Reimegård)  
 
  
