@@ -9,8 +9,8 @@ title:  'Schedule'
 
 **Monday 13th**  
 Room:  
-**09.00-09.15** [Lecture:Generall Introduction](slides/not_available_yet.pdf) (Johan Reimegård/Björn Nystedt)
-**09.15-10.15** [Lecture:RNA-seq introduction](slides/not_available_yet.pdf) (Johan Reimegård)
+**09.00-09.15** [Lecture:Generall Introduction](slides/not_available_yet.pdf) (Johan Reimegård/Björn Nystedt)  
+**09.15-10.15** [Lecture:RNA-seq introduction](slides/not_available_yet.pdf) (Johan Reimegård)  
 **10.30-11.15** [Lecture: Short read mapping programs](slides/RNA-not_available_yet.pdf) (Pär Engström)  
 **11.15-12.00** [Lecture: Short read assembly](slides/not_available_yet.pdf) (Johan Reimegård)  
 **12.00-13.00** Lunch  
