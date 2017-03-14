@@ -5,7 +5,7 @@ title:  'Precourse Material'
 
 # Pre-course Material
 
-You are not requiered to have any experience with the R language nor
+You are not required to have any experience with the R language nor
 with the software R-studio to follow the course, but to save time and
 get a smooth start we ask everyone to have the latest version of R and
 R studio installed on your computer at course start.
@@ -13,17 +13,17 @@ R studio installed on your computer at course start.
 # Software needed for the course
 
 For the course we will use the latest version of R and R-studio. Both
-of these softwares works on computers running Linux, Windows and
-Macintosh operative systems. R-studio is a set of tools as well as an
-editor that facilitates the use of R and in many ways create a
-superior environment to integrate directly with R. Over the last years
-it has become a very popular tool and in many ways become a de-facto
-standard for working with R.
+of these works on computers running Linux, Windows and Macintosh
+operative systems. R-studio is a set of tools as well as an editor
+that facilitates the use of R and in many ways create a superior
+environment to integrate directly with R. Over the last years it has
+become a very popular tool and in many ways become a de-facto standard
+for working with R.
 
 Note that on same operative systems it will be easier to install and
 run R and R-studio if you are administrator of your own computer and
 hence are allowed to install software on your machine. If you do not
-have these privilegies please ask your system administrator to install
+have these privileges please ask your system administrator to install
 the latest version of R and R-studio.
 
 ## Install R
@@ -38,8 +38,8 @@ the latest version of R and R-studio.
 
 Once you clicked on the "Download R for Windows" you will come to a
 new web page where you will have a set of options. Click on the first
-link named "base". This will take you to the webpage entitled "R-3.3.2
-for Windows (32/64 bit)" where you can download the "R-3.3.2-win.exe"
+link named "base". This will take you to the web page entitled "R-3.3.3
+for Windows" where you can download the "R-3.3.3-win.exe"
 that will can be run to install R on your computer.
 
 ### Details for Macintosh
@@ -47,16 +47,16 @@ that will can be run to install R on your computer.
 Once you clicked on the "Download R for Macintosh" you will come to a
 new web page where you will have a set of options. Unless you have an
 old version of your operative system you should select the first link
-named "R-3.3.2.pkg" that will download R to your computer. If you are
+named "R-3.3.3.pkg" that will download R to your computer. If you are
 not sure what version you are running click the apple on the top left
 of your screen and select "About this mac" (Om den här datorn). In
 case you are running something older than 10.9, you should instead
 pick the "R-3.2.1-snowleopard.pkg" to install. Note that this will not
-give you the latest version of R, but it will be sufficient for this
-course. 
+give you the latest version of R, but it will be sufficient for most
+sections of the course.
 
 You can then double-click the downloaded package that will prompt you
-with some quesitons for installation details. Stick with the default
+with some questions for installation details. Stick with the default
 settings and you should be fine.
 
 ### Details for Linux
@@ -72,9 +72,10 @@ installation.
 
 ## Install R-studio
 
-Go to the webpage [rstudio](https://www.rstudio.com/products/rstudio/download/) download the installer corresponding to your
-operative system. Unpack the installer and install the app on a
-suitable place on your system.
+Go to the
+web page [rstudio](https://www.rstudio.com/products/rstudio/download/)
+download the installer corresponding to your operative system. Unpack
+the installer and install the app on a suitable place on your system.
 
 ## Test your environment
 
@@ -88,7 +89,7 @@ system you are running.
 
 # Other tools
 
-To be ablo to follow in this class we do recommend to use R-studio,
+To be able to follow in this class we do recommend to use R-studio,
 but in case it does not fit your needs all the R code we describe will
 of course work irrespective of the environment that you use. The main
 benefits of using r-studio is that there are bundled packages with
@@ -128,25 +129,29 @@ following links goes to some useful material on using R.
   The basics of getting data into R, clean the data do your
   analysis. One of the authors of this book Hadley Wickham is also
   behind R-studio and has published several books on different aspects
-  of using R, many of them available for free via his webpage. He has
+  of using R, many of them available for free via his web page. He has
   also created many packages for R that facilitate structured data
-  analysis. His most popular packages is ggplot2 for creating beutiful
+  analysis. His most popular packages is ggplot2 for creating beautiful
   graphics with limited set of commands. This is one of the few
-  external packages that we will use in this class as it offers a
-  superior experience compared to the base R graphics. Besides ggplot2
-  he has created many other packages that make use of novel objects
-  and often use slightly different R syntax to interact with
-  them. This means that code using them will look different to most
-  other R code. If you like this way of working, there is a  whole set
-  of packages often referred to as the
-  [tidyverse](https://blog.rstudio.org/2016/09/15/tidyverse-1-0-0)
+  external packages that we will use more extensively in
+  class. Besides ggplot2 he has created many other packages that make
+  use of novel objects and often use slightly different R syntax to
+  interact with them. This means that code using them will look
+  different to most other R code. If you like this way of working,
+  there is a whole set of packages often referred to as
+  the [tidyverse](https://blog.rstudio.org/2016/09/15/tidyverse-1-0-0)
   that offers a more unified interaction with objects and functions
   under this approach to data analysis.
 
 # Useful Non-R specific online resources
 
 - [http://biosupport.se/](http://biosupport.se/)  
+  Forum where NBIS and Scilifelab related personal tries to answer
+  questions submitted by the community
 - [http://www.biostars.org/](http://www.biostars.org/)  
+  Online Question and answer resource aimed at bioinformatics
 - [http://seqanswers.com/](http://seqanswers.com/)  
+  Online forum focusing on analysis of ngs data
 - [Stackoverflow](http://stackoverflow.com)  
+  Online community for programmers.
   
