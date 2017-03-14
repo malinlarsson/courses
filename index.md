@@ -41,3 +41,4 @@ title:  'Welcome'
 
 ### R Programming Foundations for Life Scientists  
 [2016 November - Uppsala](r_programming/1611/)  
+[2017 Mars - Uppsala](r_programming/1703/)  
