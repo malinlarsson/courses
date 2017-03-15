@@ -28,11 +28,11 @@ Room:
 
 **Wednesday 15th**  
 Room:  
-**09.00-10.00** [Lecture: Gene-set analysis and data integration](slides/not_yet_available.pdf) (Leif Väremo)    
-**10:15-11:00** [Lecture: Single cell RNA-seq analysis](slides/not_yet_available.pdf) (Åsa Björklund)  
-**11:00-12:00** [Lecture: Long read analysis](slides/not_yet_available.pdf) (Adam Ameur)  
+**09.00-10.00** [Lecture: Gene-set analysis and data integration](slides/GSA_and_data_integration.pdf) (Leif Väremo)    
+**10:15-11:00** [Lecture: Single cell RNA-seq analysis](slides/scRNAseq_Asa_Bjorklund.pdf) (Åsa Björklund)  
+**11:00-12:00** [Lecture: Long read analysis](slides/Long_reads_Adam_Amuer.pdf) (Adam Ameur)  
 **12.00-13.00** Lunch  
 **13.00-16.00** [Exercise: ](../labs/index) (Åsa Björklund, Leif Väremo, Johan Reimegård)  
-**16.00-17.00** [Lecture: Summary of the week ](slides/not_yet_available.pdf) (Johan Reimegård)  
+**16.00-17.00** [Lecture: Summary of the week ](slides/summary.pdf) (Johan Reimegård)  
 
  
