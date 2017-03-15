@@ -19,7 +19,7 @@ Room:
 
 **Tuesday 14th**  
 Room:  
-**09:00-10.00** [Lecture: RNA-seq Quality Control](slides/not_yet_available.pdf) (Stefania Giacomello)  
+**09:00-10.00** [Lecture: RNA-seq Quality Control](slides/RNAseqQC_Stefania.pdf) (Stefania Giacomello)  
 **10.15-11.00** [Lecture: Differential expression analysis](slides/DiffExp_Mikael_Huss.pdf) (Mikael Huss)  
 **11:00-12.00** [Lecture: miRNA analysis](slides/smallRNAs_Jakub_Westholm.pdf) (Jakub Orzechowski Westholm)  
 **12.00-13.00** Lunch  
