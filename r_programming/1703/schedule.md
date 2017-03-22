@@ -7,20 +7,14 @@ title:  'Schedule'
 
 **Monday**
 Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)
-**09.00-09.15** [Registration and Welcome, presentation of SciLifeLab]() (Elina Staaf)
-
+**09.00-09.15**
+[Registration and Welcome, presentation of SciLifeLab]() (Elina Staaf)  
 **09:15-10:00** [Lecture: Introduction to R programming]() (Marcin Kierczak)
-
 **10:15-10:45** [Lecture: The R environment]() (Marcin Kierczak, Thomas Källman)
-
 **11:00-12:00** [Exercise and video: Using R-studio]() (Marcin Kierczak, Thomas Källman)
-
 **12:00-13:00** Lunch at BMC restaurant
-
 **13:00-15:00** [Lecture: Elements of R programming - part 1a]() (Marcin Kierczak)
-
 **15:00-17:00** [Exercise: Data types in R]() (Marcin Kierczak, Thomas Källman)
-
 **Tuesday**
 Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)
 **09:00-10:00**
