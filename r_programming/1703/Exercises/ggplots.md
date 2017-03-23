@@ -16,61 +16,62 @@ title:  'ggplots maps in R'
 
 # Introduction<a id="orgheadline1"></a>
 
-Even though the R base plot capabilities are more impressive than most
-other programming language, there are other packages to generate
-graphics available. Two of the more popular packages besides the base
-package is lattice and ggplot2. They are according to many superior to
-the base plot library when it comes to explanatory data analysis as they
-without much work generate trellis graphics eg. graphs that display a
+Even though plotting capabilities of R base are really impressive compared to 
+other programming languages, there are other packages available to help you generate
+awesome graphics. Two of the more popular packages besides the base
+package are **lattice** and **ggplot2**. According to many users, these are superior to
+the base plot library, especially when it comes to exploratory data analysis --
+without too much work, they generate trellis graphics, e.g. graphs that display a
 variable or the relationship between variables, conditioned on one or
 more other variables. Over the last years ggplot2 has become the
-standard plot library for many R users, especially as it keeps
-evolving and new features are added. In addition to being more
-convient for certain types of plots many feel that the defaults
-colors, axis types etc looks better on ggplot2 compared to the base R
+standard plotting library for many R users, especially as it keeps
+evolving and new features are added continuously. In addition to being more
+convient for certain types of plots, many feel that the default
+colors, axis types etc. look better on ggplot2 compared to the base R
 and lattice libraries.
 
 # Exercise<a id="orgheadline2"></a>
 
-This exercise will not consist of any exercises for you to solve
-instead the code blocks below will read in data and generate map
+This exercise will not consist of particular tasks for you to solve.
+Instead, the code blocks below will read in data and generate map
 plots. Make sure that you can run the code and generate the plot. Once
 you have a working code go over the code line by line and try to
 obtain a fairly detailed understanding of what is going on. Read the
-help for some of the functions and try the plots with other arguments.
+help for some of the functions and try to replot things with altered arguments (e.g. colors or point shapes).
 
 Before you start you should download the following files to your
-working directory.  
+working directory:  
 [Bolaget.csv](../files/Bolaget.csv)  
 [coop_Uppsala.kml](../files/coop_Uppsala.kml)  
 [ica_Uppsala.kml](../files/ica_Uppsala.kml)  
 
-If you can not load the library install it either via the menu of
-Rstudio or by typing `install.packages("ggmap")` in R.
+If you cannot load the library install it either via the menu of
+RStudio or by typing `install.packages("ggmap")` in R.
 
 ```R
 # Load the libraries necessary for working with maps
+# Install them if missing
 library(ggmap)
 library(maptools)
 library(sp)
 library(rgdal)
 library(deldir)
     
-# Download map of Uppsala from stamen maps
+# Download the map of Uppsala from Stamen Maps
 google.map <- get_map(c(17.63,59.84), zoom=12, maptype = 'toner')
     
-# Lad the list of shops
+# Load the list of System Bolaget shops
 data <- read.table("Bolaget.csv", header=T, sep=";", quote="")
     
 # Narrow down the list to Uppsala only
-		data <- data[data$Address4 == "UPPSALA",]
+data <- data[data$Address4 == "UPPSALA",]
 		
-# The description in the file says the coords are in RT90 datum.
-# The map uses WGS84 thus we need a conversion:
+# The description in the file says the provided coords are in the RT90 datum.
+# The map uses WGS84 thus we need a conversion from RT90 to WGS84:
 latlonRT90 <- data[,c('RT90x', 'RT90y')]
 colnames(latlonRT90) <- c('x','y')
 
-# EPSG codes for RT90 and WGS84 are 3021 and 4326. 
+# EPSG codes for RT90 and WGS84 are 3021 and 4326, respectively. 
 # Here, we do the actual conversion
 tmp <- data.frame(coords.x = latlonRT90$y, coords.y = latlonRT90$x)
 coordinates(tmp)=~coords.x+coords.y
@@ -83,7 +84,7 @@ coords <- data.frame(lat=coords@coords[,1], lon=coords@coords[,2])
 # Do the Voronoi tesseleation
 voronoi <- deldir(coords)
 
-# Plot the map, shop density, shops as points and the tesselation lines.
+# Plot the map, shops density, shops as points and the tesselation lines.
 map <- ggmap(google.map)
 map +
 stat_density2d(data = coords, 
