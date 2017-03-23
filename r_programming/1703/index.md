@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  'R Programming Foundations for Life Scientists, 2 hp - Mars 2017'
+title:  'R Programming Foundations for Life Scientists, 2 hp (ECTS) - Mars 2017'
 --- 
 
 
@@ -18,6 +18,6 @@ Held in Uppsala Mars 27 - Mars 31, 2017.
 [Travel Info](travel)  
 
 ## Teachers
-Marcin Kiercak - Uppsala University  
-Thomas Källman - thomas.kallman@nbis.se, Uppsala University, NBIS, Sclilifelab  
+Marcin Kierczak - marcin.kierczak at scilifelab dot se, Uppsala University, NBIS, SciLifeLab  
+Thomas Källman - thomas.kallman at nbis dot se, Uppsala University, NBIS, ScliLifeLab  
 et al.

@@ -96,6 +96,14 @@ benefits of using r-studio is that there are bundled packages with
 this software that greatly helps for documenting the R-code that you
 use and write.
 
+While this is NOT absolutely necessary, to be able to get the most from the 
+part of the course that covers explanatory programming, we advise you to have 
+a distribution of LaTeX system installed on your machine so that the R-Studio 
+can call it. Please follow guidelines on [LaTeX site](http://www.latex-project.org/get/)
+
+Mac users can follow [this link](https://www.tug.org/mactex/mactex-download.html) 
+and installation instructions therein.
+
 Some commonly used tools besides R-studio are:
 
 -   The built in GUI that comes with R.
