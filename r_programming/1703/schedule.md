@@ -35,7 +35,7 @@ Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)
 
 **Thursday**
 Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)  
-**09:00-10:00** [Lecture: Functions in R](Lectures/Lecture_8_-_SelectedFns.pdf) (Marcin Kierczak)  
+**09:00-10:00** [Lecture: Selected functions in R](Lectures/Lecture_8_-_SelectedFns.pdf) (Marcin Kierczak)  
 **10:00-11:00** [Lecture: Graphics](Lectures/Lecture_9_-_graphics.pdf) (Marcin Kierczak)  
 **11:00-12:00** [Exercise: Functions in R]() (Marcin Kierczak, Moritz Buck, Johan Reimergård)  
 **12:00-13:00** Lunch at BMC restaurant  
@@ -44,7 +44,7 @@ Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)
 
 **Friday**
 Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)  
-**09:00-10:00** [Lecture: ggplot2](Lectures/Lecture_10_-_ggplot2.pdf) (Marcin Kierczak)  
+**09:00-10:00** [Lecture: Graphics using ggplot2](Lectures/Lecture_10_-_ggplot2.pdf) (Marcin Kierczak)  
 **10:00-11:00** Live presentation: More on explanatory programming and intro to R package anatomy (Marcin Kierczak, Thomas Källman)  
 **11:00-12:00** Q&A session  
 **12.00-13.00** Lunch at BMC restaurant  
