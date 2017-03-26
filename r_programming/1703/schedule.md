@@ -13,7 +13,7 @@ Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)
 **11:00-12:00** [Exercise and video: Using R-studio]() (Marcin Kierczak, Thomas Källman)  
 **12:00-13:00** Lunch at BMC restaurant  
 **13:00-15:00** [Lecture: Elements of R programming - variable types, operators](Lectures/Lecture_3_-_Elements1.pdf) (Marcin Kierczak)  
-**15:00-17:00** [Exercise: Data types in R]() (Marcin Kierczak, Thomas Källman)  
+**15:00-17:00** [Exercise: Data types in R](Exercises/DataTypes) (Marcin Kierczak, Thomas Källman)  
 
 **Tuesday**
 Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)  
