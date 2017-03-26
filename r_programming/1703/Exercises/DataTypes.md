@@ -94,8 +94,7 @@ This command uses commands that we have not talked about yet. If you
 do not understand how it works now, you will do so after tomorrows
 lectures and exercises.
 
-1.  Create variables *var1* and *var2* and initialize them with two
-    integers of choice.
+1.  Create variables *var1* and *var2* and initialize them with two integers of choice.
 	<details>
 	<summary>:key: Click to see how</summary>
 	<pre>
@@ -104,8 +103,7 @@ lectures and exercises.
 	</pre>
 	</details>
 <br>
-2.  Add the two variables and save them as a new variable named *var3*
-    and print the result
+2.  Add the two variables and save them as a new variable named *var3* and print the result
 	<details> 
 	<summary>:key: Click to see how</summary> 
 	<pre>
