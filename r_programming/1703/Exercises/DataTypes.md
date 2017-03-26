@@ -100,13 +100,13 @@ lectures and exercises.
 	<summary>:key: Click to see how</summary>
 	<pre>
 	var1 <- 11  
-    var2 <- 34  
+	var2 <- 34  
 	</pre>
 	</details>
 <br>
 2.  Add the two variables and save them as a new variable named
-    *var3* and print the result
-    <details>
+	*var3* and print the result
+	<details>
 	<summary>:key: Click to see how</summary>
 	<pre>
 	var3 <- var1 + var2  
