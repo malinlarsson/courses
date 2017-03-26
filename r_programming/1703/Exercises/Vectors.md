@@ -482,11 +482,11 @@ Do the following on your newly created vector.
 	<pre>
 	veggies[-5]  
 
- 	[1] "apple"  "banana" "orange" "kiwi"  
+	[1] "apple"  "banana" "orange" "kiwi"  
 
 	veggies[1:4]  
 	
-    [1] "apple"  "banana" "orange" "kiwi"  
+	[1] "apple"  "banana" "orange" "kiwi"  
 	</pre>
 	</details>
 <br>
@@ -494,7 +494,7 @@ Do the following on your newly created vector.
     <details>
 	<summary>:key: Click to see how</summary>
 	<pre>
-    veggies[veggies=="apple" | veggies == "banana" | veggies == "orange" | veggies == "kiwi"]  
+	veggies[veggies=="apple" | veggies == "banana" | veggies == "orange" | veggies == "kiwi"]  
 
 	[1] "apple"  "banana" "orange" "kiwi"  
 
