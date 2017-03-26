@@ -19,9 +19,9 @@ Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)
 Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)  
 **09:00-10:00** [Lecture: Elements of R programming language - vectors, strings](Lectures/Lecture_4_-_Elements2.pdf) (Marcin Kierczak)  
 **10:00-11:00** [Lecture: Elements of R programming language - matrices, lists, data frames and objects](Lectures/Lecture_5_-_Elements3.pdf) (Marcin Kierczak)  
-**11:00-12:00** [Exercise: Working with vectors]() (Marcin Kierczak, Eva Freyhult, Bengt Sennblad)  
+**11:00-12:00** [Exercise: Working with vectors](Vectors) (Marcin Kierczak, Eva Freyhult, Bengt Sennblad)  
 **12:00-13:00** Lunch at BMC restaurant  
-**13:00-17:00** [Exercise: Matrices, lists, data frames]() (Marcin Kierczak, Eva Freyhult, Bengt Sennblad)  
+**13:00-17:00** [Exercise: Matrices, lists, data frames](Dataframes) (Marcin Kierczak, Eva Freyhult, Bengt Sennblad)  
 
 **Wednesday**
 Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)  

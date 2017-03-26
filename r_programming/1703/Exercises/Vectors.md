@@ -447,9 +447,6 @@ y <- c(1, 5, 11)
 	- `c(1, 3, 5) + c(2, 4, 6)`
 	- `c(1, 3, 5) + c(2, 4, 6, 8)`
 	- `c(1, 3) - c(2, 4, 6 ,8)`
-	
-	Try to think about your expectations 
-	prior to running the code in R. 
 
 13. Create two numeric vectors of length 4 and test run all the basic
 	operators (as seen in the table earlier) with these two as
@@ -457,7 +454,7 @@ y <- c(1, 5, 11)
 	
 ## Modify and subset vectors<a id="orgheadline6"></a>
 
-Create a new character vector that the following words and save it using a suitable name:
+Create a new character vector that contains the following words and save it using a suitable name:
 apple, banana, orange, kiwi, potato
 <details>
 <summary>:key: Click to see how</summary>
@@ -484,9 +481,11 @@ Do the following on your newly created vector.
 	<summary>:key: Click to see how</summary>
 	<pre>
 	veggies[-5]  
-    veggies[1:4]  
+
+ 	[1] "apple"  "banana" "orange" "kiwi"  
+
+	veggies[1:4]  
 	
-	[1] "apple"  "banana" "orange" "kiwi"  
     [1] "apple"  "banana" "orange" "kiwi"  
 	</pre>
 	</details>
@@ -496,9 +495,11 @@ Do the following on your newly created vector.
 	<summary>:key: Click to see how</summary>
 	<pre>
     veggies[veggies=="apple" | veggies == "banana" | veggies == "orange" | veggies == "kiwi"]  
-    veggies[veggies!="potato"]  
-	
+
 	[1] "apple"  "banana" "orange" "kiwi"  
+
+	veggies[veggies!="potato"]  
+	
 	[1] "apple"  "banana" "orange" "kiwi"  
 	</pre>
 	</details>
@@ -558,7 +559,7 @@ Do the following on your newly created vector.
 	</pre>
 	</details>
 <br>
-8.  Sample 30 values randomly with replacement from your letter vector and convert the character vector to factors. Which of     the levels have most entries in the vector? 
+8.  Sample 30 values randomly with replacement from your letter vector and convert the character vector to factors. Which of the levels have most entries in the vector? 
 	<details>
 	<summary>:key: Click to see how</summary>
 	<pre>
@@ -586,10 +587,11 @@ Do the following on your newly created vector.
 	<summary>:key: Click to see how</summary>
 	<pre>
 	letters[1:length(letters)-1]  
-    letters[-length(letters)]  
-    
+
 	[1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s"  
 	[20] "t" "u" "v" "w" "x" "y"  
+
+	letters[-length(letters)]  
          
     [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s"  
 	[20] "t" "u" "v" "w" "x" "y"  
