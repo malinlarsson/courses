@@ -110,7 +110,7 @@ lectures and exercises.
 	<summary>:key: Click to see how</summary>
 	<pre>
 	var3 <- var1 + var2  
-    var3  
+	var3  
     
 	[1] 45  
 	</pre>
