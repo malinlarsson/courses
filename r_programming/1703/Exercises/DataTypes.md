@@ -96,7 +96,7 @@ lectures and exercises.
 
 1.  Create variables *var1* and *var2* and initialize them with two
     integers of choice.
-    <details>
+	<details>
 	<summary>:key: Click to see how</summary>
 	<pre>
 	var1 <- 11  
@@ -105,7 +105,7 @@ lectures and exercises.
 	</details>
 <br>
 2.  Add the two variables and save them as a new variable named *var3*
-	and print the result 
+    and print the result
 	<details> 
 	<summary>:key: Click to see how</summary> 
 	<pre>
