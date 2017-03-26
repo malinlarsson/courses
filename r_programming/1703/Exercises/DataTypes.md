@@ -104,10 +104,10 @@ lectures and exercises.
 	</pre>
 	</details>
 <br>
-2.  Add the two variables and save them as a new variable named
-	*var3* and print the result
-	<details>
-	<summary>:key: Click to see how</summary>
+2.  Add the two variables and save them as a new variable named *var3*
+	and print the result 
+	<details> 
+	<summary>:key: Click to see how</summary> 
 	<pre>
 	var3 <- var1 + var2  
 	var3  
