@@ -103,7 +103,9 @@ lectures and exercises.
 	</pre>
 	</details>
 <br>
-2.  Add the two variables and save them as a new variable named *var3* and print the result
+2.  Add the two variables and save them as a new variable named *var3*
+    and print the result.
+	
 	<details> 
 	<summary>:key: Click to see how</summary> 
 	<pre>
@@ -113,7 +115,7 @@ lectures and exercises.
 	[1] 45  
 	</pre>
 	</details>
-<br>
+	<br>
 3.  Check the class, mode, and type for var1, var2, var3 and &pi; (is
 	found under the variable name pi in R)
 	<details>
