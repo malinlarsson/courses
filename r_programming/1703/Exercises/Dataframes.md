@@ -227,7 +227,7 @@ Create a matrix containing 1:12 as shown for the matrix X above.
 8.  Create two different 2 by 2 matrices named A and B. A should
     contain the values 1 - 4 and B the values 5-8. Try out the
     following commands and by looking at the results see if you can
-    figure out what is going on.
+    figure out what is going on.  
     A. A \* B  
     B. A / B  
     C. A %x% B  
