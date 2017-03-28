@@ -7,7 +7,7 @@ title:  'Schedule'
 
 **Monday**
 Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)  
-**09.00-09.15** [Registration and Welcome, presentation of SciLifeLab]() (Elina Staaf)  
+**09.00-09.15** [Registration and Welcome, presentation of SciLifeLab](Lectures/Intro R_VT17_170327.pdf) (Elina Staaf)  
 **09:15-10:00** [Lecture: Introduction to R programming](Lectures/Lecture_1_-_Introduction.pdf) (Marcin Kierczak)  
 **10:15-10:45** [Lecture: Introduction to R environment](Lectures/Lecture_2_-_REnvironment.pdf) (Marcin Kierczak, Thomas Källman)  
 **11:00-12:00** [Exercise and video: Using R-studio]() (Marcin Kierczak, Thomas Källman)  

@@ -228,12 +228,12 @@ Create a matrix containing 1:12 as shown for the matrix X above.
     contain the values 1 - 4 and B the values 5-8. Try out the
     following commands and by looking at the results see if you can
     figure out what is going on.
-    A. A \* B 
-    B. A / B 
-    C. A %x% B 
-    D. A + B
-    E. A - B 
-    F. A == B
+    A. A \* B  
+    B. A / B  
+    C. A %x% B  
+    D. A + B  
+    E. A - B  
+    F. A == B  
     <details>
     <summary>:key: Click to see how</summary>
     <pre>
@@ -241,44 +241,52 @@ Create a matrix containing 1:12 as shown for the matrix X above.
         A <- matrix(1:4, ncol = 2, nrow = 2)
         B <- matrix(5:8, ncol = 2, nrow = 2)
         A
-        B
-        A * B
-        A / B
-        A %x% B
-        A + B
-        A - B
-        A == B
-    
+
             [,1] [,2]
         [1,]    1    3
         [2,]    2    4
-        
+		
+		B
+
             [,1] [,2]
         [1,]    5    7
         [2,]    6    8
-        
+
+        A * B
+		
             [,1] [,2]
         [1,]    5   21
         [2,]   12   32
-        
+
+		A / B
+		
                  [,1]      [,2]
         [1,] 0.2000000 0.4285714
         [2,] 0.3333333 0.5000000
-        
+		
+		
+        A %x% B
+		
             [,1] [,2] [,3] [,4]
         [1,]    5    7   15   21
         [2,]    6    8   18   24
         [3,]   10   14   20   28
         [4,]   12   16   24   32
-        
+		
+        A + B
+		
             [,1] [,2]
         [1,]    6   10
         [2,]    8   12
-        
+		
+        A - B
+		
             [,1] [,2]
         [1,]   -4   -4
         [2,]   -4   -4
-        
+		
+        A == B
+		
              [,1]  [,2]
         [1,] FALSE FALSE
         [2,] FALSE FALSE
