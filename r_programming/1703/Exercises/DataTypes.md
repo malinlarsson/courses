@@ -25,7 +25,7 @@ layout: default
 
 # Introduction<a id="orgheadline2"></a>
 
-There are set of data modes used in R. The mode of a variable will
+There are different data modes used in R. The mode of a variable will
 for example determine what kind of operators that can be done on it. At the end of
 this exercise you should know:
 
@@ -46,9 +46,9 @@ at what they are.
 -   Integer = Numbers that can be represented without fractional component
 -   Numeric = Any number that is not a complex number.
 -   Character = Text
--   Complex = Complex numbers
+
 In many cases the mode of on entry is determined by the content so if
-you save the value 5.1 as a variable in R, the variable will by R
+you save the value 5.1 as a variable in R, the variable will
 automatically be recognised as numeric. If you instead have a text
 string like "hello world" it will have the mode character. Below you
 will also see examples of how you can specify the mode and not rely on
@@ -59,7 +59,7 @@ R inferring the right mode based on content.
 In all exercises on this course it is important that you prior to
 running the commands in R, try to figure out what you expect the
 result to be. You should then verify that this will indeed be the
-result by running the command in an R session. In case there is a
+qresult by running the command in an R session. In case there is a
 discrepency between your expectations and the actual output make sure
 you understand why before you move forward. If you can not figure out
 how to, or which command to run you can click the key to reveal
@@ -68,8 +68,12 @@ code and trying out things on your own have a hard time understanding
 what is going on, ask the TAs or or your someone sitting next to you
 who might have wrapped their head around the issue.
 
-Also note that in many cases there multiple solutions
-that solve the problem equally well.
+Also note that in many cases there multiple solutions that solve the
+problem equally well.
+
+We do recommend to write all code in a R markdown document in R-studio
+as that will at the end of the course be your own R tutorial with
+comments and code solutions. 
 
 ## Create and retrieve information about variables in R<a id="orgheadline3"></a>
 
@@ -83,124 +87,127 @@ ls()
 In case you have objects that you want to remove from the current
 session you can do so with the rm function. NB! This command will
 remove all objects available in your current session.
-
-    rm(list = ls())
-
+```
+rm(list = ls())
+```
 This command uses commands that we have not talked about yet. If you
 do not understand how it works now, you will do so after tomorrows
 lectures and exercises.
 
-1.  Create variables *var1* and *var2* and initialize them with two
-    integers of choice.
-    <details>
+1.  Create variables *var1* and *var2* and initialize them with two integers of choice.
+	<details>
 	<summary>:key: Click to see how</summary>
 	<pre>
 	var1 <- 11  
-    var2 <- 34  
+	var2 <- 34  
 	</pre>
 	</details>
 <br>
-2.  Add the two variables and save them as a new variable named
-    *var3* and print the result
-    <details>
-	<summary>:key: Click to see how</summary>
+2.  Add the two variables and save them as a new variable named *var3*
+    and print the result.
+	
+	<details> 
+	<summary>:key: Click to see how</summary> 
 	<pre>
-	var3 <- var1 + var2   
-    var3  
-    
+	var3 <- var1 + var2  
+	var3  
+
 	[1] 45  
 	</pre>
 	</details>
-<br>
-3.  Check the class, mode and type for var1, var2, var3 and &pi; (is
-    found under the variable name pi in R)
-    <details>
-    <summary>:key: Click to see how</summary>
-    <pre>
-    mode(var1)  
-    class(var1)  
-    typeof(var1)  
-    mode(var2)  
-    class(var2)  
-    typeof(var2)  
-    mode(var3)  
-    class(var3)  
-    typeof(var3)  
-    mode(pi)  
-    class(pi)  
-    typeof(pi)  
+	<br>
+3.  Check the class, mode, and type for var1, var2, var3 and &pi; (is
+	found under the variable name pi in R)
+	<details>
+	<summary>:key: Click to see how for var1</summary>
+	<pre>
+	mode(var1)  
+	class(var1)  
+	typeof(var1)  
+	
+	[1] "numeric"  
+	[1] "numeric"  
+	[1] "double"  
+	</pre>
+	</details>
+	
+	<details>
+	<summary>:key: Click to see how for &pi;</summary>
+	<pre>
+	mode(pi)  
+	class(pi)  
+	typeof(pi)  
     
-    [1] "numeric"
-    [1] "numeric"
-    [1] "double"
-    [1] "numeric"
-    [1] "numeric"  
-    [1] "double"  
-    [1] "numeric"  
-    [1] "numeric"  
-    [1] "double"  
-    [1] "numeric"  
-    [1] "numeric"  
-    [1] "double"  
+	[1] "numeric"  
+	[1] "numeric"  
+	[1] "double"  
 	</pre>
 	</details>
 <br>
 4.  Create two character variables containing a text of choice. 
-    -   check  mode, class and type of the first one,
-    -   add var1 to it and report the result
-    <details>
-    <summary>:key: Click to see how</summary>
-    <pre>
-    text1 <- 'test'  
-    text1 + var1  
-    Error in text1 + var1 : non-numeric argument to binary operator  
-    </pre>
-    </details>
+	-   check mode, class, and type of the first one
+		<details>
+		<summary>:key: Click to see how create character variables</summary>
+		<pre>
+		text1 <- "test1"  
+		text2 <- "test2"  
+		</pre>
+		</details>
+	
+	-   add var1 to it and report the result
+		<details>
+		<summary>:key: Click to see how to add variables</summary>
+		<pre>
+		text1 + var1  
+	
+		Error in text1 + var1 : non-numeric argument to binary operator  
+		</pre>
+		</details>
 <br>
 5.  Cast var3 to integer, cast an integer variable to double, cast a
-    string to a double.
-    <details>
+	string to a double.
+	<details>
 	<summary>:key: Click to see how</summary>
 	<pre>
 	as.integer(var3)  
-    i <- 175  
-    as.double(i)  
-    as.double(text1)  
+	i <- 175  
+	as.double(i)  
+	as.double(text1)  
     
-    [1] 45  
-    [1] 175  
-    [1] NA  
-    Warning message:  
-    NAs introduced by coercion  
+	[1] 45  
+	[1] 175  
+	[1] NA  
+	Warning message:  
+	NAs introduced by coercion  
 	</pre>
 	</details>
 <br>
 6.  Report floor and ceiling of &pi; and round &pi; to 3 decimal places.
-    <details>
+	<details>
 	<summary>:key: Click to see how</summary>
 	<pre>
 	floor(pi)  
-    ceiling(pi)  
-    round(pi, digits = 3)  
+	ceiling(pi)  
+	round(pi, digits = 3)  
     
 	[1] 3  
-    [1] 4  
-    [1] 3.142  
+	[1] 4  
+	[1] 3.142  
 	</pre>
 	</details>
 <br>
 7.  Is floor of &pi; an integer?
-    <details>
+	<details>
 	<summary>:key: Click to see how</summary>
 	<pre>	
 	is.integer(floor(pi))  
-    
+
 	[1] FALSE  
 	</pre>
 	</details>
 <br>
 8.  Treat '3.56437' string as number.
-    <details>
+	<details>
 	<summary>:key: Click to see how</summary>
 	<pre>	
 	as.numeric('3.56437')  
@@ -208,7 +215,7 @@ lectures and exercises.
 	</details>
 <br>
 9.  Divide &infin; by - &infin;
-    <details>
+	<details>
 	<summary>:key: Click to see how</summary>
 	<pre>	
 	-Inf/Inf  
@@ -217,79 +224,81 @@ lectures and exercises.
 	</pre>
 	</details>
 <br>
-10.  Create two freely chosen complex numbers. 
-     -   Check that they are complex indeed.
-     -   Add, multiply and divide one by another.
-     -   Add an integer to their sum.
-     <details>
-	 <summary>:key: Click to see how</summary>
-	 <pre>
-     c1 <- 23 + 4i  
-     c2 <- -15 - 7i  
-     is.complex(c1)  
-	 is.complex(c2)  
-     c1 + c2  
-     c1 / c2  
-     c1 + c2 + 7  
-	 [1] TRUE  
-     [1] TRUE  
-     [1] 8-3i  
-     [1] -1.361314+0.368613i  
-     [1] 15-3i  
-	 </pre>
-	 </details>
+10. Create two freely chosen complex numbers. 
+	-   Check that they are complex indeed.
+	-   Add, multiply and divide one by another.
+	-   Add an integer to their sum.
+	<details>
+	<summary>:key: Click to see how</summary>
+	<pre>
+	c1 <- 23 + 4i  
+	c2 <- -15 - 7i  
+	is.complex(c1)  
+	is.complex(c2)  
+	c1 + c2  
+	c1 / c2  
+	c1 + c2 + 7  
+	[1] TRUE  
+	[1] TRUE  
+	[1] 8-3i  
+	[1] -1.361314+0.368613i  
+	[1] 15-3i  
+	</pre>
+	</details>
 <br>
-11.  Print a truth table for OR (for three distinct logical values).
-     <details>
-	 <summary>:key: Click to see how</summary>
-	 <pre>	
-	 x <- c(NA, FALSE, TRUE)  
-     names(x) <- as.character(x)  
-     outer(x, x, "|")  
-     
-	 NA FALSE TRUE  
-     NA      NA    NA TRUE  
-   	 FALSE   NA FALSE TRUE  
-     TRUE  TRUE  TRUE TRUE  
-	 </pre>
-	 </details>
+11. Print a truth table for OR (for three distinct logical
+    values). Read about truth tables here
+    https://en.wikipedia.org/wiki/Truth_table
+	<details>
+	<summary>:key: Click to see how</summary>
+	<pre>	
+	x <- c(NA, FALSE, TRUE)  
+	names(x) <- as.character(x)  
+	outer(x, x, "|")  
+	
+	NA FALSE TRUE  
+	NA      NA    NA TRUE  
+	FALSE   NA FALSE TRUE  
+	TRUE  TRUE  TRUE TRUE  
+	</pre>
+	</details>
 <br>
-12.  Multiply a logical TRUE by a logical FALSE.
-     Rise the logical true to the 7-th power.
-     <details>
-     <summary>:key: Click to see how</summary>
- 	 <pre>
-	 TRUE * FALSE  
-	 T^7  
+12. Multiply a logical TRUE by a logical FALSE.
+	Rise the logical true to the 7-th power.
+	<details>
+	<summary>:key: Click to see how</summary>
+	<pre>
+	TRUE * FALSE  
+	T^7  
 	[1] 0  
 	[1] 1  
 	</pre>
 	</details>
 <br>
-13.  Create two character variables containing two verses of your favorite song.  
-     -  concatenate the two variables,  
-     -  paste the variables with '\*' as separator.  
-     -  find if 'and' occurs in the second line,  
-     -  substitute a word for another,  
-     -  extract substring starting at the 5th character and 5 characters long.  
-	 <details>
-	 <summary>:key: Click to see how</summary>
-	 <pre>	
-     line1 <- "Hello darkness my old friend"  
-     line2 <- "I've come to talk to you again"  
-     paste(line1, line2, sep = "")  
-     paste(line1, line2, sep = "*")  
-	 grep('and', line2)  
-     sub('Hello', 'Goodbye', line1)  
-     substr(line1, 5, 5 + 5)  
+13. Create two character variables containing two verses of your favorite song.  
+	-  concatenate the two variables,  
+	-  paste the variables with '\*' as separator.  
+	-  find if 'and' occurs in the second line,  
+	-  substitute a word for another,  
+	-  extract substring starting at the 5th character and 5 characters long.  
+	<details>
+	<summary>:key: Click to see how</summary>
+	<pre>	
+	line1 <- "Hello darkness my old friend"  
+	line2 <- "I've come to talk to you again"  
+	paste(line1, line2, sep = "")  
+	paste(line1, line2, sep = "*")  
+	grep('and', line2)  
+	sub('Hello', 'Goodbye', line1)  
+	substr(line1, 5, 5 + 5)  
     
-	 [1] "Hello darkness my old friendI've come to talk to you again"  
-	 [1] "Hello darkness my old friend*I've come to talk to you again"  
-	 integer(0)  
-	 [1] "Goodbye darkness my old friend"  
-	 [1] "o dark"  
-	 </pre>
-	 </details>
+	[1] "Hello darkness my old friendI've come to talk to you again"  
+	[1] "Hello darkness my old friend*I've come to talk to you again"  
+	integer(0)  
+	[1] "Goodbye darkness my old friend"  
+	[1] "o dark"  
+	</pre>
+	</details>
 <br>
 
 ## R Environment

@@ -36,12 +36,15 @@ is to instead use matrices or data frames. As with vectors all values
 in a matrix has to be of the same type (eg. you can not mix for
 example characters and numerics in the same matrix). For data frames
 this is not a requirement and different columns can have different
-modes.
+modes, but all columns in a data frame have the same number of
+entries. In addition to these R also have objects named lists that can
+store any type of data set and are not restricted by types or dimensions.
 
 In this exercise you will learn how to:
 - Create and work with matrices, data frames and lists
-- To perform basic math operator on matrices
+- Perform basic math operator on matrices
 - Use functions to summarize information from data frames
+- Extract subsets of data from macrices, data frames and lists
 - Create S3 object from a list
 
 
@@ -225,12 +228,12 @@ Create a matrix containing 1:12 as shown for the matrix X above.
     contain the values 1 - 4 and B the values 5-8. Try out the
     following commands and by looking at the results see if you can
     figure out what is going on.
-    A. A \* B 
-    B. A / B 
-    C. A %x% B 
-    D. A + B
-    E. A - B 
-    F. A == B
+    A. A \* B  
+    B. A / B  
+    C. A %x% B  
+    D. A + B  
+    E. A - B  
+    F. A == B  
     <details>
     <summary>:key: Click to see how</summary>
     <pre>
@@ -238,44 +241,52 @@ Create a matrix containing 1:12 as shown for the matrix X above.
         A <- matrix(1:4, ncol = 2, nrow = 2)
         B <- matrix(5:8, ncol = 2, nrow = 2)
         A
-        B
-        A * B
-        A / B
-        A %x% B
-        A + B
-        A - B
-        A == B
-    
+
             [,1] [,2]
         [1,]    1    3
         [2,]    2    4
-        
+		
+		B
+
             [,1] [,2]
         [1,]    5    7
         [2,]    6    8
-        
+
+        A * B
+		
             [,1] [,2]
         [1,]    5   21
         [2,]   12   32
-        
+
+		A / B
+		
                  [,1]      [,2]
         [1,] 0.2000000 0.4285714
         [2,] 0.3333333 0.5000000
-        
+		
+		
+        A %x% B
+		
             [,1] [,2] [,3] [,4]
         [1,]    5    7   15   21
         [2,]    6    8   18   24
         [3,]   10   14   20   28
         [4,]   12   16   24   32
-        
+		
+        A + B
+		
             [,1] [,2]
         [1,]    6   10
         [2,]    8   12
-        
+		
+        A - B
+		
             [,1] [,2]
         [1,]   -4   -4
         [2,]   -4   -4
-        
+		
+        A == B
+		
              [,1]  [,2]
         [1,] FALSE FALSE
         [2,] FALSE FALSE
@@ -607,17 +618,27 @@ factor even though we just gave it a character vector.
     </details>
 <br>
 9.  Calculate the mean value for the two columns that you added to the
-    mtcars data frame. Try to modify so you get the mean by cylinder
+    mtcars data frame. 
+    <details>
+    <summary>:key: Click to see how</summary>
+    <pre>
+  
+        colMeans(mtcars2[, c("random1", "random2")])
+
+            random1     random2 
+         0.07930118 -0.19708361
+
+    </pre>
+    </details>
+
+	Try to modify so you get the mean by cylinder
     number instead.
     <details>
     <summary>:key: Click to see how</summary>
     <pre>
+
+		aggregate(mtcars2$random1,  by = list(mtcars$cyl), FUN = mean)
     
-        colMeans(mtcars2[, c("random1", "random2")])
-        aggregate(mtcars2$random1, list(mtcars$cyl), FUN = mean)
-    
-            random1     random2 
-         0.07930118 -0.19708361
           Group.1          x
         1       4 0.02470902
         2       6 0.16250439
@@ -634,7 +655,7 @@ factor even though we just gave it a character vector.
 
 # Lists<a id="orgheadline7"></a>
 
-The last data structure that we will explore is lists, which are a
+The last data structure that we will explore are lists, which is a
 very flexible structure. Lists can i R combine different data
 structures and they do not have to be of equal dimensions or have
 other restrictions. The drawback with a flexible structure is that it

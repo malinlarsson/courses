@@ -139,7 +139,7 @@ After this exercise you should know:
 
 3.  Create a data frame with two numeric and one character
     vector. Write a loop that loops over the columns and reports the
-    mean of the column if it is numeric and the total number of
+    sum of the column if it is numeric and the total number of
     characters if it’s a character vector.
 	
 	<details>
@@ -187,7 +187,7 @@ After this exercise you should know:
 	</details>
 <br>
 
-5.  Read up on the ifelse function in R.  and try to see if you can use this
+5.  Read up on the ifelse function in R. If possible use ifelse
     to answer question 3 with this function.
 
 6.  In all loops that we tried out we have created the variable where
