@@ -123,7 +123,7 @@ have a sound word vector and list.
 	<pre>
         shelley.vec2 <- scan(file = "book_chapter.txt", what = " ", quote = NULL)
         shelley.filt2 <- gsub(pattern = '[^[:alnum:] ]', replacement = "", x = shelley.vec2)
-        which(nchar(shelley.filt2) ==max(nchar(shelley.filt2)))
+        which(nchar(shelley.filt2) == max(nchar(shelley.filt2)))
         shelley.filt2[301]
     
         Read 551 items
