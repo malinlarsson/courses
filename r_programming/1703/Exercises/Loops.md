@@ -139,21 +139,21 @@ After this exercise you should know:
 
 3.  Create a data frame with two numeric and one character
     vector. Write a loop that loops over the columns and reports the
-    sum of the column if it is numeric and the total number of
-    characters if it’s a character vector.
+    sum of the column values if it is numeric and the total number of
+    characters if it is a character vector.
 	
 	<details>
 	<summary>:key: Click to see how</summary>
 	<pre>
-        #df1 <- data.frame(c(letters[1:5], LETTERS[1:5], 1:5, 1:5))
-        vector1 <- 1:10
+	
+		vector1 <- 1:10
         vector2 <- c("Odd", "Loop", letters[1:8])
         vector3 <- rnorm(10, sd = 10)
         df1 <- data.frame(vector1, vector2, vector3, stringsAsFactors = FALSE)
         sum.vec <- vector()
         for (i in 1:ncol(df1)) {
             if (is.numeric(df1[,i])) {
-                sum.vec[i] <- mean(df1[,i])
+                sum.vec[i] <- sum(df1[,i])
             } else {
                 sum.vec[i] <- sum(nchar(df1[,i]))
             }
@@ -173,22 +173,22 @@ After this exercise you should know:
 	<summary>:key: Click to see how</summary>
 	<pre>
         df.info <- function(df) {
-        sum.vec <- vector()
-        for (i in 1:ncol(df)) {
-            if (is.numeric(df[,i])) {
-                sum.vec[i] <- mean(df[,i])
-				} else {
-                sum.vec[i] <- sum(nchar(df[,i]))
-            }
-        }
-        sum.vec
-        }
+			sum.vec <- vector()
+			for (i in 1:ncol(df)) {
+				if (is.numeric(df[,i])) {
+					sum.vec[i] <- mean(df[,i])
+					} else {
+					sum.vec[i] <- sum(nchar(df[,i]))
+					}
+				}
+			sum.vec
+		}
 	</pre>
 	</details>
 <br>
 
-5.  Read up on the ifelse function in R. If possible use ifelse
-    to answer question 3 with this function.
+5.  Read up on the ifelse function in R. If possible use the ifelse function
+    to answer question 3.
 
 6.  In all loops that we tried out we have created the variable where
     the output is saved outside the loop. Why is this?

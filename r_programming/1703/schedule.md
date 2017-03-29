@@ -27,9 +27,9 @@ Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)
 Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)  
 **09:00-10:00** [Lecture: Elements of R programming language - control structures, iteration, recursion, variable scope](Lectures/Lecture_6_-_Elements4.pdf) (Marcin Kierczak)  
 **10:00-11:00** [Lecture: Loading data into R](Lectures/Lecture_7_-_Loading_data.pdf) (Marcin Kierczak)  
-**11:00-12:00** [Exercise: Loding data]() (Johan Nylander, Alvaro Martinez Barrio, Johan Viklund)  
+**11:00-12:00** [Exercise: Loding data](Exercises/LoadData) (Johan Nylander, Alvaro Martinez Barrio, Johan Viklund)  
 **12:00-13:00** Lunch at BMC restaurant  
-**13:00-17:00** [Exercise: Loops, conditional statements, functions, variable scope]() (Johan Nylander, Alvaro Martinez Barrio, Johan Viklund)  
+**13:00-17:00** [Exercise: Loops, conditional statements, functions, variable scope](Exercises/Loops) (Johan Nylander, Alvaro Martinez Barrio, Johan Viklund)  
 
 **18:00-** Course dinner at [Lingon](https://goo.gl/maps/zXcHB6rPHcU2)
 
