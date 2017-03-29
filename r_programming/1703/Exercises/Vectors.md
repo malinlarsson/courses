@@ -253,7 +253,7 @@ As in other programming languages there are a set of basic operators in R.
 
 
 <tr>
-<td class="org-left">x ||  y</td>
+<td class="org-left">x |  y</td>
 <td class="org-left">The same for vectors</td>
 <td class="org-left">&#xa0;</td>
 <td class="org-left">&#xa0;</td>
