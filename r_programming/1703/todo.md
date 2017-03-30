@@ -14,6 +14,13 @@ title:  'TODOS and fixes to be introduced'
 * explain modulo operators and logical operators somewhere as they are used in the labs
 * whan talking about objects, give a bit more biological examples
 * in the labs we ask about integers, but we create doubles in the answers...
-* labs truth table we talk about scalars, but there is no scalars in R!
+* labs truth table we talk about scalars, but there is no scalars in
+  R!
+  TK: Updated these text to instead use non-vectorized and vectorized.
+  
 * talk about printing with () before I actually use it
 * add info about *strsplit* from the **stringr** package
+
+# Day 3
+* Add text on aggregate and related function to the exercise on GTF
+  files. Add also a tapply solution to the problem
