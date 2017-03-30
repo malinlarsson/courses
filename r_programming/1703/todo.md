@@ -17,3 +17,7 @@ title:  'TODOS and fixes to be introduced'
 * labs truth table we talk about scalars, but there is no scalars in R!
 * talk about printing with () before I actually use it
 * add info about *strsplit* from the **stringr** package
+
+# Day 3
+* purpose of the gsub([[:alphanum:] ] ... )
+* say something about *aggregate*
