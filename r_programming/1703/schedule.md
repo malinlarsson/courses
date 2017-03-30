@@ -27,9 +27,9 @@ Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)
 Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)  
 **09:00-10:00** [Lecture: Elements of R programming language - control structures, iteration, recursion, variable scope](Lectures/Lecture_6_-_Elements4.pdf) (Marcin Kierczak)  
 **10:00-11:00** [Lecture: Loading data into R](Lectures/Lecture_7_-_Loading_data.pdf) (Marcin Kierczak)  
-**11:00-12:00** [Exercise: Loding data]() (Johan Nylander, Alvaro Martinez Barrio, Johan Viklund)  
+**11:00-12:00** [Exercise: Loding data](Exercises/LoadData) (Johan Nylander, Alvaro Martinez Barrio, Johan Viklund)  
 **12:00-13:00** Lunch at BMC restaurant  
-**13:00-17:00** [Exercise: Loops, conditional statements, functions, variable scope]() (Johan Nylander, Alvaro Martinez Barrio, Johan Viklund)  
+**13:00-17:00** [Exercise: Loops, conditional statements, functions, variable scope](Exercises/Loops) (Johan Nylander, Alvaro Martinez Barrio, Johan Viklund)  
 
 **18:00-** Course dinner at [Lingon](https://goo.gl/maps/zXcHB6rPHcU2)
 
@@ -37,10 +37,10 @@ Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)
 Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)  
 **09:00-10:00** [Lecture: Selected functions in R](Lectures/Lecture_8_-_SelectedFns.pdf) (Marcin Kierczak)  
 **10:00-11:00** [Lecture: Graphics](Lectures/Lecture_9_-_graphics.pdf) (Marcin Kierczak)  
-**11:00-12:00** [Exercise: Functions in R]() (Marcin Kierczak, Moritz Buck, Johan Reimergård)  
+**11:00-12:00** [Exercise: Functions in R](Exercises/SelectedFns) (Marcin Kierczak, Moritz Buck, Johan Reimergård)  
 **12:00-13:00** Lunch at BMC restaurant  
-**13:00-15:00** [Exercise: Functions in R cted.]() (Moritz Buck, Johan Reimergård)  
-**15:00-17:00** [Exercise: Graphics in R cted.]() (Moritz Buck, Johan Reimergård)  
+**13:00-15:00** [Exercise: Functions in R cted.](Exercises/SelectedFns) (Moritz Buck, Johan Reimergård)  
+**15:00-17:00** [Exercise: Graphics in R cted.](Exercises/PlotHandson) (Moritz Buck, Johan Reimergård)  
 
 **Friday**
 Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)  

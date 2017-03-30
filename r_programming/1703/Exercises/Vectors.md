@@ -230,7 +230,7 @@ As in other programming languages there are a set of basic operators in R.
 
 <tr>
 <td class="org-left">x && y</td>
-<td class="org-left">Boolean AND for scalar</td>
+<td class="org-left">Non-vectorized boolean AND</td>
 <td class="org-left">3 >= 2 &&  3 < 10</td>
 <td class="org-left">TRUE</td>
 </tr>
@@ -238,7 +238,7 @@ As in other programming languages there are a set of basic operators in R.
 
 <tr>
 <td class="org-left">x & y</td>
-<td class="org-left">The same for vectors</td>
+<td class="org-left">Vectorized boolean AND</td>
 <td class="org-left">&#xa0;</td>
 <td class="org-left">&#xa0;</td>
 </tr>
@@ -246,7 +246,7 @@ As in other programming languages there are a set of basic operators in R.
 
 <tr>
 <td class="org-left">x || y</td>
-<td class="org-left">Boolean OR for scalar</td>
+<td class="org-left">Non-vectorized boolean OR</td>
 <td class="org-left">1 >= 2 || 3 < 10</td>
 <td class="org-left">TRUE</td>
 </tr>
@@ -254,7 +254,7 @@ As in other programming languages there are a set of basic operators in R.
 
 <tr>
 <td class="org-left">x |  y</td>
-<td class="org-left">The same for vectors</td>
+<td class="org-left">Vectorized boolean OR</td>
 <td class="org-left">&#xa0;</td>
 <td class="org-left">&#xa0;</td>
 </tr>
