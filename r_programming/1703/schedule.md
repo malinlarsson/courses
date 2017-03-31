@@ -48,7 +48,7 @@ Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)
 **10:00-11:00** Live presentation: More on explanatory programming and intro to R package anatomy (Marcin Kierczak, Thomas Källman)  
 **11:00-12:00** Q&A session  
 **12.00-13.00** Lunch at BMC restaurant  
-**13:00-16.00** [Graphics in R: ggplot2]() (Marcin Kierczak, Moritz Buck, Thomas Källman)  
+**13:00-16.00** [Graphics in R: ggplot2](Exercises/ggplots) (Marcin Kierczak, Moritz Buck, Thomas Källman)  
 
 **Extra Material**
 - [Color names list in R](files/Rcolor.pdf)
