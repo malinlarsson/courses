@@ -62,7 +62,6 @@ rownames(gdp) <- gdp$Country
 # Rename the 3rd column for the sake of simplicity.
 colnames(gdp)[3] <- 'GDP'
 
-# Convert GDP to numeric (remove non-decimal commas too).
 ```
 
 Note the function of the *%>%* (pipe) operator. The **left() %>% right() -> var2** is equivalent to
