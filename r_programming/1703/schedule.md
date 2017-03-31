@@ -50,6 +50,8 @@ Room: [Trippelrummet, E10, ground floor](files/bmc_map.jpg)
 **12.00-13.00** Lunch at BMC restaurant  
 **13:00-16.00** [Graphics in R: ggplot2](Exercises/ggplots) (Marcin Kierczak, Moritz Buck, Thomas Källman)  
 
+**Extra exercise** [Gapminder example](Exercises/Lab - gapminder ggplot/gapminder.html)
+
 **Extra Material**
 - [Color names list in R](files/Rcolor.pdf)
 - [Visualizing data](files/rules_for_using_color.pdf)
