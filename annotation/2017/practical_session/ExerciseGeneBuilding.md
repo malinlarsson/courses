@@ -80,7 +80,7 @@ The Blastdb folder will be used for the functional annotation exercise tomorrow.
 Maker strings together a range of different tools into a complex pipeline (e.g. blast, exonerate, repeatmasker, augustus...). On Uppmax, loading all these tools and Maker into your global PATH is done simply by typing:
 
 <i>module load bioinfo-tools</i>  
-<i>module load maker/2.31.6</i>  
+<i>module load maker/2.31.8</i>  
 
 If you are trying to run Maker on your own computer or cluster, make sure that in fact all its various dependencies are loaded.
 ## Understanding Makers control files
