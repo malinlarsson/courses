@@ -1,4 +1,9 @@
-Training ab-initio predictor
+---
+layout: default
+title:  'Training Ab-initio predictor'
+---
+
+# Training ab-initio predictor
 
 From this maker run evidence base we can train our abinitio softwares and then use them for the second run of annotation. 
 You will need a set of genomic sequences with gene structures (sequence coordinates of starts and ends of exons and genes) and the most important part is selected the right set of genes. 
