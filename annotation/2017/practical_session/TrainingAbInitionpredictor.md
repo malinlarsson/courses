@@ -15,21 +15,19 @@ FGENESH (Works great, costs money even for training) and now EVM.
 
 ## Training Augustus
 
-Augustus (Works great, hard to train, but getting better)
-
 First you need to write the librabries path you will need in .bash_profile to perform the following analyses.
 
-/home/login/annotation_course/course_material/lib/install_perllib_missing.sh
+*/home/login/annotation_course/course_material/lib/install_perllib_missing.sh*
 
-source ~/.bash_profile
+*source ~/.bash_profile*
 
 Then load all modules that we will need to train Augustus
 
-module load bioinfo-tools 
-module load perl/5.18.4
-module load perl_module/5.18.4
-module load BioPerl/1.6.923_Perl5.18.4 
-module load cufflinks/2.2.1
+*module load bioinfo-tools*  
+*module load perl/5.18.4  
+module load perl_module/5.18.4  
+module load BioPerl/1.6.923_Perl5.18.4   
+module load cufflinks/2.2.1*
 
 Create project folder
 
