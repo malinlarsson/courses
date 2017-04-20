@@ -6,6 +6,8 @@ In many cases, or as a first step towards modelling complete genes, it is suffic
 
 Exercise 1 -Training Augustus
 
+Augustus (Works great, hard to train, but getting better)
+
 First you need to write the librabries path you will need in .bash_profile to perform the following analyses.
 
 /home/login/annotation_course/course_material/lib/install_perllib_missing.sh
