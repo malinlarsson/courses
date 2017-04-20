@@ -69,12 +69,15 @@ In order to do so, we translate our coding genes into proteins, format the prote
 Indeed, each sequence can contain one or more genes, the genes can be on either strand. However, the genes must not overlap, and only one transcript per gene is allowed.
 
 *gffread -y codingGeneFeatures.filter.longest_cds.tmp -g 4.fa codingGeneFeatures.filter.longest_cds.gff  
-~/annotation_course/course_material/scripts/fix_fasta.sh codingGeneFeatures.filter.longest_cds.tmp > protein/codingGeneFeatures.filter.longest_cds.proteins.fa  
-rm codingGeneFeatures.filter.longest_cds.tmp*
+~/annotation_course/course_material/scripts/fix_fasta.sh codingGeneFeatures.filter.longest_cds.tmp > protein/codingGeneFeatures.filter.longest_cds.proteins.fa*  
+
+*rm codingGeneFeatures.filter.longest_cds.tmp*
 
 *module load blast  
-makeblastdb -in protein/codingGeneFeatures.filter.longest_cds.proteins.fa -dbtype prot  
-blastp -query protein/codingGeneFeatures.filter.longest_cds.proteins.fa -db codingGeneFeatures.filter.longest_cds.proteins.fa -outfmt 6 -out blast_recursive/codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive*
+
+*makeblastdb -in protein/codingGeneFeatures.filter.longest_cds.proteins.fa -dbtype prot*  
+
+*blastp -query protein/codingGeneFeatures.filter.longest_cds.proteins.fa -db codingGeneFeatures.filter.longest_cds.proteins.fa -outfmt 6 -out blast_recursive/codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive*
 
 *~/annotation_course/course_material/git/GAAS/annotation/Tools/Util/gff/gff_filter_by_mrna_id.pl --gff codingGeneFeatures.filter.longest_cds.gff --blast blast_recursive/codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive --outfile nonredundant/codingGeneFeatures.nr.gff*
 
