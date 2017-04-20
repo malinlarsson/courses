@@ -45,6 +45,7 @@ mkdir filter
 mkdir protein
 mkdir nonredundant
 mkdir blast_recursive
+mkdir gff2genbank
 
 Next step, we need to filter the best genes we will use for the training, we need complete genes, models with a distance with an other model over 500 nt and a AED score over 0.3 (those are our default parameters).
 
@@ -59,21 +60,21 @@ In order to do so, we translate our coding genes into proteins, format the prote
 Indeed, each sequence can contain one or more genes, the genes can be on either strand. However, the genes must not overlap, and only one transcript per gene is allowed.
 
 gffread -y codingGeneFeatures.filter.longest_cds.tmp -g 4.fa codingGeneFeatures.filter.longest_cds.gff
-~/annotation_course/course_material/scripts/fix_fasta.sh codingGeneFeatures.filter.longest_cds.tmp > codingGeneFeatures.filter.longest_cds.proteins.fa 
+~/annotation_course/course_material/scripts/fix_fasta.sh codingGeneFeatures.filter.longest_cds.tmp > protein/codingGeneFeatures.filter.longest_cds.proteins.fa 
 rm codingGeneFeatures.filter.longest_cds.tmp
 
 module load blast
-makeblastdb -in codingGeneFeatures.filter.longest_cds.proteins.fa -dbtype prot
-blastp -query codingGeneFeatures.filter.longest_cds.proteins.fa -db codingGeneFeatures.filter.longest_cds.proteins.fa -outfmt 6 -out codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive
+makeblastdb -in protein/codingGeneFeatures.filter.longest_cds.proteins.fa -dbtype prot
+blastp -query protein/codingGeneFeatures.filter.longest_cds.proteins.fa -db codingGeneFeatures.filter.longest_cds.proteins.fa -outfmt 6 -out blast_recursive/codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive
 
-~/annotation_course/course_material/git/GAAS/annotation/Tools/Util/gff/gff_filter_by_mrna_id.pl --gff codingGeneFeatures.filter.longest_cds.gff --blast codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive --outfile codingGeneFeatures.nr.gff
+~/annotation_course/course_material/git/GAAS/annotation/Tools/Util/gff/gff_filter_by_mrna_id.pl --gff codingGeneFeatures.filter.longest_cds.gff --blast blast_recursive/codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive --outfile nonredundant/codingGeneFeatures.nr.gff
 
 
 module load augustus/3.2.3
 
 The sequences need to be converted in a simple genbank format.
 
-gff2gbSmallDNA.pl codingGeneFeatures.nr.gff 4.fa 500 codingGeneFeatures.nr.gbk
+gff2gbSmallDNA.pl nonredundant/codingGeneFeatures.nr.gff 4.fa 500 gff2genbank/codingGeneFeatures.nr.gbk
 
 In order for the test accuracy to be statistically meaningful the test set should also be large enough (100-200 genes). 
 You should split the set of gene structures randomly.
@@ -82,24 +83,22 @@ randomSplit.pl gff2genbank/codingGeneFeatures.nr.gbk 100
 
 What happenned? how can you solve it? what might be the consequences of it? 
 
+
 Train Augustus
 
-Now that you have 
+Now that you have created a det of gene to train augustus, let's train it!
 
-I add to copy that /sw/bioinfo/augustus/2.7/config/species/generic/*
+Augustus need a set of parameters that are provided :
 
+cp -r ~/annotation_course/course_material/augustus_path/ .
 
-Need to copy augustus_path
-
-
-new_species.pl --AUGUSTUS_CONFIG_PATH=Augustus_path --species=dmel
+new_species.pl --AUGUSTUS_CONFIG_PATH=augustus_path --species=dmel_login
 
 AUGUSTUS_CONFIG_PATH=Augustus_path
 
+etraining --species=dmel_login gff2genbank/codingGeneFeatures.nr.gbk.train 
 
-etraining --species=dmel codingGeneFeatures.nr.gbk.train 
-
-augustus --species=dmel coding.nr.gbk.test | tee run.log 
+augustus --species=dmel gff2genbank/coding.nr.gbk.test | tee run.log 
 
 
 Genemark
