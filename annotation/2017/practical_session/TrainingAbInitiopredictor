@@ -3,8 +3,12 @@ Training ab-initio predictor
 From this maker run evidence base we can train our abinitio softwares and then use them for the second run of annotation. 
 You will need a set of genomic sequences with gene structures (sequence coordinates of starts and ends of exons and genes) and the most important part is selected the right set of genes. 
 In many cases, or as a first step towards modelling complete genes, it is sufficient to have only the coding parts of the gene structure (CDS).
+We will only train augustus today as it is one the best ab-initio predictor and one of the hardest to train.
+Maker also support SNAP (Works good, easy to train, not as good as others ab-initio especially on longer intron genomes), GeneMark (Self training, no hints, buggy, not good for fragmented genomes or long introns).
+FGENESH (Works great, costs money even for training) and now EVM.
 
-Exercise 1 -Training Augustus
+
+Training Augustus
 
 Augustus (Works great, hard to train, but getting better)
 
@@ -102,5 +106,3 @@ etraining --species=dmel_login gff2genbank/codingGeneFeatures.nr.gbk.train 
 
 augustus --species=dmel gff2genbank/coding.nr.gbk.test | tee run.log 
 
-
-Genemark
