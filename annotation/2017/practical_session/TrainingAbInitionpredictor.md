@@ -89,7 +89,7 @@ You should split the set of gene structures randomly.
 
 *randomSplit.pl gff2genbank/codingGeneFeatures.nr.gbk 100*
 
-## What happenned? how can you solve it? what might be the consequences of it? 
+- What happenned? how can you solve it? what might be the consequences of it? 
 
 
 ## Train Augustus
@@ -108,4 +108,4 @@ Augustus need a set of parameters that are provided :
 
 *augustus --species=dmel gff2genbank/coding.nr.gbk.test | tee run.log* 
 
-## Look at the accuracy report, what does it mean? why?
+- Look at the accuracy report, what does it mean? why?
