@@ -13,20 +13,20 @@ Room: E10:1309
 **09.00-9.15** Introduction (Elina Staaf, Henrik Lantz)  
 **09.15-10.00** [Lecture: Understanding Annotation](files/Annotation_course_apr2016.ppt) (Henrik Lantz)  
 **10.00-10.15** Coffee break  
-**10.15-10.30** Lecture: Prokaryote annotation (Lucile Soler)
-**10.30-12.00** Exercise: Prokaryote annotation and visualization
-**12.00-13.00** Lunch
-**13.00-13.15**	Summary of prokaryote annotation exercise (Lucile Soler)
+**10.15-10.30** Lecture: Prokaryote annotation (Lucile Soler)  
+**10.30-12.00** Exercise: Prokaryote annotation and visualization (Lucile Soler)  
+**12.00-13.00** Lunch  
+**13.00-13.15**	Summary of prokaryote annotation exercise (Lucile Soler)  
 **13.15-15.00** [Practical 1: Gathering and preparation of data](practical_session/ExcerciseEvidence) (Henrik Lantz, Mahesh Panchal, Lucile Soler)  
-**15.00-15.15** Coffee break 
+**15.00-15.15** Coffee break  
 **15.15-17.00** [Practical 1: Gathering and preparation of data](practical_session/ExcerciseEvidence) (Henrik Lantz, Mahesh Panchal, Lucile Soler)  
 
 **Wednesday 10th**
 
 Room: E10:1309  
-**09.00-9.15** Summary of yesterday’s exercise (Lucile Soler)
+**09.00-9.15** Summary of yesterday’s exercise (Lucile Soler) 
 **09.15-10.00** [Lecture: Structural annotation programs and pipelines](files/BILS_Annot_Methods_2016_pipelines.pdf) (Henrik Lantz)  
-**10.00-10.15** 10.00-10.15	Coffee break
+**10.00-10.15** 10.00-10.15	Coffee break 
 **10.15-12.00** [Practical 2: Structural annotation of eukaryote genomes](practical_session/ExerciseGeneBuilding) (Henrik Lantz, Mahesh Panchal, Lucile Soler)  
 **12.00-13.00** Lunch  
 **13.00-17.00** [Practical 2: Structural annotation of eukaryote genomes](practical_session/ExerciseGeneBuilding) (Henrik Lantz, Mahesh Panchal, Lucile Soler)  
