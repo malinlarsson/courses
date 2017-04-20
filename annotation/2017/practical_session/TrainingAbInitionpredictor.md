@@ -1,4 +1,7 @@
-
+---
+layout: default
+title:  'Training Ab-initio'
+---
 
 # Training ab-initio predictor
 
