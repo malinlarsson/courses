@@ -31,6 +31,8 @@ You will need to symlink all data you will need such as the gff files from the f
 
 ln -s ~/practical2/maker_no_abinitio/annotationByType/maker.gff dmel_results_noAbinitio.gff
 
+COMPILE A SET OF TRAINING AND TEST GENES
+
 First step is to select only the coding genes from the maker.gff file and remove all tRNA
 
 /home/login/course_material/git/GAAS/annotation/Tools/Maker/maker_gff3manager_JD_v8.pl -f dmel_results_noAbinitio.gff -o dmel_results_noAbinitio_clean
@@ -53,33 +55,36 @@ we also need to select the longest ORF
 ~/annotation_course/course_material/scripts/find_longest_CDS.pl -f filter/codingGeneFeatures.filter.gff -o codingGeneFeatures.filter.longest_cds.gff
 
 There are different ways of proceding after the first selection and we are using the approched of spliced alignments of protein sequences of the same or a very closely related species against the assembled genomic sequence.
+In order to do so, we translate our coding genes into proteins, format the protein fasta file to be able to run a recursive blast and then select the best ones.
+Indeed, each sequence can contain one or more genes, the genes can be on either strand. However, the genes must not overlap, and only one transcript per gene is allowed.
 
 gffread -y codingGeneFeatures.filter.longest_cds.tmp -g 4.fa codingGeneFeatures.filter.longest_cds.gff
-
-/home/lucile/annotation_course/2017/course_material/scripts/fix_fasta.sh codingGeneFeatures.filter.longest_cds.tmp > codingGeneFeatures.filter.longest_cds.proteins.fa 
-
-
+~/annotation_course/course_material/scripts/fix_fasta.sh codingGeneFeatures.filter.longest_cds.tmp > codingGeneFeatures.filter.longest_cds.proteins.fa 
 rm codingGeneFeatures.filter.longest_cds.tmp
 
 module load blast
-
 makeblastdb -in codingGeneFeatures.filter.longest_cds.proteins.fa -dbtype prot
-
-
 blastp -query codingGeneFeatures.filter.longest_cds.proteins.fa -db codingGeneFeatures.filter.longest_cds.proteins.fa -outfmt 6 -out codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive
 
+~/annotation_course/course_material/git/GAAS/annotation/Tools/Util/gff/gff_filter_by_mrna_id.pl --gff codingGeneFeatures.filter.longest_cds.gff --blast codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive --outfile codingGeneFeatures.nr.gff
 
-/home/lucile/annotation_course/2017/course_material/git/GAAS/annotation/Tools/Util/gff/gff_filter_by_mrna_id.pl --gff codingGeneFeatures.filter.longest_cds.gff --blast codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive --outfile codingGeneFeatures.nr.gff
 
 module load augustus/3.2.3
 
+The sequences need to be converted in a simple genbank format.
+
 gff2gbSmallDNA.pl codingGeneFeatures.nr.gff 4.fa 500 codingGeneFeatures.nr.gbk
 
-Usually 100 genes are selected but it will not be it in that case (unless pick the full genome) as there is less than 80 genes in the file
+In order for the test accuracy to be statistically meaningful the test set should also be large enough (100-200 genes). 
+You should split the set of gene structures randomly.
 
+randomSplit.pl gff2genbank/codingGeneFeatures.nr.gbk 100
 
-randomSplit.pl gff2genbank/codingGeneFeatures.nr.gbk 70
+What happenned? how can you solve it? what might be the consequences of it? 
 
+Train Augustus
+
+Now that you have 
 
 I add to copy that /sw/bioinfo/augustus/2.7/config/species/generic/*
 
