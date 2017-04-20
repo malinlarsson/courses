@@ -117,7 +117,7 @@ Next, we will annotate the genome of the fruit fly _Drosophila melanogaster_. Fi
 
 [Running Maker without ab-initio predictions](ExcerciseMakerNoAbinit)
 
-[Training ab-initio predictor](TrainingAbInitionpredictor)
+[Training ab-initio predictor](TrainingAbInitiopredictor)
 
 [Running Maker with ab-initio predictions](ExcerciseMakerAbinit)
 ### Inspecting the output
