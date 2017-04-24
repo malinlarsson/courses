@@ -1,12 +1,12 @@
 ---
 layout: default
-title:  'Introduction to Genome Annotation - April 2016'
+title:  'Introduction to Genome Annotation - May 2017'
 ---
  
 
 # Introduction to Genome Annotation
 
-Held in Uppsala April 26-27, 2016.
+Held in Uppsala May 9th-11th, 2017.
 
 ## Important Links
 [Pre-course material](precourse)  
@@ -17,7 +17,6 @@ Held in Uppsala April 26-27, 2016.
 [Map over Uppsala](http://www.uppsalakartan.se/)  
 [Map over Uppsala biomedical center, BMC](bmc)  
 [Travel Info](travel)  
-[Restaurant Koh Phangan](http://www.kohphangan.se/#)  
 [TO DO AND EAT in Uppsala](http://www.destinationuppsala.se/en/)
 
 ## Helpful Things
