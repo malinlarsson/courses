@@ -10,7 +10,7 @@ title:  'Travel'
 
 Single tickets are possible to buy at trams (but not from driver).
 
-Please see [www.vasttrafik.se](www.vasttrafik.se) for times of departures/arrivals.
+Please see [www.vasttrafik.se](http://www.vasttrafik.se) for times of departures/arrivals.
 
 All lectures and exercises are at Medicinarberget close to Sahlgrenska Hospital. (Restaurant In Contro is located at Svenska Mässan at Korsvägen.) Depending on where you live you may be in walking distance.
 
