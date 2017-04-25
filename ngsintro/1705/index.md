@@ -13,8 +13,8 @@ Held in Gothenburg May 15-19, 2017.
 [Schedule](schedule)  
 
 ## Maps & Travel Info
-[Map over Gothenburg](https://goo.gl/maps/VbczQ)
-[Map over Gothenburg University](http://www.gu.se/kontakt/hitta-pa-gu)
+[Map over Gothenburg](https://goo.gl/maps/VbczQ)  
+[Map over Gothenburg University](http://www.gu.se/kontakt/hitta-pa-gu)  
 [Travel Info](travel)  
 
 ## Helpful Things
