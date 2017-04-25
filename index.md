@@ -22,6 +22,7 @@ title:  'Welcome'
 [2016 September - Uppsala](ngsintro/1609/)  
 [2016 November - Umeå](ngsintro/1611/)  
 [2017 January - Uppsala](ngsintro/1701/)
+[2017 May - Gothenburg](ngsintro/1705/)
 
 ### Introduction to Genome Annotation
 
