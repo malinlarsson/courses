@@ -1,20 +1,20 @@
 ---
 layout: default
-title:  'Introduction to Bioinformatics Using NGS Data - November 2016'
+title:  'Introduction to Bioinformatics Using NGS Data - May 2017'
 ---
 
 
 # Introduction to Bioinformatics Using NGS Data
 
-Held in Uppsala January 23-27, 2017.
+Held in Gothenburg May 15-19, 2017.
 
 ## Important Links
 [Pre-course material](precourse)   
 [Schedule](schedule)  
 
 ## Maps & Travel Info
-[Map over Uppsala](https://www.google.se/maps/@59.8557755,17.6369985,13.5z)  
-[Map over Uppsala Biomedical Centre (BMC)](../common/images/bmc_map.jpg)  
+[Map over Gothenburg](https://goo.gl/maps/VbczQ)
+[Map over Gothenburg University](http://www.gu.se/kontakt/hitta-pa-gu)
 [Travel Info](travel)  
 
 ## Helpful Things
