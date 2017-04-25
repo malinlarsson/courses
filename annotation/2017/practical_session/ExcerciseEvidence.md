@@ -3,7 +3,7 @@ layout: default
 title:  'Exercise Evidence'
 ---
 
-#Preparing evidence data for annotation
+# Preparing evidence data for annotation
 
 This exercise is meant to get you acquainted with the type of data you would normally encounter in an annotation project. You will get an idea of where to download protein sequences, and also try out some programs that often are used. We will for all exercises use data for the fruit fly, Drosophila melanogaster, as that is one of the currently best annotated organisms and there is plenty of high quality data available.
 
@@ -94,22 +94,7 @@ Run augustus on the same genome file but using settings for yeast instead (chang
 
 Load this result file into Webapollo and compare with your earlier results. Can you based on this draw any conclusions about how a typical yeast gene differs from a typical Drosophila gene?
 
-##3. Assembling transcripts based on rna-seq data
-
-Rna-seq data is in general very useful in annotation projects as the data usually comes from the actual organism you study and thus avoids the danger of introducing errors caused by differences in gene structure between your study organism and other species.
-
-The program Cufflinks can be used to assemble transcripts from mapped rna-seq reads. First the reads need to be mapped to the genome, and we prefer using the mapper Tophat2 as it belongs to the same family of programs as Cufflinks and is splice-aware. The result from Tophat2 is a BAM-file, a binary file with the coordinates of all mapped reads. We have in this practical already created such a file for you for chromosome 4 of D. melanogaster, and you can find it in course\_data/dmel/chromosome\_4/bam/.
-
-**_Exercise 7_ - Cufflinks:**  
-Load the Cufflinks module using ‘module load cufflinks/2.2.1’. By typing ‘cufflinks’ you will get a list of the parameters you can change and also see the default values for each parameter.
-
-Then run Cufflinks on the supplied BAM-file using:  
-*cufflinks -o outdir -p 8 -b /home/__login__/annotation\_course/course\_material/data/dmel/chromosome\_4/chromosome/4.fa -u /home/__login__/annotation\_course/course\_material/data/dmel/chromosome\_4/bam/accepted\_hits.chr4.bam*  
-
-When done you can find your results in the directory ‘outdir’. The file transcripts.gtf includes your assembled transcripts.
-As Webapollo doesn't like the gtf format file you should convert it in gff3 format (cf. Exercise 5). Then, transfer the gff3 file to your computer and load it into [Webapollo](http://bils-web.imbim.uu.se/drosophila_melanogaster). How well does it compare with your Augustus results? Looking at your results, are you happy with the default values of Cufflinks (which we used in this exercise) or is there something you would like to change?
-
-##4. Checking the gene space of your assembly.
+##3. Checking the gene space of your assembly.
 
 Cegma is a program that includes sequences of 248 core proteins. These proteins are conserved and should be present in all eukaryotes. Cegma will try to align these proteins to your genomic sequence and report to you the number of proteins that are successfully aligned. This percentage can be used as a measure of how complete your assembly is. 
 
@@ -117,7 +102,8 @@ BUSCO provides measures for quantitative assessment of genome assembly, gene set
 
 ***Note:*** In a real-world scenario, this step should come first and foremost. Indeed, if the result is under your expectation you might be required to enhance your assembly before to go further. As running Cegma is taking a while, we have chosen to do it at the end of this practical session. You should also open a new tab and launch BUSCO. The results should be available after the lunch.  
 
-**_Exercise 8_ - Cegma -:**  
+
+**_Exercise 7_ - Cegma -:**  
 
 Here you will try Cegma on Chromosome 4 of Drosophila melanogaster.First, load cegma by typing 'module load cegma'. The problem is that the file ‘4.fa’ has fasta-headers that are only numbers, and Cegma won’t accept that. Can you figure out how to change the fasta header to ‘chr4’ rather than just ‘4’ using the linux command sed? Ask the teachers if you are having problems, or cheat by using the already parsed file 4_parsed.fa. :)
 
@@ -125,7 +111,7 @@ Here you will try Cegma on Chromosome 4 of Drosophila melanogaster.First, load c
 
 When done, check the output.completeness_report. How many proteins are reported as complete? Does this sound reasonable?
 
-**_Exercise 9_ - BUSCO -:**
+**_Exercise 8_ - BUSCO -:**
 
 You will run BUSCO on chromosome 4 of Drosophila melanogaster. We will select the lineage set of arthropoda.
 
@@ -135,3 +121,43 @@ _module load BUSCO_
 *BUSCO -g /home/__login__/annotation\_course/course\_material/data/dmel/chromosome\_4/chromosome/4.fa -o 4\_dmel_busco -c 8 -l /sw/apps/bioinfo/BUSCO/1.1b1/lineage_sets/arthropoda*
 
 When done, check the short\_summary\_4\_dmel\_busco. How many proteins are reported as complete? Does this sound reasonable?
+
+
+
+##4. Assembling transcripts based on rna-seq data
+
+Rna-seq data is in general very useful in annotation projects as the data usually comes from the actual organism you study and thus avoids the danger of introducing errors caused by differences in gene structure between your study organism and other species.
+
+Important remarks:
+- Check if RNAseq are paired or not. Last generation of sequenced short reads (since 2013) are almost all paired. Anyway, it is important to check that information, which will be useful for the tools used in the next steps.
+- Check if RNAseq are stranded. Indeed this information will be useful for the tools used in the next steps. (In general way we recommend to use stranded RNAseq to avoid transcript fusion during the transcript assembly process. That gives more reliable results. )
+- Left / L / forward / 1 are identical meaning. It is the same for Right / R /Reverse / 2
+
+**_Exercise 9_ - Cufflinks:**  
+
+Checking encoding version
+
+To check the technology used to sequences the RNAseq and get some extra information we have to use fastqc tool.
+
+module load fastqc
+ mkdir fastqc_reports
+ for i in *.left.* ;do fastqc $i -o fastqc_reports;done
+
+Edit
+Checking the fastq quality score format
+
+~/git/BILS/GAAP/annotation/Tools/Util/fastqFormatDetect.pl fastq_file.fastq
+
+In the normal mode, it differentiates between Sanger/Illumina1.8+ and Solexa/Illumina1.3+/Illumina1.5+.
+In the advanced mode, it will try to pinpoint exactly which scoring system is used.
+
+The program Cufflinks can be used to assemble transcripts from mapped rna-seq reads. First the reads need to be mapped to the genome, and we prefer using the mapper Tophat2 as it belongs to the same family of programs as Cufflinks and is splice-aware. The result from Tophat2 is a BAM-file, a binary file with the coordinates of all mapped reads. We have in this practical already created such a file for you for chromosome 4 of D. melanogaster, and you can find it in course\_data/dmel/chromosome\_4/bam/.
+
+
+ **_Exercise 9_ - Cufflinks:**  
+
+When done you can find your results in the directory ‘outdir’. The file transcripts.gtf includes your assembled transcripts.
+As Webapollo doesn't like the gtf format file you should convert it in gff3 format (cf. Exercise 5). Then, transfer the gff3 file to your computer and load it into [Webapollo](http://bils-web.imbim.uu.se/drosophila_melanogaster). How well does it compare with your Augustus results? Looking at your results, are you happy with the default values of Cufflinks (which we used in this exercise) or is there something you would like to change?
+
+
+
