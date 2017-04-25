@@ -21,7 +21,6 @@ Here are links to some manuals.
 You don't have to read through all of it, but you should get a glimps of what it will be like to use the software.
 The top three are discussion fora, which could be useful to answer questions that are not covered by the manuals.
 
-Biosupport.se: [http://biosupport.se/](http://biosupport.se/)  
 Biostar: [http://www.biostars.org/](http://www.biostars.org/)  
 SeqAnswers: [http://seqanswers.com/](http://seqanswers.com/)  
 Utbildningsradion: [https://www.youtube.com/watch?v=zQ-e9SuoWXo](https://www.youtube.com/watch?v=zQ-e9SuoWXo)
