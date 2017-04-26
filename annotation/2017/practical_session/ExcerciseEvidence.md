@@ -7,7 +7,7 @@ title:  'Exercise Evidence'
 
 This exercise is meant to get you acquainted with the type of data you would normally encounter in an annotation project. You will get an idea of where to download protein sequences, and also try out some programs that often are used. We will for all exercises use data for the fruit fly, Drosophila melanogaster, as that is one of the currently best annotated organisms and there is plenty of high quality data available.
 
-##1. Obtaining data
+## 1. Obtaining data
 
 <u>**Swissprot:**</u> Uniprot is an excellent source for high quality protein sequences. The main site can be found at [http://www.uniprot.org](http://www.uniprot.org). This is also the place to find Swissprot, a collection of manually curated non-redundant proteins that cover a wide range of organisms while still being manageable in size.
 
@@ -29,7 +29,7 @@ Navigate the Refseq ftp site to find the invertebrate collection of protein sequ
 **_Exercise 4_ - Ensembl Biomart:**  
 Go to Biomart at [http://www.ensembl.org/biomart/martview](http://www.ensembl.org/biomart/martview) and use it to download all protein sequences for chromosome 4 in Drosophila melanogaster. Once you have downloaded the file, use some command line magic to figure out how many sequences are included in the file. Please ask the teachers if you are having problems here.
 
-##2. Running an ab initio gene finder
+## 2. Running an ab initio gene finder
 
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](LoginInstructions).
 
@@ -87,7 +87,7 @@ Run augustus on the same genome file but using settings for yeast instead (chang
 
 Load this result file into Webapollo and compare with your earlier results. Can you based on this draw any conclusions about how a typical yeast gene differs from a typical Drosophila gene?
 
-##3. Checking the gene space of your assembly.
+## 3. Checking the gene space of your assembly.
 
 Cegma is a program that includes sequences of 248 core proteins. These proteins are conserved and should be present in all eukaryotes. Cegma will try to align these proteins to your genomic sequence and report to you the number of proteins that are successfully aligned. This percentage can be used as a measure of how complete your assembly is. 
 
@@ -125,40 +125,98 @@ When done, check the short\_summary\_4\_dmel\_busco. How many proteins are repor
 
 
 
-##4. Assembling transcripts based on rna-seq data
+## 4. Assembling transcripts based on rna-seq data
 
-Rna-seq data is in general very useful in annotation projects as the data usually comes from the actual organism you study and thus avoids the danger of introducing errors caused by differences in gene structure between your study organism and other species.
+Rna-seq data is in general very useful in annotation projects as the data usually comes from the actual organism you are studying and thus avoids the danger of introducing errors caused by differences in gene structure between your study organism and other species.
 
-Important remarks:
+Important remarks to remmenber before starting working with RNA-seq:
 - Check if RNAseq are paired or not. Last generation of sequenced short reads (since 2013) are almost all paired. Anyway, it is important to check that information, which will be useful for the tools used in the next steps.
 - Check if RNAseq are stranded. Indeed this information will be useful for the tools used in the next steps. (In general way we recommend to use stranded RNAseq to avoid transcript fusion during the transcript assembly process. That gives more reliable results. )
 - Left / L / forward / 1 are identical meaning. It is the same for Right / R /Reverse / 2
 
-**_Exercise 9_ - Cufflinks:**  
+**_Exercise 9_ - RNA-seq assembly genome based:**  
 
-Checking encoding version
+# Checking encoding version and fastq quality score format
 
 To check the technology used to sequences the RNAseq and get some extra information we have to use fastqc tool.
 
-module load fastqc
- mkdir fastqc_reports
+_module load bioinfo-tools_
+_module load fastQC/0.11.5_
 
+*mkdir fastqc_reports*
 
-Edit
+*fastqc ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq.gz -o fastqc_reports/*
+
+scp the html file resulting of fastqc (cf. exercise 4), what kind of result do you have?
+
 Checking the fastq quality score format
 
-~/git/BILS/GAAP/annotation/Tools/Util/fastqFormatDetect.pl fastq_file.fastq
+*~/annotation_course/course_material/git/GAAS/annotation/Tools/Util/fastqFormatDetect.pl ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq.gz*
 
 In the normal mode, it differentiates between Sanger/Illumina1.8+ and Solexa/Illumina1.3+/Illumina1.5+.
 In the advanced mode, it will try to pinpoint exactly which scoring system is used.
 
-The program Cufflinks can be used to assemble transcripts from mapped rna-seq reads. First the reads need to be mapped to the genome, and we prefer using the mapper Tophat2 as it belongs to the same family of programs as Cufflinks and is splice-aware. The result from Tophat2 is a BAM-file, a binary file with the coordinates of all mapped reads. We have in this practical already created such a file for you for chromosome 4 of D. melanogaster, and you can find it in course\_data/dmel/chromosome\_4/bam/.
+More test can be made and should be made on RNA-seq data before doing the assembly, we have not time to do all of them during this course. have a look [here](https://en.wikipedia.org/wiki/List_of_RNA-Seq_bioinformatics_tools)
 
+# Trimmomatic/Tophat/Stringtie (mapping reads to genome)
 
- **_Exercise 9_ - Cufflinks:**  
+Trimmomatic
+
+[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) performs a variety of useful trimming tasks for illumina paired-end and single ended data.The selection of trimming steps and their associated parameters are supplied on the command line.
+
+*mkdir trimmomatic*
+_module load bioinfo-tools_
+_module load trimmomatic/0.36_
+
+The following command line will perform the following:
+	• Remove adapters (ILLUMINACLIP:TruSeq3-PE.fa:2:30:10)
+	• Remove leading low quality or N bases (below quality 3) (LEADING:3)
+	• Remove trailing low quality or N bases (below quality 3) (TRAILING:3)
+	• Scan the read with a 4-base wide sliding window, cutting when the average quality per base drops below 15 (SLIDINGWINDOW:4:15)
+	• Drop reads below the 36 bases long (MINLEN:36)
+
+*java -jar /sw/apps/bioinfo/trimmomatic/0.32/milou/trimmomatic-0.32.jar PE -threads 8 ~/annotation_course/2017/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq.gz ~/annotation_course/2017/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.right.fastq.gz trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.left_unpaired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz trimmomatic/ERR305399.right_unpaired.fastq.gz ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.32/milou/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36*
+
+Tophat
+
+Once the reads have been trimmed, we use [tophat](https://ccb.jhu.edu/software/tophat/index.shtml) to align the RNA-seq reads to a genome in order to identify exon-exon splice junctions. It is built on the ultrafast short read mapping program [Bowtie](http://bowtie-bio.sourceforge.net/index.shtml).
+
+*mkdir tophat*
+
+*module load tophat/2.0.11
+module load bowtie2/2.2.3
+module load samtools/0.1.19
+module load perl
+module load perl_modules*
+
+*tophat --library-type=fr-firststrand chr4 trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz*
+
+This step will take a really long time so you can use the bam file located here ~/annotation_course/course_material/data/dmel/chromosome_4/RNAseq/tophat/accepted_hits.bam
+
+Stringtie
+
+StringTie is a fast and highly efficient assembler of RNA-Seq alignments into potential transcripts. It uses a novel network flow algorithm as well as an optional de novo assembly step to assemble and quantitate full-length transcripts representing multiple splice variants for each gene locus. Its input can include not only the alignments of raw reads used by other transcript assemblers, but also alignments longer sequences that have been assembled from those reads.
+
+module load bioinfo-tools
+module load StringTie
+
+stringtie accepted_hits.bam -o outdir/transcripts.gtf
 
 When done you can find your results in the directory ‘outdir’. The file transcripts.gtf includes your assembled transcripts.
-As Webapollo doesn't like the gtf format file you should convert it in gff3 format (cf. Exercise 5). Then, transfer the gff3 file to your computer and load it into [Webapollo](http://bils-web.imbim.uu.se/drosophila_melanogaster). How well does it compare with your Augustus results? Looking at your results, are you happy with the default values of Cufflinks (which we used in this exercise) or is there something you would like to change?
+As Webapollo doesn't like the gtf format file you should convert it in gff3 format (cf. Exercise 5). Then, transfer the gff3 file to your computer and load it into [Webapollo](http://bils-web.imbim.uu.se/drosophila_melanogaster). How well does it compare with your Augustus results? Looking at your results, are you happy with the default values of Stringtie (which we used in this exercise) or is there something you would like to change?
+
+# Trinity (de-novo assembly)
+
+Trinity assemblies can be used as complemetary evidence, particularly when trying to polish a gene build with Pasa. Before you start, check how big the raw read data is that you wish to assemble to avoid unreasonably long run times.
+
+*module load bioinfo-tools
+module load perl
+module load perl_modules
+module load trinity/2.0.6
+module load java/sun_jdk1.7.0_25
+module load samtools*
+
+*Trinity --seqType fq --max_memory 64G --left ~/annotation_course/2017/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq --right ~/annotation_course/2017/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.right.fastq --CPU 8 --output trinity_result --SS_lib_type RF* 
 
 
-
+Trinity takes a long time to run if you want to have a look at the results, look in ~/annotation_course/course_material/data/dmel/chromosome_4/RNAseq/ the output that will be used later on for the annotation will be Trinity.fasta
