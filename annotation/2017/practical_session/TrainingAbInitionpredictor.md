@@ -73,7 +73,7 @@ Indeed, each sequence can contain one or more genes, the genes can be on either 
 
 *rm codingGeneFeatures.filter.longest_cds.tmp*
 
-*module load blast  
+*module load blast*  
 
 *makeblastdb -in protein/codingGeneFeatures.filter.longest_cds.proteins.fa -dbtype prot*  
 
