@@ -15,9 +15,9 @@ Before going into the exercises below, you should create in your home folder a s
 
 *cd annotation_course/*
 
-*mkdir practical2*  
+*mkdir practical3*  
 
-*cd practical2*  
+*cd practical3*  
 
 This course\_material folder is write-proteced, it is only a resource for you to obtain data from, but not where you are writing your own outputs to!
 
@@ -60,6 +60,8 @@ course\_material/data/dmel
   - annotation/
   
   - cegma/
+  
+  - RNAseq/
 
 - full_genome/
 
@@ -68,7 +70,9 @@ course\_material/data/blastdb/
 
 course\_material/git/
 
-course\_material/lib/
+course\_material/lib/  
+
+course\_material/augustus_path/
 
 The folder git contains scripts that we will use to analyse or format data. 
 the folder lib contains perl library required by perl script.
