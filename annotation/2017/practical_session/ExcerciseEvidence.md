@@ -160,7 +160,7 @@ More test can be made and should be made on RNA-seq data before doing the assemb
 
 ### Trimmomatic/Tophat/Stringtie (mapping reads to genome)
 
-Trimmomatic
+#### Trimmomatic
 
 [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) performs a variety of useful trimming tasks for illumina paired-end and single ended data.The selection of trimming steps and their associated parameters are supplied on the command line.
 
@@ -177,23 +177,23 @@ The following command line will perform the following:
 
 *java -jar /sw/apps/bioinfo/trimmomatic/0.32/milou/trimmomatic-0.32.jar PE -threads 8 ~/annotation_course/2017/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq.gz ~/annotation_course/2017/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.right.fastq.gz trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.left_unpaired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz trimmomatic/ERR305399.right_unpaired.fastq.gz ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.32/milou/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36*
 
-Tophat
+#### Tophat
 
 Once the reads have been trimmed, we use [tophat](https://ccb.jhu.edu/software/tophat/index.shtml) to align the RNA-seq reads to a genome in order to identify exon-exon splice junctions. It is built on the ultrafast short read mapping program [Bowtie](http://bowtie-bio.sourceforge.net/index.shtml).
 
 *mkdir tophat*
 
-*module load tophat/2.0.11 
-module load bowtie2/2.2.3 
-module load samtools/0.1.19 
-module load perl 
-module load perl_modules* 
+*module load tophat/2.0.11* 
+*module load bowtie2/2.2.3* 
+*module load samtools/0.1.19* 
+*module load perl* 
+*module load perl_modules* 
 
 *tophat --library-type=fr-firststrand chr4 trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz*
 
 This step will take a really long time so you can use the bam file located here ~/annotation_course/course_material/data/dmel/chromosome_4/RNAseq/tophat/accepted_hits.bam
 
-Stringtie
+#### Stringtie
 
 StringTie is a fast and highly efficient assembler of RNA-Seq alignments into potential transcripts. It uses a novel network flow algorithm as well as an optional de novo assembly step to assemble and quantitate full-length transcripts representing multiple splice variants for each gene locus. Its input can include not only the alignments of raw reads used by other transcript assemblers, but also alignments longer sequences that have been assembled from those reads.
 
@@ -205,16 +205,16 @@ stringtie accepted_hits.bam -o outdir/transcripts.gtf
 When done you can find your results in the directory ‘outdir’. The file transcripts.gtf includes your assembled transcripts.
 As Webapollo doesn't like the gtf format file you should convert it in gff3 format (cf. Exercise 5). Then, transfer the gff3 file to your computer and load it into [Webapollo](http://bils-web.imbim.uu.se/drosophila_melanogaster). How well does it compare with your Augustus results? Looking at your results, are you happy with the default values of Stringtie (which we used in this exercise) or is there something you would like to change?
 
-# Trinity (de-novo assembly)
+### Trinity (de-novo assembly)
 
 Trinity assemblies can be used as complemetary evidence, particularly when trying to polish a gene build with Pasa. Before you start, check how big the raw read data is that you wish to assemble to avoid unreasonably long run times.
 
-*module load bioinfo-tools 
-module load perl 
-module load perl_modules 
-module load trinity/2.0.6 
-module load java/sun_jdk1.7.0_25 
-module load samtools* 
+*module load bioinfo-tools* 
+*module load perl* 
+*module load perl_modules* 
+*module load trinity/2.0.6* 
+*module load java/sun_jdk1.7.0_25* 
+*module load samtools* 
 
 *Trinity --seqType fq --max_memory 64G --left ~/annotation_course/2017/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq --right ~/annotation_course/2017/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.right.fastq --CPU 8 --output trinity_result --SS_lib_type RF* 
 
