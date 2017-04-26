@@ -136,7 +136,7 @@ Important remarks to remmenber before starting working with RNA-seq:
 
 **_Exercise 9_ - RNA-seq assembly genome based:**  
 
-# Checking encoding version and fastq quality score format
+### Checking encoding version and fastq quality score format
 
 To check the technology used to sequences the RNAseq and get some extra information we have to use fastqc tool.
 
@@ -158,15 +158,15 @@ In the advanced mode, it will try to pinpoint exactly which scoring system is us
 
 More test can be made and should be made on RNA-seq data before doing the assembly, we have not time to do all of them during this course. have a look [here](https://en.wikipedia.org/wiki/List_of_RNA-Seq_bioinformatics_tools)
 
-# Trimmomatic/Tophat/Stringtie (mapping reads to genome)
+### Trimmomatic/Tophat/Stringtie (mapping reads to genome)
 
 Trimmomatic
 
 [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) performs a variety of useful trimming tasks for illumina paired-end and single ended data.The selection of trimming steps and their associated parameters are supplied on the command line.
 
-*mkdir trimmomatic*
-_module load bioinfo-tools_
-_module load trimmomatic/0.36_
+*mkdir trimmomatic* 
+_module load bioinfo-tools_ 
+_module load trimmomatic/0.36_ 
 
 The following command line will perform the following:
 	• Remove adapters (ILLUMINACLIP:TruSeq3-PE.fa:2:30:10)
@@ -183,11 +183,11 @@ Once the reads have been trimmed, we use [tophat](https://ccb.jhu.edu/software/t
 
 *mkdir tophat*
 
-*module load tophat/2.0.11
-module load bowtie2/2.2.3
-module load samtools/0.1.19
-module load perl
-module load perl_modules*
+*module load tophat/2.0.11 
+module load bowtie2/2.2.3 
+module load samtools/0.1.19 
+module load perl 
+module load perl_modules* 
 
 *tophat --library-type=fr-firststrand chr4 trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz*
 
@@ -197,8 +197,8 @@ Stringtie
 
 StringTie is a fast and highly efficient assembler of RNA-Seq alignments into potential transcripts. It uses a novel network flow algorithm as well as an optional de novo assembly step to assemble and quantitate full-length transcripts representing multiple splice variants for each gene locus. Its input can include not only the alignments of raw reads used by other transcript assemblers, but also alignments longer sequences that have been assembled from those reads.
 
-module load bioinfo-tools
-module load StringTie
+*module load bioinfo-tools* 
+*module load StringTie* 
 
 stringtie accepted_hits.bam -o outdir/transcripts.gtf
 
@@ -209,12 +209,12 @@ As Webapollo doesn't like the gtf format file you should convert it in gff3 form
 
 Trinity assemblies can be used as complemetary evidence, particularly when trying to polish a gene build with Pasa. Before you start, check how big the raw read data is that you wish to assemble to avoid unreasonably long run times.
 
-*module load bioinfo-tools
-module load perl
-module load perl_modules
-module load trinity/2.0.6
-module load java/sun_jdk1.7.0_25
-module load samtools*
+*module load bioinfo-tools 
+module load perl 
+module load perl_modules 
+module load trinity/2.0.6 
+module load java/sun_jdk1.7.0_25 
+module load samtools* 
 
 *Trinity --seqType fq --max_memory 64G --left ~/annotation_course/2017/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq --right ~/annotation_course/2017/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.right.fastq --CPU 8 --output trinity_result --SS_lib_type RF* 
 
