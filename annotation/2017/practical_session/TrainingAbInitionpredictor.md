@@ -13,7 +13,7 @@ Maker also support SNAP (Works good, easy to train, not as good as others ab-ini
 FGENESH (Works great, costs money even for training) and now EVM.
 
 
-## [Training Augustus](http://www.vcru.wisc.edu/simonlab/bioinformatics/programs/augustus/docs/tutorial2015/training.html)
+## Training Augustus
 
 First you need to write the librabries path you will need in .bash_profile to perform the following analyses.
 
@@ -111,4 +111,4 @@ please use the path where you copied augustus_path in the Busco exercise yesterd
 
 *augustus --species=dmel gff2genbank/codingGeneFeatures.nr.gbk.test | tee run.log* 
 
-- Look at the accuracy report, what does it mean? why?
+- Look at the accuracy report, what does it mean? why? see [Training Augustus](http://www.vcru.wisc.edu/simonlab/bioinformatics/programs/augustus/docs/tutorial2015/training.html)
