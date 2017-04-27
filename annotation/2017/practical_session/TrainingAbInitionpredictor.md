@@ -13,7 +13,7 @@ Maker also support SNAP (Works good, easy to train, not as good as others ab-ini
 FGENESH (Works great, costs money even for training) and now EVM.
 
 
-## Training Augustus
+## [Training Augustus](http://www.vcru.wisc.edu/simonlab/bioinformatics/programs/augustus/docs/tutorial2015/training.html)
 
 First you need to write the librabries path you will need in .bash_profile to perform the following analyses.
 
