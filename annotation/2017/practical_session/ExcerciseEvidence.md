@@ -111,7 +111,7 @@ You will run BUSCO on chromosome 4 of Drosophila melanogaster. We will select th
 
 BUSCO2 is using augustus to run, as we have no administator rights on uppmax we need to copy the config file of augustus in folder we can right in and set up de the environment.
 
-*ln -s ~/annotation_course/course_material/augustus_path*
+*cp -r ~/annotation_course/course_material/augustus_path*
 
 AUGUSTUS_config_PATH=augustus_path
 
