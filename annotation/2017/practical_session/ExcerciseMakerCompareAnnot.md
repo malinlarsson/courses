@@ -9,7 +9,21 @@ In this exercise you will take the three annotations you have created for Drosop
 
 ## Evaluating annotation quality
 
-Evaluating an annotation can be done in two ways - in comparison with another annotation (see below) or in reference to the evidence alignments. The former isn't so much a quality check as a measure of congruency - i.e. the resulting numbers don't tell you which of the two gene builds is more correct. On the other hand, a comparison with evidence alignments is what Maker uses internally to select gene models. After syntheszing and annotating loci, the resulting model will be ranked against the filtered evidence alignments. The more congruent these two points of information are, the lower the 'annotation edit distance' (AED) will be. The AED score can be used to e.g. check an annotation for problematic models that may then be subjected to manual curation.
+Evaluating an annotation can be done in three ways - running busco but with the proteins obtained from the annotation, in comparison with another annotation or in reference to the evidence alignments. The former isn't so much a quality check as a measure of congruency - i.e. the resulting numbers don't tell you which of the two gene builds is more correct. On the other hand, a comparison with evidence alignments is what Maker uses internally to select gene models. After syntheszing and annotating loci, the resulting model will be ranked against the filtered evidence alignments. The more congruent these two points of information are, the lower the 'annotation edit distance' (AED) will be. The AED score can be used to e.g. check an annotation for problematic models that may then be subjected to manual curation.
+
+### BUSCO2
+
+BUSCO is run before annotating to check if the assembly is good and therefore if the annotation will be good. It is also run after the structural annotation to then compare if we indeed find a number of genes corresponding of the first run of busco.
+
+you will need to link the protein file created by maker on the run with the abinitio
+
+*module load BUSCO/2.0.1
+
+*ln -s ~/PATH/maker_dmel_with_annotation/maker_with_abinition/annotations.proteins.fa*   
+
+*BUSCO -i annotations.proteins.fa -o dmel_maker_abinitio -m prot -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/arthropoda -o dmel_maker_abinitio*   
+
+- if you compare with you first busco results what do you see?
 
 ## Comparing annotations
 
@@ -23,15 +37,15 @@ First you need to write the path of librabries,  you will need,  in the bash\_pr
 
 If it isn't loaded anymore, reload it:
 
-*module load Bioperl*
+*module load BioPerl/1.6.924_Perl5.18.4*
 
-## Preparing the input files
+### Preparing the input files
 First you have to be situated in a folder containing the two maker annotations (with and without ab initio) and the augustus annotation. Then, copy or sym-link the EnsEMBL reference annotation that we provided you. Hint: The EnsEMBL annotation for chromosome 4 should be located in the folder course\_material/data/dmel/chromosome\_4/annotation.  
 Now we have to do a couple of things: convert the EnsEMBL reference annotation from GTF format to GFF3 and then sort any GFF3-formatted annotation in a way that genometools accepts.  
-*~/annotation_course/course_material/git/GAAS/annotation/Tools/Converter/gtf2gff3_universal.pl -gtf drosophila\_melanogaster.gtf -o drosophila\_melanogaster.gff*
+*~/annotation_course/course_material/git/GAAS/annotation/Tools/Converter/gxf_to_gff3.pl -gtf drosophila\_melanogaster.chr4.gtf -o drosophila\_melanogaster.gff*
 
 you need to unload Bioperl to be able to load GenomeTools 
-*module unload BioPerl*
+*module unload BioPerl/1.6.924_Perl5.18.4*
 
 *module load Genometools*
 
