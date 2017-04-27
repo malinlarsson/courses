@@ -13,7 +13,7 @@ Let's do this step-by-step:
 
 Create a new folder for the first Maker run:
 
-*cd ~/practical2/*  
+*cd ~/practical3/*  
 <i>mkdir maker\_dmel\_no\_abinitio</i>  
 <i>cd maker\_dmel\_no\_abinitio</i>
 
