@@ -73,7 +73,7 @@ _module load perl_
 _module load perl_modules_  
 _module load BioPerl/1.6.24_PERL5.18.5_  
 
-*~/annotation\_course/course\_material/git/GAAS/annotation/Tools/Converter/gxf_to_gff3.pl -g augustus_drosophila.gtf -o augustus_drosophila.gff3*
+*~/annotation\_course/course\_material/git/GAAS/annotation/Tools/Converter/gxf_to_gff3.pl -g augustus_drosophila.gtf -o augustus_drosophila.gff3 --gff_version 2*
 
 Transfer the augustus\_drosophila.gff3 to your computer using scp:    
 *scp __login__@milou.uppmax.uu.se:/home/__login__/annotation\_course/practical1/augustus\_drosophila.gff3 .*  
@@ -168,12 +168,12 @@ More test can be made and should be made on RNA-seq data before doing the assemb
 _module load bioinfo-tools_  
 _module load trimmomatic/0.36_  
 
-The following command line will perform the following:
-	• Remove adapters (ILLUMINACLIP:TruSeq3-PE.fa:2:30:10)
-	• Remove leading low quality or N bases (below quality 3) (LEADING:3)
-	• Remove trailing low quality or N bases (below quality 3) (TRAILING:3)
-	• Scan the read with a 4-base wide sliding window, cutting when the average quality per base drops below 15 (SLIDINGWINDOW:4:15)
-	• Drop reads below the 36 bases long (MINLEN:36)
+The following command line will perform the following:  
+	• Remove adapters (ILLUMINACLIP:TruSeq3-PE.fa:2:30:10)  
+	• Remove leading low quality or N bases (below quality 3) (LEADING:3)  
+	• Remove trailing low quality or N bases (below quality 3) (TRAILING:3)  
+	• Scan the read with a 4-base wide sliding window, cutting when the average quality per base drops below 15 (SLIDINGWINDOW:4:15)  
+	• Drop reads below the 36 bases long (MINLEN:36)  
 
 *java -jar /sw/apps/bioinfo/trimmomatic/0.32/milou/trimmomatic-0.32.jar PE -threads 8 ~/annotation_course/2017/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq.gz ~/annotation_course/2017/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.right.fastq.gz trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.left_unpaired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz trimmomatic/ERR305399.right_unpaired.fastq.gz ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.32/milou/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36*
 
