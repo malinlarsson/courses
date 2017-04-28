@@ -24,7 +24,7 @@ Complex, non-systematic errors are harder to rectify by just rerunning the pipel
 
 Manual curation is an integral part of any annotation project. It irons out issues that exist in the gene build and can be used to add further detail - like references to external data sources, or isoforms etc.
 
-The aim of manual curation is to compare a gene model against existing evidence from sources such as ab-initio predictions, protein alignments, RNA-seq as well as related species and fix those parts that are in clear conflict with the evidence. During the course, we will present a few basic features of WebApollo - but there is also a fairly comprehensive handbook available here: [http://icebox.lbl.gov/webapollo/docs/webapollo_user_guide.pdf](http://icebox.lbl.gov/webapollo/docs/webapollo_user_guide.pdf)
+The aim of manual curation is to compare a gene model against existing evidence from sources such as ab-initio predictions, protein alignments, RNA-seq as well as related species and fix those parts that are in clear conflict with the evidence. During the course, we will present a few basic features of WebApollo - but there is also a fairly comprehensive handbook available here: [http://icebox.lbl.gov/webapollo/docs/webapollo_user_guide.pdf](http://genomearchitect.github.io/users-guide/)
 
 ## Jamboree
 
