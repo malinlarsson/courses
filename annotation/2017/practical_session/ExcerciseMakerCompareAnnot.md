@@ -42,12 +42,12 @@ If it isn't loaded anymore, reload it:
 ### Preparing the input files
 First you have to be situated in a folder containing the two maker annotations (with and without ab initio) and the augustus annotation. Then, copy or sym-link the EnsEMBL reference annotation that we provided you. Hint: The EnsEMBL annotation for chromosome 4 should be located in the folder course\_material/data/dmel/chromosome\_4/annotation.  
 Now we have to do a couple of things: convert the EnsEMBL reference annotation from GTF format to GFF3 and then sort any GFF3-formatted annotation in a way that genometools accepts.  
-*~/annotation_course/course_material/git/GAAS/annotation/Tools/Converter/gxf_to_gff3.pl -gtf drosophila\_melanogaster.chr4.gtf -o drosophila\_melanogaster.gff*
+*~/annotation_course/course_material/git/GAAS/annotation/Tools/Converter/gxf_to_gff3.pl -g drosophila\_melanogaster.chr4.gtf -o drosophila\_melanogaster.gff*
 
 you need to unload Bioperl to be able to load GenomeTools 
 *module unload BioPerl/1.6.924_Perl5.18.4*
 
-*module load Genometools*
+*module load GenomeTools/1.3.5*
 
 *gt gff3 -sort maker\_no\_abinitio.gff &gt; maker\_no\_abinitio.sorted.gff* (repeat for the other files)
 ### Counting features
