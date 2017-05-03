@@ -111,7 +111,7 @@ You will run BUSCO on chromosome 4 of Drosophila melanogaster. We will select th
 
 BUSCO2 is using augustus to run, as we have no administator rights on uppmax we need to copy the config file of augustus in folder we can right in and set up de the environment.
 
-*cp -r ~/annotation_course/course_material/augustus_path*
+*cp -r ~/annotation_course/course_material/augustus_path .*
 
 AUGUSTUS_config_PATH=augustus_path
 
@@ -119,7 +119,7 @@ _module load bioinfo-tools_
 _module load BUSCO_  
 
 
-*BUSCO -i /home/__login__/annotation\_course/course\_material/data/dmel/chromosome\_4/chromosome/4.fa -o 4\_dmel_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/arthropoda*
+*BUSCO -i /home/__login__/annotation\_course/course\_material/data/dmel/chromosome\_4/chromosome/4.fa -o 4\_dmel_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/arthropoda_obd9*
 
 When done, check the short\_summary\_4\_dmel\_busco. How many proteins are reported as complete? Does this sound reasonable?
 
