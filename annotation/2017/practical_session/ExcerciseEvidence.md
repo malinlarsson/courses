@@ -113,7 +113,7 @@ BUSCO2 is using augustus to run, as we have no administator rights on uppmax we 
 
 *cp -r ~/annotation_course/course_material/augustus_path .*
 
-AUGUSTUS_config_PATH=augustus_path
+AUGUSTUS_CONFIG_PATH=augustus_path
 
 _module load bioinfo-tools_  
 _module load BUSCO_  
