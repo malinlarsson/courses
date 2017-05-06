@@ -109,6 +109,6 @@ please use the path where you copied augustus_path in the Busco exercise yesterd
 
 *etraining --species=dmel_login gff2genbank/codingGeneFeatures.nr.gbk.train* 
 
-*augustus --species=dmel gff2genbank/codingGeneFeatures.nr.gbk.test | tee run.log* 
+*augustus --species=dmel gff2genbank/codingGeneFeatures.nr.gbk.test _| tee run.log* 
 
 - Look at the accuracy report, what does it mean? why? see [Training Augustus](http://www.vcru.wisc.edu/simonlab/bioinformatics/programs/augustus/docs/tutorial2015/training.html)
