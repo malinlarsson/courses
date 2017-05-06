@@ -5,6 +5,9 @@ title:  'Prokka exercise'
 
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](LoginInstructions).
 
+
+# Organizing data
+
 Before going into the exercises below, you should create in your home folder a specific folder for this practical session and copy a folder with the course data using:  
 
 *mkdir annotation course*
@@ -16,6 +19,48 @@ Before going into the exercises below, you should create in your home folder a s
 *mkdir practical1*
 
 *cd practical1*
+
+
+The data we are providing for the course is organized in the following way in the folder annotation\_course:
+
+course\_material/data/prokka
+
+course\_material/data/human
+
+course\_material/data/dmel
+
+- chromosome_4/
+
+  - bam/
+
+  - chromosome/
+
+  - evidence/
+
+  - raw_computes/
+  
+  - annotation/
+  
+  - cegma/
+  
+  - RNAseq/
+
+- full_genome/
+
+
+course\_material/data/blastdb/
+
+course\_material/git/
+
+course\_material/lib/  
+
+course\_material/script
+
+course\_material/augustus_path/
+
+The folder git contains scripts that we will use to analyse or format data. 
+the folder lib contains perl library required by perl script.
+The Blastdb folder will be used for the functional annotation exercise tomorrow.
 
 All the files needed for this practical will be in course_material/data/prokka and course_material/augustus_path
 
