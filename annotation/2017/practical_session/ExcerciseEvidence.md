@@ -106,11 +106,9 @@ When done, check the output.completeness_report. How many proteins are reported 
 
 You will run BUSCO on chromosome 4 of Drosophila melanogaster. We will select the lineage set of arthropoda.
 
-BUSCO2 is using augustus to run, as we have no administator rights on uppmax we need to copy the config file of augustus in folder we can right in and set up de the environment.
+As said yesterday, BUSCO2 is using augustus to run so please use the path you copied ~/annotation_course/course_material/augustus_path into.
 
-*cp -r ~/annotation_course/course_material/augustus_path .*
-
-AUGUSTUS_CONFIG_PATH=augustus_path
+AUGUSTUS_CONFIG_PATH=PATH/augustus_path
 
 _module load bioinfo-tools_  
 _module load BUSCO_  
