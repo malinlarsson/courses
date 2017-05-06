@@ -202,6 +202,8 @@ stringtie accepted_hits.bam -o outdir/transcripts.gtf
 When done you can find your results in the directory ‘outdir’. The file transcripts.gtf includes your assembled transcripts.
 As Webapollo doesn't like the gtf format file you should convert it in gff3 format (cf. Exercise 5). Then, transfer the gff3 file to your computer and load it into [Webapollo](http://bils-web.imbim.uu.se/drosophila_melanogaster). How well does it compare with your Augustus results? Looking at your results, are you happy with the default values of Stringtie (which we used in this exercise) or is there something you would like to change?
 
+**_Exercise 10_ - RNA-seq de-novo assembly:**  
+
 ### Trinity (de-novo assembly)
 
 Trinity assemblies can be used as complementary evidence, particularly when trying to polish a gene build with Pasa. Before you start, check how big the raw read data is that you wish to assemble to avoid unreasonably long run times.
