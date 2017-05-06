@@ -6,7 +6,7 @@ title:  'Exercise - Running Maker without ab-initio predictions'
 # Running Maker without ab-initio predictions
 ## Overview
 
-The first run of Maker will be done without ab-initio predictions. What are your expectations for the resulting gene build? In essence, we are attempting a purely evidence-based annotation, where the best protein- and est-alignments are chosen to build the most likely gene models. The purpose of an evidence-based annotation is simple. Basically, you may try to annotate an organism where no usable ab-initio model is available. The evidence-based annotation can then be used to create a set of genes on which a new model could be trained on (using e.g. Snap or Augustus). Selection of genes for training can be based on the annotation edit distance (AED score), which says something about how great the distance between a gene model and the evidence alignments is. A score of 0.0 would essentially say that the final model is in perfect agreement with the evidence.
+The first run of Maker will be done without ab-initio predictions. What are your expectations for the resulting gene build? In essence, we are attempting a purely evidence-based annotation, where the best protein- and EST-alignments are chosen to build the most likely gene models. The purpose of an evidence-based annotation is simple. Basically, you may try to annotate an organism where no usable ab-initio model is available. The evidence-based annotation can then be used to create a set of genes on which a new model could be trained on (using e.g. Snap or Augustus). Selection of genes for training can be based on the annotation edit distance (AED score), which says something about how great the distance between a gene model and the evidence alignments is. A score of 0.0 would essentially say that the final model is in perfect agreement with the evidence.
 
 Let's do this step-by-step:
 ## Prepare the input data
@@ -31,7 +31,7 @@ To finish, you will also need EST set file and a protein set file:
 * ln -s ~/annotation\_course/course\_material/data/dmel/chromosome\_4/evidence/est.chr4.fa  
 * ln -s ~/annotation\_course/course\_material/data/dmel/chromosome\_4/evidence/protein.chr4.fa  
 
-You should now have 1 raw compute, 1 EST file, 1 protein file and the genome sequence in the working directory. For Maker to use this information, we need create the three config files, as discussed above (maker -CTL). You can leave the two files controlling external software behavious untouched. In the actual maker options file, we need to provide:
+You should now have 1 raw compute, 1 EST file, 1 protein file and the genome sequence in the working directory. For Maker to use this information, we need create the three config files, as discussed above (maker -CTL). You can leave the two files controlling external software behaviors untouched. In the actual maker options file, we need to provide:
 
 - name of the genome sequence (genome=)
 - name of the 'EST' set file(s) (est=)
