@@ -74,7 +74,7 @@ BUSCO2 provides measures for quantitative assessment of genome assembly, gene se
 
 You will run BUSCO on 3 bacterial assemblies provided (one E coli, one chlamydia and one streptococcus). We will select the lineage set of bacteria.
 
-BUSCO2 is using augustus to run, as we have no administator rights on uppmax we need to copy the config file of augustus in a folder we can write in and set up de the environment.
+BUSCO2 is using augustus to run, as we have no administator rights on uppmax we need to copy the config file of augustus in a folder we can write in and set up the environment.
 
 *cp -r ~/annotation_course/course_material/augustus_path .*
 
