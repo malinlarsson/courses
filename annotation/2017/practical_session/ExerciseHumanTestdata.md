@@ -10,7 +10,7 @@ Maker comes with some test data to try out the pipeline. This test set is suffic
 The human test data set is located in the folder you symlinked earlier, named 'course\_data/human'.
 ## Create project folder
 
-First, we create a new folder in which to store all the configuration and input files. To do so, type:
+First, we create a new folder in which, we will store all the configuration files and input files. To do so, type:
 
 <i>mkdir maker\_human</i>  
 <i>cd maker\_human</i>
@@ -123,7 +123,7 @@ rw-rw-r- 1 marc b2011210 20865 Mar 24 10:16 NT\_010783%2E15.maker.transcripts.fa
 rw-rw-r- 1 marc b2011210 4248 Mar 24 10:15 run.log  
 drwxrwsr-x 3 marc b2011210 4096 Mar 24 10:16 theVoid.NT\_010783.15
 
-The main annotation file is 'NT\_010783%2E15.gff' - including both the finished gene models and all the raw compute data. The other files include fasta files for the different sequence features that have been annotated - based on ab-initio predictions through augustus as well as on the finished gene models. The folder 'theVoid' inclused all the raw computations that Maker has preformed to synthesize the evidence into gene models.
+The main annotation file is 'NT\_010783%2E15.gff' - including both the finished gene models and all the raw compute data. The other files include fasta files for the different sequence features that have been annotated - based on ab-initio predictions through augustus as well as on the finished gene models. The folder 'theVoid' include all the raw computations that Maker has performed to synthesize the evidence into gene models.
 
 ## Understanding a Maker annotation
 
