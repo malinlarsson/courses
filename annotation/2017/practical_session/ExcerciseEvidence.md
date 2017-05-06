@@ -5,7 +5,7 @@ title:  'Exercise Evidence'
 
 # Preparing evidence data for annotation
 
-This exercise is meant to get you acquainted with the type of data you would normally encounter in an annotation project. You will get an idea of where to download protein sequences, and also try out some programs that often are used. We will for all exercises use data for the fruit fly, Drosophila melanogaster, as that is one of the currently best annotated organisms and there is plenty of high quality data available.
+This exercise is meant to get you acquainted with the type of data you would normally encounter in an annotation project. You will get an idea of where to download protein sequences, and also try out some programs that are often used. We will for all exercises use data for the fruit fly, Drosophila melanogaster, as that is one of the currently best annotated organisms and there is plenty of high quality data available.
 
 ## 1. Obtaining data
 
@@ -33,6 +33,7 @@ Go to Biomart at [http://www.ensembl.org/biomart/martview](http://www.ensembl.or
 
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](LoginInstructions).
 
+*cd annotation_course*
 
 *mkdir practical2* 
 
@@ -46,7 +47,7 @@ This browser can already has a number of tracks preloaded for you, but you can a
 
 **_Exercise 5_ - Augustus:**
 
-First you need to write the librabries path you will need in .bash_profile to perform the following analyses. 
+First you need to write the libraries path you will need in .bash_profile to perform the following analyses. 
 
 */home/__login__/annotation_course/course_material/lib/install_perllib_missing.sh*
 
@@ -125,7 +126,7 @@ When done, check the short\_summary\_4\_dmel\_busco. How many proteins are repor
 
 Rna-seq data is in general very useful in annotation projects as the data usually comes from the actual organism you are studying and thus avoids the danger of introducing errors caused by differences in gene structure between your study organism and other species.
 
-Important remarks to remmenber before starting working with RNA-seq:
+Important remarks to remember before starting working with RNA-seq:
 - Check if RNAseq are paired or not. Last generation of sequenced short reads (since 2013) are almost all paired. Anyway, it is important to check that information, which will be useful for the tools used in the next steps.
 - Check if RNAseq are stranded. Indeed this information will be useful for the tools used in the next steps. (In general way we recommend to use stranded RNAseq to avoid transcript fusion during the transcript assembly process. That gives more reliable results. )
 - Left / L / forward / 1 are identical meaning. It is the same for Right / R /Reverse / 2
@@ -203,7 +204,7 @@ As Webapollo doesn't like the gtf format file you should convert it in gff3 form
 
 ### Trinity (de-novo assembly)
 
-Trinity assemblies can be used as complemetary evidence, particularly when trying to polish a gene build with Pasa. Before you start, check how big the raw read data is that you wish to assemble to avoid unreasonably long run times.
+Trinity assemblies can be used as complementary evidence, particularly when trying to polish a gene build with Pasa. Before you start, check how big the raw read data is that you wish to assemble to avoid unreasonably long run times.
 
 *module load bioinfo-tools*  
 *module load perl*  
@@ -216,3 +217,6 @@ Trinity assemblies can be used as complemetary evidence, particularly when tryin
 
 
 Trinity takes a long time to run if you want to have a look at the results, look in ~/annotation_course/course_material/data/dmel/chromosome_4/RNAseq/ the output that will be used later on for the annotation will be Trinity.fasta
+
+
+You have now successfully retrieve most data useful to do an annotation! 
