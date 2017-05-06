@@ -72,13 +72,13 @@ The first exercise will be a very short one in which you will create a gene buil
 ## Running Maker - Drosophila genome
 ### Getting the pre-computes
 
-Running Maker on a full genome, even of an invertebrate, can take a considerable amount of time - especially if only few processing cores are available. We have therefore generate the genome-wide raw computes prior to the course. You can find the in the folder you have symlinked earlier under
+Running Maker on a full genome, even of an invertebrate, can take a considerable amount of time - especially if only few processing cores are available. We have therefore generated the genome-wide raw computes prior to the course. You can find the in the folder you have symlinked earlier under
 
 *annotation\_course/course\_material/data/dmel/chromosome_4/raw*
 
 Ab-initio guided or evidence-based
 
-Next, we will annotate the genome of the fruit fly _Drosophila melanogaster_. First without ab-initio predictions to guide the gene build, and afterwards with. Make sure you work with the sample data stored in the sub-folder '<b>chromosome_4</b>'. Even a small genome like Drosophila would take too long to run within the time we have for this course.
+Next, we will annotate the genome of the fruit fly _Drosophila melanogaster_. First without ab-initio predictions to guide the gene build, and afterwards with ab-initio. Make sure you work with the sample data stored in the sub-folder '<b>chromosome_4</b>'. Even a small genome like Drosophila would take too long to run within the time we have for this course.
 
 [Running Maker without ab-initio predictions](ExcerciseMakerNoAbinit)
 
