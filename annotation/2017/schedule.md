@@ -14,7 +14,7 @@ Room: E10:1309
 **09.15-10.00** [Lecture: Understanding Annotation] (Henrik Lantz)  
 **10.00-10.15** Coffee break  
 **10.15-10.30** Lecture: Prokaryote annotation (Lucile Soler)  
-**10.30-12.00** [Exercise: Prokaryote annotation and visualization](practical_session/prokka.md) (Lucile Soler)  
+**10.30-12.00** [Exercise: Prokaryote annotation and visualization](practical_session/prokka) (Lucile Soler)  
 **12.00-13.00** Lunch  
 **13.00-13.15**	Summary of prokaryote annotation exercise (Lucile Soler)  
 **13.15-15.00** [Practical 1: Gathering and preparation of data] (Henrik Lantz, Mahesh Panchal, Lucile Soler)  
