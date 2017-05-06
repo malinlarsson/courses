@@ -11,7 +11,7 @@ Before going into the exercises below, you should create in your home folder a s
 
 *cd annotation_course*
 
-*ln -s /sw/courses/annotation/2016/course_material/ *
+*ln -s /sw/courses/annotation/2016/course_material/*
 
 *mkdir practical1*
 
