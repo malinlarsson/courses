@@ -33,10 +33,6 @@ Go to Biomart at [http://www.ensembl.org/biomart/martview](http://www.ensembl.or
 
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](LoginInstructions).
 
-Before going into the exercises below, you should create in your home folder a specific folder for this practical session and add a symbolic link to a folder with the course data using:  
-
-
-*cd annotation_course*
 
 *mkdir practical2* 
 
