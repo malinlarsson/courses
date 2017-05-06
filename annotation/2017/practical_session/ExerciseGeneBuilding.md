@@ -39,49 +39,6 @@ At minimum, most annotation projects will run with a protein data set, possibly 
 
 We will therefore first run our annotation project in the traditional way, with proteins and ESTs, and then repeat the process with a well-trained ab-initio gene predictor. You can then compare the output to get an idea of how crucial the use of a gene predictor is. However, before we get our hands dirty, we need to understand Maker a little better...
 
-## Organizing the data
-
-The data we are providing for the course is organized in the following way in the folder annotation\_course:
-
-course\_material/data/prokka
-
-course\_material/data/human
-
-course\_material/data/dmel
-
-- chromosome_4/
-
-  - bam/
-
-  - chromosome/
-
-  - evidence/
-
-  - raw_computes/
-  
-  - annotation/
-  
-  - cegma/
-  
-  - RNAseq/
-
-- full_genome/
-
-
-course\_material/data/blastdb/
-
-course\_material/git/
-
-course\_material/lib/  
-
-course\_material/script
-
-course\_material/augustus_path/
-
-The folder git contains scripts that we will use to analyse or format data. 
-the folder lib contains perl library required by perl script.
-The Blastdb folder will be used for the functional annotation exercise tomorrow.
-
 
 ## Loading Maker
 
