@@ -24,9 +24,9 @@ Now link the raw computes you want to use into your folder:
  - repeatmasker.chr4.gff (coordinates of repeatmasked regions)  
  - cufflinks2genome.chr4.gff (EST hints created from assembled transcripts) 
  
-You could use the stringtie gff results you created but you need to change feature types from genes/trsncripts into match / match_part otherwise Maker do not recognize it, also you could use the trinity.fasta file you created with trinity but maker will take longer to run.
+You could use the stringtie gff results you created but you need to change feature types from genes/transcripts into match / match_part otherwise Maker do not recognize it, also you could use the trinity.fasta file you created with trinity but maker will take longer to run.
 
-In addition, you will also need the genome sequence and a protein set (you can use the protein and est sets we used earlier). Sym-link it from the the data directory created earlier:
+In addition, you will also need the genome sequence and a protein set (you can use the protein and EST sets we used earlier). Sym-link it from the the data directory created earlier:
 
 *ln -s /path/to/chromosome\_4/chromosome/4.fa*
 
