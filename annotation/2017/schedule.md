@@ -27,9 +27,9 @@ Room: E10:1309
 **09.00-9.15** Summary of yesterday’s exercise (Lucile Soler)  
 **09.15-10.00** [Lecture: Structural annotation programs and pipelines] (Henrik Lantz)  
 **10.00-10.15** Coffee break  
-**10.15-12.00** [Practical 3: Structural annotation of eukaryote genomes] (Henrik Lantz, Mahesh Panchal, Lucile Soler)  
+**10.15-12.00** [Practical 3: Structural annotation of eukaryote genomes](practical_session/ExerciseGeneBuilding) (Henrik Lantz, Mahesh Panchal, Lucile Soler)  
 **12.00-13.00** Lunch   
-**13.00-17.00** [Practical 3: Structural annotation of eukaryote genomes] (Henrik Lantz, Mahesh Panchal, Lucile Soler)   
+**13.00-17.00** Practical 3: Structural annotation of eukaryote genomes (Henrik Lantz, Mahesh Panchal, Lucile Soler)   
 
 **Thursday 11th** 
 
