@@ -43,6 +43,8 @@ We will therefore first run our annotation project in the traditional way, with 
 
 The data we are providing for the course is organized in the following way in the folder annotation\_course:
 
+course\_material/data/prokka
+
 course\_material/data/human
 
 course\_material/data/dmel
@@ -71,6 +73,8 @@ course\_material/data/blastdb/
 course\_material/git/
 
 course\_material/lib/  
+
+course\_material/script
 
 course\_material/augustus_path/
 
