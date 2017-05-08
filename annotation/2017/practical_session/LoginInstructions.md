@@ -19,13 +19,15 @@ You should now get a welcoming message from Uppmax to show that you have success
 
 For this course, we have arranged for you to have one half of a node (=8 cores) each. To get this reservation you need to use the salloc command like this:
 
-$ salloc -A g2016007 -t 08:00:00 -p core -n 8 -\-no-shell -\-reservation=check_below &
+$ salloc -A g2017011 -t 08:00:00 -p core -n 8 -\-no-shell -\-reservation=check_below &
 
 where you should substitute “check_below” with one of these alternatives depending on the day.
 
-Monday: g2016007_tuesday
+Tuesday : g2017011_1
 
-Tuesday: g2016007_wednesday
+Wednesday : g2017011_2
+
+Thursday : g2017011_3
 
 Now check which node you got (replace *username* with your uppmax user name) like this:
 
@@ -41,4 +43,4 @@ $ ssh -X q34
 
 You are now logged in to your reserved node, and there is no need for you to use the SLURM queuing system. You can now continue with the specific exercise instructions, but **please remember to never use more than 8 cores** as you will be sharing a node (i.e., a single computer) with someone else in the course and there are only 16 cores available in total per node.
 
-By Martin Dahlö, revised by Henrik Lantz.
+By Martin Dahlö, revised by Henrik Lantz and lucile Soler
