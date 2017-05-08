@@ -25,7 +25,7 @@ Held in Uppsala May 9th-11th, 2017.
 [Mac keyboard layout](../../Metagenomics/1511/common/mac-keyboard)  
 
 ## External Resources
-[Mac keyboard layouts](../common/mac-keyboard)  
+[Mac keyboard layouts](../../Metagenomics/1511/common/mac-keyboard)  
 [IGV (Integrative Genomics Viewer) Home](https://www.broadinstitute.org/igv/)  
 [Samtools Home](http://www.htslib.org/)  
 [BWA Home](http://bio-bwa.sourceforge.net/)  
