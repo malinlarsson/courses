@@ -114,7 +114,7 @@ Look at the different results obtained :
 - Do you see any differences with the different options and no options you used?
 - Did you get the annotation you expected after the busco results?
 
-You could now also visualise all this information using a genome browser, such as [IGV](http://www.broadinstitute.org/igv/home). 
+You could now also visualise all this information using a genome browser, such as [IGV](http://software.broadinstitute.org/software/igv/). 
 IGV requires a genome fasta file and any number of annotation files in GTF or GFF3 format (note that GFF3 formatted file tend to look a bit weird in IGV sometimes).
 
 Transfer the gff3 files to your computer using scp:    
