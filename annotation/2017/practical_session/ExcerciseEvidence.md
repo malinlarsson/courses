@@ -75,7 +75,7 @@ _module load BioPerl/1.6.24_PERL5.18.5_
 Transfer the augustus\_drosophila.gff3 to your computer using scp:    
 *scp __login__@milou.uppmax.uu.se:/home/__login__/annotation\_course/practical2/augustus\_drosophila.gff3 .*  
 
-Load the file in [Webapollo](http://bils-web.imbim.uu.se/drosophila_melanogaster). [Here find the WebApollo instruction](UsingWebapollo)
+Load the file in [Webapollo](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/). [Here find the WebApollo instruction](UsingWebapollo)
 <br/>Load the Ensembl annotation available in  ~/annotation\_course/course\_material/dmel/chromosome\_4/annotation
 How does the Augustus annotation compare with the Ensembl annotation? Are they identical?
 
@@ -198,7 +198,7 @@ StringTie is a fast and highly efficient assembler of RNA-Seq alignments into po
 stringtie accepted_hits.bam -o outdir/transcripts.gtf
 
 When done you can find your results in the directory ‘outdir’. The file transcripts.gtf includes your assembled transcripts.
-As Webapollo doesn't like the gtf format file you should convert it in gff3 format (cf. Exercise 5). Then, transfer the gff3 file to your computer and load it into [Webapollo](http://bils-web.imbim.uu.se/drosophila_melanogaster). How well does it compare with your Augustus results? Looking at your results, are you happy with the default values of Stringtie (which we used in this exercise) or is there something you would like to change?
+As Webapollo doesn't like the gtf format file you should convert it in gff3 format (cf. Exercise 5). Then, transfer the gff3 file to your computer and load it into [Webapollo](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/). How well does it compare with your Augustus results? Looking at your results, are you happy with the default values of Stringtie (which we used in this exercise) or is there something you would like to change?
 
 **_Exercise 10_ - RNA-seq de-novo assembly:**  
 
