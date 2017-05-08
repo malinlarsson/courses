@@ -11,7 +11,7 @@ title:  'Schedule'
 
 Room: E10:1309  
 **09.00-9.15** Introduction (Elina Staaf, Henrik Lantz)  
-**09.15-10.00** [Lecture: Understanding Annotation] (Henrik Lantz)  
+**09.15-10.00** [Lecture: Understanding Annotation](slides/Annotation_course_may2017.ppt) (Henrik Lantz)  
 **10.00-10.15** Coffee break  
 **10.15-10.30** [Lecture: Prokaryote annotation](slides/prokkaLS_08_05_2017.pdf) (Lucile Soler)  
 **10.30-12.00** [Practical 1: Prokaryote annotation and visualization](practical_session/prokka) (Lucile Soler, Mahesh Binzer-Panchal, Henrik Lantz)  
@@ -25,7 +25,7 @@ Room: E10:1309
 
 Room: E10:1309  
 **09.00-9.15** Summary of yesterday’s exercise (Lucile Soler)  
-**09.15-10.00** [Lecture: Structural annotation programs and pipelines] (Henrik Lantz)  
+**09.15-10.00** [Lecture: Structural annotation programs and pipelines](slides/Structural_annotation_Jacques_HL.pptx) (Henrik Lantz)  
 **10.00-10.15** Coffee break  
 **10.15-12.00** [Practical 3: Structural annotation of eukaryote genomes](practical_session/ExerciseGeneBuilding) (Henrik Lantz, Mahesh Binzer-Panchal, Lucile Soler)  
 **12.00-13.00** Lunch   
