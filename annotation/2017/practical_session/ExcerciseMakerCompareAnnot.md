@@ -17,7 +17,7 @@ BUSCO is run before annotating to check if the assembly is good and therefore if
 
 You will need to link the protein file created by maker on the run with the ab-initio
 
-*module load BUSCO
+*module load BUSCO*
 
 *ln -s ~/PATH/maker_dmel_with_annotation/maker_with_abinition/annotations.proteins.fa*   
 
