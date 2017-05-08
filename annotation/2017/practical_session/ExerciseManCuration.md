@@ -28,7 +28,7 @@ The aim of manual curation is to compare a gene model against existing evidence 
 
 ## Jamboree
 
-For this exercise, we have set up a specific [Webapollo](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/annotator/index) instance of a drosophila melanogaster annotation of the chromosome 4.  
+For this exercise, we have set up a specific [Webapollo](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/annotator/index) instance of a drosophila melanogaster annotation of the chromosome 4 (dmel_jamboree).  
 
 The tracks available are:  
 
