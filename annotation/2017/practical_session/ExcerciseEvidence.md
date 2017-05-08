@@ -73,7 +73,7 @@ _module load BioPerl/1.6.24_PERL5.18.5_
 *~/annotation\_course/course\_material/git/GAAS/annotation/Tools/Converter/gxf_to_gff3.pl -g augustus_drosophila.gtf -o augustus_drosophila.gff3 --gff_version 2*
 
 Transfer the augustus\_drosophila.gff3 to your computer using scp:    
-*scp __login__@milou.uppmax.uu.se:/home/__login__/annotation\_course/practical1/augustus\_drosophila.gff3 .*  
+*scp __login__@milou.uppmax.uu.se:/home/__login__/annotation\_course/practical2/augustus\_drosophila.gff3 .*  
 
 Load the file in [Webapollo](http://bils-web.imbim.uu.se/drosophila_melanogaster). [Here find the WebApollo instruction](UsingWebapollo)
 <br/>Load the Ensembl annotation available in  ~/annotation\_course/course\_material/dmel/chromosome\_4/annotation
