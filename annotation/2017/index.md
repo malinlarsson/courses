@@ -14,7 +14,7 @@ Held in Uppsala May 9th-11th, 2017.
 [Schedule](schedule)
 
 ## Maps & Travel Info
-[Map over Uppsala](http://www.uppsalakartan.se/)  
+[Map over Uppsala](http://www.stadskartan.se/uppsala/?lng=en)  
 [Map over Uppsala biomedical center, BMC](bmc)  
 [Travel Info](travel)  
 [TO DO AND EAT in Uppsala](http://www.destinationuppsala.se/en/)
@@ -22,7 +22,7 @@ Held in Uppsala May 9th-11th, 2017.
 ## Helpful Things
 [Linux cheat sheet](files/linux-cheat-sheet.pdf)  
 [UPPMAX cheat sheet](files/uppmax-cheat-sheet.png)  
-[Mac keyboard layout](../common/mac-keyboard)  
+[Mac keyboard layout](../../Metagenomics/1511/common/mac-keyboard)  
 
 ## External Resources
 [Mac keyboard layouts](../common/mac-keyboard)  
