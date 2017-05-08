@@ -37,5 +37,5 @@ Held in Uppsala May 9th-11th, 2017.
 [Allpaths-lg](http://www.broadinstitute.org/software/allpaths-lg/blog/?page_id=12)  
 [BLAT](http://genome.ucsc.edu/goldenPath/help/blatSpec.html)  
 [BLAST](http://www.ncbi.nlm.nih.gov/books/NBK1763/)  
- A good explanation of the FASTQ format can be found over at the] [MAQ web page]. It also includes simple Perl code to encode and decode the quality scores.
- [MAQ web page]:(http://maq.sourceforge.net/fastq.shtml)
+ A good explanation of the FASTQ format can be found over at the [MAQ web page](http://maq.sourceforge.net/fastq.shtml). It also includes simple Perl code to encode and decode the quality scores.
+
