@@ -117,5 +117,9 @@ Look at the different results obtained :
 You could now also visualise all this information using a genome browser, such as [IGV](http://www.broadinstitute.org/igv/home). 
 IGV requires a genome fasta file and any number of annotation files in GTF or GFF3 format (note that GFF3 formatted file tend to look a bit weird in IGV sometimes).
 
+Transfer the gff3 files to your computer using scp:    
+*scp __login__@milou.uppmax.uu.se:/home/__login__/annotation\_course/practical1/prokka/YOURFILE*  
+
+
 - Do you see any differences with the different options and no option you used?
 
