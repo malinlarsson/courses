@@ -42,19 +42,20 @@ A genomic region of the chrosmosome is assigned to each of you. Your aim is to m
 
 NOTES: Isoforms are allowed. Start each gene annotation by dragging-and-dropping the gene model that you think be the best. 
 
-Alejandro     	50 000 - 151 500
-<br/>Andrea	        151 500	- 253 000
-<br/>Andreas	        253 000	- 354 500
-<br/>Fabien	        354 500 - 456 000
-<br/>Helen	          456 000	- 557 500
-<br/>Hugo	          557 500	- 659 000
-<br/>Jörg	          659 000	- 760 500
-<br/>Nikolay	        760 500	- 862 000
-<br/>Patricia	      862 000	- 963 500
-<br/>Sandra	        963 500	- 1 065 000
-<br/>Sofia	          1 065 000	- 1 166 500
-<br/>Sofie	          1 166 500	- 1 268 000 
-
+Johannes     	            50 000 - 140 500
+<br/>Rami-Petteri	        140 500	- 227 500
+<br/>Arman	              227 500	- 314 500
+<br/>Paulina	            314 500 - 401 500
+<br/>Ramon	              401 500	- 488 500
+<br/>Ludovic              488 500	- 575 500
+<br/>Topi                 575 500	- 662 500
+<br/>Mahwash	            662 500	- 749 500
+<br/>Lihong	              749 500	- 836 500
+<br/>Suvi	                836 500	- 923 500
+<br/>Carina	              923 500	- 1 010 500
+<br/>Karin	              1 010 500	- 1 097 500 
+<br/>Chao                 1 097 500 - 1 184 500
+<br/>Mi                   1 184 500 - 1 268 000
 
 The work you performed was only on small genome portion (1,3 Mbp). That gives you a flavour of the time cost to do a manual curation on a small genome, and an idea of the amount of work needed to manually curate a big genome (>1 Gbp).
 
