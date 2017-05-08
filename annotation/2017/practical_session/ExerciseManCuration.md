@@ -43,7 +43,7 @@ A genomic region of the chrosmosome is assigned to each of you. Your aim is to m
 NOTES: Isoforms are allowed. Start each gene annotation by dragging-and-dropping the gene model that you think be the best. 
 
 Johannes     	            50 000 - 140 500
-<br/>Rami-Petteri	        140 500	- 227 500
+<br/>Rami-Petteri	    \t    140 500	- 227 500
 <br/>Arman	              227 500	- 314 500
 <br/>Paulina	            314 500 - 401 500
 <br/>Ramon	              401 500	- 488 500
