@@ -31,7 +31,6 @@ Held in Uppsala May 9th-11th, 2017.
 [BWA Home](http://bio-bwa.sourceforge.net/)  
 [GATK Home](https://www.broadinstitute.org/gatk/)  
 [SeqAnswers - Next-generation sequencing forum](http://seqanswers.com/)  
-[Biosupport.se - Sweden centered bioinformatics Q&A](https://biosupport.se/)   
 [Trinity](http://trinityrnaseq.github.io/)  
 [Cufflinks](http://cole-trapnell-lab.github.io/cufflinks/)  
 [Satuma/Spines](http://www.broadinstitute.org/science/programs/genome-biology/spines)  
