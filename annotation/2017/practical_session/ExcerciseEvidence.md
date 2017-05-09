@@ -170,7 +170,7 @@ The following command line will perform the following:
 	• Scan the read with a 4-base wide sliding window, cutting when the average quality per base drops below 15 (SLIDINGWINDOW:4:15)  
 	• Drop reads below the 36 bases long (MINLEN:36)  
 
-*java -jar /sw/apps/bioinfo/trimmomatic/0.32/milou/trimmomatic-0.32.jar PE -threads 8 ~/annotation_course/2017/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq.gz ~/annotation_course/2017/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.right.fastq.gz trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.left_unpaired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz trimmomatic/ERR305399.right_unpaired.fastq.gz ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.32/milou/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36*
+*java -jar /sw/apps/bioinfo/trimmomatic/0.32/milou/trimmomatic-0.32.jar PE -threads 8 ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq.gz ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.right.fastq.gz trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.left_unpaired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz trimmomatic/ERR305399.right_unpaired.fastq.gz ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.32/milou/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36*
 
 #### Tophat
 
@@ -184,7 +184,7 @@ Once the reads have been trimmed, we use [tophat](https://ccb.jhu.edu/software/t
 *module load perl*  
 *module load perl_modules*  
 
-*tophat --library-type=fr-firststrand chr4 trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz*
+*tophat --library-type=fr-firststrand ~/course-material/data/dmel/chromosome_4/chromosome/chr4 trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz*
 
 This step will take a really long time so you can use the bam file located here ~/annotation_course/course_material/data/dmel/chromosome_4/RNAseq/tophat/accepted_hits.bam
 
