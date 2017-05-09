@@ -78,13 +78,14 @@ BUSCO2 is using augustus to run, as we have no administator rights on uppmax we 
 
 *cp -r ~/annotation_course/course_material/augustus_path .*
 
-*AUGUSTUS_CONFIG_PATH=augustus_path*
+
 
 _module load bioinfo-tools_  
 _module load BUSCO_  
 
+*AUGUSTUS_CONFIG_PATH=augustus_path*
 
-*BUSCO -i /home/__login__/annotation\_course/course\_material/data/prokka/Chlamydia_trachomatis_a_363.fa -o chlamydia_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/bacteria_obd9*
+*BUSCO -i /home/__login__/annotation\_course/course\_material/data/prokka/Chlamydia_trachomatis_a_363.fa -o chlamydia_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/bacteria_odb9*
 
 look at the results of busco in short_summary_chlamydia_busco.txt
 
