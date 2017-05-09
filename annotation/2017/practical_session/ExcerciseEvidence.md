@@ -114,7 +114,7 @@ _module load bioinfo-tools_
 _module load BUSCO_  
 
 
-*BUSCO -i /home/__login__/annotation\_course/course\_material/data/dmel/chromosome\_4/chromosome/4.fa -o 4\_dmel_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/arthropoda_obd9*
+*BUSCO -i /home/__login__/annotation\_course/course\_material/data/dmel/chromosome\_4/chromosome/4.fa -o 4\_dmel_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/arthropoda_odb9*
 
 When done, check the short\_summary\_4\_dmel\_busco. How many proteins are reported as complete? Does this sound reasonable?
 
