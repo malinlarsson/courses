@@ -7,23 +7,22 @@ title:  'Schedule'
 
 **Monday 15th**  
 Room: Ingegerd Eriksson  
-**10.15-11.00** Registration and Welcome, presentation of SciLifeLab (Elina Staaf, Magnus Alm Rosenblad)  
-**11.00-12.00** Lecture: Introduction to Linux (Valentin Georgiev)  
-**10.00-12.00** Exercise: Introduction to Linux (Valentin Georgiev, Martin Dahlö, Marcela Davila Lopez, Magnus Alm Rosenblad)  
+**10.00-10.15** Registration and Welcome, presentation of SciLifeLab (Elina Staaf, Magnus Alm Rosenblad)  
+**10.15-11.00** Lecture: Introduction to Linux (Valentin Georgiev)  
+**11.00-12.00** Exercise: Introduction to Linux (Valentin Georgiev, Martin Dahlö, Marcela Davila Lopez, Magnus Alm Rosenblad)  
 **12.00-13.00** Lunch  
 **13.00-14.00** Lecture: Introduction to UPPMAX/UPPNEX (Valentin Georgiev)  
 **14.00-17.00** Exercise: Introduction to UPPMAX/UPPNEX (Valentin Georgiev, Martin Dahlö, Marcela Davila Lopez, Magnus Alm Rosenblad)  
 
 **Tuesday 16th**  
 Room: Ingegerd Eriksson  
-**09.00-09.30** Lecture: File types in bioinformatics (Valentin Georgiev)  
+**09.00-09.30** Lecture: File types in bioinformatics (Martin Dahlö)  
 **09.30-12.00** Exercise: File types in bioinformatics (Valentin Georgiev, Marcela Davila Lopez, Martin Dahlö, Magnus Alm Rosenblad)  
 **12.00-13.00** Lunch  
 **13:00-14:00** Lecture: Advanced Linux usage (Valentin Georgiev)  
 **14:00-17:00** Exercise: Advanced Linux usage (Valentin Georgiev, Marcela Davila Lopez, Martin Dahlö, Magnus Alm Rosenblad)  
 
 **Wednesday 17th**  
-Room: Ingegerd Eriksson  
 Room: Birgit Thilander 9-12, thereafter Ingegerd Eriksson  
 **09:00-10.00** Lecture: NGS workflow (Sebastian DiLorenzo)  
 **10:00-12.00** Exercise: NGS workflow part I (Sebastian DiLorenzo, Katarina Truvé, Magnus Alm Rosenblad)  
