@@ -184,7 +184,7 @@ Once the reads have been trimmed, we use [tophat](https://ccb.jhu.edu/software/t
 *module load perl*  
 *module load perl_modules*  
 
-*tophat --library-type=fr-firststrand ~/course_material/data/dmel/chromosome_4/chromosome/chr4 trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz*
+*tophat --library-type=fr-firststrand ~/annotation_course/course_material/data/dmel/chromosome_4/chromosome/chr4 trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz*
 
 This step will take a really long time so you can use the bam file located here ~/annotation_course/course_material/data/dmel/chromosome_4/RNAseq/tophat/accepted_hits.bam
 
