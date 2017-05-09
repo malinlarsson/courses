@@ -32,13 +32,13 @@ Go to Biomart at [http://www.ensembl.org/biomart/martview](http://www.ensembl.or
 ## 2. Running an ab initio gene finder
 
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](LoginInstructions).
+```
+cd annotation_course
 
-*cd annotation_course*
+mkdir practical2
 
-*mkdir practical2* 
-
-*cd practical2*  
-
+cd practical2 
+```
 
 We have made a genome browser called Webapollo available for you on the address [http://annotation-prod.scilifelab.se:8080/NBIS_gp1/](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/)  called drosophila\_melanogaster\_course.
 This browser can already has a number of tracks preloaded for you, but you can also load data you have generated yourself using the ‘file” menu and then ‘open’ and ‘local files’. First time you go there you need to log in using the email adress provided to register the course and your last name as password (lower case and if more than one last name separated by _ eg: lastname1_lastname2)(if you already have access to our webapollo please use the password that have been previously provided to you).
@@ -48,17 +48,20 @@ This browser can already has a number of tracks preloaded for you, but you can a
 **_Exercise 5_ - Augustus:**
 
 First you need to write the libraries path you will need in .bash_profile to perform the following analyses. 
+```
+/home/__login__/annotation_course/course_material/lib/install_perllib_missing.sh
 
-*/home/__login__/annotation_course/course_material/lib/install_perllib_missing.sh*
-
-*source ~/.bash\_profile*
-
+source ~/.bash_profile
+```
 Second load the needed modules using:  
-_module load bioinfo-tools_  
-_module load augustus_
-
+```
+module load bioinfo-tools  
+module load augustus
+```
 Run Augustus on your genome file using:  
-*augustus -\-species=fly /home/__login__/annotation\_course/course\_material/data/dmel/chromosome\_4/chromosome/4.fa > augustus\_drosophila.gtf*
+```
+augustus --species=fly /home/__login__/annotation_course/course_material/data/dmel/chromosome_4/chromosome/4.fa > augustus_drosophila.gtf
+```
 
 Take a look at the result file using ‘less augustus\_drosophila.gtf’. What kinds of features have been annotated? Does it tell you anything about UTRs?
 
@@ -66,15 +69,17 @@ The gff-format of Augustus is non-standard (looks like gtf) so to view it in a g
 
 Do this to convert your Augustus-file:
 
-_module load perl_  
-_module load perl_modules_  
-_module load BioPerl/1.6.924_Perl5.18.4_  
+```
+module load perl  
+module load perl_modules  
+module load BioPerl/1.6.924_Perl5.18.4
 
-*~/annotation\_course/course\_material/git/GAAS/annotation/Tools/Converter/gxf_to_gff3.pl -g augustus_drosophila.gtf -o augustus_drosophila.gff3 --gff_version 2*
-
+~/annotation\_course/course\_material/git/GAAS/annotation/Tools/Converter/gxf_to_gff3.pl -g augustus_drosophila.gtf -o augustus_drosophila.gff3 --gff_version 2
+```
 Transfer the augustus\_drosophila.gff3 to your computer using scp:    
-*scp __login__@milou.uppmax.uu.se:/home/__login__/annotation\_course/practical2/augustus\_drosophila.gff3 .*  
-
+```
+scp __login__@milou.uppmax.uu.se:/home/__login__/annotation_course/practical2/augustus_drosophila.gff3 .  
+```
 Load the file in [Webapollo](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/). [Here find the WebApollo instruction](UsingWebapollo)
 <br/>Load the Ensembl annotation available in  ~/annotation\_course/course\_material/data/dmel/chromosome\_4/annotation
 How does the Augustus annotation compare with the Ensembl annotation? Are they identical?
@@ -97,8 +102,10 @@ BUSCO2 provides measures for quantitative assessment of genome assembly, gene se
 
 Here you will try Cegma on Chromosome 4 of Drosophila melanogaster.First, load cegma by typing 'module load cegma'. The problem is that the file ‘4.fa’ has fasta-headers that are only numbers, and Cegma won’t accept that. Can you figure out how to change the fasta header to ‘chr4’ rather than just ‘4’ using the linux command sed? Ask the teachers if you are having problems, or cheat by using the already parsed file 4_parsed.fa. :)
 
-_module load cegma_   
-*cegma -g /home/__login__/annotation\_course/course\_material/data/dmel/chromosome\_4/chromosome/4\_parsed.fa -T 8*
+```
+module load cegma   
+cegma -g /home/__login__/annotation_course/course_material/data/dmel/chromosome_4/chromosome/4_parsed.fa -T 8
+```
 
 When done, check the output.completeness_report. How many proteins are reported as complete? Does this sound reasonable?
 
@@ -108,13 +115,14 @@ You will run BUSCO on chromosome 4 of Drosophila melanogaster. We will select th
 
 As said yesterday, BUSCO2 is using augustus to run so please use the path you copied ~/annotation_course/course_material/augustus_path into.
 
+```
 AUGUSTUS_CONFIG_PATH=PATH/augustus_path
 
-_module load bioinfo-tools_  
-_module load BUSCO_  
+module load bioinfo-tools
+module load BUSCO
 
-
-*BUSCO -i /home/__login__/annotation\_course/course\_material/data/dmel/chromosome\_4/chromosome/4.fa -o 4\_dmel_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/arthropoda_odb9*
+BUSCO -i /home/__login__/annotation_course/course_material/data/dmel/chromosome_4/chromosome/4.fa -o 4_dmel_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/arthropoda_odb9
+```
 
 When done, check the short\_summary\_4\_dmel\_busco. How many proteins are reported as complete? Does this sound reasonable?
 
@@ -135,18 +143,21 @@ Important remarks to remember before starting working with RNA-seq:
 
 To check the technology used to sequences the RNAseq and get some extra information we have to use fastqc tool.
 
-_module load bioinfo-tools_  
-_module load FastQC/0.11.5_  
+```
+module load bioinfo-tools 
+module load FastQC/0.11.5 
 
-*mkdir fastqc_reports*
+mkdir fastqc_reports
 
-*fastqc ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq.gz -o fastqc_reports/*
-
+fastqc ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq.gz -o fastqc_reports/
+```
 scp the html file resulting of fastqc (cf. exercise 4), what kind of result do you have?
 
 Checking the fastq quality score format
 
-*~/annotation_course/course_material/git/GAAS/annotation/Tools/Util/fastqFormatDetect.pl ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq.gz*
+```
+~/annotation_course/course_material/git/GAAS/annotation/Tools/Util/fastqFormatDetect.pl ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq.gz
+```
 
 In the normal mode, it differentiates between Sanger/Illumina1.8+ and Solexa/Illumina1.3+/Illumina1.5+.
 In the advanced mode, it will try to pinpoint exactly which scoring system is used.
@@ -159,9 +170,11 @@ More test can be made and should be made on RNA-seq data before doing the assemb
 
 [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) performs a variety of useful trimming tasks for illumina paired-end and single ended data.The selection of trimming steps and their associated parameters are supplied on the command line.
 
-*mkdir trimmomatic*  
-_module load bioinfo-tools_  
-_module load trimmomatic/0.36_  
+```
+mkdir trimmomatic
+module load bioinfo-tools
+module load trimmomatic/0.36 
+```
 
 The following command line will perform the following:  
 	• Remove adapters (ILLUMINACLIP:TruSeq3-PE.fa:2:30:10)  
@@ -170,13 +183,15 @@ The following command line will perform the following:
 	• Scan the read with a 4-base wide sliding window, cutting when the average quality per base drops below 15 (SLIDINGWINDOW:4:15)  
 	• Drop reads below the 36 bases long (MINLEN:36)  
 
-*java -jar /sw/apps/bioinfo/trimmomatic/0.32/milou/trimmomatic-0.32.jar PE -threads 8 ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq.gz ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.right.fastq.gz trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.left_unpaired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz trimmomatic/ERR305399.right_unpaired.fastq.gz ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.32/milou/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36*
+```
+java -jar /sw/apps/bioinfo/trimmomatic/0.32/milou/trimmomatic-0.32.jar PE -threads 8 ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq.gz ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.right.fastq.gz trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.left_unpaired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz trimmomatic/ERR305399.right_unpaired.fastq.gz ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.32/milou/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+```
 
 #### Tophat
 
 Once the reads have been trimmed, we use [tophat](https://ccb.jhu.edu/software/tophat/index.shtml) to align the RNA-seq reads to a genome in order to identify exon-exon splice junctions. It is built on the ultrafast short read mapping program [Bowtie](http://bowtie-bio.sourceforge.net/index.shtml).
 
-'''
+```
 mkdir tophat
 
 module load tophat/2.0.11  
@@ -186,7 +201,7 @@ module load perl
 module load perl_modules  
 
 tophat --library-type=fr-firststrand ~/annotation_course/course_material/data/dmel/chromosome_4/chromosome/chr4 trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz
-'''
+```
 
 This step will take a really long time so you can use the bam file located here ~/annotation_course/course_material/data/dmel/chromosome_4/RNAseq/tophat/accepted_hits.bam
 
@@ -194,10 +209,12 @@ This step will take a really long time so you can use the bam file located here 
 
 StringTie is a fast and highly efficient assembler of RNA-Seq alignments into potential transcripts. It uses a novel network flow algorithm as well as an optional de novo assembly step to assemble and quantitate full-length transcripts representing multiple splice variants for each gene locus. Its input can include not only the alignments of raw reads used by other transcript assemblers, but also alignments longer sequences that have been assembled from those reads.
 
-*module load bioinfo-tools*  
-*module load StringTie*  
+```
+module load bioinfo-tools
+module load StringTie
 
 stringtie accepted_hits.bam -o outdir/transcripts.gtf
+```
 
 When done you can find your results in the directory ‘outdir’. The file transcripts.gtf includes your assembled transcripts.
 As Webapollo doesn't like the gtf format file you should convert it in gff3 format (cf. Exercise 5). Then, transfer the gff3 file to your computer and load it into [Webapollo](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/). How well does it compare with your Augustus results? Looking at your results, are you happy with the default values of Stringtie (which we used in this exercise) or is there something you would like to change?
@@ -208,15 +225,16 @@ As Webapollo doesn't like the gtf format file you should convert it in gff3 form
 
 Trinity assemblies can be used as complementary evidence, particularly when trying to polish a gene build with Pasa. Before you start, check how big the raw read data is that you wish to assemble to avoid unreasonably long run times.
 
-*module load bioinfo-tools*  
-*module load perl*  
-*module load perl_modules*  
-*module load trinity/2.0.6*  
-*module load java/sun_jdk1.7.0_25*  
-*module load samtools*  
+```
+module load bioinfo-tools
+module load perl
+module load perl_modules
+module load trinity/2.0.6
+module load java/sun_jdk1.7.0_25
+module load samtools
 
-*Trinity --seqType fq --max_memory 64G --left ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq --right ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.right.fastq --CPU 8 --output trinity_result --SS_lib_type RF* 
-
+Trinity --seqType fq --max_memory 64G --left ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq --right ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.right.fastq --CPU 8 --output trinity_result --SS_lib_type RF 
+```
 
 Trinity takes a long time to run if you want to have a look at the results, look in ~/annotation_course/course_material/data/dmel/chromosome_4/RNAseq/ the output that will be used later on for the annotation will be Trinity.fasta
 
