@@ -176,15 +176,17 @@ The following command line will perform the following:
 
 Once the reads have been trimmed, we use [tophat](https://ccb.jhu.edu/software/tophat/index.shtml) to align the RNA-seq reads to a genome in order to identify exon-exon splice junctions. It is built on the ultrafast short read mapping program [Bowtie](http://bowtie-bio.sourceforge.net/index.shtml).
 
-*mkdir tophat*
+'''
+mkdir tophat
 
-*module load tophat/2.0.11*  
-*module load bowtie2/2.2.3*  
-*module load samtools/0.1.19*  
-*module load perl*  
-*module load perl_modules*  
+module load tophat/2.0.11  
+module load bowtie2/2.2.3  
+module load samtools/0.1.19  
+module load perl  
+module load perl_modules  
 
-*tophat --library-type=fr-firststrand ~/annotation_course/course_material/data/dmel/chromosome_4/chromosome/chr4 trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz*
+tophat --library-type=fr-firststrand ~/annotation_course/course_material/data/dmel/chromosome_4/chromosome/chr4 trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz
+'''
 
 This step will take a really long time so you can use the bam file located here ~/annotation_course/course_material/data/dmel/chromosome_4/RNAseq/tophat/accepted_hits.bam
 
