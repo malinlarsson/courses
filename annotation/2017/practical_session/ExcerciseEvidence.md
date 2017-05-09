@@ -76,7 +76,7 @@ Transfer the augustus\_drosophila.gff3 to your computer using scp:
 *scp __login__@milou.uppmax.uu.se:/home/__login__/annotation\_course/practical2/augustus\_drosophila.gff3 .*  
 
 Load the file in [Webapollo](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/). [Here find the WebApollo instruction](UsingWebapollo)
-<br/>Load the Ensembl annotation available in  ~/annotation\_course/course\_material/dmel/chromosome\_4/annotation
+<br/>Load the Ensembl annotation available in  ~/annotation\_course/course\_material/data/dmel/chromosome\_4/annotation
 How does the Augustus annotation compare with the Ensembl annotation? Are they identical?
 
 **_Exercise 6 -_ Augustus with yeast models:**  
