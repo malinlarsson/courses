@@ -213,7 +213,7 @@ Trinity assemblies can be used as complementary evidence, particularly when tryi
 *module load java/sun_jdk1.7.0_25*  
 *module load samtools*  
 
-*Trinity --seqType fq --max_memory 64G --left ~/annotation_course/2017/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq --right ~/annotation_course/2017/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.right.fastq --CPU 8 --output trinity_result --SS_lib_type RF* 
+*Trinity --seqType fq --max_memory 64G --left ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.left.fastq --right ~/annotation_course/course_material/data/dmel/chromosome_4/raw_computes/ERR305399.right.fastq --CPU 8 --output trinity_result --SS_lib_type RF* 
 
 
 Trinity takes a long time to run if you want to have a look at the results, look in ~/annotation_course/course_material/data/dmel/chromosome_4/RNAseq/ the output that will be used later on for the annotation will be Trinity.fasta
