@@ -29,7 +29,7 @@ Room: Birgit Thilander 9-12, thereafter Ingegerd Eriksson
 **12.00-13.00** Lunch  
 **13.00-17:00** Exercise: NGS workflow part II (Sebastian DiLorenzo, Lena Hansson, Magnus Alm Rosenblad)  
 
-**18:00-** Course dinner at TBA  
+**18:00-** Course dinner at [Taverna Averna](https://www.tavernaaverna.se/)  
 
 **Thursday 18th**  
 **09.00-11.00** Lecture: Next Generation Sequencing Overview (Olga Vinnere Pettersson)  
