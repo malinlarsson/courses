@@ -68,7 +68,7 @@ Do this to convert your Augustus-file:
 
 _module load perl_  
 _module load perl_modules_  
-_module load BioPerl/1.6.24_PERL5.18.5_  
+_module load BioPerl/1.6.924_PERL5.18.4_  
 
 *~/annotation\_course/course\_material/git/GAAS/annotation/Tools/Converter/gxf_to_gff3.pl -g augustus_drosophila.gtf -o augustus_drosophila.gff3 --gff_version 2*
 
