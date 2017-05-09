@@ -102,6 +102,8 @@ Prokka is a really easy tool to use for bacterial annotation.
 You are going to use the same assemblies you used previously for Busco
 
 _module load bioinfo-tools_  
+*module unload BUSCO*
+
 *module load prokka*
 
 *prokka --help*
