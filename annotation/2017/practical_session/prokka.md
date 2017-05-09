@@ -78,7 +78,7 @@ BUSCO2 is using augustus to run, as we have no administator rights on uppmax we 
 
 *cp -r ~/annotation_course/course_material/augustus_path .*
 
-*chmod a+w -R augustus_path*
+*chmod u+w -R augustus_path*
 
 _module load bioinfo-tools_  
 _module load BUSCO_  
