@@ -97,7 +97,7 @@ BUSCO2 provides measures for quantitative assessment of genome assembly, gene se
 
 Here you will try Cegma on Chromosome 4 of Drosophila melanogaster.First, load cegma by typing 'module load cegma'. The problem is that the file ‘4.fa’ has fasta-headers that are only numbers, and Cegma won’t accept that. Can you figure out how to change the fasta header to ‘chr4’ rather than just ‘4’ using the linux command sed? Ask the teachers if you are having problems, or cheat by using the already parsed file 4_parsed.fa. :)
 
-_module load cegma_
+_module load cegma_   
 *cegma -g /home/__login__/annotation\_course/course\_material/data/dmel/chromosome\_4/chromosome/4\_parsed.fa -T 8*
 
 When done, check the output.completeness_report. How many proteins are reported as complete? Does this sound reasonable?
