@@ -92,7 +92,7 @@ There exist a number of 'annotation viewers' - IGV, Argo and Apollo, to name a f
 ### Using WebApollo to view annotations
 Transfer your maker annotation files to your computer using the scp command.  
 Then, jump to [WebApollo](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/) and upload your annotation track. [Here find the WebApollo instruction](UsingWebapollo)  
-Along with your own gene builds, there are a number of other tracks already available - including a BAM track obtained from an RNA-seq sample as well as the reference annotation from FlyBase /EnsEMBL. You can now compare your gene builds against this reference. Some questions to ask yourself:
+You can now compare your gene builds against this reference. Some questions to ask yourself:
 
 - Do my gene builds recover all the genes found in the reference?  
 - What sort of differences are most common?  
