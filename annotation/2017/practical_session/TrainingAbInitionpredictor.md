@@ -24,8 +24,8 @@ source ~/.bash_profile
 Then load all modules that we will need to train Augustus
 ```
 module load bioinfo-tools   
-module load perl/5.18.4  
-module load perl_module/5.18.4  
+module load perl  
+module load perl_module  
 module load BioPerl/1.6.924_Perl5.18.4   
 module load cufflinks/2.2.1
 ```
