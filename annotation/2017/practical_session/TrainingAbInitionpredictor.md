@@ -56,7 +56,7 @@ mkdir nonredundant
 mkdir blast_recursive  
 mkdir gff2genbank  
 ```
-Next step, we need to filter the best genes we will use for the training, we need complete genes, models with a distance with an other model (distance genes to genes) over 500 nt and a AED score over 0.3 (those are our default parameters).
+Next step, we need to filter the best genes we will use for the training, we need complete genes, models with a distance with an other model (distance genes to genes) over 500 nt and a AED score under 0.3 (those are our default parameters).
 ```
 ~/annotation_course/course_material/scripts/filter_sort.pl -file codingGeneFeatures.gff -F 4.fa -o filter/codingGeneFeatures.filter.gff -c -r -d 500 -a 0.3
 ```
