@@ -49,7 +49,7 @@ Maker strings together a range of different tools into a complex pipeline (e.g. 
 
 ```
 module load bioinfo-tools  
-module load maker/2.31.8  
+module load maker/2.31.9  
 ```
 
 If you are trying to run Maker on your own computer or cluster, make sure that in fact all its various dependencies are loaded.
