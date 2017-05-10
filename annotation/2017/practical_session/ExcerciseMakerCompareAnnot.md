@@ -96,4 +96,3 @@ Along with your own gene builds, there are a number of other tracks already avai
 
 - Do my gene builds recover all the genes found in the reference?  
 - What sort of differences are most common?  
-- Do my gene builds reflect the patterns found in the RNA-seq data?
