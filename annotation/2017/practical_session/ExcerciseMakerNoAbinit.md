@@ -30,7 +30,7 @@ ln -s /path/to/chromosome_4/chromosome/4.fa
 To finish, you will also need EST set file and a protein set file:  
 ```
  ln -s ~/annotation_course/course_material/data/dmel/chromosome_4/evidence/est.chr4.fa  
- ln -s ~/annotation_course/course_material/data/dmel/chromosome_4/evidence/protein.chr4.fa  
+ ln -s ~/annotation_course/course_material/data/dmel/chromosome_4/evidence/proteins.chr4.fa  
 ```
 You should now have 1 raw compute, 1 EST file, 1 protein file and the genome sequence in the working directory. For Maker to use this information, we need create the three config files, as discussed above (maker -CTL). You can leave the two files controlling external software behaviors untouched. In the actual maker options file, we need to provide:
 
