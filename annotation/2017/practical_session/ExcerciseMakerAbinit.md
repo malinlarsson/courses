@@ -39,7 +39,7 @@ This time, we do specify a reference species to be used by augustus, which will 
 
 *keep_preds=1*
 
-With these settings, Maker will run augustus to predict gene loci, but inform these predictions with information from the protein and est alignments. Note that if you are tempted to run both ab-initio predictions and gene model calling from evidence, you are out of luck. While Maker won't complain when trying to do this, it will simply not create hints for the ab-initio predictions. And in most cases, this will result in problems.
+With these settings, Maker will run augustus to predict gene loci, but inform these predictions with information from the protein and est alignments.
 ## Run Maker with ab-initio predictions
 
 With everything configured, run Maker as you did for the previous analysis:
