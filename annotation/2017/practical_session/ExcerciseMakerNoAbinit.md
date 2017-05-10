@@ -25,7 +25,7 @@ Now link the raw computes you want to use into your folder. The files you will n
 
 In addition, you will also need the genome sequence. Sym-link it from the the data directory created earlier:
 ```
-ln -s /path/to/chromosome\_4/chromosome/4.fa
+ln -s /path/to/chromosome_4/chromosome/4.fa
 ```
 To finish, you will also need EST set file and a protein set file:  
 ```
@@ -60,7 +60,7 @@ This will take a little while and process a lot of output to the screen. Luckily
 
 Once Maker is finished, compile the annotation:
 ```
-~/annotation\_course/course\_material/git/GAAS/annotation/Tools/Maker/maker\_merge\_outputs\_from\_datastore.pl --output maker\_no\_abinitio
+~/annotation_course/course_material/git/GAAS/annotation/Tools/Maker/maker_merge_outputs_from_datastore.pl --output maker_no_abinitio
 ```
 We have specified a name for the output directory - unlike before - since we will be creating more than one annotation and need to be able to tell them apart.  
 
