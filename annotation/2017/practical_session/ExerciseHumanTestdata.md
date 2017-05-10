@@ -11,30 +11,35 @@ The human test data set is located in the folder you symlinked earlier, named 'c
 ## Create project folder
 
 First, we create a new folder in which, we will store all the configuration files and input files. To do so, type:
-
-<i>mkdir maker\_human</i>  
-<i>cd maker\_human</i>
-
+```
+mkdir maker_human  
+cd maker_human
+```
 If you haven't done so already, load the maker module:
-
-<i>module load bioinfo-tools</i>  
-<i>module load maker/2.31.9</i>
-
+```
+module load bioinfo-tools  
+module load maker/2.31.9
+```
 Next, we create symbolic links to sequence files we wish to use in this exercise (located in course\_data/human):
 
 - hsap\_contig.fasta - a piece of the human genome  
-*ln -s /home/__login__/annotation\_course/course\_material/data/human/hsap\_contig.fasta*  
-- hsap\_protein.fasta - Proteins that map to the genomic region  
-*ln -s /home/__login__/annotation\_course/course\_material/data/human/hsap\_protein.fasta*  
+```
+ln -s /home/login/annotation_course/course_material/data/human/hsap_contig.fasta
+```
+- hsap\_protein.fasta - Proteins that map to the genomic region 
+```
+ln -s /home/login/annotation_course/course_material/data/human/hsap_protein.fasta  
+```
 - hsap\_est.fasta - EST data that maps to the genomic region  
-*ln -s /home/__login__/annotation\_course/course\_material/data/human/hsap\_est.fasta*  
-
+```
+ln -s /home/login/annotation_course/course_material/data/human/hsap_est.fasta  
+```
 ##Configure your maker project
 
 Next, we create the 3 maker control files:
-
-_maker -CTL_
-
+```
+maker -CTL
+```
 Off these, only maker_opts.ctl is of concern to us. Have a look at the following sections and fill in the information as shown:
 
 \#-----Genome (these are always required)  
@@ -83,9 +88,9 @@ unmask=0 #also run ab-initio prediction programs on unmasked sequence, 1 = yes, 
 ## Run Maker
 
 Above, we have specified to annotate a short piece of the human genome using the augustus gene finder to create ab-initio predictions, combined with evidence alignments from both protein and EST data. To run this configured analysis, just type:
-
-_maker -c 8_
-
+```
+maker -c 8
+```
 This will start Maker on 8 cores, if everything is configured correctly.
 
 ***Note:*** In a real-world scenario, executing maker in this way will not be the preferred option. Instead of using Makers' powerful parallelization via MPI, we are simply telling it to run on one node with 8 cores. This works fine for a small test data set, but will be insufficient for a large genome. Unfortunately, the MPI mode of Maker doesn't currently work on Milou.
@@ -130,9 +135,9 @@ The main annotation file is 'NT\_010783%2E15.gff' - including both the finished 
 You have two options now for gathering the output in some usable form - copy select files by hand to wherever you want them. Or you can use a script that does the job for you (we have included an example in the script folder).
 
 From your Maker folder, run the script called 'maker\_merge\_outputs\_from\_index.pl' to create an output file for all annotations and protein files:
-
-*/home/__login__/annotation_course/course_material/git/GAAS/annotation/Tools/Maker/maker_merge_outputs_from_datastore.pl* 
-
+```
+/home/login/annotation_course/course_material/git/GAAS/annotation/Tools/Maker/maker_merge_outputs_from_datastore.pl 
+```
 This will create a directory called "annotations" containing:
 
 \-annotations.gff  
@@ -170,13 +175,14 @@ This should contains a bunch of files, including '**maker.gff**' - which contain
 ### Inspect the gene models
 
 Next, we load the GenomeTools package:
-
-_module load GenomeTools/1.5.8_  
+```
+module load GenomeTools/1.5.8 
+```
 (In the case which you have a conflict with another module. Unload the problematic one. Don't forget to reload the inactivated module once you finished with GenomeTools)
 
 
 And run its counting method on the gene models:
-
-_gt stat maker.gff_
-
+```
+gt stat maker.gff
+```
 We could now also visualise all this information using a genome browser, such as [IGV](http://software.broadinstitute.org/software/igv/). IGV requires a genome fasta file and any number of annotation files in GTF or GFF3 format (note that GFF3 formatted file tend to look a bit weird in IGV sometimes).
