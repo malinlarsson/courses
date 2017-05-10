@@ -43,7 +43,7 @@ module load BioPerl/1.6.924_Perl5.18.4
 First you have to be situated in a folder containing the two maker annotations (with and without ab initio) and the augustus annotation. Then, copy or sym-link the EnsEMBL reference annotation that we provided you. Hint: The EnsEMBL annotation for chromosome 4 should be located in the folder course\_material/data/dmel/chromosome\_4/annotation.  
 Now we have to do a couple of things: convert the EnsEMBL reference annotation from GTF format to GFF3 and then sort any GFF3-formatted annotation in a way that genometools accepts.
 ```
-~/annotation_course/course_material/git/GAAS/annotation/Tools/Converter/gxf_to_gff3.pl -g drosophila_melanogaster.chr4.gtf -o drosophila_melanogaster.gff*
+~/annotation_course/course_material/git/GAAS/annotation/Tools/Converter/gxf_to_gff3.pl -g drosophila_melanogaster.chr4.gtf -o drosophila_melanogaster.gff
 ```
 you need to unload Bioperl to be able to load GenomeTools 
 ```
