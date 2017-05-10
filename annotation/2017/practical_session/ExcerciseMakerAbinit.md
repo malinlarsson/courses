@@ -19,7 +19,7 @@ Create a new folder for this Maker run:
 mkdir maker_dmel_with_abinitio  
 cd maker_dmel_with_abinitio
 ```
-Now link the raw computes you want to use into your folder:
+Now link the gff files you want to use into your folder:
 
  - repeatmasker.chr4.gff (coordinates of repeatmasked regions)  
  - cufflinks2genome.chr4.gff (EST hints created from assembled transcripts) 
