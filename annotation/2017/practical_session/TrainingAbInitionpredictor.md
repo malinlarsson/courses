@@ -69,6 +69,7 @@ In order to do so, we translate our coding genes into proteins, format the prote
 Indeed, each sequence can contain one or more genes; the genes can be on either strand. However, the genes must not overlap, and only one transcript per gene is allowed.
 ```
 gffread -y codingGeneFeatures.filter.longest_cds.tmp -g 4.fa codingGeneFeatures.filter.longest_cds.gff  
+
 ~/annotation_course/course_material/scripts/fix_fasta.sh codingGeneFeatures.filter.longest_cds.tmp > protein/codingGeneFeatures.filter.longest_cds.proteins.fa  
 
 rm codingGeneFeatures.filter.longest_cds.tmp
