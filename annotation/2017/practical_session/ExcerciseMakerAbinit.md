@@ -15,10 +15,10 @@ However, if one or more good ab-initio profiles are available, they can potentia
 In order to compare the performance of Maker with and without ab-initio predictions in a real-world scenario, we have first run a gene build without ab-initio predictions. Now, we run a similar analysis but enable ab-initio predictions through augustus.
 
 Create a new folder for this Maker run:
-
-<i>mkdir maker\_dmel\_with\_abinitio</i>  
-<i>cd maker\_dmel\_with\_abinitio</i>
-
+```
+mkdir maker_dmel_with_abinitio  
+cd maker_dmel_with_abinitio
+```
 Now link the raw computes you want to use into your folder:
 
  - repeatmasker.chr4.gff (coordinates of repeatmasked regions)  
@@ -27,9 +27,9 @@ Now link the raw computes you want to use into your folder:
 You could use the stringtie gff results you created but you need to change feature types from genes/transcripts into match / match_part otherwise Maker do not recognize it, also you could use the trinity.fasta file you created with trinity but maker will take longer to run.
 
 In addition, you will also need the genome sequence and a protein set (you can use the protein and EST sets we used earlier). Sym-link it from the the data directory created earlier:
-
-*ln -s /path/to/chromosome\_4/chromosome/4.fa*
-
+```
+ln -s /path/to/chromosome_4/chromosome/4.fa
+```
 This time, we do specify a reference species to be used by augustus, which will enable ab-initio gene finding and keep_preds=1 will also show abinitio prediction not supported by any evidences :
 
 *augustus\_species=fly* #Augustus gene prediction species model  (this is where you can call the database you trained for augustus)
@@ -43,15 +43,15 @@ With these settings, Maker will run augustus to predict gene loci, but inform th
 ## Run Maker with ab-initio predictions
 
 With everything configured, run Maker as you did for the previous analysis:
-
-*maker -c 8*
-
+```
+maker -c 8
+```
 We probably expect this to take a little bit longer than before, since we have added another step to our analysis.
 
 ## Compile the output
 
 When Maker has finished, compile the output:
-
-<i>~/annotation\_course/course\_material/git/GAAS/annotation/Tools/Maker/maker\_merge\_outputs\_from\_datastore.pl -\-output maker\_with\_abinitio</i>  
-
+```
+~/annotation_course/course_material/git/GAAS/annotation/Tools/Maker/maker_merge_outputs_from_datastore.pl --output maker_with_abinitio  
+```
 And again, it is probably best to link the resulting output (maker.gff) to a result folder (the same as defined in the previous exercise e.g. dmel\_results), under a descriptive name.
