@@ -17,7 +17,7 @@ Held in Uppsala May 9th-11th, 2017.
 [Map over Uppsala](http://www.stadskartan.se/uppsala/?lng=en)  
 [Map over Uppsala biomedical center, BMC](bmc)  
 [Travel Info](travel)  
-[TO DO AND EAT in Uppsala](http://www.destinationuppsala.se/en/)
+[TO DO AND EAT in Uppsala](http://www.destinationuppsala.se/en/)  
 [Restaurant Meza](http://meza.nu/)
 
 ## Helpful Things
