@@ -12,7 +12,7 @@ title:  'Exercise Gene Building'
 Before going into the exercises below, you should create in your home folder a specific folder for this practical session 3 using:  
 
 ```
-cd ~/*
+cd ~/
 
 cd annotation_course/
 
