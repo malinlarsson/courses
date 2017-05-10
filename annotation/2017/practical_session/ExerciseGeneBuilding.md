@@ -47,8 +47,10 @@ We will therefore first run our annotation project in the traditional way, with 
 
 Maker strings together a range of different tools into a complex pipeline (e.g. blast, exonerate, repeatmasker, augustus...). On Uppmax, loading all these tools and Maker into your global PATH is done simply by typing:
 
-<i>module load bioinfo-tools</i>  
-<i>module load maker/2.31.8</i>  
+```
+module load bioinfo-tools  
+module load maker/2.31.8  
+```
 
 If you are trying to run Maker on your own computer or cluster, make sure that in fact all its various dependencies are loaded.
 ## Understanding Makers control files
@@ -76,8 +78,9 @@ The first exercise will be a very short one in which you will create a gene buil
 ### Getting the pre-computes
 
 Running Maker on a full genome, even of an invertebrate, can take a considerable amount of time - especially if only few processing cores are available. We have therefore generated the genome-wide raw computes prior to the course. You can find the in the folder you have symlinked earlier under
-
-*annotation\_course/course\_material/data/dmel/chromosome_4/raw*
+```
+annotation\_course/course\_material/data/dmel/chromosome_4/raw
+```
 
 Ab-initio guided or evidence-based
 
