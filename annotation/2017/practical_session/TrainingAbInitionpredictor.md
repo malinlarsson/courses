@@ -25,7 +25,7 @@ Then load all modules that we will need to train Augustus
 ```
 module load bioinfo-tools   
 module load perl  
-module load perl_module  
+module load perl_modules  
 module load BioPerl/1.6.924_Perl5.18.4   
 module load cufflinks/2.2.1
 ```
