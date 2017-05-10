@@ -85,6 +85,8 @@ trna=0 #find tRNAs with tRNAscan, 1 = yes, 0 = no
 snoscan\_rrna= #rRNA file to have Snoscan find snoRNAs  
 unmask=0 #also run ab-initio prediction programs on unmasked sequence, 1 = yes, 0 = no
 
+you can check maker parameters [here](http://weatherby.genetics.utah.edu/MAKER/wiki/index.php/The_MAKER_control_files_explained) 
+
 ## Run Maker
 
 Above, we have specified to annotate a short piece of the human genome using the augustus gene finder to create ab-initio predictions, combined with evidence alignments from both protein and EST data. To run this configured analysis, just type:
