@@ -11,13 +11,16 @@ title:  'Exercise Gene Building'
 ## First of all
 Before going into the exercises below, you should create in your home folder a specific folder for this practical session 3 using:  
 
-*cd ~/*
+```
+cd ~/*
 
-*cd annotation_course/*
+cd annotation_course/
 
-*mkdir practical3*  
+mkdir practical3  
 
-*cd practical3*  
+cd practical3
+
+```
 
 This course\_material folder is write-proteced, it is only a resource for you to obtain data from, but not where you are writing your own outputs to!
 
