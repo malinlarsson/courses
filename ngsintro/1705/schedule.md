@@ -23,7 +23,7 @@ Room: Ingegerd Eriksson
 **14:00-17:00** Exercise: Advanced Linux usage (Valentin Georgiev, Marcela Davila Lopez, Martin Dahlö, Magnus Alm Rosenblad)  
 
 **Wednesday 17th**  
-Room: Birgit Thilander 9-12, thereafter Ingegerd Eriksson  
+Room: Ingegerd Eriksson  
 **09:00-10.00** Lecture: NGS workflow (Sebastian DiLorenzo)  
 **10:00-12.00** Exercise: NGS workflow part I (Sebastian DiLorenzo, Katarina Truvé, Magnus Alm Rosenblad)  
 **12.00-13.00** Lunch  
@@ -32,6 +32,7 @@ Room: Birgit Thilander 9-12, thereafter Ingegerd Eriksson
 **18:00-** Course dinner at [Taverna Averna](https://www.tavernaaverna.se/)  
 
 **Thursday 18th**  
+Room: Birgit Thilander 9-12, thereafter Ingegerd Eriksson  
 **09.00-11.00** Lecture: Next Generation Sequencing Overview (Olga Vinnere Pettersson)  
 **11:00-12.00** Lecture: NGS and bioinformatics analysis pipelines (Adam Ameur)  
 **12.00-13.00** Lunch  
