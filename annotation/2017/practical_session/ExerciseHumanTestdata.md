@@ -136,7 +136,7 @@ The main annotation file is 'NT\_010783%2E15.gff' - including both the finished 
 
 You have two options now for gathering the output in some usable form - copy select files by hand to wherever you want them. Or you can use a script that does the job for you (we have included an example in the script folder).
 
-From your Maker folder, run the script called 'maker\_merge\_outputs\_from\_index.pl' to create an output file for all annotations and protein files:
+From your Maker folder (in maker_human), run the script called 'maker\_merge\_outputs\_from\_index.pl' to create an output file for all annotations and protein files:
 ```
 /home/login/annotation_course/course_material/git/GAAS/annotation/Tools/Maker/maker_merge_outputs_from_datastore.pl 
 ```
