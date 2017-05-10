@@ -44,7 +44,7 @@ ln -s ~/annotation_course/practical3/maker_no_abinitio/annotationByType/maker.gf
 
 First step is to select only the coding genes from the maker.gff file and remove all tRNA
 ```
-~/annotation_course/course_material/git/GAAS/annotation/Tools/Maker/maker_gff3manager_JD_v8.pl -f dmel_results_noAbinitio.gff -o dmel_results_clean
+~/annotation_course/course_material/git/GAAS/annotation/Tools/Maker/maker_gff3manager_JD_v8.pl -f dmel_results_noAbinitio.gff -o dmel_results_noAbinitio_clean
 
 cd dmel_results_noAbinitio_clean
 ```
