@@ -36,7 +36,7 @@ Room: E10:1309
 Room: E10:1309  
 **09.00-09.15** Lecture: Introduction to manual curation (Henrik Lantz)  
 **09.15-11.15** [Practical 4: Manual curation(incl. coffee break)](practical_session/ExerciseManCuration) (Henrik Lantz, Mahesh Binzer-Panchal, Lucile Soler)  
-**11.15-12.00** [Lecture: Functional annotation] (Lucile Soler)  
+**11.15-12.00** [Lecture: Functional annotation](slides/FunctionalAnnot_LS_11_05_2017.pdf) (Lucile Soler)  
 **12.00-13.00** Lunch  
 **13.00-16.00** [Practical 5: Functional annotation and annotation analysis contd. (incl. coffee break)](practical_session/ExerciseFuncAnnotInterp) (Henrik Lantz, Mahesh Binzer-Panchal, Lucile Soler)  
 **16.00-17.00** Wrap-up  
