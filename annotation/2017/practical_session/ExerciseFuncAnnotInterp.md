@@ -55,7 +55,7 @@ now create a link with the maker.gff
 ```
 ln -s maker_with_abinitio/annotationByType/maker.gff
 ```
-Before to use the script allowing to load the information from Annie output to your annotation file you have to load some PATH to your profile. To do that just launch the following script:  
+Before to use the script allowing to load the information from Annie output to your annotation file you have to load some PATH to your profile. To do that just launch the following script(in case you have not done it yet) or just source the bash_profile:  
 ```
 ~/annotation_course/course_material/lib/install_perllib_missing.sh  
 source ~/.bash_profile  
