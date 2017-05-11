@@ -38,6 +38,7 @@ Launch Interproscan with the option -h if you want have a look about all the par
 - The option '-pa' provides mappings from matches to pathway information (MetaCyc,UniPathway,KEGG,Reactome).
 ```
 module load InterProScan/5.15-54.0  
+module load perl  
 interproscan.sh -i maker_with_abinitio/annotations.proteins.fa -t p -dp -pa -appl Pfam,ProDom-2006.1,SuperFamily-1.75,PIRSF-3.01 --goterms --iprlookup
 ```
 The analysis shoud take 2-3 secs per protein request - depending on how many sequences you have submitted, you can make a fairly deducted guess regarding the running time.  
@@ -56,10 +57,10 @@ ln -s maker_with_abinitio/annotationByType/maker.gff
 ```
 Before to use the script allowing to load the information from Annie output to your annotation file you have to load some PATH to your profile. To do that just launch the following script:  
 ```
-~/annotation_course/course_material/lib/install_perllib_missing.sh*  
+~/annotation_course/course_material/lib/install_perllib_missing.sh  
 source ~/.bash_profile  
 
-ipr_update_gff maker.gff interproscan.tsv > maker.with_interpro.gff*
+ipr_update_gff maker.gff interproscan.tsv > maker.with_interpro.gff
 ```
 Where a match is found, the new file will now include features called Dbxref and/or Ontology_term in the gene and transcript feature field (9th column).
 
