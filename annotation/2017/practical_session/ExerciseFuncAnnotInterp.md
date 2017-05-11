@@ -21,7 +21,7 @@ cd practical5
 ```
 Now link the annotation folder you choose to work with. The command will looks like:
 ```
-ln -s ~/annotation_course/practical2/maker_dmel_with_abinitio/maker_with_abinitio/  
+ln -s ~/annotation_course/practical3/maker_dmel_with_abinitio/maker_with_abinitio/  
 ```
 ## Interproscan approach
  Interproscan combines a number of searches for conserved motifs and curated data sets of protein clusters etc. This step may take fairly long time. It is recommended to paralellize it for huge amount of data by doing analysis of chunks of tens or hundreds proteins.
