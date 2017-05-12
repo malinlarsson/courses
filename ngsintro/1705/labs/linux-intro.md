@@ -40,7 +40,7 @@ Usually you would do most of the work in this lab directly on one of the login n
 This was covered briefly in the lecture notes.
 
 ```bash
-$ salloc -A g2016035 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2016035_1 &
+$ salloc -A g2017014 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2017014_1 &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
@@ -97,7 +97,7 @@ It is the equivalent of double clicking a folder in a GUI.
 To enter the course project's proj folder, simply type
 
 ```bash
-$ cd /proj/g2016035
+$ cd /proj/g2017014
 ```
 
 Have a look around and see which folders there are.
@@ -111,7 +111,7 @@ $ cd nobackup
 
 We can easily see that this is a relative path, since it does not start with a **/** That means that this command will only work when you are standing in your project folder.
 If you are standing somewhere else and say that you want to enter a folder named nobackup, the computer will tell you that there is no folder named nobackup where you are located at the moment.
-The absolute path to the course's nobackup folder would be **/proj/g2016035/nobackup**
+The absolute path to the course's nobackup folder would be **/proj/g2017014/nobackup**
 
 It is the exact same things as if you are using a GUI.
 If you are standing on your desktop, you can double click a folder which is located on your desktop.
@@ -159,14 +159,14 @@ For structures sake, first create a folder named as your username in the course'
 This can be done in 2 ways:
 
 ```bash
-$ mkdir /proj/g2016035/nobackup/<username>
-$ mkdir /proj/g2016035/nobackup/<username>/linux_tutorial
+$ mkdir /proj/g2017014/nobackup/<username>
+$ mkdir /proj/g2017014/nobackup/<username>/linux_tutorial
 ```
 
 or
 
 ```bash
-$ mkdir -p /proj/g2016035/nobackup/<username>/linux_tutorial
+$ mkdir -p /proj/g2017014/nobackup/<username>/linux_tutorial
 ```
 
 The reason for this is that Linux will not like it if you try to create the folder linux_tutorial inside a folder (the one named like your username) that does not exist yet.
@@ -181,7 +181,7 @@ Without it, only files directly in the source folder would be copied, NOT sub-fo
 ```bash
 Ex: cp -r <source folder> <destination folder>
 
-$ cp -r /sw/courses/ngsintro/linux_tutorial/* /proj/g2016035/nobackup/<username>/linux_tutorial
+$ cp -r /sw/courses/ngsintro/linux_tutorial/* /proj/g2017014/nobackup/<username>/linux_tutorial
 ```
 
 If you are unable to copy the files on uppmax, you can download the files instead of copying them.
@@ -192,7 +192,7 @@ I.e. if you want to download the file http://somewhere.com/my.file and you give 
 ```bash
 Ex: wget -P <destination prefix> <source URL>
 
-$ wget -P /proj/g2016035/nobackup/<username>/linux_tutorial {{site.url}}/ngsintro/1502/labs/files/linux-intro/files.tar.gz
+$ wget -P /proj/g2017014/nobackup/<username>/linux_tutorial {{site.url}}/ngsintro/1502/labs/files/linux-intro/files.tar.gz
 ```
 
 ## 5. Unpack Files
@@ -201,7 +201,7 @@ Go to the folder you just copied and see what is in it.
 **NOTE: Remember to tab-complete to avoid typos and too much writing.**
 
 ```bash
-$ cd /proj/g2016035/nobackup/<username>/linux_tutorial
+$ cd /proj/g2017014/nobackup/<username>/linux_tutorial
 
 $ ll
 ```
