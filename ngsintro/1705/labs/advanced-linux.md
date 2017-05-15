@@ -57,7 +57,7 @@ Start your terminal, log onto UPPMAX (check with squeue which core you had and s
 
 ```bash
 # ONLY IF YOU DON'T ALREADY HAVE AN ACTIVE ALLOCATION SINCE BEFORE
-$ salloc -A g2017014 -t 04:30:00 -p core --no-shell --reservation=g2017014_MON &
+$ salloc -A g2017014 -t 04:30:00 -p core --no-shell --reservation=g2017014_mon &
 
 ```
 
