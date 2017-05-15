@@ -11,7 +11,7 @@ Room: Ingegerd Eriksson
 **10.15-11.00** [Lecture: Introduction to Linux](slides/linux-tutorial.pdf) (Valentin Georgiev)  
 **11.00-12.00** [Exercise: Introduction to Linux](labs/linux-intro) (Valentin Georgiev, Martin Dahlö, Marcela Davila Lopez, Magnus Alm Rosenblad)  
 **12.00-13.00** Lunch  
-**13.00-14.00** [Lecture: Introduction to UPPMAX/UPPNEX](slides/2017_05_15_UPPMAX_tutorial.pdf) (Valentin Georgiev)  
+**13.00-14.00** [Lecture: Introduction to UPPMAX/UPPNEX](slides/2017_05_15_UPPMAX_tutorial.pdf) ( Valentin Georgiev)  
 **14.00-17.00** [Exercise: Introduction to UPPMAX/UPPNEX](labs/uppmax-intro) (Valentin Georgiev, Martin Dahlö, Marcela Davila Lopez, Magnus Alm Rosenblad)  
 
 **Tuesday 16th**  
