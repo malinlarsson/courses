@@ -16,11 +16,11 @@ Room: Ingegerd Eriksson
 
 **Tuesday 16th**  
 Room: Ingegerd Eriksson  
-**09.00-09.30** Lecture: File types in bioinformatics (Martin Dahlö)  
-**09.30-12.00** Exercise: File types in bioinformatics (Valentin Georgiev, Marcela Davila Lopez, Martin Dahlö, Magnus Alm Rosenblad)  
+**09.00-09.30** [Lecture: File types in bioinformatics](slides/file_types.pdf) (Martin Dahlö)  
+**09.30-12.00** [Exercise: File types in bioinformatics](labs/filetypes) (Valentin Georgiev, Marcela Davila Lopez, Martin Dahlö, Magnus Alm Rosenblad)  
 **12.00-13.00** Lunch  
-**13:00-14:00** Lecture: Advanced Linux usage (Valentin Georgiev)  
-**14:00-17:00** Exercise: Advanced Linux usage (Valentin Georgiev, Marcela Davila Lopez, Martin Dahlö, Magnus Alm Rosenblad)  
+**13:00-14:00** [Lecture: Advanced Linux usage](slides/advanced_linux.pdf) (Martin Dahlö)  
+**14:00-17:00** [Exercise: Advanced Linux usage](labs/loops_lab) (Valentin Georgiev, Marcela Davila Lopez, Martin Dahlö, Magnus Alm Rosenblad)  
 
 **Wednesday 17th**  
 Room: Ingegerd Eriksson  
