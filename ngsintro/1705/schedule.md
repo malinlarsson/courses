@@ -8,7 +8,7 @@ title:  'Schedule'
 **Monday 15th**  
 Room: Ingegerd Eriksson  
 **10.00-10.15** Registration and Welcome, presentation of SciLifeLab (Elina Staaf, Magnus Alm Rosenblad)  
-**10.15-11.00** Lecture: Introduction to Linux (Valentin Georgiev)  
+**10.15-11.00** [Lecture: Introduction to Linux](slides/linux-tutorial.pdf) (Valentin Georgiev)  
 **11.00-12.00** [Exercise: Introduction to Linux](labs/linux-intro) (Valentin Georgiev, Martin Dahlö, Marcela Davila Lopez, Magnus Alm Rosenblad)  
 **12.00-13.00** Lunch  
 **13.00-14.00** Lecture: Introduction to UPPMAX/UPPNEX (Valentin Georgiev)  
