@@ -18,11 +18,10 @@ In order to do these exercises, you will need to know a few things.
 
 ## Book a node
 
-We have reserved half a node for each student during this course.
 By now, you are probably already familiar with the procedure:
 
 ```bash
-salloc -A g2016028 -t 08:00:00 -p core -n 8 --no-shell --reservation=g2016028_WED
+salloc -A g2017014 -t 08:00:00 -p core -n 8 --no-shell --reservation=g2017014_wed &
 ```
 
 Make sure you ony do this once, otherwise you will take away resources from the other course participants! 
@@ -105,7 +104,8 @@ So that we don't clutter up the top level of our globs and get in the way of lat
 mkdir ~/glob/gatk
 ```
 
-##Running commands
+## Running commands
+
 Throughout the exercises, we will illustrate commands on the format:  
 ```bash
 command <parameter1> <parameter2> ...  
