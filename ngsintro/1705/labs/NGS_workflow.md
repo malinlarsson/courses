@@ -321,6 +321,8 @@ java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T PrintReads -BQSR <calibrati
 
 The &lt;input bam&gt; in this step is the same as the last step. As we have not changed the latest created BAM file. The &lt;calibration table&gt; is the file we created in the previous step using BaseRecalibrator. The &lt;output bam&gt; is new and will have the recalibrated qualities.
 
+A good method article describing [BQSR](https://software.broadinstitute.org/gatk/documentation/article.php?id=44).
+
 
 <img src="files/NGS_workflow/wf_varcall.png" style="width: 100%"/>
 <!-- ![](files/NGS_workflow/wf_varcall.png) -->
