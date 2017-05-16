@@ -66,6 +66,8 @@ To be able to do parts of this lab, you will need some files.
 To avoid all the course participants editing the same file all at once, undoing each other's edits, each participant will get their own copy of the needed files.
 The files are located in the folder `/sw/courses/ngsintro/loops/`
 
+If you for some reason have problems copying the files, or if you are not on uppmax when running this lab, you can download these files [here](../files/loops.tar.gz). You can unpack the file using the command `tar -xzvf loops.tar.gz` once you have downloaded it. After unpacking, continue the lab from step 4.
+
 Next, copy the lab files from this folder.
 -r means recursively, which means all the files including sub-folders of the source folder.
 Without it, only files directly in the source folder would be copied, NOT sub-folders and files in sub-folders.
