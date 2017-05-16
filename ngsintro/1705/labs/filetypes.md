@@ -419,4 +419,4 @@ Fewer types of quality values are easier to compress, hence this amazing compres
 Real data will have much more diverse quality scores, and the CRAM file would be pethaps 0.7-0.8 of the original BAM file.
 
 
-If you have been fast to finish this lab and you still have time left (or just can't get enough of linux stuff), please have a look at the [loops lab](loops-lab) where you can learn the basics in bash programming using variables, loops and controll statements.
+If you have been fast to finish this lab and you still have time left (or just can't get enough of linux stuff), please have a look at the [loops lab](loops_lab) where you can learn the basics in bash programming using variables, loops and controll statements.
