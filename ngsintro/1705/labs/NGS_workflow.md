@@ -49,7 +49,7 @@ to connect to the node.
 1. Copying and pasting commands from the exercise to terminal can result in formatting errors. You will learn more by typing anyway :).
 1. To be more strict, use the complete path to files you are using.
 1. Once a command has resulted in successful completion, save it! You will redo the procedure again with another sample and this will save time.
-1. If you change the node you are working on you will need to reload the tool modules. (see Accessing programs)
+1. If you change the node you are working on you will need to reload the tool modules. (see [Accessing programs](https://github.com/SciLifeLab/courses/blob/gh-pages/ngsintro/1705/labs/NGS_workflow.md#accessing-programs) below)
 1. Check that the output file exists and is a reasonable size after a command is completed as a quick way to see that nothing is wrong. A common mistake people make is to attempt to load input files that do not exist or create output files where they cannot write.
 1. Google errors, someone in the world has run into EXACTLY the same problem you had and asked about it on a forum somewhere.
 
