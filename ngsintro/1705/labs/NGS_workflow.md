@@ -7,10 +7,10 @@ title:  'NGS workflow'
 # NGS workflow
 
 The data we will work with comes from the 1000 Genomes Project.
-Because whole human genomes are time consuming to work with on account of their size, we will use only a small portion of the human genome. To be more precise about a megabase from chromosome 17.
+Because whole human genomes are time consuming to work with on account of their size, we will use only a small portion of the human genome. To be more precise it is about a megabase from chromosome 17.
 Samtools has been used to extract this region of the data from the 1000 Genomes ftp site. It is a whole genome shotgun sequence from all of the individuals from the CEU (CEPH Europeans from Utah) population whose samples had low coverage (2-4x average).
-We have 81 low coverage Illumina sequences, 63 Illumina exomes and 15 low coverage 454 samples.
-55 of the samples exist in more than one datatype.
+<!-- We have 81 low coverage Illumina sequences, 63 Illumina exomes and 15 low coverage 454 samples.
+55 of the samples exist in more than one datatype. -->
 
 Much like the corresponding lecture, we will go through alignment, deduplication, base quality score recalibration, variant calling and variant filtering.
 
@@ -26,7 +26,7 @@ salloc -A g2017014 -t 04:00:00 -p core -n 8 --no-shell --reservation=g2017014_we
 ```
 
 Make sure you only do this once, otherwise other course participants will have a hard time booking theirs!
-Once your job allocation has been granted you can connect to the node you got using ssh, just like in the [Uppmax Introduction exercise](uppmax-intro) yesterday.
+Once your job allocation has been granted you can connect to the node using ssh, just like in the [Uppmax Introduction exercise](uppmax-intro) yesterday.
 
 I.e. Use
 
@@ -49,7 +49,7 @@ to connect to the node.
 1. Copying and pasting commands from the exercise to terminal can result in formatting errors. You will learn more by typing anyway :).
 1. To be more strict, use the complete path to files you are using.
 1. Once a command has resulted in successful completion, save it! You will redo the procedure again with another sample and this will save time.
-1. If you change the node you are working on you will need to reload the tool modules. (see [Accessing programs](https://github.com/SciLifeLab/courses/blob/gh-pages/ngsintro/1705/labs/NGS_workflow.md#accessing-programs) below)
+1. If you change the node you are working on you will need to reload the tool modules. (See [Accessing programs](https://github.com/SciLifeLab/courses/blob/gh-pages/ngsintro/1705/labs/NGS_workflow.md#accessing-programs) below)
 1. Check that the output file exists and is a reasonable size after a command is completed as a quick way to see that nothing is wrong. A common mistake people make is to attempt to load input files that do not exist or create output files where they cannot write.
 1. Google errors, someone in the world has run into EXACTLY the same problem you had and asked about it on a forum somewhere.
 
@@ -62,7 +62,7 @@ command <parameter1> <parameter2> ...
 ```
 
 This signifies that you should replace &lt;parameter&gt; with the correct parameter type, for example your input file name, output file name, directory name, etc.
-If you don't know what parameter you should supply, please ask.
+If you don't know which parameter you should supply, please ask.
 
 ## Accessing programs
 
@@ -86,19 +86,19 @@ Picard and GATK are java programs, which means that we need to explicitly invoke
 
 You need to know where your input data is and where your output will go.
 
-All input data for the first steps of the exercises is located in the folder:
+All input data for the first steps of the exercises are located in the folder:
 
 ```bash
 /sw/courses/ngsintro/gatk
 ```
 
-Since we're all sharing the same data, we've made these files read-only. This prevents someone accidentally deleting or writing over the raw data or someone else's output.
+Since we're all sharing the same data, we've made these files read-only. This prevents someone accidentally deleting or overwriting the raw data or someone else's output.
 
 Instead, you are going to write your output to your home directory.
 Remember that your home directory can be represented by the '~' character.
 (It is not good practice to keep large amounts of data in your home directory, usually you would work in your designated projects storage space.)
 
-So that we don't clutter up the top level of our home folder we will make a subdirectory
+So that we don't clutter the top level of our home folder we will make a subdirectory
 
 ```bash
 mkdir ~/ngsworkflow
@@ -109,7 +109,7 @@ mkdir ~/ngsworkflow
 Before we can align our sample we need a reference genome, and we need to perform the Burrows-Wheeler transform on the reference to build the associated files that the aligner expects. You will only need to create these files once, wether running on one sample or a million.
 For our exercises, we'll use only human chromosome 17.
 You can copy this from the project directory to your workspace.
-(Normally copying you would not copy the reference, but this is so that everyone can see the full BWA process.)
+(Normally you would not copy the reference, but this is so that everyone can see the full BWA process.)
 
 ```bash
 cp /sw/courses/ngsintro/gatk/refs/human_17_v37.fasta ~/ngsworkflow
@@ -160,19 +160,13 @@ java -Xmx16g -jar $PICARD_HOME/picard.jar CreateSequenceDictionary R=~/ngsworkfl
 
 ## Aligning the reads
 
-We are skipping the quality control and trimming of reads for this exercise due to the origin of the data.
+We are skipping the quality control and trimming of reads for this exercise due to the origin of the data. But please feel free to read up on these two excellent tools after the exercise, [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) & [MultiQC](http://multiqc.info/).
 
 Let's start with aligning a chunk of whole genome shotgun data from individual NA06984. The command used is bwa mem, the ```-t 8``` signifies that we want it to use 8 threads/cores, which is what we have booked. This is followed by our reference genome and the forward and reverse read fastq files.
-
-Learn more about [bwa mem](http://bio-bwa.sourceforge.net/bwa.shtml) if you are interested.
 
 ```bash
 bwa mem -t 8 ~/ngsworkflow/human_17_v37.fasta /sw/courses/ngsintro/gatk/fastq/wgs/NA06984.ILLUMINA.low_coverage.17q_1.fq /sw/courses/ngsintro/gatk/fastq/wgs/NA06984.ILLUMINA.low_coverage.17q_2.fq > ~/ngsworkflow/NA06984.ILLUMINA.low_coverage.17q.sam
 ```
-
-<!-- ```bash
-bwa aln ~/ngsworkflow/human_17_v37.fasta /sw/courses/ngsintro/gatk/fastq/wgs/NA06984.ILLUMINA.low_coverage.17q_1.fq > ~/ngsworkflow/NA06984.ILLUMINA.low_coverage.17q_1.sai
-``` -->
 
 Note that you have to use a file redirect ( &gt;) for your output, otherwise bwa will print the output directly to stdout, i.e. your screen.
 
@@ -183,63 +177,28 @@ The file name has 6 parts, separated by . or \_:
 
 1. NA06984 - this is the individuals name
 1. ILLUMINA - these reads came from the Illumina platform
-1. low_coverage - these are low coverage whole genome shotgun reads
+1. low_coverage - these are relatively low coverage reads
 1. 17q - I have sampled these reads from one region of 17q
 1. 1 - these are the forward reads in their paired sets
 1. 2 - these are the reverse reads in their paired sets
 1. fq - this is a fastq file
 
-<!-- Now we need to do this again for the second read file.
-Everything is that same except with 2s instead of 1s.
-Don't forget to change your output file also! -->
-
 Before we go on to the next step, take a minute and look at the fastq files and understand the format and contents of these files.
-Use
-
-```bash
-less
-```
-
-to read one of those .fq files in the project directory.
-
-<!-- ## Merging Alignments and Making SAM Files
-
-The sai files are a binary format internal to BWA.
-We now need to process those into something we can use.
-For paired ends, this is done with the sampe function of BWA.
-(Note that if you ever forget the syntax for a function, you can just type
-
-```bash
-bwa <function>
-```
-
-and it will list the parameters and options.
-Run it for your files:
-
-```bash
-bwa sampe <ref> <sai1> <sai2> <fq1> <fq2> > ~/ngsworkflow/<sample>.sam
-```
-
-The sampe function takes a lot of arguments.
-It needs the reference and the reads, because the sai files just have the definitions of the alignments, not the sequences.
-It needs the sai files to get the alignments.
-It outputs a SAM format file.
-I would suggest that you give it the same name prefix as the others, but if you are getting tired of typing that, pick something shorter.
-Retain the sample name and the fact that it is the 17q low coverage data. -->
+Use _less_ to read one of the .fq files in the project directory.
 
 ## Creating a BAM file and adding Read Group information
 
-SAM files are nice, but bulky, so there is a compressed binary format, BAM.
+SAM files are nice, but space inefficient. Luckily there is a compressed binary format, BAM.
 We want to convert our SAM into BAM before proceeding downstream.
 
 Typically the BAM has the same name as the SAM but with the .sam extension replaced with .bam.
 
-We need to add something called read groups which defines information about the sequencing run to our BAM file, because GATK is going to need this information.
+We need to add something called read groups which adds information about the sequencing run to our BAM file, because GATK is going to need this information later on.
 Normally, you would do this one sequencing run at a time, but because of the way this data was downloaded from 1000 Genomes, our data is pulled from multiple runs and merged.
 We will pretend that we have one run for each sample, but on real data, you should not do this.
 
 We will use Picard to add read group information.
-As a benefit, it turns out that Picard is a very smart program, and we can start with the SAM file and ask it to simultaneously add read groups, sort the file, and output as BAM.
+As a benefit, it turns out that Picard is a very smart program, and we can start with the SAM file and ask it to simultaneously add read groups, sort the file, and output as BAM. If you only wanted to sort the file you could use for example [picard SortSam](https://broadinstitute.github.io/picard/command-line-overview.html#SortSam).
 
 ```bash
 java -Xmx16g -jar $PICARD_HOME/picard.jar AddOrReplaceReadGroups INPUT=<sam file> OUTPUT=<bam file> SORT_ORDER=coordinate RGID=<sample>-id RGLB=<sample>-lib RGPL=ILLUMINA RGPU=<sample>-01 RGSM=<sample>
@@ -251,15 +210,15 @@ We specify the INPUT, the OUTPUT (assumed to be BAM), the SORT_ORDER, meaning we
 The &lt;sample&gt; names for each of these 1000 Genomes runs is the Coriell identifier which is made up of the two letters and five numbers at the start of the file names (e.g., NA11932). This is sufficient to add for our read groups with suffixes such as -id and -lib as shown above.
 Here is a more strict explanation of the read groups components:
 
-* RGID is the group ID. This is usually derived from the combination of the sample id and run id, or the SRA/EBI id.
-* RGLB is the group library. This will come from your library construction process. You may have multiple read groups per library if you did multiple sequencing runs, but you should only have one library per read group.
-* RGPL is the platform. It is a restricted vocabulary. These reads are ILLUMINA.
-* RGPU is the run identifier. It would normally be the barcode of your flowcell. You may have multiple read groups per run, but only one run per read group. We will just fake it as &lt;sample&gt;-01.
-* RGSM is the sample name. You can have multiple read groups, libraries, runs, and even platforms per sample, but you can only have one sample per read group. (If you are pooling samples without barcoding, there is no way to separate them later, so you should just designate the pool itself as a sample, but downstream analyses like SNP calling will be blind to that knowledge.)
+* __RGID__ is the group ID. This is usually derived from the combination of the sample id and run id, or the SRA/EBI id.
+* __RGLB__ is the group library. This will come from your library construction process. You may have multiple read groups per library if you performed multiple sequencing runs, but you should only have one library per read group.
+* __RGPL__ is the platform. It is a restricted vocabulary. These reads are ILLUMINA.
+* __RGPU__ is the run identifier. It would normally be the barcode of your flowcell. You may have multiple read groups per run, but only one run per read group. We will just fake it as &lt;sample&gt;-01.
+* __RGSM__ is the sample name. You can have multiple read groups, libraries, runs, and even platforms per sample, but you can only have one sample per read group. (If you are pooling samples without barcoding, there is no way to separate them later, so you should just designate the pool itself as a sample, but downstream analyses like SNP calling will be blind to that knowledge.)
 
 Lastly, we need to index this BAM, so that programs can randomly access the sorted data without reading the whole file.
 This creates a index file similarly named to the input BAMfile, except with a .bai extension.
-If you rename one the BAM and not the bai or vice versa you will cause problems for programs that expect them to be in sync.
+If you rename the BAM and not the bai or vice versa you will cause problems for programs that expect them to be in sync.
 
 ```bash
 java -Xmx16g -jar $PICARD_HOME/picard.jar BuildBamIndex INPUT=<bam file>
@@ -277,7 +236,7 @@ This is done in two steps.
 First, we identify possible sites to realign using the GATK tool RealignerTargetCreator:
 
 ```bash
-java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -I <input bam file> -R <reference> -T RealignerTargetCreator -o <intervals file>
+java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T RealignerTargetCreator -I <input bam file> -R <reference> -o <intervals file>
 ```
 
 The &lt;bam file&gt; should be your sorted and indexed BAM with read groups added from before.
@@ -290,11 +249,11 @@ Using this speeds up the process of identifying potential realignment sites, but
 Now we feed our intervals file back into a different GATK tool called IndelRealigner to perform the realignments:
 
 ```bash
-java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -I <input bam> -R <reference> -T IndelRealigner -o <realigned bam> -targetIntervals <intervals file>
+java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T IndelRealigner -I <input bam> -R <reference> -o <realigned bam> -targetIntervals <intervals file>
 ```
 
 Note that we need to give it the intervals file we just made, and also specify a new output BAM (&lt;realigned bam&gt;).
-GATK is also clever and automatically indexes that BAM for us (you can type ls and look at the list of files to verify this).
+GATK is also clever and automatically indexes that BAM for us (you can give the _ls_ command and look at the list of files to verify this).
 
 <img src="files/NGS_workflow/wf_markdup.png" style="width: 100%"/>
 <!-- ![](files/NGS_workflow/wf_markdup.png) -->
@@ -310,14 +269,14 @@ java -Xmx16g -jar $PICARD_HOME/picard.jar MarkDuplicates INPUT=<input bam> OUTPU
 The &lt;input bam&gt; should now be your realigned BAM from before, and you need to specify an output, the &lt;marked bam&gt; which will be a new file used in the following steps.
 There is also the output of &lt;metrics file&gt; that contains some statistics such as how many reads were marked as duplicates.
 
-Picard does not automatically index the .bam file so you need to do that before proceeding.
+Picard does not always give the option to automatically index the .bam file so you need to do that before proceeding.
 
 ```bash
 java -Xmx16g -jar $PICARD_HOME/picard.jar BuildBamIndex INPUT=<bam file>
 ```
 
 Now we can look at the duplicates we marked with Picard, using a filter on the bit flag.
-The mark for duplicates is the bit for 1024, we can use samtools view to look at them.
+The mark for duplicates is the bit for 1024, we can use samtools view to look at them. First go to [this online utility](https://broadinstitute.github.io/picard/explain-flags.html) that is helpful for decoding sam flags. Notice that it can also be used in reverse to find the appropriate flag. Now look at your data.
 
 ```bash
 samtools view -f 1024 <bam file> | less
@@ -337,7 +296,7 @@ Before we move forward, ask yourself why we used samtools to look at the BAMfile
 ## Base quality score recalibration
 
 Next we want to perform quality recalibration with GATK.
-We do this last, because we want all the data to be as clean as possible at at this point.
+We do this last, because we want all the data to be as clean as possible at this point.
 Like the local realignment this is performed in two steps.
 First, we compute all the covariation of quality with various other factors using BaseRecalibrator:
 
@@ -349,19 +308,19 @@ Note: This can take about 20 minutes.
 
 As usual we give it our latest BAM file and the reference file.
 Additionaly we supply a list of known sites.
-If we had not done this GATK will think all the real SNPs in our data are errors since we are using low coverge calls from 1000 Genomes.
+If we had not done this GATK will think all the real SNPs in our data are errors since we are using low coverage calls from 1000 Genomes.
 If you are sequencing an organism with few known sites, you could try variant calling once before base quality score recalibration and then using the most confident variants as known sites (which should remove most of the non-erroneous bases).
-Failure to supply known SNPs to the recalibration will result in globally lower quality scores.
+Failure to supply known SNPs to the recalibration will result in globally lower quality scores. <!-- Is this true generally or of this dataset? Why exactly is this? shouldnt it even out around overconfident or underconfident snps depending on mapping quality and sequencing quality? -->
 
 The calibration table output file has the covariation data written to it.
-It is used in the next step where we use GATKs PrintReads to apply the recalibration:
+It is used in the next step where GATKs PrintReads applies the recalibration:
 
 ```bash
 java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T PrintReads -BQSR <calibration table> -I <input bam> -R <reference> -o <output bam>
 ```
 
-The &lt;input bam&gt; in this step is the same as the last step. As we have not changed the latest created BAM file. The &lt;output bam&gt; is new and will have the recalibrated qualities.
-The &lt;calibration table&gt; is the file we created in the previous step using BaseRecalibrator.
+The &lt;input bam&gt; in this step is the same as the last step. As we have not changed the latest created BAM file. The &lt;calibration table&gt; is the file we created in the previous step using BaseRecalibrator. The &lt;output bam&gt; is new and will have the recalibrated qualities.
+
 
 <img src="files/NGS_workflow/wf_varcall.png" style="width: 100%"/>
 <!-- ![](files/NGS_workflow/wf_varcall.png) -->
@@ -377,20 +336,20 @@ java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T HaplotypeCaller -R <referen
 The &lt;reference&gt; is our reference fasta again.
 The &lt;input bam&gt; is the output from the recalibration step.
 The output file is &lt;filename.g.vcf&gt;.
-It needs to have a .g.vcf extension because it is a gvcf file.
-The filename prefix should be identifiable as associated with your BAM file name (like the name root you use before the .bam) so you can tell later which vcf file came from which BAM). The --variant_index_type LINEAR and --variant_index_parameter 128000 sets the correct index strategy for the output gVCF.
+It needs to have a .g.vcf extension to correctly identify as a gVCF file.
+The filename prefix should be identifiable as associated with your BAM file name (like the name root you use before the .bam) so you can tell later which VCF file came from which BAM). The --variant_index_type LINEAR and --variant_index_parameter 128000 sets the correct index strategy for the output gVCF.
 
-Rerun the mapping and variant calling steps for at least one more sample from the course directory ```/sw/courses/ngsintro/gatk/fastq/wgs``` before continuing with the next step. Make sure it is also 17q.
+As mentioned in [General tips nr 5](https://github.com/SciLifeLab/courses/blob/gh-pages/ngsintro/1705/labs/NGS_workflow.md#general-tips) it is now time to rerun the mapping and variant calling steps for at least one more sample from the course directory ```/sw/courses/ngsintro/gatk/fastq/wgs``` before continuing with the next step. Make sure it is also 17q so the genomic regions are comparable.
 
 # Joint genotyping
 
-Now you will call variants on all the gvcf-files produced in the previous step by using GenotypeGVCFs. This takes the output from the Haplotypecaller that was run on each sample to create raw SNP and indel VCFs.
+Now you will call genotypes from all the gVCF-files produced in the previous step by using GenotypeGVCFs. This takes the output from the HaplotypeCaller that was run on each sample to create raw SNP and indel VCFs.
 
 ```bash
 java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T GenotypeGVCFs -R <ref file> --variant <sample1>.g.vcf --variant <sample2>.g.vcf ... -o <output>.vcf
 ```
 
-As an alternative try to run the same thing but with all the gVCF for all low_coverage files in the course directory. A gVCF file where these have been merged can be found in the course directory, /sw/courses/ngsintro/gatk/vcfs/ILLUMINA.low_coverage.17q.g.vcf. In the next step when viewing the data in IGV, look at both and try to see if there is a difference for a your sample.
+As an alternative try to run the same thing but with all the gVCF for all low_coverage files in the course directory. A gVCF file where these have been merged can be found in the course directory at /sw/courses/ngsintro/gatk/vcfs/ILLUMINA.low_coverage.17q.g.vcf. In the next step when viewing the data in IGV, look at both and try to see if there is a difference for your sample.
 
 ```bash
 java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T GenotypeGVCFs -R <ref file> --variant /sw/courses/ngsintro/gatk/vcfs/ILLUMINA.low_coverage.17q.g.vcf -o <output>
@@ -398,10 +357,10 @@ java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T GenotypeGVCFs -R <ref file>
 
 ## Filtering Variants
 
-The last thing we will do is filter variants.
+The last thing we will do is filter the variants.
 We do not have enough data that the VQSR technique for training filter thresholds on our data is likely to work, so instead we're going to use the [best practices](http://www.broadinstitute.org/gatk/guide/topic?name=best-practices) parameters suggested by the GATK team at Broad.
 
-The parameters are slightly different for SNPs and indels, but we have called ours together.
+The parameters are slightly different for SNPs and INDELs, which we have called together and are both in our gVCF.
 Why do you think that some of these parameters are different between the two types of variants?
 
 An example command line with SNP filters is:
@@ -417,26 +376,22 @@ However, the order of these pairs, or their placement relative to other argument
 1. The arguments to filterExpression are in quotation marks (").
 Why is that?
 
-Once you have the filtered calls, open your filtered VCF with less and page through it.
+Once you have the filtered calls for both SNPs and INDELs, open your filtered VCF with less and page through it.
 It still has all the variant lines, but the FILTER column that was blank before is now filled in, indicating that the variant on that line either passed filtering or was filtered out, with a list of the filters it failed.
 Note also that the filters that were run are described in the header section.
 
 ## Look at Your Data with IGV
 
-Next, we want to know how to look at these data.
+Next, we want to know how to look at the data.
 For that, we will use IGV (Integrative Genomics Viewer).
-We will launch IGV from our desktops because it runs faster that way.
-Go to your browser window and Google search for IGV.
-Find the downloads page.
-You will be prompted for an email address.
+You can either launch it from UPPMAX using your graphical forwarding, -X or -Y, by following this [guide](http://www.uppmax.uu.se/support-sv/user-guides/integrative-genomics-viewer--igv--guide/).
+You also have the option to launch IGV from your desktop, which is sometimes faster. In that case go to the [IGV download page](https://software.broadinstitute.org/software/igv/download), and follow the instructions. You will be prompted for an email address.
 If you have not already downloaded IGV from that email address, it will prompt you to fill in some information and agree to a license.
 When you go back to your own lab, you can just type in your email and download the software again without agreeing to the license.
 
-Now launch the viewer through webstart.
-The 1.2 Gb version should be sufficient for our data.
-It will take a minute or two to download IGV and start it up.
-While that's going on, we need to download some data to our local machines so the viewer can find it (IGV can also look at web hosted data, but we are not going to set that up for our course data).
-When it prompts you to save the IGV program, if you are working on a Mac put it in the Applications folder, otherwise just save it in your home directory.
+Now launch the viewer through webstart. The 1.2 Gb version should be sufficient for our data. It will take a minute or two to download IGV and start it up. When it prompts you to save the IGV program, if you are working on a Mac put it in the Applications folder, otherwise just save it in your home directory.
+
+Whichever way you choose we now need to download some data to our local machines so the viewer can find it (IGV can also look at web hosted data, but we are not going to set that up for our course data. You can also mount UPPMAX as a drive on your computer using for example sshfs but this is also outside of the scope of this course.).
 
 Open a new terminal or xterm _on your local machine_ (i.e., do not log in to UPPMAX again).
 You should be in your home directory.
@@ -449,33 +404,32 @@ We want to get both the BAMs and bais for the low coverage and exome data.
 scp <username>@milou.uppmax.uu.se:/sw/courses/ngsintro/gatk/processed/MERGED.illumina.\* ./
 ```
 
-Because your UPPMAX user name is different than the user name on the local machine, you have to put your UPPMAX user name in front of the @ in the scp so that it knows you want to log in as your UPPMAX user, not as macuser.
+The <username> is your UPPMAX username.
 After the colon, we give the path to the files we want.
-The wildcard (*) character indicates that we want all the files that start with "MERGED.illumina".
-However, in this case, we need to add a backslash ('\') in front of the wildcard ('*').
+The wildcard (\*) character indicates that we want all the files that start with "MERGED.illumina".
+However, in this case, we need to add a backslash ('\\') in front of the wildcard ('\*').
 This is known as "escaping", because ordinarily your local shell would try to expand the wildcard in your local directory, but we want it expanded on the remote machine.
 The './' means copy the files to your current directory.
 
 It will prompt you for your UPPMAX password, then it should download four files.
 
-We will also want to load the vcfs into IGV, so you can look at what calls got made.
+We will also want to load the VCFs into IGV, so you can see your variant calls.
 
 ```bash
 scp <username>@milou.uppmax.uu.se:/sw/courses/ngsintro/gatk/vcfs/MERGED.illumina.\* ./
 ```
 
-Do the same thing for the vcf that you have created in your home directory.
+Do the same thing for the VCF that you have created in your home directory.
 
-By now, IGV should be launching.
 The first thing we want to do is make sure we have the right reference.
 In IGV, go to the popup menu in the upper left and set it to "Human 1kg (b37+decoy)".
-This is the latest build of the human genome (also known as GRCh37).
+This is the build of the human genome that corresponds to the reference we used when mapping and processing the reads (also known as GRCh37).
 
-Now, go under the Tools menu and selection "Run igvtools..." Change the command to "Count" and then use the Browse button next to the Input File line to select the BAMs (not the bai) that you just downloaded.
+Now, go under the Tools menu and select "Run igvtools...". Change the command to "Count" and then use the Browse button next to the Input File line to select the BAMs (not the bai) that you just downloaded.
 It will autofill the output file.
 Now hit the Run button.
 This generates a .tdf file for each BAM.
-This allows us to see the coverage value for our BAM file even at zoomed at views.
+This allows us to see the coverage value for our BAM file even at zoomed out views.
 (We could also do this offline using a standalone version of igvtools.)
 
 Now close the igvtools window and go back to the File menu, select "Load from File..." and select your BAMs (not the .bai or the .tdf).
@@ -510,13 +464,22 @@ You can look at just the calls you made, or you can look at the calls from the f
 You can even load these data all together.
 Are there calls that were made using only one or two samples that were not made in the full data set or vice versa?
 
-Try to browse around in your data and get a feeling for the called variants. Can you find a variant that have an allele frequency of exactly 0.5? A variant that have calls for all individuals? Exonic variants?
+Try to browse around in your data and get a feeling for the called variants. Can you find a variant that has an allele frequency of exactly 0.5? A variant that was called for all individuals? Exonic variants?
 
 
 ## [Extra labs](resequencing-extra)
 
-If you have more time there are a couple of extra exercises where you will perform downstream analysis of the called variants in your .vcf file. [Extra labs](resequencing-extra)
+If you have more time there are a couple of extra exercises where you will perform downstream analysis of the called variants in your .vcf file. [Click here](resequencing-extra) to be taken to them.
 
 ## More info Quality Scores
 Here is a technical documentation of Illumina Quality Scores: [technote_Q-Scores.pdf](technote_Q-Scores.pdf)
+
+## Tools used or referenced
+
+[BWA](http://bio-bwa.sourceforge.net/bwa.shtml)
+[FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+[MultiQC](http://multiqc.info/)
+[Picard](https://broadinstitute.github.io/picard/command-line-overview.html)
+[GATK](https://software.broadinstitute.org/gatk/)
+[samtools](http://www.htslib.org/)
 
