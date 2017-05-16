@@ -350,7 +350,7 @@ Try viewing the file without it and see the difference.
 To view the file, we will use the program **IGV** (Integrated Genome Viewer).
 Before we can do this, we have to load the module for IGV.
 
-NOTE: If you are using a Mac you might have to install the program [XQuartz](https://www.xquartz.org/), if you have not already installed that program. By using -Y in your ssh command you enable graphical transfer over ssh, but you will also have to have a program able to receive the graphics in order to display it. This used to be included in OSX, but it was removed for some unclear reason..
+**NOTE**: If you are using a Mac you might have to install the program [XQuartz](https://www.xquartz.org/), if you have not already installed that program. By using -Y in your ssh command you enable graphical transfer over ssh, but you will also have to have a program able to receive the graphics in order to display it. This used to be included in OSX, but it was removed for some unclear reason..
 
 ```bash
 $ module load bioinfo-tools IGV/2.3.17
