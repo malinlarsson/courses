@@ -408,8 +408,8 @@ scp <username>@milou.uppmax.uu.se:/sw/courses/ngsintro/gatk/processed/MERGED.ill
 
 The <username> is your UPPMAX username.
 After the colon, we give the path to the files we want.
-The wildcard (\*) character indicates that we want all the files that start with "MERGED.illumina".
-However, in this case, we need to add a backslash ('\\') in front of the wildcard ('\*').
+The wildcard (*) character indicates that we want all the files that start with "MERGED.illumina".
+However, in this case, we need to add a backslash ('\') in front of the wildcard ('*').
 This is known as "escaping", because ordinarily your local shell would try to expand the wildcard in your local directory, but we want it expanded on the remote machine.
 The './' means copy the files to your current directory.
 
