@@ -360,7 +360,7 @@ java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T GenotypeGVCFs -R <ref file>
 ## Filtering Variants
 
 The last thing we will do is filter the variants.
-We do not have enough data that the VQSR technique for training filter thresholds on our data is likely to work, so instead we're going to use the [best practices](http://www.broadinstitute.org/gatk/guide/topic?name=best-practices) parameters suggested by the GATK team at Broad.
+We do not have enough data that the VQSR technique for training filter thresholds on our data is likely to work, so instead we're going to use the [parameters suggested by the GATK team at Broad.](https://software.broadinstitute.org/gatk/documentation/article?id=2806)
 
 The parameters are slightly different for SNPs and INDELs, which we have called together and are both in our gVCF.
 Why do you think that some of these parameters are different between the two types of variants?
