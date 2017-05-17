@@ -24,10 +24,10 @@ Room: Ingegerd Eriksson
 
 **Wednesday 17th**  
 Room: Ingegerd Eriksson  
-**09:00-10.00** Lecture: NGS workflow (Sebastian DiLorenzo)  
-**10:00-12.00** Exercise: NGS workflow part I (Sebastian DiLorenzo, Katarina Truvé, Magnus Alm Rosenblad)  
+**09:00-10.00** [Lecture: NGS workflow](slides/NGS_workflow.pdf) (Sebastian DiLorenzo)  
+**10:00-12.00** [Exercise: NGS workflow part I](labs/NGS_workflow) (Sebastian DiLorenzo, Katarina Truvé, Magnus Alm Rosenblad)  
 **12.00-13.00** Lunch  
-**13.00-17:00** Exercise: NGS workflow part II (Sebastian DiLorenzo, Lena Hansson, Magnus Alm Rosenblad)  
+**13.00-17:00** [Exercise: NGS workflow part II](labs/NGS_workflow) (Sebastian DiLorenzo, Lena Hansson, Magnus Alm Rosenblad)  
 
 **18:00-** Course dinner at [Taverna Averna](https://www.tavernaaverna.se/)  
 
