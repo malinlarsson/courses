@@ -1791,10 +1791,10 @@ fastx_clipper -l 1000 -i Trinity.formated -o Trinity1000.fasta
 Align some sequences to a protein database and assess full-lengthness using NCBI blast database. Also try to see if you can find instances of spliced genes in your data by using the UCSC genome browser (do a web search to find it) 
 
 - Select BLAT from the menu at the top of the page and paste in a mouse transcript sequence from Trinity.fasta.
-- Select the mouse/mm10 genome and click ???submit???.
+- Select the mouse/mm10 genome and click “submit”.
 - Click on the top scoring hit.
 
-Examine the alignments by clicking ???details??? on the resulting page.
+Examine the alignments by clicking “details” on the resulting page.
 - Your sequences will be displayed in the browser.
 - Enable the mouse annotations (ENSEMBL gene build, UCSC genes, human proteins etc.).
 
@@ -1817,7 +1817,7 @@ For those interested in RNA-seq analysis Scilifelab offer a more advanced course
 
 
 # About authors
-Thomas K�llman :neckbeard:, Agata Smialowska :smiling_imp:, Olga Dethlefsen :angel: @ NBIS, National Bioinformatics Infrastructure Sweden
+Thomas Källman :neckbeard:, Agata Smialowska :smiling_imp:, Olga Dethlefsen :angel: @ NBIS, National Bioinformatics Infrastructure Sweden
 <br />
 <br />
 [Jump to the top](#begin)
