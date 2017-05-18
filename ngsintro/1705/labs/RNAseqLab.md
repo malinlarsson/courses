@@ -67,7 +67,7 @@ salloc -A g2016035 -t 08:00:00 -p core -n 8 --no-shell --reservation=g2016035_5 
 <br />
 
 
-:computer: **Create a folder** named _transcriptome_ for your project in your _/proj/g2016035/nobackup/<username>_ directory. **Create  a sub-folder** called _DATA_.
+:computer: **Create a folder** named _transcriptome_ for your project in your _/proj/g2016035/nobackup/\<username\>_ directory. **Create a sub-folder** called _DATA_.
 <details>
 <summary>:key: Click to see suggested commands</summary>
 {% highlight bash %}
