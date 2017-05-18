@@ -42,7 +42,7 @@ Room: Birgit Thilander 9-12, thereafter Ingegerd Eriksson
 **Friday 19th**  
 Room: Ingegerd Eriksson  
 **09:00-10:00** Lecture: Data management (Niclas Jareborg)  
-**10:30-12:00** [Exercise: RNA sequencing, transcriptome and expression quantification part II](labs/rnaseq_161129.md) (Leif Väremo, Lena Hansson, Sebastian DiLorenzo, Niclas Jareborg)  
+**10:30-12:00** [Exercise: RNA sequencing, transcriptome and expression quantification part II](labs/RNAseqLab.md) (Leif Väremo, Lena Hansson, Sebastian DiLorenzo, Niclas Jareborg)  
 **12.00-13.00** Lunch  
 **13.00-13.20** Lecture: The Bioinformatics Infrastructure in Sweden (Niclas Jareborg)    
 **13:20-15.00** Open discussions (Leif Väremo, Sebastian DiLorenzo,  Katarina Truvè)  
