@@ -37,7 +37,7 @@ Room: Birgit Thilander 9-12, thereafter Ingegerd Eriksson
 **11:00-12.00** [Lecture: NGS and bioinformatics analysis pipelines](slides/SciLife_Bioinfo_course_may2017_AA.ppt) (Adam Ameur)  
 **12.00-13.00** Lunch  
 **13.00-14.00** [Lecture: RNA sequencing, transcriptome and expression quantification](slides/Lecture.html) (Lena Hansson)   
-**14.00-17.00** [Exercise: RNA sequencing, transcriptome and expression quantification part I](labs/RNAseqLab.Rmd) (Leif Väremo, Lena Hansson, Sebastian DiLorenzo)  
+**14.00-17.00** [Exercise: RNA sequencing, transcriptome and expression quantification part I](labs/rnaseq_161129.md) (Leif Väremo, Lena Hansson, Sebastian DiLorenzo)  
 
 **Friday 19th**  
 Room: Ingegerd Eriksson  
