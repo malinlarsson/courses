@@ -34,15 +34,15 @@ Room: Ingegerd Eriksson
 **Thursday 18th**  
 Room: Birgit Thilander 9-12, thereafter Ingegerd Eriksson  
 **09.00-11.00** Lecture: Next Generation Sequencing Overview (Olga Vinnere Pettersson)  
-**11:00-12.00** Lecture: NGS and bioinformatics analysis pipelines (Adam Ameur)  
+**11:00-12.00** [Lecture: NGS and bioinformatics analysis pipelines](slides/scilife_intro_NGS_data_VT17_170515.pptx) (Adam Ameur)  
 **12.00-13.00** Lunch  
-**13.00-14.00** Lecture: RNA sequencing, transcriptome and expression quantification (Lena Hansson)   
-**14.00-17.00** Exercise: RNA sequencing, transcriptome and expression quantification part I (Leif Väremo, Lena Hansson, Sebastian DiLorenzo)  
+**13.00-14.00** [Lecture: RNA sequencing, transcriptome and expression quantification](slides/Lecture.html) (Lena Hansson)   
+**14.00-17.00** [Exercise: RNA sequencing, transcriptome and expression quantification part I](labs/rnaseq_161129.md) (Leif Väremo, Lena Hansson, Sebastian DiLorenzo)  
 
 **Friday 19th**  
 Room: Ingegerd Eriksson  
 **09:00-10:00** Lecture: Data management (Niclas Jareborg)  
-**10:30-12:00** Exercise: RNA sequencing, transcriptome and expression quantification part II (Leif Väremo, Lena Hansson, Sebastian DiLorenzo, Niclas Jareborg)  
+**10:30-12:00** [Exercise: RNA sequencing, transcriptome and expression quantification part II](labs/rnaseq_161129.md) (Leif Väremo, Lena Hansson, Sebastian DiLorenzo, Niclas Jareborg)  
 **12.00-13.00** Lunch  
 **13.00-13.20** Lecture: The Bioinformatics Infrastructure in Sweden (Niclas Jareborg)    
 **13:20-15.00** Open discussions (Leif Väremo, Sebastian DiLorenzo,  Katarina Truvè)  
