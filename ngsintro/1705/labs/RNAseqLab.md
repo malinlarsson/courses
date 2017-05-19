@@ -771,7 +771,6 @@ de.out <- cbind(table.annotations[idx.match, c(1,3,4,5)], lrt.table)
       
 write.table(de.out, "results_DE.txt", sep="\t", quote=F, row.names=F)
 save.image(file = "DEdata.RData") 
-
 {% endhighlight %}
 </details>
 <br />
