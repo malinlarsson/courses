@@ -44,7 +44,7 @@ Room: Ingegerd Eriksson
 **09:00-10:00** [Lecture: Data management](slides/2017-05-18%20Data%20management%20for%20NGS%20course.pdf) (Niclas Jareborg)  
 **10:30-12:00** [Exercise: RNA sequencing, transcriptome and expression quantification part II](labs/RNAseqLab.md) (Leif Väremo, Lena Hansson, Sebastian DiLorenzo, Niclas Jareborg)  
 **12.00-13.00** Lunch  
-**13.00-13.20** Lecture: The Bioinformatics Infrastructure in Sweden (Niclas Jareborg)    
+**13.00-13.20** [Lecture: The Bioinformatics Infrastructure in Sweden](slides/NBIS%20NGScourse%202017-05.pdf) (Niclas Jareborg)    
 **13:20-15.00** Open discussions (Leif Väremo, Sebastian DiLorenzo,  Katarina Truvè)  
 
 
