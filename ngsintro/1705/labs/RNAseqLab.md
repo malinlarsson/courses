@@ -694,7 +694,7 @@ ln -s /sw/courses/ngsintro/rnaseq/main/DE/diffExp.R
 
 :computer: **Write the diffExp.R script that will be run**
 <details>
-<summary>
+{% highlight R %}
 ### R script for differential expression
 
 rm(list=ls())
@@ -771,7 +771,7 @@ de.out <- cbind(table.annotations[idx.match, c(1,3,4,5)], lrt.table)
       
 write.table(de.out, "results_DE.txt", sep="\t", quote=F, row.names=F)
 save.image(file = "DEdata.RData")
-</summary>
+{% endhighlight %}
 </details>
 <br />
 
