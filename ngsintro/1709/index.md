@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  'Introduction to Bioinformatics Using NGS Data - May 2017'
+title:  'Introduction to Bioinformatics Using NGS Data - September 2017'
 ---
 
 
