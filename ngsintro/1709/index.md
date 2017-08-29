@@ -6,15 +6,15 @@ title:  'Introduction to Bioinformatics Using NGS Data - May 2017'
 
 # Introduction to Bioinformatics Using NGS Data
 
-Held in Gothenburg May 15-19, 2017.
+Held in Lund September 25-29, 2017.
 
 ## Important Links
 [Pre-course material](precourse)   
 [Schedule](schedule)  
 
 ## Maps & Travel Info
-[Map over Gothenburg](https://goo.gl/maps/VbczQ)  
-[Map over Gothenburg University](http://www.gu.se/kontakt/hitta-pa-gu)  
+[Map over Lund](https://www.google.se/maps/@55.7043427,13.1955233,14z)  
+[Map over the ecology building](http://www.biology.lu.se/map-over-education-facilities-in-the-ecology-building)  
 [Travel Info](travel)  
 
 ## Helpful Things
