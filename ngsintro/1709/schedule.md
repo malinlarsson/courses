@@ -29,7 +29,7 @@ Room: Ekologihuset, Sölvegatan 37, Lund, lecture hall Tanken (13-17: Maskrosen)
 **12.00-13.00** Lunch  
 **13.00-17:00** [Exercise: NGS workflow part II](labs/NGS_workflow) (Nikolay Oskolkov, Markus Ringnér)  
 
-**18:00-** Course dinner at TBA  
+**18:00-** Course dinner at Kulturkrogen, Tegnérsplatsen 4, 223 50 Lund  
 
 **Thursday 28th**  
 Room: Ekologihuset, Sölvegatan 37, Lund, lecture hall Tanken  
