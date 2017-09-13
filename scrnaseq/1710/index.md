@@ -4,7 +4,7 @@ title:  'Single cell RNA sequencing data analysis - October 2017'
 ---
  
 
-# RNAseq course 
+# scRNAseq analysis course 
 
 Held in Uppsala October 2-4, 2017.
 
