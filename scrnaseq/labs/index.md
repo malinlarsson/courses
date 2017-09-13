@@ -24,7 +24,7 @@ Tutorial with the SC3 consensus clustering package
 
 ### Pagoda package
 
-Pagoda patway wPCA for clustering of cells. OBS! several steps in this tutorial takes very long to run if you work with your own dataset, a good suggestion is to start with the first steps, knn.error.model and pagoda.varnorm and let it run while working on other tutorials.
+Pagoda patway wPCA for clustering of cells. OBS! several steps in this tutorial takes hours to run if you work with your own dataset, a good suggestion is to start with the first steps, knn.error.model, pagoda.varnorm and pagoda.pathway.wPCA and let it run while working on other tutorials. You can also run it with more than one core to speed things up.
  
 *	[Tutorial for Pagoda](pagoda_ilc)
 
