@@ -4,6 +4,10 @@ Run through steps 1-5 of the manual, step 6 is more detail on the different step
 
 For this exercise you can either run with your own data or with the example data from Treutlein paper that they provide with the package. Below is an example with human innate lympoid cells (ILCs) from Bjorklund et al. 2016.
 
+Data for running with this ILC data, plus some intermediate files for steps that takes long time, can be found at:
+
+`/proj/b2013006/nobackup/scrnaseq_course/data/ILC`
+
 ### Load packages
 
 ``` r
@@ -62,7 +66,7 @@ if (file.exists(savefile)){
 
 Now you can explore the data interactively within a shiny app using command:
 
-sc3\_interactive(sceset)
+`sc3_interactive(sceset)`
 
 ### Plot results
 
