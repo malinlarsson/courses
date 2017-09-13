@@ -49,7 +49,7 @@ donor2cols <- c("black", "orange", "magenta")[as.integer(M$Donor)]
 Get GO-terms
 ------------
 
-In the [Tutorial for biomaRt](biomart), there is an example on how to fetch go-terms for Ensembl genes. In the file "GO\_BP\_annotations.Rdata this was done for all genes in the ILC dataset and selecting for Biological Process entries in GO.
+In the [Tutorial for biomaRt](biomart), there is an example on how to fetch go-terms for Ensembl genes. In the file `GO_BP_annotations.Rdata` this was done for all genes in the ILC dataset and selecting for Biological Process entries in GO.
 
 In the tutorial there is an example where they fetch first 100 go-terms in org.Hs.egGO2ALLEGS, plus some selected ones related to neurogenesis. In their example they translate gene symbol to NCBI gene id to then fetch go-terms. There are several different ways of getting go-terms for genes, but if you are working with Ensembl IDs the most straight forward is probably to use biomaRt.
 
@@ -63,10 +63,6 @@ load("data/ILC/GO_BP_annotations.Rdata",verbose=TRUE)
     ## Loading objects:
     ##   goBP2gene
 
-``` r
-go.env <- list2env(goBP2gene) # convert to an environment
-```
-
 Filter with SCDE clean.counts and go-terms with clean.gos
 ---------------------------------------------------------
 
@@ -79,6 +75,8 @@ The clean.counts function will remove genes and cells based on specified cutoffs
 ``` r
 cd <- clean.counts(C, min.lib.size = 1000, min.reads = 10, min.detected = 5)
 genes <- rownames(cd)
+
+# now filter out all genes that are not included in cd from the go-annotations
 go.env <- lapply(goBP2gene, function(x) x[x %in% genes])
 
 # remove GOs with too few or too many genes
@@ -91,7 +89,7 @@ go.env <- list2env(go.env)
 Fit error models
 ----------------
 
-OBS! it takes a while to run, around an hour with large datasets
+OBS! it takes a while to run on 1 cpu, around an hour with this dataset.
 
 ``` r
 # since this step takes a while, save data to a file so that it does not have to be rerun if you execute the code again.

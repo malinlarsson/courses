@@ -16,6 +16,12 @@ For those not familiar with working with biomaRt, we suggest that you have a loo
  
 *	[Tutorial for biomaRt](biomart) 
 
+### scater package
+
+Tutorial with the scater package for QC of scRNA-seq data
+
+*	[Tutorial for scater](scater_ilc)
+
 ### SC3 package
 
 Tutorial with the SC3 consensus clustering package
