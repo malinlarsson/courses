@@ -22,8 +22,8 @@ Held in Uppsala October 2-4, 2017.
 ## Helpful Things
 [Linux cheat sheet](files/linux-cheat-sheet.pdf)  
 [UPPMAX cheat sheet](files/uppmax-cheat-sheet.png)  
-[How to create a webexport in your project](http://www.uppmax.uu.se/support/user-guides/webexport-guide/)
-[How to submit a job on uppmax using slurm](http://www.uppmax.uu.se/support/user-guides/slurm-user-guide/)
+[How to create a webexport in your project](http://www.uppmax.uu.se/support/user-guides/webexport-guide/)   
+[How to submit a job on uppmax using slurm](http://www.uppmax.uu.se/support/user-guides/slurm-user-guide/)   
 
 
 
