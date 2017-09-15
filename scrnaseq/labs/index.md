@@ -16,12 +16,6 @@ For those not familiar with working with biomaRt, we suggest that you have a loo
  
 *	[Tutorial for biomaRt](biomart) 
 
-### PCA and clustering
-
-Basic PCA and clustering using base R on mouse embryonic development data.
-
-*       [Tutorial for PCA and clustering](PCA_and_clustering)
-
 ### scater package
 
 Tutorial with the scater package for QC of scRNA-seq data
@@ -40,19 +34,7 @@ Pagoda patway wPCA for clustering of cells. OBS! several steps in this tutorial 
  
 *	[Tutorial for Pagoda](pagoda_ilc)
 
-### Seurat package
 
-Tutorial for Seurat package with normalization, dimensionality reduction and clustering.
-
-*       [Tutorial for Seurat](seurat_analysis)
-
-## UPPMAX
- 
- One example of a sbatch script
- 
- *  [sbatch scripts](sbatchScript)   
-  
- 
 ## Caveat
 
 We will try to keep these tutorials up to date. If you find any errors or things that you think should be updated please contact Asa (asa.bjorklund@scilifelab.se) 
