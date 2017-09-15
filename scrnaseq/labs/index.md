@@ -14,25 +14,24 @@ For many of the packages we recommend that you follow the tutorials supplied by 
 
 For those not familiar with working with biomaRt, we suggest that you have a look at this example code for how to convert between different formats using biomaRt. 
  
-*	[Tutorial for biomaRt](biomart) 
+
 
 ### scater package
 
 Tutorial with the scater package for QC of scRNA-seq data
 
-*	[Tutorial for scater](scater_ilc)
+
 
 ### SC3 package
 
 Tutorial with the SC3 consensus clustering package
 
-*	[Tutorial for SC3](sc3_ilc)
+
 
 ### Pagoda package
 
 Pagoda patway wPCA for clustering of cells. OBS! several steps in this tutorial takes hours to run if you work with your own dataset, a good suggestion is to start with the first steps, knn.error.model, pagoda.varnorm and pagoda.pathway.wPCA and let it run while working on other tutorials. You can also run it with more than one core to speed things up.
  
-*	[Tutorial for Pagoda](pagoda_ilc)
 
 
 ## Caveat
