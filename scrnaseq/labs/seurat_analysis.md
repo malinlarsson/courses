@@ -1,3 +1,8 @@
+---
+layout: default
+title:  'Seurat'
+---
+
 Analysis of data using Seurat package, following tutorial at: <http://satijalab.org/seurat/pbmc3k_tutorial.html>
 
 We recommend that you follow steps XX in the tutorial.
