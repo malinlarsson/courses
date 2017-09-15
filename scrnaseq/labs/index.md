@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  'Index'
+title:  'scRNAseq labs'
 ---
 
 # Welcome to NBIS scRNA-seq tutorial packages
