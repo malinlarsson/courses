@@ -34,6 +34,12 @@ Pagoda patway wPCA for clustering of cells. OBS! several steps in this tutorial 
  
 *	[Tutorial for Pagoda](pagoda_ilc)
 
+### Seurat package
+
+Tutorial for Seurat package with normalization, dimensionality reduction and clustering.
+
+*       [Tutorial for Seurat](seurat_analysis)
+
 ## UPPMAX
  
  One example of a sbatch script
