@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  'Index'
+title:  'Sbatch'
 ---
 
 # Sbatch script  

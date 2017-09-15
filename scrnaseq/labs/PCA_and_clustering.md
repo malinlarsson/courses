@@ -1,3 +1,8 @@
+---
+layout: default
+title:  'PCA and clustering'
+---
+
 PCA and clustering on a single cell RNA-seq dataset
 ===================================================
 

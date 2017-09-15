@@ -1,3 +1,8 @@
+---
+layout: default
+title:  'biomaRt'
+---
+
 Here is some example code on how to translate between gene symbols and ensembl gene ids using the biomaRt package. For more details on the package, have a look at: <https://bioconductor.org/packages/release/bioc/html/biomaRt.html>
 
 ``` r

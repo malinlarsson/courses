@@ -1,3 +1,8 @@
+---
+layout: default
+title:  'Pagoda'
+---
+
 Pagoda pathway wPCA
 ===================
 

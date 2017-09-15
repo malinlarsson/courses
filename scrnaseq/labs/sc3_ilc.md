@@ -1,3 +1,8 @@
+---
+layout: default
+title:  'SC3'
+---
+
 Clustering of data using SC3 package, following tutorial at: <https://bioconductor.org/packages/release/bioc/vignettes/SC3/inst/doc/my-vignette.html>
 
 Run through steps 1-5 of the manual, step 6 is more detail on the different steps of SC3, go through that as well if you find time.

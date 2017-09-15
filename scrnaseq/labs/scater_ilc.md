@@ -1,3 +1,8 @@
+---
+layout: default
+title:  'Scater'
+---
+
 Example of scater package for QC
 ================================
 
