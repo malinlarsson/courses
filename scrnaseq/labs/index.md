@@ -16,6 +16,12 @@ For those not familiar with working with biomaRt, we suggest that you have a loo
  
 *	[Tutorial for biomaRt](biomart) 
 
+### PCA and clustering
+
+Basic PCA and clustering using base R on mouse embryonic development data.
+
+*       [Tutorial for PCA and clustering](PCA_and_clustering)
+
 ### scater package
 
 Tutorial with the scater package for QC of scRNA-seq data
