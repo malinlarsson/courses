@@ -12,7 +12,7 @@ Held in Uppsala October 2-4, 2017.
 [Pre-course material](precourse)   
 [Login procedure](login)  
 [Schedule](schedule)  
-[RNAseq exercises](../labs/index)  
+[scRNAseq exercises](../labs/index)  
   
 ## Maps & Travel Info
 [Map over Uppsala](https://www.google.se/maps/place/Uppsala/@59.8332794,17.6584471,12z/data=!3m1!4b1!4m2!3m1!1s0x465fcbfb8532ab8d:0xaa4fe90a85820807)  
