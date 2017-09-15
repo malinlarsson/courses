@@ -235,7 +235,7 @@ You see the job id number in the output from jobinfo or squeue.
 $ scancel 2226987
 ```
 
-8. Interactive
+## 8. Interactive
 Sometimes it is more convenient to work interactively on a node instead of submitting your work as a job. Since you will not have the reservations we have during the course, you will have to book a node using the **interactive** command. Syntax:
 
 ```bash
