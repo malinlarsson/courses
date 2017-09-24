@@ -378,8 +378,24 @@ So be careful when deleting stuff..**
 Try it out by deleting the useless file in the folder you are standing in.
 First, look around in the folder to see the file.
 
-![](files/linux-intro/useless_file.jpg)
-
+```bash
+[valent@milou2 linux_tutorial]$ ll
+total 448
+drwxrwsr-x 2 valent g2017019   2048 Sep 19  2012 a_better_name
+drwxrwsr-x 2 valent g2017019   2048 Sep 24 13:40 backed_up_proj_folder
+drwxrwsr-x 2 valent g2017019   2048 Sep 24 13:46 external_hdd
+-rwxrwxr-x 1 valent g2017019  17198 Sep 24 13:36 files.tar.gz
+drwxrwsr-x 2 valent g2017019   2048 Sep 24 13:40 important_results
+drwxrwsr-x 2 valent g2017019 129024 Sep 19  2012 many_files
+drwxrwsr-x 2 valent g2017019   2048 Sep 19  2012 old_project
+-rwxrwxr-x 1 valent g2017019      0 Sep 24 13:36 other_file.old
+drwxrwsr-x 2 valent g2017019   2048 Sep 19  2012 part_1
+drwxrwsr-x 2 valent g2017019   2048 Sep 19  2012 part_2
+drwxrwsr-x 2 valent g2017019   2048 Jan 28  2012 this_has_a_file
+drwxrwsr-x 2 valent g2017019   2048 Jan 28  2012 this_is_empty
+-rwxrwxr-x 1 valent g2017019      0 Sep 19  2012 useless_file
+[valent@milou2 linux_tutorial]$
+```
 Now remove it:
 
 ```bash
@@ -400,7 +416,12 @@ $ rmdir this_has_a_file
 
 If you look inside `this_has_a_file`:
 
-![](files/linux-intro/this_has_a_file.jpg)
+```bash
+[valent@milou2 linux_tutorial]$ ll this_has_a_file
+total 0
+-rwxrwxr-x 1 valent g2017019 0 Jan 28  2012 file
+[valent@milou2 linux_tutorial]$
+```
 
 you will see there is a file in there! Only directories that are completely empty can be deleted using rmdir.
 To be able to delete `this_has_a_file`, either delete the file manually and then remove the folder
@@ -426,7 +447,14 @@ Then the only way out is to look at the contents of the files and try to figure 
 Now, we are looking for that really good script we wrote a couple of months ago in that other project.
 Look in the project's folder, **old_project**, and find the script.
 
-![](files/linux-intro/old_project.jpg)
+```bash
+[valent@milou2 linux_tutorial]$ ll old_project/
+total 96
+-rwxrwxr-x 1 valent g2017019 39904 Sep 19  2012 a
+-rwxrwxr-x 1 valent g2017019     0 Sep 19  2012 stuff_1
+-rwxrwxr-x 1 valent g2017019  1008 Sep 19  2012 the_best
+[valent@milou2 linux_tutorial]$
+```
 
 Not so easy with those names..
 We will have to use less to look at the files and figure out which is which.
@@ -508,13 +536,13 @@ $ tail -n <number of rows to view> <filename>
 $ tail -n 23 /sw/courses/ngsintro/linux_additional-files/large_file
 ```
 
-##9. Wildcards
-Sometimes (most time really) you have many files.
+## 9. Wildcards
+Sometimes (most of the time really) you have many files.
 So many that it would take you a day just to type all their names.
 This is where **wildcards** saves the day.
-The wildcard symbol in Linux is the star sign, * , and it means literally **anything**.
-Say that you want to move all the files which has names starting with sample_1_ and the rest of the name doesn't matter.
-You want all the files belonging to sample_1.
+The wildcard symbol in Linux is the star sign, `*` , and it means literally **anything**.
+Say that you want to move all the files which has names starting with `sample_1_` and the rest of the name doesn't matter.
+You want all the files belonging to `sample_1`.
 Then you could use the wildcard to represent the rest of the name:
 
 **(don't run this command, it's just an example)**
@@ -528,7 +556,19 @@ There are two folder called **part_1** and **part_2**.
 We want to collect all the **.txt** files from both these folders in one of the folders.
 Look around in both the folders to see what they contain.
 
-![](files/linux-intro/wildcards-0.jpg)
+```bash
+[valent@milou2 linux_tutorial]$ ll part_1/
+total 0
+-rwxrwxr-x 1 valent g2017019 0 Sep 19  2012 file_1.txt
+-rwxrwxr-x 1 valent g2017019 0 Sep 19  2012 file_2.txt
+[valent@milou2 linux_tutorial]$ ll part_2
+total 0
+-rwxrwxr-x 1 valent g2017019 0 Sep 19  2012 file_3.txt
+-rwxrwxr-x 1 valent g2017019 0 Sep 19  2012 file_4.txt
+-rwxrwxr-x 1 valent g2017019 0 Sep 19  2012 garbage.tmp
+-rwxrwxr-x 1 valent g2017019 0 Sep 19  2012 incomplete_datasets.dat
+[valent@milou2 linux_tutorial]$
+```
 
 We see that **part_1** only contains .txt files, and that **part_2** contains some other files as well.
 The best option seem to be to move all .txt files from **part_2** info **part_1**.
