@@ -202,7 +202,7 @@ $ cp -r /sw/courses/ngsintro/linux_tutorial/* /proj/g2017019/nobackup/<username>
 
 If you are unable to copy the files on uppmax, you can download the files instead of copying them.
 This is done with the command **wget** (web get).
-It works kind of the same way as the cp command, but you give it an source URL instead of a source file, and you specify the destination by giving it a prefix, a path that will be appended in front on the file name when it's downloaded.
+It works kind of the same way as the cp command, but you give it a source URL instead of a source file, and you specify the destination by giving it a prefix, a path that will be appended in front on the file name when it's downloaded.
 I.e. if you want to download the file http://somewhere.com/my.file and you give it the prefix ~/analysis/, the downloaded file will be saved as ~/analysis/my.file
 
 ```bash
@@ -236,9 +236,26 @@ The command will always be the same for all tar.gz files you want to unpack.
 -xzvf means e<b>X</b>tract from a **Z**ipped file, **V**erbose (prints the name of the file being unpacked), from the specified **F**ile (f must always be the last of the letters).
 
 Look in the folder again and see what we just unpacked:
-
-![](files/linux-intro/linux_tutorial-0.jpg)
-
+```bash
+[valent@milou2 linux_tutorial]$ ll -la
+total 512
+drwxrwsr-x 12 valent g2017019   2048 Sep 24 13:19 .
+drwxrwsr-x  6 valent g2017019   2048 Sep 24 13:19 ..
+drwxrwsr-x  2 valent g2017019   2048 Sep 19  2012 a_strange_name
+drwxrwsr-x  2 valent g2017019   2048 Sep 19  2012 backed_up_proj_folder
+drwxrwsr-x  2 valent g2017019   2048 Sep 19  2012 external_hdd
+-rwxrwxr-x  1 valent g2017019  17198 Sep 24 13:19 files.tar.gz
+drwxrwsr-x  2 valent g2017019   2048 Sep 19  2012 important_results
+drwxrwsr-x  2 valent g2017019 129024 Sep 19  2012 many_files
+drwxrwsr-x  2 valent g2017019   2048 Sep 19  2012 old_project
+-rwxrwxr-x  1 valent g2017019      0 Sep 24 13:19 other_file.old
+drwxrwsr-x  2 valent g2017019   2048 Sep 19  2012 part_1
+drwxrwsr-x  2 valent g2017019   2048 Sep 19  2012 part_2
+drwxrwsr-x  2 valent g2017019   2048 Jan 28  2012 this_has_a_file
+drwxrwsr-x  2 valent g2017019   2048 Jan 28  2012 this_is_empty
+-rwxrwxr-x  1 valent g2017019      0 Sep 19  2012 useless_file
+[valent@milou2 linux_tutorial]$ 
+```
 ## 6. Copying and Moving Files
 Let's move some files.
 Moving files might be one of the more common things you do, after cd and ls.
