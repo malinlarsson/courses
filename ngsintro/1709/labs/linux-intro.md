@@ -337,7 +337,7 @@ Sometimes you don't want to move things, you want to copy them.
 Moving a file will remove the original file, whereas copying the file will leave the original untouched.
 An example when you want to do this could be that you want to give a copy of a file to a friend.
 Imagine that you have a external hard drive that you want to place the file on.
-The file you want to give to your friend is data from last years project, which is located in your backed_up_project_folder`, `backed_up_proj_folder/last_years_data`
+The file you want to give to your friend is data from last years project, which is located in your backed_up_project_folder, `backed_up_proj_folder/last_years_data`
 
 As with the move command, the syntax is
 
