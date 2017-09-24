@@ -31,9 +31,25 @@ It is supposed to be that way.
 Just type the password and press enter, it will be fine.
 
 Now your screen should look something like this:
+```
+uppnex-47-19:~ valentingeorgiev$ ssh -Y valent@milou.uppmax.uu.se
+Last login: Sun Sep 24 12:06:48 2017 from host-95-195-219-154.mobileonline.telia.com
+ _   _ ____  ____  __  __    _    __  __
+| | | |  _ \|  _ \|  \/  |  / \   \ \/ /   | System:    milou1
+| | | | |_) | |_) | |\/| | / _ \   \  /    | User:      valent
+| |_| |  __/|  __/| |  | |/ ___ \  /  \    | Jobs:      0 running
+ \___/|_|   |_|   |_|  |_/_/   \_\/_/\_\   | Queue:     0 pending
 
-![](files/linux-intro/just-logged-in.jpg)
+###############################################################################
 
+        User Guides: http://www.uppmax.uu.se/support/user-guides
+        FAQ: http://www.uppmax.uu.se/support/faq
+
+        Write to support@uppmax.uu.se, if you have questions or comments.
+
+
+[valent@milou1 ~]$
+```
 ## 2. Getting a node of your own
 
 Usually you would do most of the work in this lab directly on one of the login nodes at uppmax, but we have arranged for you to have one core each to avoid disturbances.
