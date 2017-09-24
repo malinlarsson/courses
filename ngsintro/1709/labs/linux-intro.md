@@ -108,7 +108,7 @@ Backup is expensive, so we don't want to waste it on temporary files generated b
 The nobackup folder is the folder you will keep most of your files in.
 
 As seen in the lecture, the command for moving around is **cd**.
-The command stands for **C**hange **D** irectory and does exactly that.
+The command stands for **C**hange **D**irectory and does exactly that.
 It is the equivalent of double clicking a folder in a GUI.
 To enter the course project's proj folder, simply type
 
@@ -145,7 +145,7 @@ The next step will show you how to do the same thing, but without the moving aro
 If we want to look at what we have in our home folder, while standing in the course's project folder, we type ```$ ll /home/<username>/``` and remember to substitute **\<username\>** with your own user name.
 
 ```bash
-$ ll /home/dahlo/
+$ ll /home/valent/
 ```
 
 Since most programmers are lazy (efficient), there is a shortcut to your home folder so that you don't have to write it all the time.
