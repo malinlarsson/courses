@@ -275,13 +275,15 @@ $ mv <source> <destination>
 First, take a look inside the important_results folder:
 
 ```bash
-$ ll important_results
+[valent@milou2 linux_tutorial]$ ll important_results/
+total 0
+-rwxrwxr-x 1 valent g2017019 0 Sep 19  2012 dna_data_analysis_result_file_that_is_important-you_should_really_use_tab_completion_for_file_names.bam
+-rwxrwxr-x 1 valent g2017019 0 Sep 19  2012 temp_file-1
+-rwxrwxr-x 1 valent g2017019 0 Sep 19  2012 temp_file-2
+[valent@milou2 linux_tutorial]$
 ```
-
-![](files/linux-intro/important_results-0.jpg)
-
 You see that there are some unimportant temporary files that you have no interest in.
-Just to demonstrate the move command, I will show how you would move one of these temporary files to your backed up project folder:
+Just to demonstrate the move command, I will show you how to move one of these temporary files to your backed up project folder:
 
 ```bash
 $ mv important_results/temp_file-1 backed_up_proj_folder/
@@ -292,11 +294,13 @@ $ mv important_results/temp_file-1 backed_up_proj_folder/
 Look in the backed up project folder to make sure you moved the file correctly.
 
 ```bash
-$ ll backed_up_proj_folder
+[valent@milou2 linux_tutorial]$ ll backed_up_proj_folder/
+total 0
+-rwxrwxr-x 1 valent g2017019 0 Sep 19  2012 dna_data_analysis_result_file_that_is_important-you_should_really_use_tab_completion_for_file_names.bam
+-rwxrwxr-x 1 valent g2017019 0 Sep 19  2012 last_years_data
+-rwxrwxr-x 1 valent g2017019 0 Sep 19  2012 temp_file-1
+[valent@milou2 linux_tutorial]$
 ```
-
-![](files/linux-intro/backed_up-0.jpg)
-
 Another use for the move command is to rename things.
 When you think of it, renaming is just a special case of moving.
 You move the file to a location and give the file a new name in the process.
@@ -310,10 +314,24 @@ $ mv a_strange_name a_better_name
 Look around to see that the name change worked.
 
 ```bash
-$ ll
+[valent@milou2 linux_tutorial]$ mv a_strange_name a_better_name
+[valent@milou2 linux_tutorial]$ ll
+total 448
+drwxrwsr-x 2 valent g2017019   2048 Sep 19  2012 a_better_name
+drwxrwsr-x 2 valent g2017019   2048 Sep 24 13:40 backed_up_proj_folder
+drwxrwsr-x 2 valent g2017019   2048 Sep 19  2012 external_hdd
+-rwxrwxr-x 1 valent g2017019  17198 Sep 24 13:36 files.tar.gz
+drwxrwsr-x 2 valent g2017019   2048 Sep 24 13:40 important_results
+drwxrwsr-x 2 valent g2017019 129024 Sep 19  2012 many_files
+drwxrwsr-x 2 valent g2017019   2048 Sep 19  2012 old_project
+-rwxrwxr-x 1 valent g2017019      0 Sep 24 13:36 other_file.old
+drwxrwsr-x 2 valent g2017019   2048 Sep 19  2012 part_1
+drwxrwsr-x 2 valent g2017019   2048 Sep 19  2012 part_2
+drwxrwsr-x 2 valent g2017019   2048 Jan 28  2012 this_has_a_file
+drwxrwsr-x 2 valent g2017019   2048 Jan 28  2012 this_is_empty
+-rwxrwxr-x 1 valent g2017019      0 Sep 19  2012 useless_file
+[valent@milou2 linux_tutorial]$
 ```
-
-![](files/linux-intro/linux_tutorial-post_mv.jpg)
 
 Sometimes you don't want to move things, you want to copy them.
 Moving a file will remove the original file, whereas copying the file will leave the original untouched.
@@ -330,9 +348,13 @@ $ cp backed_up_proj_folder/last_years_data external_hdd/
 ```
 
 Take a look in the external_hdd to make sure the file got copied.
-
-![](files/linux-intro/external_hdd.jpg)
-
+```bash
+[valent@milou2 linux_tutorial]$ cp backed_up_proj_folder/last_years_data external_hdd/
+[valent@milou2 linux_tutorial]$ ll external_hdd/
+total 0
+-rwxrwxr-x 1 valent g2017019 0 Sep 24 13:46 last_years_data
+[valent@milou2 linux_tutorial]$
+```
 ## 7. Deleting Files
 Sometimes you will delete files.
 Usually this is when you know that the file or files are useless to you, and they only take up space on your hard drive or UPPMAX account.
