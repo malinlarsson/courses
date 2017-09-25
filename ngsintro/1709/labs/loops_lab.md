@@ -442,7 +442,7 @@ Basic solution:
 
 <details>
 <summary>:key: Click to see how</summary> 
-{% highlight bash %}# make the dummy pipeline available
+<pre>{% highlight bash %}# make the dummy pipeline available
 export PATH=$PATH:/sw/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
 
 # index the reference genome
@@ -472,6 +472,7 @@ do
 
 done
 {% endhighlight %}
+</pre>
 </details> 
 <br><br>
 
@@ -482,7 +483,8 @@ Advanced solution:
 
 <details>
 <summary>:key: Click to see how</summary> 
-<pre># make the dummy pipeline available in this script
+<pre>
+# make the dummy pipeline available in this script
 export PATH=$PATH:/sw/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
 
 # index the reference genome once, only if needed
