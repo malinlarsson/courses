@@ -12,7 +12,7 @@ Room: Ekologihuset, Sölvegatan 37, Lund, lecture hall Tanken
 **11.00-12.00** Exercise: Introduction to Linux (Valentin Georgiev, Dag Ahrén)  
 **12.00-13.00** Lunch  
 **13.00-14.00** [Lecture: Introduction to UPPMAX/UPPNEX](slides/UPPMAX-tutorial.pdf) (Valentin Georgiev)  
-**14.00-17.00** [Exercise: Introduction to UPPMAX/UPPNEX](labs/uppmax-intro) (Valentin Georgiev, Dag Ahrén)  
+**14.00-17.00** Exercise: Introduction to UPPMAX/UPPNEX (Valentin Georgiev, Dag Ahrén)  
 
 **Tuesday 26th**  
 Room: Ekologihuset, Sölvegatan 37, Lund, lecture hall Tanken  
