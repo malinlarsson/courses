@@ -20,7 +20,7 @@ Room: Ekologihuset, Sölvegatan 37, Lund, lecture hall Tanken
 **09.30-12.00** [Exercise: File types in bioinformatics](labs/filetypes) (Valentin Georgiev, Fredrik Levander)  
 **12.00-13.00** Lunch  
 **13:00-14:00** [Lecture: Advanced Linux usage](slides/advanced_linux.pdf) (Valentin Georgiev)  
-**14:00-17:00** Exercise: Advanced Linux usage (Valentin Georgiev, Fredrik Levander)  
+**14:00-17:00** [Exercise: Advanced Linux usage](labs/loops_lab) (Valentin Georgiev, Fredrik Levander)  
 
 **Wednesday 27th**  
 Room: Ekologihuset, Sölvegatan 37, Lund, lecture hall Tanken (13-17: Maskrosen)  
