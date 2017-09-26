@@ -15,7 +15,7 @@ Room: 9.00-12.00 A7:115a, 13.00-17.00 Trippelrummet
 **11.20-12.00** [scRNAseq quality control](slides/) (Åsa Björklund)   
 **12.00-13.00** Lunch   
 **13.00-13.45** [Dimesionality reduction](slides/) (Per Unneberg)   
-**13.45-17.00** [Practical Exercises](https://bitbucket.org/scilifelab-lts/scrnaseq-labs) (Stefania Giaccomello, Johan Reimegård, Åsa Björklund)   
+**13.45-17.00** [Practical Exercises](https://bitbucket.org/scilifelab-lts/scrnaseq-labs) (Stefania Giaccomello, Johan Reimegård, Åsa Björklund, Verena Kutschera)   
   
 **Tuesday 3rd**   
 Room: Trippelrummet   
@@ -29,7 +29,7 @@ Room: Trippelrummet
 **Wednesday 4th**  
 Room: Trippelrummet
 **09.00-9.50** [Differential gene expression](slides/) (Olga Dethlefsen)   
-**10.20-11.10** [Drop-seq and spatial transcriptomics of the fetal heart](slides/) (Stefania Giaccomello)
+**10.20-11.10** [Drop-seq and spatial transcriptomics of the fetal heart](slides/) (Stefania Giaccomello)   
 **11.10-12.00** [Example from research project](slides/) (TBA)
 **13.00-16.00** [Practical exercises](https://bitbucket.org/scilifelab-lts/scrnaseq-labs) (Åsa Björklund, Olga Dethlefsen)   
 **16.00-17.00** [Summary of the week](slides/) (Åsa Björklund)
