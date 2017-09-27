@@ -20,6 +20,7 @@ title:  'Precourse Material'
 *   SCRAN package - [website](https://github.com/elswob/SCRAN), [bioconductor](http://bioconductor.org/packages/release/bioc/html/scran.html)
 *   Seurat package - [website](http://satijalab.org/seurat/install.html)
 *   MAST package - [website](https://github.com/RGLab/MAST), [bioconductor](https://bioconductor.org/packages/release/bioc/html/MAST.html)
+*   Monocle package - [website](http://cole-trapnell-lab.github.io/monocle-release/), [bioconductor](https://bioconductor.org/packages/release/bioc/html/monocle.html)   
 
 OBS! If you run in to trouble during installations, please have a look at the troubleshooting pages for installations that most of the packages have. If you still do not succeed in installing them, please email to Åsa Björklund (asa.bjorklund at scilifelab dot se) and she will try to help you out if possible.
 

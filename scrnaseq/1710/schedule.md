@@ -27,12 +27,12 @@ Room: Trippelrummet
 **18.00-** Course dinner   
 
 **Wednesday 4th**  
-Room: Trippelrummet
+Room: Trippelrummet   
 **09.00-9.50** [Differential gene expression](slides/) (Olga Dethlefsen)   
 **10.20-11.10** [Drop-seq and spatial transcriptomics of the fetal heart](slides/) (Stefania Giaccomello)   
-**11.10-12.00** [Example from research project](slides/) (TBA)
+**11.10-12.00** [Example from research project](slides/) (TBA)   
 **13.00-16.00** [Practical exercises](https://bitbucket.org/scilifelab-lts/scrnaseq-labs) (Åsa Björklund, Olga Dethlefsen)   
-**16.00-17.00** [Summary of the week](slides/) (Åsa Björklund)
+**16.00-17.00** [Summary of the week](slides/) (Åsa Björklund)   
 
 
  
