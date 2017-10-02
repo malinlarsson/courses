@@ -10,11 +10,11 @@ title:  'Schedule'
 **Monday 2nd**  
 Room: 9.00-12.00 A7:115a, 13.00-17.00 Trippelrummet   
 **09.00-09.10** [Introduction](slides/) (Åsa Björklund)   
-**09.10-10.00** [scRNAseq methodologies and ESCG platform](slides/) (Karolina Wallenborg)   
+**09.10-10.00** [scRNAseq methodologies and ESCG platform](slides/scRNA_seq_methodologies_ESCG_KW.pdf) (Karolina Wallenborg)   
 **10.30-11.20** [Introduction to read alignment pipelines and gene expression estimates](slides/) (Johan Reimegård)   
-**11.20-12.00** [scRNAseq quality control](slides/) (Åsa Björklund)   
+**11.20-12.00** [scRNAseq quality control](slides/scRNAseq_QC_Asa_Bjorklund.pdf) (Åsa Björklund)   
 **12.00-13.00** Lunch   
-**13.00-13.45** [Dimesionality reduction](slides/) (Per Unneberg)   
+**13.00-13.45** [Dimesionality reduction](slides/presentation_PU.html) (Per Unneberg)   
 **13.45-17.00** [Practical Exercises](https://bitbucket.org/scilifelab-lts/scrnaseq-labs) (Stefania Giaccomello, Johan Reimegård, Åsa Björklund, Verena Kutschera)   
   
 **Tuesday 3rd**   
