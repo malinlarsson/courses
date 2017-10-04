@@ -29,10 +29,10 @@ Room: Trippelrummet
 **Wednesday 4th**  
 Room: 9.00-12.00 A7:115a, 13.00-17.00 Trippelrummet   
 **09.00-9.50** [Differential gene expression](slides/scRNA-seq_diffExp.pdf) (Olga Dethlefsen)   
-**10.20-11.10** [Drop-seq and spatial transcriptomics of the fetal heart](slides/) (Stefania Giaccomello)   
-**11.10-12.00** [Example from research project](slides/) (TBA)   
+**10.20-11.10** [Drop-seq and spatial transcriptomics of the fetal heart](slides/SGiacomello.pdf) (Stefania Giaccomello)   
+**11.10-12.00** [Single cell analysis of midbrain dopamine neurons]() (Åsa Björklund)   
 **13.00-16.00** [Practical exercises](https://bitbucket.org/scilifelab-lts/scrnaseq-labs) (Åsa Björklund, Olga Dethlefsen)   
-**16.00-17.00** [Summary of the week](slides/) (Åsa Björklund)   
+**16.00-17.00** [Summary of the week]() (Åsa Björklund)   
 
 
  
