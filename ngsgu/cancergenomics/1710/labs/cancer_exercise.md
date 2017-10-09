@@ -1,12 +1,12 @@
 ---
 layout: default
-title:  ‘Exercise Cancer Genomics Using NGS Data - October 2016'
+title:  ‘Exercise Cancer Genomics Using NGS Data - October 2017'
 ---
 
 # Detection of somatic mutations in tumor samples
 Malin Larsson  
 malin.larsson@scilifelab.se  
-Practical exercise given as part of the course "Advanced Next Generation Sequencing data analysis" at University of Gothenburg, October 2016.  
+Practical exercise given as part of the course "Advanced Next Generation Sequencing data analysis" at University of Gothenburg, October 2017.  
 
 ### Introduction
 In this exercise we will analyze somatic mutations in cancer, which is a bit different from the identification of inherited germline variants. We are only interested in the somatic mutations that have occurred during the development of tumor cells, so the beckground of germline variants (also present in the tumor cells) must be filtered away. Difficulties arise because tumor samples often contain a mixture of cancer cells and normal cells (Figure 1), tumors may consist of sub-clones with different somatic mutations and cancer cells may not be diploid due to copy number variation. Germline genotype callers such as GATK's HaplotypeCaller are optimized for diploid samples or samples of known ploidy, and for detecting variants with allele frequencies close to 0, 0.5 or 1. Therefore, somatic variants should be called with specialized callers.   
@@ -49,7 +49,7 @@ Figure 2 shows an overview of the workflow of this part of the exercise. Start b
 Figure 2: Workflow of somatic variant detection and annotation.
 
 ### Data
-Bam files are located here:  
+Bam files are located here (note, these files are write protected):  
 
 ```bash
 /home/teacher2/cancer_genomics_2015/data/chr17/HCC1143.normal.bam
@@ -58,28 +58,27 @@ Bam files are located here:
 /home/teacher2/cancer_genomics_2015/data/chr17/HCC1954.tumor.bam
 ```
 
-### Include paths to software and reference files in your .bashrc
-Define paths to the software, data and reference files used the exercise. This is done by inserting the following lines into your .bashrc file (located in your home directory):
+### Software and reference files
+Software and reference files are located here: 
 
 ```bash
-#Tools for cancer genomics:
-PICARD_HOME=/home/erik/bin/picard-tools-1.65
-GATK_HOME=/home/marcela/bin/GATK
-MUTECT_HOME=/home/marcela/bin
-ANNOVAR_HOME=/home/teacher2/cancer_genomics/annovar/
-bundle=/home/teacher2/cancer_genomics/bundle
-data=/home/teacher2/cancer_genomics/data
-scripts_dir=/home/teacher2/cancer_genomics/scripts
+#Public software:
+PICARD: /home/erik/bin/picard-tools-1.65
+GATK: /home/marcela/bin/GATK
+MUTECT: /home/marcela/bin
+ANNOVAR: /home/teacher2/cancer_genomics/annovar/
+
+#Public reference files:
+GATK bundle:/home/teacher2/cancer_genomics/bundle
+
+#Custom made software:
+vcf2freq.py: /home/teacher2/cancer_genomics/scripts
+
 ```
 
 The folder "bundle" above contains reference files needed for the analyses and is distributed by the Broad Institute together with GATK. For more information, please see 
 [http://gatkforums.broadinstitute.org/discussion/1213/whats-in-the-resource-bundle-and-how-can-i-get-it](http://gatkforums.broadinstitute.org/discussion/1213/whats-in-the-resource-bundle-and-how-can-i-get-it)
-
-When you have modified your .bashrc file, reload it with this command (this neads to be done in every open terminal window):  
-
-```bash
-. ~/.bashrc
-```  
+  
 
 ### Create working directory
 Create a working directory for todays exercise and go there  
@@ -93,22 +92,22 @@ cd cancer_dir
 If you start with the sample HCC1143:  
 
 ```bash
-ln -s $data/chr17/HCC1143.normal.bam HCC1143.normal.bam
-ln -s $data/chr17/HCC1143.tumor.bam HCC1143.tumor.bam
+ln -s /home/teacher2/cancer_genomics/data/chr17/HCC1143.normal.bam HCC1143.normal.bam
+ln -s /home/teacher2/cancer_genomics/data/chr17/HCC1143.tumor.bam HCC1143.tumor.bam
 ```  
 
 If you start with the sample HCC1954:  
 
 ```bash
-ln -s $data/chr17/HCC1954.normal.bam HCC1954.normal.bam
-ln -s $data/chr17/HCC1954.tumor.bam HCC1954.tumor.bam
+ln -s /home/teacher2/cancer_genomics/data/chr17/HCC1954.normal.bam HCC1954.normal.bam
+ln -s /home/teacher2/cancer_genomics/data/chr17/HCC1954.tumor.bam HCC1954.tumor.bam
 ```  
 
 ### AddOrReplaceReadGroups
 You should use the Picard's method AddOrReplaceReadGroups to update the readgroup information in the tumor and normal bam files. Picard is a java program and AddOrReplaceReadGroups is started like this:   
 
 ```bash
-java -jar $PICARD_HOME/AddOrReplaceReadGroups.jar
+java -jar /home/erik/bin/picard-tools-1.65/AddOrReplaceReadGroups.jar
 ```  
 
 When you start the program without input parameters as above, you will be provided with a help page that describes how to use the program and which paramter options that are available.  
@@ -117,7 +116,7 @@ Run AddOrReplaceReadGroups for the tumor and the normal bam files separately, an
 
 ```bash
 
-java -jar $PICARD_HOME/AddOrReplaceReadGroups.jar INPUT=sampleid.normal.bam OUTPUT=sampleid.normal.RG.bam RGID=sampleid.normal RGLB=sampleid.normal RGPU=sampleid.normal RGSM=sampleid.normal RGPL=ILLUMINA SORT_ORDER=coordinate CREATE_INDEX=True
+java -jar /home/erik/bin/picard-tools-1.65/AddOrReplaceReadGroups.jar INPUT=sampleid.normal.bam OUTPUT=sampleid.normal.RG.bam RGID=sampleid.normal RGLB=sampleid.normal RGPU=sampleid.normal RGSM=sampleid.normal RGPL=ILLUMINA SORT_ORDER=coordinate CREATE_INDEX=True
 ```  
 
 ### Realign Indels
@@ -125,13 +124,13 @@ Now you should use GATK to realign the tumor and normal .bam files simultaneousl
 To get instructions on how to use RealignerTargetCreator, please type:  
 
 ```bash
-java -jar $GATK_HOME/GenomeAnalysisTK.jar -T RealignerTargetCreator --help
+java -jar /home/marcela/bin/GATK/GenomeAnalysisTK.jar -T RealignerTargetCreator --help
 ```  
 
 To get instructions on how to use IndelRealigner, please type:  
 
 ```bash  
-java -jar $GATK_HOME/GenomeAnalysisTK.jar -T IndelRealigner --help
+java -jar /home/marcela/bin/GATK/GenomeAnalysisTK.jar -T IndelRealigner --help
 ```  
 
 For more inforamtion please read about the specific GATK tools on https://www.broadinstitute.org/gatk/guide/tooldocs/  
@@ -139,7 +138,7 @@ For more inforamtion please read about the specific GATK tools on https://www.br
 Run RealignerTargetCreator with the following options:  
 
 ```bash
-java -jar $GATK_HOME/GenomeAnalysisTK.jar -T RealignerTargetCreator -R $bundle/human_g1k_v37.fasta -L 17:1000000-9000000 -I sampleid.normal.RG.bam -I sampleid.tumor.RG.bam -known $bundle/1000G_phase1.indels.b37.vcf -known $bundle/Mills_and_1000G_gold_standard.indels.b37.vcf -o sampleid.intervals
+java -jar /home/marcela/bin/GATK/GenomeAnalysisTK.jar -T RealignerTargetCreator -R /home/teacher2/cancer_genomics/bundle/human_g1k_v37.fasta -L 17:1000000-9000000 -I sampleid.normal.RG.bam -I sampleid.tumor.RG.bam -known /home/teacher2/cancer_genomics/bundle/1000G_phase1.indels.b37.vcf -known /home/teacher2/cancer_genomics/bundle/Mills_and_1000G_gold_standard.indels.b37.vcf -o sampleid.intervals
 ```  
 
 Where   
@@ -150,7 +149,7 @@ sampleid.intervals is the outoput of RealignerTargetCreator, containing coordina
 Then run IndelRealigner with the following options:  
 
 ```bash
-java -jar $GATK_HOME/GenomeAnalysisTK.jar -T IndelRealigner -R $bundle/human_g1k_v37.fasta -I sampleid.normal.RG.bam -I sampleid.tumor.RG.bam -targetIntervals sampleid.intervals -known $bundle/1000G_phase1.indels.b37.vcf -known $bundle/Mills_and_1000G_gold_standard.indels.b37.vcf -nWayOut ".realignedtogether.bam"
+java -jar /home/marcela/bin/GATK/GenomeAnalysisTK.jar -T IndelRealigner -R /home/teacher2/cancer_genomics/bundle/human_g1k_v37.fasta -I sampleid.normal.RG.bam -I sampleid.tumor.RG.bam -targetIntervals sampleid.intervals -known /home/teacher2/cancer_genomics/bundle/1000G_phase1.indels.b37.vcf -known /home/teacher2/cancer_genomics/bundle/Mills_and_1000G_gold_standard.indels.b37.vcf -nWayOut ".realignedtogether.bam"
 ```  
 
 Where   
@@ -163,13 +162,13 @@ Sampleid.intervals is the interval file generated by RealignerTargetCreator abov
 MuTect is distributed as a jar file just like Picard and GATK. To get help and learn about input options, type  
 
 ```bash
-/home/babak/bin/MCR_8.0/sys/java/jre/glnxa64/jre/bin/java -jar $MUTECT_HOME/muTect-1.1.4.jar -help
+/home/babak/bin/MCR_8.0/sys/java/jre/glnxa64/jre/bin/java -jar /home/marcela/bin/muTect-1.1.4.jar -help
 ``` 
 
 You should run MuTect with the following options:  
 
 ```bash
-/home/babak/bin/MCR_8.0/sys/java/jre/glnxa64/jre/bin/java -jar $MUTECT_HOME/muTect-1.1.4.jar --analysis_type MuTect --reference_sequence $bundle/human_g1k_v37.fasta --cosmic $bundle/b37_cosmic_v54_120711.vcf --dbsnp $bundle/dbsnp_138.b37.vcf --intervals 17:1000000-9000000 --input_file:normal sampleid.normal.RG.realignedtogether.bam --input_file:tumor sampleid.tumor.RG.realignedtogether.bam --out sampleid.mutect.out --vcf sampleid.mutect.vcf
+/home/babak/bin/MCR_8.0/sys/java/jre/glnxa64/jre/bin/java -jar /home/marcela/bin/muTect-1.1.4.jar --analysis_type MuTect --reference_sequence /home/teacher2/cancer_genomics/bundle/human_g1k_v37.fasta --cosmic /home/teacher2/cancer_genomics/bundle/b37_cosmic_v54_120711.vcf --dbsnp /home/teacher2/cancer_genomics/bundle/dbsnp_138.b37.vcf --intervals 17:1000000-9000000 --input_file:normal sampleid.normal.RG.realignedtogether.bam --input_file:tumor sampleid.tumor.RG.realignedtogether.bam --out sampleid.mutect.out --vcf sampleid.mutect.vcf
 ```  
 
 Where   
@@ -236,17 +235,17 @@ Use the tool Annovar to link the somatic variants detected in your sample to gen
 If you start table annovar without input parameters like this:  
 
 ```bash
-$ANNOVAR_HOME/table_annovar.pl 
+/home/teacher2/cancer_genomics/annovar/table_annovar.pl 
 ```  
 
 you will be provided with help on how to use the script. 
 Please use the following command to annotate your filtered vcf file:  
 
 ```bash
-$ANNOVAR_HOME/table_annovar.pl -buildver hg19 -out sampleid -protocol refGene,exac03,cosmic70 -operation g,f,f -nastring . -vcfinput sampleid.mutect1.somatic.vcf $ANNOVAR_HOME/humandb/
+/home/teacher2/cancer_genomics/annovar/table_annovar.pl -buildver hg19 -out sampleid -protocol refGene,exac03,cosmic70 -operation g,f,f -nastring . -vcfinput sampleid.mutect1.somatic.vcf /home/teacher2/cancer_genomics/annovar/humandb/
 ```  
 
-Where "sampleid" should be replaced with "HCC1143" or "HCC1954". The path to $ANNOVAR_HOME/humandb/ should be provided in the end of the command since that directory contains all data files used for annotation.  
+Where "sampleid" should be replaced with "HCC1143" or "HCC1954". The path to /home/teacher2/cancer_genomics/annovar/humandb/ should be provided in the end of the command since that directory contains all data files used for annotation.  
 The output file 
 
 ### Questions:
@@ -272,34 +271,34 @@ In this part of the exercise you will work with data that was generated exactly 
 Filtered somatic mutations are available in these files:  
 
 ```bash
-$data/wgs/HCC1143.final.vcf
-$data/data/wgs/HCC1954.final.vcf
+/home/teacher2/cancer_genomics/data/wgs/HCC1143.final.vcf
+/home/teacher2/cancer_genomics/data/data/wgs/HCC1954.final.vcf
 ``` 
 
 Filtered somatic mutations annotated with Annovar and the refGene database, are available here:
 
 ```bash
-$data/wgs/HCC1143.avinput.variant_function
-$data/wgs/HCC1143.avinput.exonic_variant_function
-$data/wgs/HCC1954.avinput.variant_function
-$data/wgs/HCC1954.avinput.exonic_variant_function
+/home/teacher2/cancer_genomics/data/wgs/HCC1143.avinput.variant_function
+/home/teacher2/cancer_genomics/data/wgs/HCC1143.avinput.exonic_variant_function
+/home/teacher2/cancer_genomics/data/wgs/HCC1954.avinput.variant_function
+/home/teacher2/cancer_genomics/data/wgs/HCC1954.avinput.exonic_variant_function
 ```  
 
 where  
 
 ```bash
-$data=/home/teacher2/cancer_genomics/data
+/home/teacher2/cancer_genomics/data=/home/teacher2/cancer_genomics/data
 ```  
 
 ### Create symbolic links to input files  
 
 ```bash
-ln -s $data/wgs/HCC1143.final.vcf  HCC1143.final.vcf
-ln -s $data/data/wgs/HCC1954.final.vcf HCC1954.vcf
-ln -s $data/wgs/HCC1143.avinput.variant_function HCC1143.avinput.variant_function
-ln -s $data/wgs/HCC1143.avinput.exonic_variant_function HCC1143.avinput.exonic_variant_function
-ln -s $data/wgs/HCC1954.avinput.variant_function HCC1954.avinput.variant_function
-ln -s $data/wgs/HCC1954.avinput.exonic_variant_function HCC1954.avinput.exonic_variant_function
+ln -s /home/teacher2/cancer_genomics/data/wgs/HCC1143.final.vcf  HCC1143.final.vcf
+ln -s /home/teacher2/cancer_genomics/data/data/wgs/HCC1954.final.vcf HCC1954.vcf
+ln -s /home/teacher2/cancer_genomics/data/wgs/HCC1143.avinput.variant_function HCC1143.avinput.variant_function
+ln -s /home/teacher2/cancer_genomics/data/wgs/HCC1143.avinput.exonic_variant_function HCC1143.avinput.exonic_variant_function
+ln -s /home/teacher2/cancer_genomics/data/wgs/HCC1954.avinput.variant_function HCC1954.avinput.variant_function
+ln -s /home/teacher2/cancer_genomics/data/wgs/HCC1954.avinput.exonic_variant_function HCC1954.avinput.exonic_variant_function
 ``` 
 
 ### Genome wide detection of somatic mutations  
@@ -318,11 +317,11 @@ Answer the following questions using a combination of the commands "grep", "|”
 ### Normal contamination of the tumor samples
 Now you will look at the distribution of alternative allele frequencies over all detected mutations, and see how it is affected by normal contamination in the tumor sample. In this situation, the alternative allele frequency is defined as:  
 alt allele frequency =  (number of reads supporting the alternative allele)/(number of reads supporting the reference allele)  
-Use the python script "vcf2freq.py" available in $scripts_dir (home/teacher2/scripts/cancer_genomics/) to plot the distribution of alternative allele frequencies for all mutations in the six samples. The script generates a pdf file with plots of alternative allele frequency distributions for all samples in the input vcf, both in the form of box plots and as histograms. 
+Use the python script "vcf2freq.py" available in /home/teacher2/cancer_genomics/scripts to plot the distribution of alternative allele frequencies for all mutations in the six samples. The script generates a pdf file with plots of alternative allele frequency distributions for all samples in the input vcf, both in the form of box plots and as histograms. 
 vcf2freq.py is started like this:  
 
 ```bash
-$scripts_dir/vcf2freq.py sampleid.final.vcf out
+/home/teacher2/cancer_genomics/scripts/vcf2freq.py sampleid.final.vcf out
 ```
 
 Where sampleid is HCC1143 or HCC1954 and out is the root name of the output .pdf file. 
