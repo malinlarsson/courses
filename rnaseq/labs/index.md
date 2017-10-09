@@ -20,9 +20,9 @@ In the links below there are information about tools and data that we will use d
 
 ### Mapping reads 
 
-This contains information on how to map reads to a reference sequence. In the tutorial you will learn how to use both **STAR** and **HiSAT2**
+This contains information on how to map reads to a reference genome. In the tutorial you will learn how to use both **STAR** and **HISAT2**.
  
-*	[Tutorial for mapping reads to a reference and converting them to the BAM format](mapping_reads) 
+*	[Tutorial for mapping reads to a reference and converting the results to BAM format](mapping_reads) 
 
 ### Transcript assembly
 

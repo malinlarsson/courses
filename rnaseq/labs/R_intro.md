@@ -16,7 +16,7 @@ typically execute the command ``R`` at the shell prompt.
 
 In this course, we are running R on a Linux server. If you would like
 to install R on your own computer, you can find the appropriate
-download for your system [here](http://ftp.sunet.se/pub/lang/CRAN/).
+download for your system [here](http://ftp.acc.umu.se/mirror/CRAN/).
 
 When R starts, you should see a text message stating the version of
 R you are running and some further information, followed by a
@@ -28,6 +28,7 @@ works, try out some arithmetic::
 	 [1] 5
 	 > 5 * 4 + 10
 	 [1] 30
+
 And some function calls
 
 	> abs(-5)
@@ -62,7 +63,7 @@ We can also change the value of an object that we’ve created:
 	[1] 20
 
 The object *a* created above is a vector with a single element. To
-create a vector with several elements, you can use the function *c*::
+create a vector with several elements, you can use the function *c*:
 
 
 	> b <- c(1, 2, 10)
@@ -74,7 +75,7 @@ Or the colon operator::
 	> 1:10
 	[1]  1  2  3  4  5  6  7  8  9 10
 
-A matrix can be created with the function *cbind*::
+A matrix can be created with the function *cbind*:
 
 	> b <- cbind(1:10, 101:110)
 	> b
@@ -99,62 +100,102 @@ We can then use indices to access selected elements of the matrix:
 	> b[c(5,8), 2]
 	[1] 105 108
 
-You can find manuals for R and more information on the [R web site](http://www.r-project.org/)
-
-# Installing packages in R and loading them
-
-## Installing packages from BioConductor
-To install packages from BioConductor you first have to load a function biocLite.R from bioconductor and then use that function to install the package. That is done in two lines of codes
-
-	## try http if https is not available
-	source("https://bioconductor.org/biocLite.R")
-	biocLite("Name of your package")
-	
-	##Example installing DEseq2
-	
-	## try http if https is not available
-	source("https://bioconductor.org/biocLite.R")
-	biocLite("DESeq2")
-	 
-## Installing packages from CRAN
-
-To install a CRAN package in R, use the install.packages() function. This simple command downloads the package from a specified repository (by default, CRAN) and installs it on your machine:
-
-	install.packages("Name of your CRAN package")
-	
-	##An example
-	
-	install.packages("ggplot2")
-
-	
-## Installing packages from github
-
-Sometimes you want to install packages that are still under development. Those are mostly found on github. This example show how you can switch between a stable version and the development version. If you only want to install from github ignore the dev_mode() part
-
-	install.packages("devtools")
-
-	library(devtools)
-
-	dev_mode(on=T)
-
-	install_github("hadley/ggplot2")
-
-	# use dev ggplot2 now
-
-	# when finished do:
-
-	dev_mode(on=F)  #and you are back to having stable ggplot2
-
-## Load package/library
-
-Use library() to load the package after installing it
-
-	#Example of loading DEseq and ggplot2
-	library(DEseq)
-	library(ggplot2)
-
-# Quit r
+To end your R session, use the functions *quit* or *q*:
  
-	q() or quit()	 
+	> q()
+	Save workspace image? [y/n/c]: n
 
-	 
+If you wish, you can save a workspace image. This means that the state of your R session is written to a file, which will be loaded the next time
+you start R in the same working directory. This is good if you want to continue the session at a later time. If not, just answer *n* (for no).
+
+You can find manuals for R and more information on the [R web site](http://www.r-project.org/).
+
+## Working with R packages
+
+R contains many functions, in particular for statistics and
+plotting. There are numerous additional functions and data sets,
+contained in R packages that are not installed by default.
+
+Many such extension packages can be obtained from the
+[Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/web/packages/index.html).
+We will also download packages from [BioConductor](http://www.bioconductor.org), an alternative
+repository focused on R packages for bioinformatics.
+
+### Installing packages from CRAN
+
+To install a CRAN package in R, use the install.packages() function. This simple command downloads the package from a specified repository (by default, CRAN) and installs it on your machine. For example, we can install a useful package called *gplots*:
+
+	> install.packages("gplots")
+
+After installation, the package is stored in a location on your computer called the R package library. Packages are loaded from this library using the function *library*:
+
+	> library("gplots")
+
+One useful function in the *gplots* package is *heatmap.2*, which plots heatmaps with dendrograms. Since we have installed and loaded the *gplots* package, we can now use this function. Let's try it with a matrix of random, normally distributed values:
+
+	> heatmap.2( matrix(rnorm(180), ncol=6) )
+
+Note that you only need to install a package once. The next time you start R, you can run *library("gplots")* directly, because the package has already been installed. If you upgrade to a new version of R, you may have to reinstall packages.
+
+### Installing packages from BioConductor
+
+To install packages from BioConductor, you first have to load a function *biocLite.R* from BioConductor and then use that function to install the packages.
+That is done in two lines of code:
+
+	> source("https://bioconductor.org/biocLite.R")
+	> biocLite("Name of package")
+
+For example, let's install the package *DESeq2*, which provides functions for RNA-seq differential expression analysis:
+	
+	> source("https://bioconductor.org/biocLite.R")
+	> biocLite("DESeq2")
+
+You should now be able to load the package *DESeq2*:
+
+	> library("DESeq2")
+
+### Installing packages from GitHub
+
+Sometimes you want to install packages that are still under development. Those are mostly found on [GitHub](https://github.com).
+
+The example below shows how you can switch between a stable version and a development version of a package, in this case the package *ggplot2*.
+This example is provided for reference and you don't have to understand it (or try it) for completing the RNA-seq labs.
+
+First, we install and load the regular (stable) version of the *ggplot2* package from CRAN:
+
+	> install.packages("ggplot2")
+	> library(ggplot2)
+
+To see which packages are loaded, and their versions, use the function *sessionInfo*:
+
+	> sessionInfo()
+
+Note the version number of *ggplot2* reported by *sessionInfo*.
+
+There is no entirely safe way to unload packages in R, so to work with a different package version, it is safest to quit and restart R. To quit:
+
+	> q()
+	Save workspace image? [y/n/c]: n
+
+After starting R again, we install and load the *devtools* package, which provides functions for working with development versions of packages:
+
+	> install.packages("devtools")
+	> library(devtools)
+
+Next we install the development version of *ggplot2* from GitHub:
+
+	> dev_mode(on=TRUE)
+	> install_github("hadley/ggplot2")
+
+Now we can load and work with the the development version of *ggplot2*:
+
+	> library(ggplot2)
+	> sessionInfo()
+
+Check the output from *sessionInfo* to verify that you now get a different version number for *ggplot2*!
+
+When finished working with development versions, do:
+
+	> dev_mode(on=FALSE)
+
+Note that if you only want to install from GitHub, you can ignore the *dev_mode* function calls above.

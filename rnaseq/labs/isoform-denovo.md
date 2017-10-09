@@ -74,7 +74,7 @@ Load all programs that you will need for trinity to work on uppmax this exercise
     module load bioinfo-tools 
     module load bowtie
     module load samtools
-    module load trinity/2014-07-17 
+    module load trinity/2.3.2
     
     
 If you have not loaded the the STAR module yet to that as well. 

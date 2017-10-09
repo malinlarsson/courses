@@ -12,14 +12,14 @@ Held in Uppsala October 25-27, 2016.
 
 ###  On Tuesday
 
-    interactive -A g2016006 -t 6:00:00 -p core -n 4 --reservation g2016006_1
+    interactive -A g2016022 -t 6:00:00 -p core -n 4 --reservation g2016022_TUESDAY
 	
 ###  On Wednesday
 
-    interactive -A g2016006 -t 6:00:00 -p core -n 4 --reservation g2016006_2
+    interactive -A g2016022 -t 6:00:00 -p core -n 4 --reservation g2016022_WEDNESDAY
 	
 ###  On Thursday
 
-    interactive -A g2016006 -t 6:00:00 -p core -n 4 --reservation g2016006_3
+    interactive -A g2016022 -t 6:00:00 -p core -n 4 --reservation g2016022_THURSDAY
 	
 	
