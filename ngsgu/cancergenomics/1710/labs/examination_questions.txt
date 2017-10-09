@@ -1,0 +1,27 @@
+The questions 2,3,11,12 and 13 should be handed in as “examination questions”.
+
+Answers:
+
+2. GT:AD:BQ:DP:FA
+
+3. In the second subfield (AD) of the genotype field.
+
+11. Yes, both samples have a nonsynonomous TP53 mutation.
+
+12. In both tumor samples there are 0 reads supporting the reference allele and 59 reads supporting the alternative allele of the nonsynonomous TP53 mutation.
+
+16: Median values of alternative allele frequencies in HCC1143
+Normal=0
+Tumor ~ 0.3
+80% Tumor + 20% Normal ~ 0.23
+60% Tumor + 40% Normal ~ 0.18
+40% Tumor + 60% Normal ~ 0.13
+20% Tumor + 60% Normal = 0
+
+Median values of alternative allele frequencies in HCC1954
+Normal=0
+Tumor ~ 0.25
+80% Tumor + 20% Normal ~ 0.2
+60% Tumor + 40% Normal ~ 0.15
+40% Tumor + 60% Normal ~  0.1
+20% Tumor + 80% Normal = 0
