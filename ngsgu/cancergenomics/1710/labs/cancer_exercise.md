@@ -49,7 +49,7 @@ Figure 2 shows an overview of the workflow of this part of the exercise. Start b
 Figure 2: Workflow of somatic variant detection and annotation.
 
 ### Data
-Bam files are located here (note, these files are write protected):  
+Bam files are located here:  
 
 ```bash
 /home/teacher2/cancer_genomics_2015/data/chr17/HCC1143.normal.bam
@@ -57,6 +57,7 @@ Bam files are located here (note, these files are write protected):
 /home/teacher2/cancer_genomics_2015/data/chr17/HCC1954.normal.bam
 /home/teacher2/cancer_genomics_2015/data/chr17/HCC1954.tumor.bam
 ```
+Note, these files are write protected.
 
 ### Software and reference files
 Software and reference files are located here: 
