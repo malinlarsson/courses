@@ -9,7 +9,7 @@ malin.larsson@scilifelab.se
 Practical exercise given as part of the course "Advanced Next Generation Sequencing data analysis" at University of Gothenburg, October 2017.  
 
 ### Introduction
-In this exercise we will analyze somatic mutations in cancer, which is a bit different from the identification of inherited germline variants. We are only interested in the somatic mutations that have occurred during the development of tumor cells, so the beckground of germline variants (also present in the tumor cells) must be filtered away. Difficulties arise because tumor samples often contain a mixture of cancer cells and normal cells (Figure 1), tumors may consist of sub-clones with different somatic mutations and cancer cells may not be diploid due to copy number variation. Germline genotype callers such as GATK's HaplotypeCaller are optimized for diploid samples or samples of known ploidy, and for detecting variants with allele frequencies close to 0, 0.5 or 1. Therefore, somatic variants should be called with specialized callers.   
+In this exercise we will analyze somatic mutations in cancer. We want to identify the somatic mutations that have occurred during the development of tumor cells, so the beckground of germline variants (also present in the tumor cells) must be filtered away. Tumor samples often contain a mixture of cancer cells and normal cells (Figure 1), tumors may consist of sub-clones with different somatic mutations and cancer cells may not be diploid due to copy number variation. Germline genotype callers such as GATK's HaplotypeCaller are optimized for diploid samples or samples of known ploidy, and for detecting variants with allele frequencies close to 0, 0.5 or 1. Therefore, somatic variants should be called with specialized callers.   
 ![](fig/hallmarks_of_cancer.jpg)   
 Figure 1: Illustration of the complexity of a tumor sample. Published by Hanahan and Weinberg, Hallmarks of Cancer: The Next Generation, Cell 2011  
 
@@ -49,32 +49,20 @@ Figure 2 shows an overview of the workflow of this part of the exercise. Start b
 Figure 2: Workflow of somatic variant detection and annotation.
 
 ### Data
-Bam files are located here (note, these files are write protected):  
-
-```bash
+Bam files are located here (Note, these files are write protected):  
 /home/teacher2/cancer_genomics_2015/data/chr17/HCC1143.normal.bam
 /home/teacher2/cancer_genomics_2015/data/chr17/HCC1143.tumor.bam
 /home/teacher2/cancer_genomics_2015/data/chr17/HCC1954.normal.bam
 /home/teacher2/cancer_genomics_2015/data/chr17/HCC1954.tumor.bam
-```
-
+ 
 ### Software and reference files
 Software and reference files are located here: 
-
-```bash
-#Public software:
 PICARD: /home/erik/bin/picard-tools-1.65
 GATK: /home/marcela/bin/GATK
 MUTECT: /home/marcela/bin
 ANNOVAR: /home/teacher2/cancer_genomics/annovar/
-
-#Public reference files:
 GATK bundle:/home/teacher2/cancer_genomics/bundle
-
-#Custom made software:
 vcf2freq.py: /home/teacher2/cancer_genomics/scripts
-
-```
 
 The folder "bundle" above contains reference files needed for the analyses and is distributed by the Broad Institute together with GATK. For more information, please see 
 [http://gatkforums.broadinstitute.org/discussion/1213/whats-in-the-resource-bundle-and-how-can-i-get-it](http://gatkforums.broadinstitute.org/discussion/1213/whats-in-the-resource-bundle-and-how-can-i-get-it)
