@@ -265,13 +265,7 @@ Filtered somatic mutations annotated with Annovar and the refGene database, are 
 /home/teacher2/cancer_genomics/data/wgs/HCC1143.avinput.variant_function
 /home/teacher2/cancer_genomics/data/wgs/HCC1143.avinput.exonic_variant_function
 /home/teacher2/cancer_genomics/data/wgs/HCC1954.avinput.variant_function
-/home/teacher2/cancer_genomics/data/wgs/HCC1954.avinput.exonic_variant_function 
-
-where  
-
-```bash
-/home/teacher2/cancer_genomics/data=/home/teacher2/cancer_genomics/data
-```  
+/home/teacher2/cancer_genomics/data/wgs/HCC1954.avinput.exonic_variant_function   
 
 ### Create symbolic links to input files  
 
