@@ -258,20 +258,14 @@ In this part of the exercise you will work with data that was generated exactly 
 
 ### Data
 Filtered somatic mutations are available in these files:  
-
-```bash
 /home/teacher2/cancer_genomics/data/wgs/HCC1143.final.vcf
 /home/teacher2/cancer_genomics/data/data/wgs/HCC1954.final.vcf
-``` 
 
 Filtered somatic mutations annotated with Annovar and the refGene database, are available here:
-
-```bash
 /home/teacher2/cancer_genomics/data/wgs/HCC1143.avinput.variant_function
 /home/teacher2/cancer_genomics/data/wgs/HCC1143.avinput.exonic_variant_function
 /home/teacher2/cancer_genomics/data/wgs/HCC1954.avinput.variant_function
-/home/teacher2/cancer_genomics/data/wgs/HCC1954.avinput.exonic_variant_function
-```  
+/home/teacher2/cancer_genomics/data/wgs/HCC1954.avinput.exonic_variant_function 
 
 where  
 
