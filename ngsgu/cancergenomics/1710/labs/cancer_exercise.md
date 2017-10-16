@@ -90,6 +90,7 @@ If you start with the sample HCC1954:
 ln -s /home/teacher2/cancer_genomics/data/chr17/HCC1954.normal.bam HCC1954.normal.bam
 ln -s /home/teacher2/cancer_genomics/data/chr17/HCC1954.tumor.bam HCC1954.tumor.bam
 ```  
+List the content of your canced_dir and inspect what you have there before continuing.
 
 ### AddOrReplaceReadGroups
 You should use the Picard's method AddOrReplaceReadGroups to update the readgroup information in the tumor and normal bam files. Picard is a java program and AddOrReplaceReadGroups is started like this:   
@@ -230,7 +231,7 @@ you will be provided with help on how to use the script.
 Please use the following command to annotate your filtered vcf file:  
 
 ```bash
-/home/teacher2/cancer_genomics/annovar/table_annovar.pl -buildver hg19 -out sampleid -protocol refGene,exac03,cosmic70 -operation g,f,f -nastring . -vcfinput sampleid.mutect1.somatic.vcf /home/teacher2/cancer_genomics/annovar/humandb/
+/home/teacher2/cancer_genomics/annovar/table_annovar.pl -buildver hg19 -out sampleid -protocol refGene,exac03,cosmic70 -operation g,f,f -nastring . -vcfinput sampleid.mutect.somatic.vcf /home/teacher2/cancer_genomics/annovar/humandb/
 ```  
 
 Where "sampleid" should be replaced with "HCC1143" or "HCC1954". The path to /home/teacher2/cancer_genomics/annovar/humandb/ should be provided in the end of the command since that directory contains all data files used for annotation.  
