@@ -39,6 +39,8 @@ title:  'Welcome'
 [2015 October - Uppsala](rnaseq/1510/)  
 [2016 April - Uppsala](rnaseq/1604/)  
 [2016 October - Uppsala](rnaseq/1610/)  
+[2017 March - Uppsala](rnaseq/1703/)  
+[2017 November - Uppsala](rnaseq/1711/)  
 [RNAseq tutorials](rnaseq/labs)  
 
 ### R Programming Foundations for Life Scientists  
