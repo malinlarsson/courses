@@ -28,8 +28,8 @@ Room:
 
 **Wednesday 9th**  
 Room:  
-**09.00-10.00** [Lecture: Multi variate Analysis](slides/not_yet_available.pdf) (Sanela Kjellqvist)  
-**10:15-11:00** [Lecture: Multi variate test case](slides/not_yet_available.pdf) (Sanela Kjellqvist)  
+**09.00-10.00** [Lecture: Multi Variate Analysis](slides/not_yet_available.pdf) (Sanela Kjellqvist)  
+**10:15-11:15** [Lecture: MVA test case](slides/not_yet_available.pdf) (Sanela Kjellqvist)  
 **11:15-12:00** [Lecture: RNA-seq pipeline](slides/not_yet_available.pdf) (Phil Ewels)     
 **12.00-13.00** Lunch  
 **13.00-14.00** [Exercise: ](../labs/index) (Johan Reimegård, Phil Ewels, Sanela Kjellqvist)  
