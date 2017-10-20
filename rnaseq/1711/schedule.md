@@ -30,11 +30,11 @@ Room:
 Room:  
 **09.00-10.00** [Lecture: Multi variate Analysis](slides/not_yet_available.pdf) (Sanela Kjellqvist)  
 **10:15-11:00** [Lecture: Multi variate test case](slides/not_yet_available.pdf) (Sanela Kjellqvist)  
-**11:15-12:00** [Lecture: RNA seq pipeline](slides/not_yet_available.pdf) (Phil Ewels)     
+**11:15-12:00** [Lecture: RNA-seq pipeline](slides/not_yet_available.pdf) (Phil Ewels)     
 **12.00-13.00** Lunch  
 **13.00-14.00** [Exercise: ](../labs/index) (Johan Reimegård, Phil Ewels, Sanela Kjellqvist)  
 **14.00-15.00** [Lecture: miRNA analysis ](slides/not_yet_available.pdf) (Marc Friedländer)  
-**15.00-16.00** [Exercise: ](../labs/index) (Johan Reimegård, Leif Väremo, Johan Reimegård)  
+**15.00-16.00** [Exercise: ](../labs/index) (Johan Reimegård, TBA)  
 **16.00-17.00** [Lecture: Summary of the week ](slides/summary.pdf) (Johan Reimegård)  
 
  
