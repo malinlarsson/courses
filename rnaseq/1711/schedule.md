@@ -38,4 +38,3 @@ Room:
 **16.00-17.00** [Lecture: Summary of the week ](slides/summary.pdf) (Johan Reimegård)  
 
  
-[Lecture: miRNA analysis](slides/smallRNAs_Jakub_Westholm.pdf) (Jakub Orzechowski Westholm)
