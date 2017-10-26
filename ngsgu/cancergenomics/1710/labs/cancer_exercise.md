@@ -165,10 +165,10 @@ MuTect is distributed as a jar file just like Picard and GATK. To get help and l
 $MUTECT_JAVA -jar $MUTECT_HOME/muTect-1.1.4.jar -help
 ``` 
 
-You should run MuTect with the following options:  
+You should run MuTect with the following options, and use "nohup" to run it in the background:  
 
 ```bash
-$MUTECT_JAVA -jar $MUTECT_HOME/muTect-1.1.4.jar --analysis_type MuTect --reference_sequence $bundle/human_g1k_v37.fasta --cosmic $bundle/b37_cosmic_v54_120711.vcf --dbsnp $bundle/dbsnp_138.b37.vcf --intervals 17:1000000-9000000 --input_file:normal sampleid.normal.RG.realignedtogether.bam --input_file:tumor sampleid.tumor.RG.realignedtogether.bam --out sampleid.mutect.out --vcf sampleid.mutect.vcf
+nohup $MUTECT_JAVA -jar $MUTECT_HOME/muTect-1.1.4.jar --analysis_type MuTect --reference_sequence $bundle/human_g1k_v37.fasta --cosmic $bundle/b37_cosmic_v54_120711.vcf --dbsnp $bundle/dbsnp_138.b37.vcf --intervals 17:1000000-9000000 --input_file:normal sampleid.normal.RG.realignedtogether.bam --input_file:tumor sampleid.tumor.RG.realignedtogether.bam --out sampleid.mutect.out --vcf sampleid.mutect.vcf &
 ```  
 
 Where   
