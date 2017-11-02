@@ -9,7 +9,7 @@ title:  'De Novo Genome Assembly Nov 14-16 2016'
 Held in Uppsala November 14-16 2016.
 
 ## Important Links 
-[Uppmax login instructions](practical_session/LoginInstructions)  
+[Uppmax login instructions](login_instructions)  
 [Schedule](schedule)
 
 ## Maps & Travel Info

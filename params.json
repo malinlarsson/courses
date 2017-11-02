@@ -1,0 +1,6 @@
+{
+  "name": "Courses",
+  "tagline": "Course homepages for some of the courses given at SciLifeLab",
+  "body": "# SciLifeLab Courses\r\n\r\nPublic URL: http://scilifelab.github.io/courses\r\n\r\nThese are the course homepages of some of the courses given at [SciLifeLab](http://www.scilifelab.se).\r\n\r\nhttp://www.scilifelab.se/education/courses/\r\n\r\n\r\n## Editing instruction\r\n\r\n### To keep the main folder from getting cluttered\r\nPlease create a single folder for your course and inside this folder create a folder for the current instance of the course. Ex:\r\n\r\n```\r\n# create a folder for the course as a whole\r\n$ mkdir myNiceCourse\r\n\r\n# create a folder for this instance of the course\r\n$ mkdir myNiceCourse/November2015\r\n\r\n# now put all the files for this course instance inside the `November2015` folder.\r\n```\r\n\r\nIf it's a one-off course occation that will not repeat itself, please put it in the `misc` folder. ",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}

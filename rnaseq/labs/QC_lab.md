@@ -11,7 +11,7 @@ In this tutorial we will go through some of the key steps in performing a qualit
 All the data you need for this lab is available in the folder:
 `/proj/b2013006/webexport/downloads/courses/RNAseqWorkshop/QC/data/`
 
-Or via web-browser [here](https://export.uppmax.uu.se/b2013006/downloads/courses/RNAseqWorkshop/QC/data):
+Or via web-browser [here](https://export.uppmax.uu.se/b2013006/downloads/courses/RNAseqWorkshop/QC/data).
 
 
 This folder contains:
@@ -55,9 +55,24 @@ To run FastQC on uppmax you first need to load the module:
 In this case, only run FastQC on one file and take a look at the output. We have already prepared the outputs for all of the other samples. These can be viewed via a web-browser at:
 [FastQC results](https://export.uppmax.uu.se/b2013006/downloads/courses/RNAseqWorkshop/QC/fastQC/)
 
-Take a look at a few other files and see if they look similar in quality.
+Or directly at uppmax at:
+`/proj/b2013006/webexport/downloads/courses/RNAseqWorkshop/QC/fastQC/`
 
-# Mapping of reads
+Take a look at some other file and see if it look similar in quality.
+
+## Optional: Create a MultiQC report for FastQC
+
+MultiQC is a program that creates summaries over all samples for several different types of QC-measures. You can read more about the program [here](http://multiqc.info/). It will automatically look for output files from the supported tools and make a summary of them. You can either go to the folder where you have the Fastqc output or run it with the path to the folder.  
+
+	module load bioinfo-tools
+	module load MultiQC/0.8
+	multiqc /folder/with/FastQC_results/
+	# in this case the folder is /proj/b2013006/webexport/downloads/courses/RNAseqWorkshop/QC/fastQC/
+
+This should create 1 folder named `multiqc_data` with some general stats, links to all files etc. And one file `multiqc_report.html`. Have a look at the report you created or at the one we alredy ran [here](https://export.uppmax.uu.se/b2013006/downloads/courses/RNAseqWorkshop/QC/fastQC/multiqc_report.html)
+
+
+# Mapping of reads - OBS! do not run now!
 
 In this exercise we will actually not do any mapping (that will be done in a later exercise). But the commands used to run the mapping and postprocessing are:
 	
@@ -124,6 +139,17 @@ The most important parts to look at are the proportion of uniquely mapping, mult
 
 Another key point is the mismatch and indel rates. If they are very high, this could indicate that there has been some problems during the sequencing or during the library preparation.
 
+## MultiQC summary of STAR log 
+
+After mapping with star of all samples, we ran MultiQC to summarize all the logfiles. In this case we had a folder structure with sample_name/Log.final.out, so to make sure that MultiQC understands what is the sample name, we used the -dd 2 command (e.g. it splits up the path and names the samples after the second last part).
+
+	# OBS! do not run now, just for reference
+	module load bioinfo-tools
+	module load MultiQC/0.8
+	multiqc -d -dd 2 .
+
+You can se the output from that MultiQC report [here](https://export.uppmax.uu.se/b2013006/downloads/courses/RNAseqWorkshop/QC/output/multiqc_report_star.html)
+
 # After mapping: RseQC
 
 The RseQC package is one of many tools to get basic mapping statistics from your BAM files. This package provides a number of useful modules that can comprehensively evaluate high throughput sequence data, especially RNA-seq data. Some basic modules quickly inspect sequence quality, nucleotide composition bias, PCR bias and GC bias, while RNA-seq specific modules evaluate sequencing saturation, mapped reads distribution, coverage uniformity, strand specificity, etc. You can read more about the package at [the RseQC website](http://rseqc.sourceforge.net/).
@@ -168,10 +194,16 @@ Run RseQC for one sample and have a look at your output.
 * Do the reads cover most splice junctions? 
 * Based on the inner distance plots, what do you think the average fragment size of the libraries was?
 
-We have run the QC for all the samples and compiled summary files [here](https://export.uppmax.uu.se/b2013006/downloads/courses/RNAseqWorkshop/QC/output/).
-This folder contains one table that summarizes all the Log.final.out files from all the samples (summary_starlog.txt), and one pdf file with a few different plots to summarize those statistics (summary_starqc.pdf). There are also plots from the four RseqQC modules listed above including all the samples.
+# MultiQC summary of RSeQC output 
 
-What is your conclusion, do your samples look good? Is there anything that looks strange in any sample, or do you feel comfortable using all the samples in your analysis?
+We have ran RSeQC and MultiQC on all the samples in the project. The summary report from MultiQC can be found [here](https://export.uppmax.uu.se/b2013006/downloads/courses/RNAseqWorkshop/QC/output/multiqc_report_rseqc.html). 
+
+It was created using commands:
+
+      multiqc -f -d -dd 3 .
+      # since folder structure like: sample_name/qc/read_distribution.txt and so on for the other file types.
+
+Have a look at the reports. What is your conclusion, do your samples look good? Is there anything that looks strange in any sample, or do you feel comfortable using all the samples in your analysis?
 
 # Outlier detection and general overview of data
 
@@ -234,30 +266,22 @@ Here is one example that shows how to plot the top 5 PCs:
 Another thing to look at is the pairwise correlation between all the samples and see how they group based on correlation. Let's create one matrix with all pairwise Pearson correlations (again in log-space).
 
 	nSamples<-ncol(counts)
-	C<-mat.or.vec(nSamples,nSamples)
-	for (i in 1:nSamples) {
-		for (j in i:nSamples){
-			if (i==j){ C[i,j]<-NA }
-			else {
-			c<-cor(log2(counts[,i]+1),log2(counts[,j]+1),method="pearson")
-			C[i,j] = c
-			C[j,i] = c
-			}
-		}
-	}
-	colnames(C)<-colnames(counts)
-	rownames(C)<-colnames(counts)
+	C<-cor(log2(counts+1),method="pearson")	
 
-This can also be calculated as one command with the R apply function, but to clarify what is being calculated we included a more descriptive code. Another way to do the same thing would be:
+Now create a hierarchical clustering dendrogram using 1-correlation as the distance measure:
 
-	C<-apply(log2(counts+1),2,cor,log2(counts+1),method="pearson")
-	diag(C)<-NA
+    	d <- as.dist(1-C)
+	h <- hclust(d,method="ward.D2")
+	dendro <- as.dendrogram(h)
+
 
 Now you will plot a heatmap with the correlations:
 
 	pdf('correlation_heatmap.pdf')
-	heatmap(C,symm=TRUE)
+	heatmap(C,Colv=dendro,Rowv=dendro)
 	dev.off()
 
 Do the clusterings agree with what you expect? 
 Which different sample groups are more similar? Are some sample groups more dissimilar compared to the others?
+
+
