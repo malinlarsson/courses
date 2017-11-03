@@ -128,12 +128,12 @@ You should try to give the BAM files representable names, in order to make it ea
 
 The most commonly used tool for converting from SAM to BAM is [Samtools](http://www.htslib.org/doc/samtools.html) (follow the link for more information about Samtools).
 
-To load the Samtools module on Uppmax, execute:
+To load the Samtools module on UPPMAX, execute:
 
     module load bioinfo-tools
     module load samtools
 
-The Samtools command to convert from SAM to an sorted BAM file is:
+The Samtools command to convert from SAM to a sorted BAM file is:
 
 	samtools sort -o output.bam input.sam
 
