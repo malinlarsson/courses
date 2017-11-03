@@ -133,18 +133,17 @@ To load the Samtools module on Uppmax, execute:
     module load bioinfo-tools
     module load samtools
 
-The Samtools command to convert from SAM to BAM is:
+The Samtools command to convert from SAM to an sorted BAM file is:
 
-	samtools view -bS -o output.bam input.sam
+	samtools sort -o output.bam input.sam
 
 Remember to use an appropriate filename instead of ``output.bam``!
 
-Next, we need to sort and index the BAM file.
+Next, we need to index the BAM file.
 
-	samtools sort properName.bam  properName.sorted
-	samtools index properName.sorted.bam
+	samtools index properName.bam
 
-The indexing step should create and index file with the suffix ``.bai``.
+The indexing step should create an index file with the suffix ``.bai``.
 
 You can also get a report on your mapped reads using the samtools command *flagstat*:
 
