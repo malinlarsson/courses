@@ -2,7 +2,7 @@
 layout: default		
 title: 'Gene-set analysis'		
 ---		
-		
+
 # Gene-set analysis
 
 ### Introduction and data
@@ -17,7 +17,7 @@ ds <- DESeqDataSetFromMatrix(countData=counts, colData=samples, design=~timepoin
 colnames(ds) <- colnames(counts)
 ds <- DESeq(ds)
 res <- results(ds, c("timepoint","t24h","ctrl"))
-res <- res[ ! (is.na(res$pvalue) | is.na(res$padj)), ] 
+res <- res[ ! (is.na(res$pvalue) | is.na(res$padj)), ]
 # Here we also exclude genes with adjusted p-values = NA
 ```
 
@@ -51,13 +51,13 @@ This is how the table looks now:
 head(geneLevelStats)
 ```
 
-    ##                         ensembl    log2fc         padj    gene
-    ## ENSG00000104738 ENSG00000104738 -2.200845  0.00000e+00    MCM4
-    ## ENSG00000118849 ENSG00000118849  3.520993  0.00000e+00 RARRES1
-    ## ENSG00000163283 ENSG00000163283  4.264857  0.00000e+00    ALPP
-    ## ENSG00000171848 ENSG00000171848 -2.700607  0.00000e+00    RRM2
-    ## ENSG00000182481 ENSG00000182481 -2.055222  0.00000e+00   KPNA2
-    ## ENSG00000173559 ENSG00000173559  3.343229 3.40807e-303   NABP1
+    ##                         ensembl    log2fc          padj    gene
+    ## ENSG00000104738 ENSG00000104738 -2.210535  0.000000e+00    MCM4
+    ## ENSG00000118849 ENSG00000118849  3.550871  0.000000e+00 RARRES1
+    ## ENSG00000163283 ENSG00000163283  4.318265  0.000000e+00    ALPP
+    ## ENSG00000171848 ENSG00000171848 -2.717818  0.000000e+00    RRM2
+    ## ENSG00000182481 ENSG00000182481 -2.062894  0.000000e+00   KPNA2
+    ## ENSG00000110092 ENSG00000110092 -2.469861 2.849282e-302   CCND1
 
 If you are using RStudio you can also use the command `View` to inspect the data:
 
@@ -94,7 +94,7 @@ Now, try a new run of Enrichr, but this time on the top 200 genes (or choose you
 
 **Question:** Do the results look similar?
 
-If you want to, also try out DAVID. Go to the [*Functional Annotation* page](https://david-d.ncifcrf.gov/summary.jsp) and make sure the Upload tab is visible. Paste the copied gene-list, select the correct identifier, and select whether this is a gene list or background (discuss with other students if you are not sure, or ask the instructors). Submit list.
+If you want to, also try out DAVID. Go to the [*Functional Annotation* page](https://david.ncifcrf.gov/summary.jsp) and make sure the Upload tab is visible. Paste the copied gene-list, select the correct identifier, and select whether this is a gene list or background (discuss with other students if you are not sure, or ask the instructors). Submit list.
 
 **Question:** Were all gene IDs recognized?
 
@@ -114,7 +114,7 @@ First we need to construct our gene-set collection, we will be looking at so cal
 
 ``` r
 # Load the gene-set collection into piano format:
-gsc <- loadGSC("h.all.v5.1.symbols.gmt", type="gmt") # Check that the filename matches the file that you downloaded
+gsc <- loadGSC("h.all.v6.1.symbols.gmt", type="gmt") # Check that the filename matches the file that you downloaded
 gsc # Always take a look at the GSC object to see that it loaded correctly
 ```
 
@@ -136,7 +136,7 @@ gsc # Always take a look at the GSC object to see that it loaded correctly
     ## [43] "HALLMARK_IL2_ST..." "HALLMARK_BILE_A..." "HALLMARK_PEROXI..."
     ## [46] "HALLMARK_ALLOGR..." "HALLMARK_SPERMA..." "HALLMARK_KRAS_S..."
     ## [49] "HALLMARK_KRAS_S..." "HALLMARK_PANCRE..."
-    ## 
+    ##
     ## First 50 (out of 4386) gene names:
     ##  [1] "JUNB"     "CXCL2"    "ATF3"     "NFKBIA"   "TNFAIP3"  "PTGS2"   
     ##  [7] "CXCL1"    "IER3"     "CD83"     "CCL20"    "CXCL3"    "MAFF"    
@@ -147,17 +147,17 @@ gsc # Always take a look at the GSC object to see that it loaded correctly
     ## [37] "SDC4"     "EGR1"     "IL6"      "TNF"      "KDM6B"    "NFKB1"   
     ## [43] "LIF"      "PTX3"     "FOSL1"    "NR4A1"    "JAG1"     "CCL4"    
     ## [49] "GCH1"     "CCL2"    
-    ## 
+    ##
     ## Gene set size summary:
-    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-    ##    32.0    98.0   180.5   146.5   200.0   200.0 
-    ## 
+    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
+    ##    32.0    98.0   180.5   146.5   200.0   200.0
+    ##
     ## No additional info available.
 
 Now we are ready to run the GSA:
 
 ``` r
-library(snowfall); library(snow) # Install snow and snowfall (CRAN) if you want to 
+library(snowfall); library(snow) # Install snow and snowfall (CRAN) if you want to
 # run on multiple cores, otherwise omit the ncpus argument below in the call to runGSA
 padj <- geneLevelStats$padj
 log2fc <- geneLevelStats$log2fc
@@ -176,7 +176,7 @@ We can visualize the results in different ways, for instance using a network plo
 
 ``` r
 networkPlot(gsaRes, "distinct", "both", adjusted=T, ncharLabel=Inf, significance=0.01,
-            nodeSize=c(3,20), edgeWidth=c(1,5), overlap=10, 
+            nodeSize=c(3,20), edgeWidth=c(1,5), overlap=10,
             scoreColors=c("red", "orange", "yellow", "blue", "lightblue", "lightgreen"))
 ```
 
