@@ -20,6 +20,6 @@ Held in Uppsala November 6-8, 2017.
 	
 ###  On Wednesday
 
-    interactive -A g2017027 -t 6:00:00 -p core -n 4 --reservation g2017027_3
+    interactive -A g2017027 -t 8:00:00 -p core -n 4 --reservation g2017027_3
 	
 	

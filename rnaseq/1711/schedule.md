@@ -17,7 +17,7 @@ Room:
 **13.00-17.00** [Exercise: ](../labs/index) (Johan Reimegård, Pär Engström, Manfred Grabherr)  
   
 
-**Tuesday 8th**  
+**Tuesday 7th**  
 Room:  
 **09:00-10.00** [Lecture: RNA-seq Quality Control](slides/not_yet_available.pdf) (Stefania Giacomello)  
 **10.15-11.00** [Lecture: Differential expression analysis](slides/not_yet_available.pdf) (Johan Reimegård)  
@@ -26,7 +26,7 @@ Room:
 **13.00-17.00** [Exercise: ](../labs/index)(Johan Reimegård, Stefania Giacomello, Leif Wigge)  
 **18.00-20.00** Course dinner
 
-**Wednesday 9th**  
+**Wednesday 8th**  
 Room:  
 **09.00-10.00** [Lecture: Multi Variate Analysis](slides/not_yet_available.pdf) (Sanela Kjellqvist)  
 **10:15-11:15** [Lecture: MVA test case](slides/not_yet_available.pdf) (Sanela Kjellqvist)  
