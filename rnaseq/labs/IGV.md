@@ -10,7 +10,7 @@ In these exercises we will use the  Integrated Genomics Viewer (IGV).
 IGV is installed on UPPMAX, but since you would then access it over a network connection, the graphics might be sluggish. We recommend that you download and run IGV locally and download the files that you will look at locally. Alternatively, you can put the files in the webexport folder on uppmax and view them from there. More information about that further down. 
 
 If you still want to try to run IGV on UPPMAX, please refer to the 
-[Uppmax page for IGV instructions](http://www.uppmax.uu.se/starting-integrative-genomics-viewer-igv-on-milou) for advice.  
+[Uppmax page for IGV instructions](http://uppmax.uu.se/support/user-guides/integrative-genomics-viewer--igv--guide/) for advice.  
 
 ## Visualising a BED, BAM or GTF file from your local computer                                                          
 

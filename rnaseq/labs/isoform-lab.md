@@ -54,7 +54,7 @@ StringTie can also do reference-guided assembly similar to Cufflinks. In their o
 Try to do a reference-guided assembly. This is done simply by running StringTie 
 without feeding it a GTF file with the -G flag
 
-	module load StringTie/1.2.0
+	module load StringTie/1.3.3
 	stringtie -o /path/to/outputDirectory/sample.gtf sample.sorted.bam
 
 Substitute the appropriate names for the BAM file and the output file.

@@ -51,7 +51,7 @@ Read below for the flags we use for this exercise. Remember to change filenames 
 To load the HISAT2 module on UPPMAX, execute:
      
      module load bioinfo-tools      # This is to get access to all bioinformatics tools available on UPPMAX
-     module load HISAT2/2.0.1-beta  # The specific mapping program
+     module load HISAT2/2.1.0       # The specific mapping program
 
 Now you can map the reads from one of the samples (or several; it's up to you which ones) using a command such as the one below.
 
@@ -59,7 +59,7 @@ Now you can map the reads from one of the samples (or several; it's up to you wh
     
     hisat2 -p N --dta-cufflinks -x path/to/index/fileName \
 	  -1 path/to/reads/sample_1.fastq -2 path/to/reads/sample_2.fastq \
-	  -S outDir/result.sam
+	  -S outDir/hisat2.sam --summary-file outDir/hisat2_summary.txt
     
 The flags used are:
 
@@ -68,13 +68,12 @@ The flags used are:
 * ``-x /path/to/index/fileName`` specifices the path to the pre-built genome index. Note that the index consists of multiple files ending in ``.ht2``, and only the shared part of the filename should be indicated (e.g. ``genome`` if the files are called ``genome.1.ht2``, ``genome.2.ht2``, etc).
 *  `` -1 /path/to/reads/sample_1.fastq `` is where you should list the first-read FASTQ files that you wish to map 
 *  `` -2 /path/to/reads/sample_2.fastq `` is where you should list the second-read FASTQ files that you wish to map
-*  ``-S outDir/result.sam`` is the name of the result file that will be created
+*  ``-S outDir/hisat2.sam`` is the name of the result file that will be created
+*  ``--summary-file outDir/hisat2_summary.txt`` is the name of a file for summary information about the alignments
 
-This should run fairly quickly and create the file you specified with ``-S``.
+This should run fairly quickly and create the files you specified with ``-S`` and ``--summary-file``.
 
-If everything worked, HISAT2 should report some statistics about how many reads were mapped, on your terminal. Save this information!
-
-If you run HISAT2 again, it can be useful to automatically redirect the mapping statistics to a file, by adding at the end of the HISAT2 command line: ``&> outDir/result.sam.info``. Note that this will send all messages from HISAT2 (including errors and warnings) into the specified file, so make sure to check that file!
+If everything worked, HISAT2 should report some statistics about how many reads were mapped, on your terminal and in the summary file.
 
 &#10067; *Try to answer the following:*
 
@@ -129,23 +128,22 @@ You should try to give the BAM files representable names, in order to make it ea
 
 The most commonly used tool for converting from SAM to BAM is [Samtools](http://www.htslib.org/doc/samtools.html) (follow the link for more information about Samtools).
 
-To load the Samtools module on Uppmax, execute:
+To load the Samtools module on UPPMAX, execute:
 
     module load bioinfo-tools
     module load samtools
 
-The Samtools command to convert from SAM to BAM is:
+The Samtools command to convert from SAM to a sorted BAM file is:
 
-	samtools view -bS -o output.bam input.sam
+	samtools sort -o output.bam input.sam
 
 Remember to use an appropriate filename instead of ``output.bam``!
 
-Next, we need to sort and index the BAM file.
+Next, we need to index the BAM file.
 
-	samtools sort properName.bam  properName.sorted
-	samtools index properName.sorted.bam
+	samtools index properName.bam
 
-The indexing step should create and index file with the suffix ``.bai``.
+The indexing step should create an index file with the suffix ``.bai``.
 
 You can also get a report on your mapped reads using the samtools command *flagstat*:
 
