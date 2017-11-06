@@ -149,7 +149,7 @@ You can also get a report on your mapped reads using the samtools command *flags
 
 	samtools flagstat properName.sorted.bam > properName.sorted.flagstat
 
-Since the BAM file contains all the information from the original SAM file, remember to remove the SAM file and the unsorted BAM file once you are finished, in order to free up disk space.
+Since the BAM file contains all the information from the original SAM file, remember to remove the SAM file once you are finished, in order to free up disk space.
 
 The sorted, indexed bam file can be viewed in the Integrative Genomics Viewer (IGV). Instructions are [here](IGV).
 
