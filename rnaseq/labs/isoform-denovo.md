@@ -111,9 +111,9 @@ of a program it is worthwhile to read the manual and use the correct flags. As
 an example, **Trinity** handles strand specific RNA-seq data, which reduces the complexity of 
 the algorithm and produces better results.
 
-For this exercise we are using the stable 2014-07-17 version of Trinity. The minimal line to run that version of trinity is:
+The minimal line to run that version of trinity is:
 
-	 Trinity --seqType fq --JM 100G --left reads_1.fq  --right reads_2.fq --CPU 6
+	 Trinity --seqType fq --max_memory 100G --left reads_1.fq  --right reads_2.fq --CPU 6
 	 
 Remember to change the CPU count and memory to it fits with your allocated memory. To get all the available parameters that you can set type: 
 
