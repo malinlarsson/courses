@@ -27,6 +27,7 @@ Make a new subdirectory and go there for this exercise.
 	mkdir deNovoAssembly  
 	# go into that directory 
 	cd deNovoAssembly
+	
    
    
    
