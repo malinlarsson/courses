@@ -9,7 +9,7 @@ title: 'Gene-set analysis'
 
 The follwing packages are used in this tutorial: `DESeq2`, `biomaRt`, `piano`, `snow`, `snowfall`. In case you haven't installed them yet it could be convenient to do so before starting (you can potentially skip `snow` and `snowfall`). We will perform gene-set analysis on the output from the tutorial on Differential expression analysis of RNA-seq data using DESeq. A quick recap of the essential code for the differential expression analysis is included below, in case you did not save the output from that analysis:
 
-```
+``` r
 library(DESeq2)
 counts <- read.delim("count_table.txt")
 samples <- data.frame(timepoint = rep(c("ctrl", "t2h", "t6h", "t24h"), each=3))
@@ -23,13 +23,13 @@ res <- res[ ! (is.na(res$pvalue) | is.na(res$padj)), ]
 
 Let's save the information we need (fold-changes and adjusted p-values):
 
-```
+``` r
 geneLevelStats <- as.data.frame(res[,c("log2FoldChange","padj")])
 ```
 
 It will be handy to have the gene names along with the Ensembl IDs, so let's fetch them:
 
-```
+``` r
 library(biomaRt) # Install the biomaRt package (Bioconductor) if this command does not work
 
 # Get the Ensembl ID to gene name mapping:
@@ -47,7 +47,7 @@ geneLevelStats <- geneLevelStats[order(geneLevelStats$padj),]
 
 This is how the table looks now:
 
-```
+``` r
 head(geneLevelStats)
 ```
 
@@ -61,7 +61,7 @@ head(geneLevelStats)
 
 If you are using RStudio you can also use the command `View` to inspect the data:
 
-```
+``` r
 View(geneLevelStats)
 ```
 
@@ -73,7 +73,7 @@ View(geneLevelStats)
 
 First we can look if there is any common function (or other property) of the top 100 genes:
 
-```
+``` r
 # This command copies the top 100 genes to the clipboard so you can paste it
 # anywhere (Windows only)
 writeClipboard(geneLevelStats[1:100,"gene"])
@@ -106,13 +106,13 @@ Explore the results. For instance, click on Functional Annotation Clustering at 
 
 Looking at only the top 100 genes (or genes with a adjusted p-value below some cutoff) has the drawback of excluding a lot of information. Gene-set analysis (GSA) takes into account the "scores" (which can be e.g. p-values, fold-changes, etc) of all genes. This allows us to also detect small but coordinate changes converging on specific biological functions or other themes. In this tutorial we will use the piano package to perform GSA:
 
-```
+``` r
 library(piano) # Install the piano package (Bioconductor) if this command does not work
 ```
 
 First we need to construct our gene-set collection, we will be looking at so called Hallmark gene-sets from the MSigDB in this example (see this [paper](http://www.cell.com/cell-systems/abstract/S2405-4712(15)00218-5)). Download the Hallmark gene-set collection from [here](http://software.broadinstitute.org/gsea/msigdb/download_file.jsp?filePath=/resources/msigdb/5.1/h.all.v5.1.symbols.gmt). Note that you need to sign up with an email adress to gain access. Visit [this link](http://software.broadinstitute.org/gsea/msigdb/collections.jsp#H) if the first link does not work.
 
-```
+``` r
 # Load the gene-set collection into piano format:
 gsc <- loadGSC("h.all.v6.1.symbols.gmt", type="gmt") # Check that the filename matches the file that you downloaded
 gsc # Always take a look at the GSC object to see that it loaded correctly
@@ -156,7 +156,7 @@ gsc # Always take a look at the GSC object to see that it loaded correctly
 
 Now we are ready to run the GSA:
 
-```
+``` r
 library(snowfall); library(snow) # Install snow and snowfall (CRAN) if you want to
 # run on multiple cores, otherwise omit the ncpus argument below in the call to runGSA
 padj <- geneLevelStats$padj
@@ -174,7 +174,7 @@ The runGSA function uses the adjusted p-values to score the genes and the log2-f
 
 We can visualize the results in different ways, for instance using a network plot showing the significant gene-sets and the overlap of genes between sets:
 
-```
+``` r
 networkPlot(gsaRes, "distinct", "both", adjusted=T, ncharLabel=Inf, significance=0.01,
             nodeSize=c(3,20), edgeWidth=c(1,5), overlap=10,
             scoreColors=c("red", "orange", "yellow", "blue", "lightblue", "lightgreen"))
@@ -182,7 +182,7 @@ networkPlot(gsaRes, "distinct", "both", adjusted=T, ncharLabel=Inf, significance
 
 ![](images/networkplot-1.png)
 
-```
+``` r
 par(mfrow=c(1,1)) # Reset the plotting layout
 ```
 
@@ -190,7 +190,7 @@ par(mfrow=c(1,1)) # Reset the plotting layout
 
 The function `GSAsummaryTable` can be used to export the complete results.
 
-```
+``` r
 View(GSAsummaryTable(gsaRes)) # in RStudio
 # otherwise:
 head(GSAsummaryTable(gsaRes))
@@ -202,13 +202,13 @@ GSAsummaryTable(gsaRes, save=T, file="gsares.txt")
 
 The `geneSetSummary` function can be used to explore specific gene-sets in more detail.
 
-```
+``` r
 geneSetSummary(gsaRes, "HALLMARK_DNA_REPAIR")
 ```
 
 For instance, we can make a boxplot of the -log10(adjusted p-values) of the genes in the gene-set HALLMARK\_DNA\_REPAIR and compare that to the distribution of all genes:
 
-```
+``` r
 boxplot(list(-log10(geneLevelStats$padj),
              -log10(geneSetSummary(gsaRes,"HALLMARK_DNA_REPAIR")$geneLevelStats)),
         names=c("all","HALLMARK_DNA_REPAIR"))
