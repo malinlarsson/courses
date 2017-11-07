@@ -74,16 +74,14 @@ How many reads were uniquely mapped, i.e. mapped to one genomic location?
 In general, do the alignments seem to be good? I.e. do they cover the entire reads and contain few mismatches?
 
 	Yes.
-	See Log.final.out, in particular "Average mapped length" and
-	"Mismatch rate per base".  Can also use samtools (see the answer
-	to the corresponding question for HISAT above).
+	See Log.final.out, in particular "Average mapped length" and "Mismatch rate per base".
+	Can also use samtools (see the answer to the corresponding question for HISAT above).
 
 ## Converting SAM files to BAM files
 
 Does the output from samtools flagstat confirm any of your answers to the questions in the HISAT2 and STAR sections above?
 
-	Kind of. Note that several of the numbers refer to the number of
-    mappings (not reads) and there can be several mappings per read.
+	Kind of. Note that several of the numbers refer to the number of mappings (not reads) and there can be several mappings per read.
 
 Load the the BAM files with HISAT2 and STAR results into IGV. Go to the RAB11FIP5 locus. Have HISAT2 and STAR mapped the reads in a similar way?
 
@@ -92,6 +90,5 @@ Load the the BAM files with HISAT2 and STAR results into IGV. Go to the RAB11FIP
 Detailed examination of the read alignments in IGV should indicate if the RNA-seq data is strand-specific. Is it?
 
 	No.
-	Right-click on the track name, choose Color alignments by -> First
-    of pair strand. If the data is strand-specific, one color should
-    dominate for every gene (depending on the strand of the gene).
+	Right-click on the track name, choose "Color alignments by" -> "First of pair strand".
+	If the data is strand-specific, one color should dominate for every gene (depending on the strand of the gene).
