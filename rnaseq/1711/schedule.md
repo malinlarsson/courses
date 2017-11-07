@@ -9,9 +9,9 @@ title:  'Schedule'
 
 **Monday 6th**  
 Room:  
-**09.00-09.15** [Lecture:General introduction](slides/not_yet_available.pdf) (Björn Nystedt)  
-**09.15-10.15** [Lecture:RNA-seq introduction](slides/not_yet_available.pdf) (Johan Reimegård)  
-**10.30-11.15** [Lecture: Short read mapping programs](slides/not_yet_available.pdf) (Pär Engström)  
+**09.00-09.15** [Lecture:General introduction](slides/NBIS_intro.pdf) (Björn Nystedt)  
+**09.15-10.15** [Lecture:RNA-seq introduction](slides/Introduction_RNA.pdf) (Johan Reimegård)  
+**10.30-11.15** [Lecture: Short read mapping programs](slides/read_mapping.pdf) (Pär Engström)  
 **11.15-12.00** [Lecture: Short read assembly](slides/not_yet_available.pdf) (Manfred Grabherr)  
 **12.00-13.00** Lunch  
 **13.00-17.00** [Exercise: ](../labs/index) (Johan Reimegård, Pär Engström, Manfred Grabherr)  
@@ -19,9 +19,9 @@ Room:
 
 **Tuesday 7th**  
 Room:  
-**09:00-10.00** [Lecture: RNA-seq quality control](slides/not_yet_available.pdf) (Stefania Giacomello)  
-**10.15-11.00** [Lecture: Differential expression analysis](slides/not_yet_available.pdf) (Johan Reimegård)  
-**11:00-12.00** [Lecture: Gene-set analysis and data integration](slides/not_yet_available.pdf) (Leif Wigge)  
+**09:00-10.00** [Lecture: RNA-seq quality control](slides/RNAseqQC.pdf) (Stefania Giacomello)  
+**10.15-11.00** [Lecture: Differential expression analysis](slides/DiffExp.pdf) (Johan Reimegård)  
+**11:00-12.00** [Lecture: Gene-set analysis and data integration](slides/GSA_and_data_integration.pdf) (Leif Wigge)  
 **12.00-13.00** Lunch  
 **13.00-17.00** [Exercise: ](../labs/index)(Johan Reimegård, Stefania Giacomello, Leif Wigge)  
 **18.00-20.00** Course dinner
