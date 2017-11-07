@@ -7,7 +7,7 @@ title:  'Mapping reads'
 # Mapping reads to a reference and converting the results to BAM format
 
 
-### Data available for exercise
+## Data available for exercise
 
 You can carry out this exercise using the RNA-seq data we provide or your own data, if you have any.
 
@@ -159,5 +159,6 @@ The sorted, indexed bam file can be viewed in the Integrative Genomics Viewer (I
 * Load the the BAM files with HISAT2 and STAR results into IGV. Go to the RAB11FIP5 locus. Have HISAT2 and STAR mapped the reads in a similar way?
 * Detailed examination of the read alignments in IGV should indicate if the RNA-seq data is strand-specific. Is it?
 
+## When you are done...
 
-
+...compare your answers to the solutions [here](mapping_reads_answers).
