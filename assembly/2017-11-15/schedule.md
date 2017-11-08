@@ -17,8 +17,8 @@ Room: E10:1309
 **11.00-12.00** Exercise: [Quality control and read trimming](exercises/Sequence_Data_Quality_Assessment_Exercises.pdf) ([solutions](exercises/Sequence_Data_Quality_Assessment_Exercises_and_Solutions.pdf)) (Mahesh Binzer-Panchal, Henrik Lantz, Jacques Dainat, Lucile Soler)  
 **12.00-13.00** Lunch  
 **13.00-14.00** Exercise contd.: [Quality control and read trimming](exercises/Sequence_Data_Quality_Assessment_Exercises.pdf) ([solutions](exercises/Sequence_Data_Quality_Assessment_Exercises_and_Solutions.pdf)) (Mahesh Binzer-Panchal, Henrik Lantz, Jacques Dainat, Lucile Soler)  
-**14.00-14.30** Lecture: [Kmer-analysis, contamination analysis, and mapping-based analysis](files/KmerAnalysisContaminationMapping.pdf) (Mahesh Binzer-Panchal)  
-**14.30-17.00** Exercise (incl. coffee break): [Kmer-analysis, contamination analysis, and mapping-based analysis](exercises/KmerAnalysisAndContamination_Exercises.pdf) ([solutions](exercises/KmerAnalysisAndContamination_ExercisesAndSolutions.pdf)) (Mahesh Binzer-Panchal, Henrik Lantz, Jacques Dainat, Lucile Soler)  
+**14.00-14.30** Lecture: [Kmer-analysis, contamination analysis, and mapping-based analysis](files/KmerAnalysisContaminationMapping.pdf) (Mahesh Binzer-Panchal)  
+**14.30-17.00** Exercise (incl. coffee break): [Kmer-analysis, contamination analysis, and mapping-based analysis](exercises/KmerAnalysisAndContamination_Exercises.pdf) ([solutions](exercises/KmerAnalysisAndContamination_ExercisesAndSolutions.pdf)) (Mahesh Binzer-Panchal, Henrik Lantz, Jacques Dainat, Lucile Soler)  
 
 **Thursday 16th**
 
