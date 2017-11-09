@@ -12,7 +12,7 @@ Room:
 **09.00-09.15** [Lecture:General introduction](slides/NBIS_intro.pdf) (Björn Nystedt)  
 **09.15-10.15** [Lecture:RNA-seq introduction](slides/Introduction_RNA.pdf) (Johan Reimegård)  
 **10.30-11.15** [Lecture: Short read mapping programs](slides/read_mapping.pdf) (Pär Engström)  
-**11.15-12.00** [Lecture: Short read assembly](slides/not_yet_available.pdf) (Manfred Grabherr)  
+**11.15-12.00** [Lecture: Short read assembly](slides/Transcriptome_assembly.pdf) (Manfred Grabherr)  
 **12.00-13.00** Lunch  
 **13.00-17.00** [Exercise: ](../labs/index) (Johan Reimegård, Pär Engström, Manfred Grabherr)  
   
@@ -28,13 +28,13 @@ Room:
 
 **Wednesday 8th**  
 Room:  
-**09.00-10.00** [Lecture: Multivariate analysis](slides/not_yet_available.pdf) (Sanela Kjellqvist)  
-**10:15-11:15** [Lecture: MVA test case](slides/not_yet_available.pdf) (Sanela Kjellqvist)  
-**11:15-12:00** [Lecture: RNA-seq pipeline](slides/not_yet_available.pdf) (Phil Ewels)     
+**09.00-10.00** [Lecture: Multivariate analysis](slides/MVA.pdf) (Sanela Kjellqvist)  
+**10:15-11:15** [Lecture: MVA test case](../labs/Simca_tutorial) (Sanela Kjellqvist)  
+**11:15-12:00** [Lecture: RNA-seq pipeline](slides/pipeline.pdf) (Phil Ewels)     
 **12.00-13.00** Lunch  
 **13.00-14.00** [Exercise: ](../labs/index) (Johan Reimegård, Phil Ewels, Sanela Kjellqvist)  
-**14.00-15.00** [Lecture: miRNA analysis](slides/not_yet_available.pdf) (Marc Friedländer)  
-**15.00-16.00** [Exercise: ](../labs/index) (Johan Reimegård, TBA)  
+**14.00-15.00** [Lecture: miRNA analysis](slides/sRNAs.pdf) (Marc Friedländer)  
+**15.00-16.00** [Exercise: ](../labs/index) (Johan Reimegård)  
 **16.00-17.00** [Lecture: Summary of the week](slides/summary.pdf) (Johan Reimegård)  
 
  
