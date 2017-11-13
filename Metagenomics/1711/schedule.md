@@ -8,7 +8,7 @@ title:  'Schedule'
 
 #### This course is given at Navet (E10) at BMC. Click the heading of a topic to see the lecture slides or lab instructions.
 
-### Tuesday 20th  
+### Monday 20th  
 
 Room:  E10:1308/1309 (BMC, entrance C11)
 
@@ -18,7 +18,7 @@ Room:  E10:1308/1309 (BMC, entrance C11)
 
 * Monday evening: Dinner somewhere
 
-### Wednesday 21th  
+### Tuesday 21th  
 
 Room:  E10:1308/1309 (BMC, entrance C11)
 
