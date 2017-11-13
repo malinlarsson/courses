@@ -4,7 +4,7 @@ title:  'Metagenomics Workshop - November 2016'
 ---
  
 
-# Introduction to Metagenomics and Single Cell analysis
+# Introduction to Metagenomics
 ---
 
 Held in Uppsala November 20-22, 2017.  
