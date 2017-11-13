@@ -13,8 +13,7 @@ Held in Uppsala November 20-22, 2017.
 
 [Pre-course material](precourse.md)  
 [Course material](tutorial.md)  
-[Schedule](schedule.md\)
-
+[Schedule](schedule.md)
 [VirtualWhiteboardThing](https://etherpad.wikimedia.org/p/SciLifeLab_---_MetaGenomics)
 
 ## Maps & Travel Info
