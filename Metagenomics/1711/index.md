@@ -11,9 +11,9 @@ Held in Uppsala November 20-22, 2016.
 
 ## Important Links
 
-[Pre-course material](precourse)  
-[Course material](tutorial)  
-[Schedule](schedule)  
+[Pre-course material](precourse.md)  
+[Course material](tutorial.md)  
+[Schedule](schedule.md)  
 
 ## Maps & Travel Info
 
