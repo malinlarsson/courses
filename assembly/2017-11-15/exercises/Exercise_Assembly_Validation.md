@@ -222,7 +222,7 @@ we can get a better idea of what is in the assembly as long as the classificatio
 	ln -s ../*.fasta .
 	function apply_Kraken {
 		ASSEMBLY=$1 # The assembly is the first parameter to this function
-		KRAKEN_DB=/opt/byod/minikraken_20141208 # The location of the kraken database
+		KRAKEN_DB=/sw/courses/assembly/minikraken_20141208 # The location of the kraken database
 		echo "Running Kraken: $ASSEMBLY"
 		kraken --threads 4 --db $KRAKEN_DB --fasta-input $ASSEMBLY > ${ASSEMBLY/.fasta/.kraken.out}
 		kraken-report --db $KRAKEN_DB ${ASSEMBLY/.fasta/.kraken.out} > ${ASSEMBLY/.fasta/.kraken.rpt}
