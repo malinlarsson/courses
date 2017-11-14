@@ -43,7 +43,7 @@ $ command sequence.fastq
 $ rm sequence.fastq
 ```
 
-## Exercises:
+## Exercises:
 
 1. What is a k-mer?
 
