@@ -15,6 +15,7 @@ Assisting in the tutorials will be : Mahesh Binzer-Panchal, Sari Peura, Lucile S
 
 Room:  E10:1308/1309 (BMC, entrance C11)
 
+
 * Monday 9-9.30: Introduction to metagenomics (lecture, Moritz Buck)
 * Monday 9.30-12: general NGS data types/UPPMAX (tutorial)
 * Monday 12-12.45: Lunch
@@ -27,14 +28,18 @@ Room:  E10:1308/1309 (BMC, entrance C11)
 
 Room:  E10:1308/1309 (BMC, entrance C11)
     
+ 
 * Tuesday: 9-12 Amplicon, Shotgun --- read-based analysis (tutorial)
 * Tuesday 12-12.45: Lunch
 * Tuesday 12.45-13.15: Assembly (lecture, Moritz Buck)
 * Tuesday 13.15-17: Assembly and mapping (tutorial)
 
-* Monday 18-20: Course dinner Messob (Sturegatan 4A, Uppsala)
+* Tuesday 18-20: Course dinner Messob (Sturegatan 4A, Uppsala)
 
 ### Wednesday 22th  
+
+Room:  E10:1308/1309 (BMC, entrance C11)
+
 
 * Wednesday 9-11.30: Assembly (tutorial)
 * Wednesday 11.30-12: Binning/Annotation (lecture, Anders Andersson)
