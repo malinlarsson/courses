@@ -105,7 +105,7 @@ $ rm sequence.fastq
 
 9. Run Kraken on `Bacteria/bacteria_R{1,2}.fastq.gz`. What is the reason for this result? Can one do better?
 	```bash
-	KRAKEN_DB=/proj/g2017011/databases/minikraken_20141208
+	KRAKEN_DB=/sw/courses/assembly/minikraken_20141208
 	kraken --threads 4 --db $KRAKEN_DB --fastq-input --gzip-compressed --paired <read_{1,2}.fastq.gz> > <kraken.out>
 	kraken-report --db $KRAKEN_DB <kraken.out> > <kraken.rpt>
 	cut -f2,3 <kraken.out> > <krona.in>
