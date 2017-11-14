@@ -27,17 +27,16 @@ Room:  E10:1308/1309 (BMC, entrance C11)
 
 Room:  E10:1308/1309 (BMC, entrance C11)
     
-    * Tuesday: 9-12 Amplicon, Shotgun --- read-based analysis (tutorial)
-    * Tuesday 12-12.45: Lunch
-    * Tuesday 12.45-13.15: Assembly (lecture, Moritz Buck)
-    * Tuesday 13.15-17: Assembly and mapping (tutorial)
+* Tuesday: 9-12 Amplicon, Shotgun --- read-based analysis (tutorial)
+* Tuesday 12-12.45: Lunch
+* Tuesday 12.45-13.15: Assembly (lecture, Moritz Buck)
+* Tuesday 13.15-17: Assembly and mapping (tutorial)
 
-* Monday 18-20: Course dinner Messob 
-                Sturegatan 4A, Uppsala
+* Monday 18-20: Course dinner Messob (Sturegatan 4A, Uppsala)
 
 ### Wednesday 22th  
 
-    * Wednesday 9-11.30: Assembly (tutorial)
-    * Wednesday 11.30-12: Binning/Annotation (lecture, Anders Andersson)
-    * Wednesday 12-12.45: Lunch
-    * Wednesday 12.45-17: Binning/Annotation (tutorial)
+* Wednesday 9-11.30: Assembly (tutorial)
+* Wednesday 11.30-12: Binning/Annotation (lecture, Anders Andersson)
+* Wednesday 12-12.45: Lunch
+* Wednesday 12.45-17: Binning/Annotation (tutorial)
