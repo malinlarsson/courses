@@ -181,7 +181,7 @@ Use KmerGenie to find the optimal k.
 
 ```bash
 module load KmerGenie/1.7039
-kmergenie list_of_filenames.fofn
+kmergenie list_of_readfiles.fofn
 ```
 
 Also examine the assembly graphs from different values of k to see which gives the best layout. Do they agree?
