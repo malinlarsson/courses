@@ -35,7 +35,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 2. Make a copy of the data in your workspace (note the `.` at the end of the command):
 
 	```bash
-	cp -vr /proj/g2017011/exercises/Data_Quality_Assessment/* .
+	cp -vr /proj/g2017025/exercises/Data_Quality_Assessment/* .
 	```
 
 	Use `md5sum -c` to check the checksums are complete.
