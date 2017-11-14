@@ -49,7 +49,7 @@ Room: E10:1309
 **10.15-10.30** Coffee break  
 **10.30-12.00** Exercise: [Assembly validation](exercises/Exercise_Assembly_Validation.md)  
 **12.00-13.00** Lunch  
-**13.00-15.00** Exercise: [Team Assembly project](exercises/Team Exercise.pdf)  
+**13.00-15.00** Exercise: [Team Assembly project](exercises/Exercise_Diatom_assembly_project.md)  
 **15.00-15.15** Coffee break  
 **15.15-17.00** Exercise discussion and wrap-up (Mahesh Binzer-Panchal, Henrik Lantz)  
 <br/>
