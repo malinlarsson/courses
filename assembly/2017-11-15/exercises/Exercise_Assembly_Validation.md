@@ -261,7 +261,7 @@ phylogenetic clade. [Busco Supplementary Online Material.]
 	function apply_BUSCO {
 		ASSEMBLY=$1 #The assembly is the first parameter to this function
 		LINEAGE=$BUSCO_LINEAGE_SETS/bacteria_odb9
-		busco -i $ASSEMBLY -l $LINEAGE -c 4 -m genome -o ${ASSEMBLY/.fasta/_busco}
+		BUSCO -i $ASSEMBLY -l $LINEAGE -c 4 -m genome -o ${ASSEMBLY/.fasta/_busco}
 	}
 	```
 
