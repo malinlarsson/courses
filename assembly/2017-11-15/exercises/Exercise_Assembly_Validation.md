@@ -4,7 +4,7 @@ title:  'Exercise: Assembly Validation'
 ---
 # Assembly Validation.
 
-## Introduction
+## Introduction
 
 The following exercises are intended to introduce you to the tools involved in assembly validation.
 
