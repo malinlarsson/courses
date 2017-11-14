@@ -10,9 +10,11 @@ One of the assemblers, MaSuRCA, will take a bit longer to run (about an hour) so
 
 ### Setup
 
-Make a copy of the folder which includes the read data using `cp -vr /proj/g2017025/exercises/illumina_assembly/data .`
+Make a copy of the folder which includes the read data using `cp -vr /sw/courses/assembly/illumina_assembly/data .`
 
 ### Rhodobacter HiSeq data
+
+Use the files `Rhodo_Hiseq_trimmed_read{1,2}.fastq` for the assemblies. 
 
 #### Spades
 
@@ -47,7 +49,7 @@ module load bowtie
 Start Abyss using the abyss-pe script:
 
 ```bash
-abyss-pe k=31 l=1 n=5 s=100 np=8 name=asm lib='reads' reads=' ../../data/Rhodo_Hiseq_trimmed_read1.fastq ../../data/Rhodo_Hiseq_trimmed_read2.fastq' aligner=bowtie
+abyss-pe k=31 l=1 n=5 s=100 np=8 name=asm lib='reads' reads='../data/Rhodo_Hiseq_trimmed_read1.fastq ../data/Rhodo_Hiseq_trimmed_read2.fastq' aligner=bowtie
 ```
 
 Once done you will have two files called asm-contigs.fa and asm.scaffolds.fa.
@@ -82,9 +84,9 @@ asm_flags=3
 
 rank=1
 
-q1=../../data/Rhodo_Hiseq_trimmed_read1.fastq
+q1=../data/Rhodo_Hiseq_trimmed_read1.fastq
 
-q2=../../data/Rhodo_Hiseq_trimmed_read2.fastq
+q2=../data/Rhodo_Hiseq_trimmed_read2.fastq
 ```
 
 Exit and save the file by ctrl-x (if using nano) and answer yes when asked to save.
