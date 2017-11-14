@@ -12,7 +12,7 @@ For this exercise we will focus on assembling an E. coli dataset sequenced using
 Copy the data to your working directory.
 
 ```bash
-cp -vr /proj/g2017025/exercises/PacBio_assembly .
+cp -vr /sw/courses/assembly/PacBio_assembly/Ecoli_Data .
 ```
 
 ### Miniasm
@@ -164,13 +164,20 @@ java -cp $GEPARD_HOME/Gepard-1.40.jar org.gepard.client.cmdline.CommandLine -seq
 module load SMRT/2.3.0
 ```
 
-Polishing is a necessary step to remove indel and SNP errors. Use Quiver from the SMRT portal to polish a draft assembly. Modify
-the environment variables to the appropriate settings for your data (PACBIO_DATA_DIR and ASSEMBLY).
+Polishing is a necessary step to remove indel and SNP errors. Use Quiver from the SMRT portal to polish a draft assembly. 
+Note that polishing requires the pulsefield information that is encoded in the raw \*.h5 files. This means that the fastq files are insufficient.
+
+The full PacBio data for the Ecoli dataset can be found here:
+```bash
+/proj/g2017025/exercises/PacBio_Assembly/Ecoli_raw_data
+```
+
+Modify the environment variables to the appropriate settings for your data (PACBIO_DATA_DIR and ASSEMBLY).
 
 ```bash
 source $SMRT_SETUP_SCRIPT
 
-PACBIO_DATA_DIR=/proj/b2017025/nobackup/$USER/
+PACBIO_DATA_DIR=/proj/g2017025/exercises/PacBio_Assembly/Ecoli_raw_data
 PROTOCOL_XML=quiver_and_bridge_mapping.xml
 
 ASSEMBLY=draft_assembly.fasta
