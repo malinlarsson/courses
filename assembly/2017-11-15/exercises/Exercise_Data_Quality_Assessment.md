@@ -27,7 +27,7 @@ If you have trouble finding a tool, use the `module spider` function to search.
 module spider fastqc
 ```
 
-## Exercises:
+## Exercises:
 
 1. Use `md5sum` to calculate the checksums of the data files in the folder `/proj/g2017025/exercises/Data_Quality_Assessment/`.
 Redirect (`>` operator) the output into a file called `checksums.txt` in your workspace.
