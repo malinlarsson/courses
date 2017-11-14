@@ -154,7 +154,7 @@ Use quast to compare the assemblies with the E. coli reference.
 Compare the draft assemblies and the reference to each other using Gepard.
 
 ```bash
-GEPARD_HOME=/proj/g2017025/tools/gepard
+GEPARD_HOME=/sw/course/assembly/Tools
 java -cp $GEPARD_HOME/Gepard-1.40.jar org.gepard.client.cmdline.CommandLine -seq1 <fasta1> -seq2 <fasta2> -outfile <comparison.png> -matrix $GEPARD_HOME/matrices/edna.mat
 ```
 
@@ -172,7 +172,7 @@ The full PacBio data for the Ecoli dataset can be found here:
 /proj/g2017025/exercises/PacBio_Assembly/Ecoli_raw_data
 ```
 
-Modify the environment variables to the appropriate settings for your data (PACBIO_DATA_DIR and ASSEMBLY).
+Modify the environment variables to the appropriate settings for your data (ASSEMBLY).
 
 ```bash
 source $SMRT_SETUP_SCRIPT
