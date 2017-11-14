@@ -24,7 +24,7 @@ Room: E10:1309
 **10.15-11.00** Lecture: [Quality control and read trimming](lectures/Sequence_Quality_Assessment.pdf) (Mahesh Binzer-Panchal)  
 **11.00-12.00** Exercise: [Quality control and read trimming](exercises/Exercise_Data_Quality_Assessment.md)  
 **12.00-13.00** Lunch  
-**13.00-14.00** Exercise: Quality control and read trimming contd.
+**13.00-14.00** Exercise: Quality control and read trimming contd.  
 **14.00-14.30** Lecture: [K-mer and contamination analysis](lectures/K-mer_Contaminant_Analysis.pdf) (Mahesh Binzer-Panchal)  
 **14.30-17.00** Exercise (incl. coffee break): [K-mer and contamination analysis](exercises/Exercise_K-mer_and_Contamination_Analysis.md)   
 
@@ -37,9 +37,9 @@ Room: E10:1309
 **10.15-11.00** Lecture: [Illumina assembly](lectures/Illumina_Assembly.pdf) (Mahesh Binzer-Panchal)  
 **11.00-12.00** Exercise: [Illumina assembly](exercises/Exercise_Illumina_Assembly.md)  
 **12.00-13.00** Lunch  
-**13.00-13.30** Exercise: Illumina assembly contd. 
-**13.30-14.30** Lecture: [Long Read assembly](lectures/Long_read_Assembly.pdf) (Mahesh Binzer-Panchal)
-**14.30-17.00** Exercise: [Long Read assembly](exercises/Exercise_Long_Read_Assembly.md) (incl. coffee break)
+**13.00-13.30** Exercise: Illumina assembly contd.  
+**13.30-14.30** Lecture: [Long Read assembly](lectures/Long_read_Assembly.pdf) (Mahesh Binzer-Panchal)  
+**14.30-17.00** Exercise: [Long Read assembly](exercises/Exercise_Long_Read_Assembly.md) (incl. coffee break) 
 
 **Friday 17th**
 
