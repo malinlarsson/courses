@@ -19,7 +19,7 @@ Course Assistants:
 
 Room: E10:1309  
 **09.00-09.15** Introduction (Henrik Lantz)  
-**09.15-10.00** Lecture: [NGS technologies and basic concepts](files/Sequence_technologies_2016.ppt) (Henrik Lantz)  
+**09.15-10.00** Lecture: [NGS technologies and basic concepts](files/Sequence_technologies_2017.pptx) (Henrik Lantz)  
 **10.00-10.15** Coffee break  
 **10.15-11.00** Lecture: [Quality control and read trimming](lectures/Sequence_Quality_Assessment.pdf) (Mahesh Binzer-Panchal)  
 **11.00-12.00** Exercise: [Quality control and read trimming](exercises/Exercise_Data_Quality_Assessment.md)  
