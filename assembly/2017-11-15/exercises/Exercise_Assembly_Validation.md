@@ -39,6 +39,10 @@ For these exercises we will use the assemblies generated during your Illumina ex
 
 ### QUAST
 
+```bash
+module load bioinfo-tools quast/4.5.4
+```
+
 QUAST is a good starting point to help evaluate the quality of assemblies. It provides many helpful contiguity statistics.
 
 1. Run QUAST on all the assemblies at once and generate a report.
@@ -55,6 +59,11 @@ QUAST is a good starting point to help evaluate the quality of assemblies. It pr
 	* Which assembly has the best contiguity metrics?
 
 ### Read alignment statistics
+
+```bash
+module load bwa/0.7.17 samtools/1.5
+export PATH="/proj/g2017025/tools/FRC_align/bin:$PATH"
+```
 
 Read congruency is an important measure in determining assembly accuracy. Clusters of read pairs that align incorrectly are
 strong indicators of mis-assembly.
@@ -126,6 +135,10 @@ strong indicators of mis-assembly.
 
 ### K-mer Analysis Toolkit
 
+```bash
+module load KAT/2.3.4
+```
+
 KAT is useful tool for high accuracy sequence data. The spectra-cn (copy number spectra) graph shows a
 decomposition of k-mers in the assembly vs k-mers in the reads.
 The black portion are k-mers not present in the assembly, the red portion is found once in the assembly, and so on.
@@ -153,21 +166,24 @@ This shows the completeness of an assembly, i.e. are all the reads assembled int
 
 ### Blobtools
 
+```bash
+module load blast/2.6.0+ blobtools/0.9.17 
+```
+
 During the sequence quality assessment stage we tried to discern whether contamination was present. Sometimes this is
 not feasible at the read level. By plotting Contig GC content vs Contig Read Coverage we can look for clusters of contigs that
 share similar coverage. The appearance of multiple clusters can indicate multiple organisms. Occasionally, contigs can also be
 taxonomically classified, providing further evidence for contaminants.
 
-5. Run Blobtools on each assembly. Blobtools requires both a BAM file as input and blast output for the classification step.
+5. Run Blast and Blobtools on each assembly. Blobtools requires both a BAM file as input and blast output for the classification step.
 	```bash
 	mkdir Blast
 	cd Blast
 	ln -s ../*.fasta
 	function apply_Blast {
 		ASSEMBLY=$1 # The assembly is the first parameter to this function
-		BLAST_DB=/opt/byod/byod/nt-database/nt # The location of the blast database nt
 		echo "Blast: $ASSEMBLY"
-		blastn -task megablast -query $ASSEMBLY -db $BLAST_DB -outfmt '6 qseqid staxids bitscore std sscinames sskingdoms stitle' \
+		blastn -task megablast -query $ASSEMBLY -db $BLASTDB -outfmt '6 qseqid staxids bitscore std sscinames sskingdoms stitle' \
                 -culling_limit 5 -num_threads 4 -evalue 1e-25 -out ${ASSEMBLY/.fasta/_blast_alignment.blast.out}
 	}
 	cd ..
@@ -175,7 +191,6 @@ taxonomically classified, providing further evidence for contaminants.
 	cd Blobtools
 	ln -s ../*.fasta .
 	ln -s ../BWA/*.bam .
-	ln -s /opt/byod/Assembly_validation/Blast/*.out .
 	function apply_Blobtools {
 		ASSEMBLY=$1 # The assembly is the first parameter to this function
 		BAM=$2 # The BAM file is the second parameter to this function
@@ -192,6 +207,10 @@ taxonomically classified, providing further evidence for contaminants.
 	* Why might coverage vary across contigs within an assembly?
 
 ### Kraken Taxonomic Classification
+
+```bash
+module load Kraken/1.0 Krona/2.7
+```
 
 As we pointed out before, occasionally classification might not be informative at the read level. By applying Kraken to the longer contigs,
 we can get a better idea of what is in the assembly as long as the classification database contains that information.
@@ -216,6 +235,10 @@ we can get a better idea of what is in the assembly as long as the classificatio
 
 ### BUSCO
 
+```bash
+module load BUSCO/2.0.1
+```
+
 Assessing gene space is a core aspect of knowing whether or not you have a good assembly.
 
 Benchmarking Universal Single-Copy Orthologs
@@ -233,12 +256,11 @@ phylogenetic clade. [Busco Supplementary Online Material.]
 	mkdir BUSCO
 	cd BUSCO
 	ln -s ../*.fasta .
-	# run the following two lines to setup the busco environment
-	rsync -av /opt/miniconda3/pkgs/augustus-3.2.2-boost1.61_3/config/{species,model} .
-	export AUGUSTUS_CONFIG_PATH=$PWD
+	# run the following line to setup the busco environment on milou
+	source $BUSCO_SETUP
 	function apply_BUSCO {
 		ASSEMBLY=$1 #The assembly is the first parameter to this function
-		LINEAGE=/opt/byod/byod/busco/lineages/bacteria_odb9
+		LINEAGE=$BUSCO_LINEAGE_SETS/bacteria_odb9
 		busco -i $ASSEMBLY -l $LINEAGE -c 4 -m genome -o ${ASSEMBLY/.fasta/_busco}
 	}
 	```
@@ -246,6 +268,10 @@ phylogenetic clade. [Busco Supplementary Online Material.]
 	* What does the gene space look like for each assembly?
 
 ### Comparative Alignment
+
+```bash
+module load mauve/2015-02-13
+```
 
 Comparative alignment is a useful tool to see how assemblies compare to each other. This can be useful to compare assemblies to a reference, or
 to see if assemblies have large structural differences.
@@ -263,8 +289,9 @@ to see if assemblies have large structural differences.
 	function apply_Gepard {
 		ASSEMBLY1=$1 # An assembly is the first parameter to this function
 		ASSEMBLY2=$2 # An assembly is the second parameter to this function
-		SUBSTITUTION_MATRIX=/proj/g2017025/tools/gepard/resources/matrices/edna.mat
-		java -Djava.awt.headless=true -Xmx1024m -cp /proj/g2017025/tools/gepard/dist/Gepard-1.40.jar org.gepard.client.cmdline.CommandLine \
+		GEPARD_HOME=/sw/courses/assembly/Tools
+		SUBSTITUTION_MATRIX=$GEPARD_HOME/matrices/edna.mat
+		java -Djava.awt.headless=true -Xmx1024m -cp $GEPARD_HOME/Gepard-1.40.jar org.gepard.client.cmdline.CommandLine \
 			-seq1 $ASSEMBLY1 -seq2 $ASSEMBLY2 -matrix $SUBSTITUTION_MATRIX -outfile ${ASSEMBLY1/.fasta/}_vs_${ASSEMBLY2/.fasta/}_dotplot.png
 	}
 	```
