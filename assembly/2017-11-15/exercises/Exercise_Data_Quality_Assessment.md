@@ -29,13 +29,13 @@ module spider fastqc
 
 ## Exercises:
 
-1. Use `md5sum` to calculate the checksums of the data files in the folder `/proj/g2017025/exercises/Data_Quality_Assessment/`.
+1. Use `md5sum` to calculate the checksums of the data files in the folder `/sw/courses/assembly/QC_Data/`.
 Redirect (`>` operator) the output into a file called `checksums.txt` in your workspace.
 
 2. Make a copy of the data in your workspace (note the `.` at the end of the command):
 
 	```bash
-	cp -vr /proj/g2017025/exercises/Data_Quality_Assessment/* .
+	cp -vr /sw/courses/assembly/QC_Data/* .
 	```
 
 	Use `md5sum -c` to check the checksums are complete.
