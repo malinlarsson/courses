@@ -29,11 +29,7 @@ You should at least go through the exercises in the tutorial, no need to know it
 
 **Additional links**
 
-Here are links to some discussion fora, which could be useful to answer questions that are not covered by the tutorial manuals.
+*[**a horribly cute terminal tutorial** ](http://unixmages.com/)
 
-* [Biosupport.se](http://biosupport.se/): http://biosupport.se/
-* [Biostar](http://www.biostars.org/): http://www.biostars.org/
-* [SeqAnswers](http://seqanswers.com/): http://seqanswers.com/ 
-
-If you feel uncertatin how to work in a terminal window it is important that you go through this tutorial before you start.
+If you feel uncertain how to work in a terminal window it is important that you go through this tutorial before you start.
  
