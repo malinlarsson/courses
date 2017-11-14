@@ -76,36 +76,36 @@ length_cutoff = 12000       # use longest 30X coverage
 # The length cutoff used for seed reads used for pre-assembly - the min length of corrected reads
 length_cutoff_pr = 12000    # 0-5000 lower than above
 
-# concurrency settings
-pa_concurrent_jobs = 8 # pre-assembly
-ovlp_concurrent_jobs = 8 # overlap
+# concurrency settings
+pa_concurrent_jobs = 8 # pre-assembly
+ovlp_concurrent_jobs = 8 # overlap
 cns_concurrent_jobs = 8 # consensus
-
-# overlapping options for Daligner 
-pa_HPCdaligner_option = -dal4 -t16 -e.70 -l1000 -s1000 
-ovlp_HPCdaligner_option = -dal4 -t32 -h60 -e.96 -l500 -s1000
 
-# -B <int>, -dal <int> 
-# blocks to compare => higher = less but longer jobs
+# overlapping options for Daligner 
+pa_HPCdaligner_option = -dal4 -t16 -e.70 -l1000 -s1000 
+ovlp_HPCdaligner_option = -dal4 -t32 -h60 -e.96 -l500 -s1000
+
+# -B <int>, -dal <int> 
+# blocks to compare => higher = less but longer jobs
 
 # -e <int>   
 # average correlation rate (def 70%)
 
-# -v # turns on verbose
-# -l <int>
-# the length in base pairs of the minimum local alignment (def. 1000)
+# -v # turns on verbose
+# -l <int>
+# the length in base pairs of the minimum local alignment (def. 1000)
 
-# -s <int>
-# how frequently trace alignments measured in bases are recorded (def. 100)
+# -s <int>
+# how frequently trace alignments measured in bases are recorded (def. 100)
 
-# -b 
+# -b 
 # daligner assumes the data has a strong compositional bias (e.g. >65% AT rich).
 
-# -t <int>,-M <int>       # Limits the effects of repeats
+# -t <int>,-M <int>       # Limits the effects of repeats
 # Invariably, some k-mers are significantly over-represented (e.g. homopolymer runs). These k-mers create an excessive number of matching k-mer pairs and left unaddressed would cause daligner to overflow the available physical memory.  One way to deal with this is to explicitly set the -t parameter which suppresses the use of any k-mer that occurs more than t times in either the subject or target block.  However, a better way to handle the situation is to let the program automatically select a value of t that meets a given memory usage limit specified (in Gb) by the -M parameter.  By default daligner will use the amount of physical memory as the choice for -M.  If you want to use less, say only 8Gb on a 24Gb HPC cluster node because you want to run 3 daligner jobs on the node, then specify -M8.  Specifying -M0 basically indicates that you do not want daligner to self adjust k-mer suppression to fit within a given amount of memory.
 
-# -H <int> 
-# By default daligner compares all overlaps between reads in the database that are greater than the minimum cutoff set when the DB or DBs were split, typically 1 or 2 Kbp.  However, the HGAP assembly pipeline only wants to correct large reads, say 8Kbp or over, and so needs only the overlaps where the a-read is one of the large reads.  By setting the -H parameter to say N, one alters daligner so that it only reports overlaps where the a-read is over N base-pairs long.
+# -H <int> 
+# By default daligner compares all overlaps between reads in the database that are greater than the minimum cutoff set when the DB or DBs were split, typically 1 or 2 Kbp.  However, the HGAP assembly pipeline only wants to correct large reads, say 8Kbp or over, and so needs only the overlaps where the a-read is one of the large reads.  By setting the -H parameter to say N, one alters daligner so that it only reports overlaps where the a-read is over N base-pairs long.
 # Essentially limits making alignments of reads of any size only to reads longer than <int>
 
 # -k <int>, -h <int>, -w <int>
@@ -115,33 +115,33 @@ ovlp_HPCdaligner_option = -dal4 -t32 -h60 -e.96 -l500 -s1000
 pa_DBspliAt_option = -x1000 -s50 -a
 ovlp_DBsplit_option = -x1000 -s50 -a
 
-# -x <int>
-# Ignore reads lower than length
+# -x <int>
+# Ignore reads lower than length
 
-# -s <int>
-# specifies number of mb in each DB chunk - larger numbers makes smaller numbers of longer jobs (should be 400 mb or so for large genomes)
+# -s <int>
+# specifies number of mb in each DB chunk - larger numbers makes smaller numbers of longer jobs (should be 400 mb or so for large genomes)
 
 # -a # ignore secondary reads from the same well
 
-# error correction consensus option 
+# error correction consensus option 
 falcon_sense_option = --output_multi --min_idt 0.70 --min_cov 4 --local_match_count_threshold 2 --max_n_read 200 --n_core 6
 
-# --min_cov <int>
-# break/trim seed read lower than <int>
+# --min_cov <int>
+# break/trim seed read lower than <int>
 
-# --max_n_read <int>
+# --max_n_read <int>
 # max reads used for error correction - reduce value for highly repetitive genomes
 
-# overlap filtering options 
-overlap_filtering_setting = --max_diff 100 --max_cov 100 --min_cov 20 --bestn 10
+# overlap filtering options 
+overlap_filtering_setting = --max_diff 100 --max_cov 100 --min_cov 20 --bestn 10
 
-# --bestn <int>
-# Use the <int> best overlaps to simplify transitive edges in the graph
+# --bestn <int>
+# Use the <int> best overlaps to simplify transitive edges in the graph
 
-# --max_cov <int>, --min_cov <int>
-# filter overlaps that are too high or too low (e.g. reads ending in repeats, or many sequencing errors)
+# --max_cov <int>, --min_cov <int>
+# filter overlaps that are too high or too low (e.g. reads ending in repeats, or many sequencing errors)
 
-# --max_diff <int>
+# --max_diff <int>
 # Max difference of coverage between 5’ and 3’ ends
 ```
 
