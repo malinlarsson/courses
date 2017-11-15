@@ -57,3 +57,7 @@ Room: E10:1309
 
 ***Note:***
 The practical exercise sessions will be made on the UPPMAX cluster. You can find the log instructions [here](login_instructions)
+
+**solutions**
+* Quality Control and read trimming exercises: [Solutions](solutions/Solutions_Data_Quality_Assessment.md)
+* K-mer and contamination analysis exercises: [Solutions](solutions/Solutions_K-mer_and_Contamination_Analysis.md)
