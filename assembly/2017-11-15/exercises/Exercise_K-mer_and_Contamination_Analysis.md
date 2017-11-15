@@ -97,7 +97,7 @@ $ rm sequence.fastq
 	mkfifo <named_pipe_read1.fastq> && zcat <read1.fastq.gz> > <named_pipe_read1.fastq> & # Make a named pipe for read 1 and run in background
 	mkfifo <named_pipe_read2.fastq> && zcat <read2.fastq.gz> > <named_pipe_read2.fastq> & # Make a named pipe for read 2 and run in background
 	kat comp -t 4 -o <output.cmp> --density_plot <named_pipe_read1.fastq> <named_pipe_read2.fastq> # run KAT on the named pipes and print a density plot
-	kat plot spectra-mx -x 50 -y 500000 -n -o <output.cmp>-main.mx.spectra-mx.png <output.cmp>-main.mx # Make a spectra-mx plot
+	kat plot spectra-mx -x 50 -y 500000 -i -o <output.cmp>-main.mx.spectra-mx.png <output.cmp>-main.mx # Make a spectra-mx plot
 	rm <named_pipe_read1.fastq> <named_pipe_read2.fastq> # names pipes can only be used once, and so are removed after use
 	```
 
