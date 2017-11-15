@@ -64,7 +64,7 @@ title:  'Exercise: K-mer and contamination analysis'
 	
 	**solution**
 	
-	[KAT k-mer histogram](images/bacteria.hist.png)
+	![KAT k-mer histogram](images/bacteria.hist.png)
 	The mean k-mer frequency appears to be around 25.
 
 6. The following command prints the frequency of each k-mer frequency between 5 and 45. What is the mean k-mer frequency?
@@ -98,7 +98,7 @@ title:  'Exercise: K-mer and contamination analysis'
 	rm sequences.fastq
 	```
 	
-	[KAT k-mer gcp histogram](images/bacteria.gcp.mx.png)
+	![KAT k-mer gcp histogram](images/bacteria.gcp.mx.png)
 	The scale of GC content is the k-mer size, which is in this case 27 (Note: The image
 	does not go all the way to 27 since the y-axis has been cropped for some reason).
 	In order to find GC%, one should multiply the GC count by 100% divided by the k-mer size
@@ -125,9 +125,9 @@ title:  'Exercise: K-mer and contamination analysis'
 	rm read1.fastq read2.fastq
 	```
 	
-	[KAT k-mer comp density plot](images/bacteria_R1vsR1.cmp-main.mx.density.png)
+	![KAT k-mer comp density plot](images/bacteria_R1vsR1.cmp-main.mx.density.png)
 	
-	[KAT k-mer comp spectra-mx plot](images/bacteria_R1vsR2.cmp-main.mx.spectra-mx.png)
+	![KAT k-mer comp spectra-mx plot](images/bacteria_R1vsR2.cmp-main.mx.spectra-mx.png)
 	
 	The difference in the distribution means between the two datasets is due to the lower quality
 	of the second read file. The increased number of reads with N's reduces the k-mer count frequency
@@ -157,7 +157,7 @@ title:  'Exercise: K-mer and contamination analysis'
 	/sw/apps/bioinfo/Krona/2.7/src/KronaTools-2.7/scripts/ImportTaxonomy.pl bacteria.krona.in -o bacteria.krona.html
 	```
 	
-	[Krona display of Kraken contamination report](images/bacteria.kraken.svg)
+	![Krona display of Kraken contamination report](images/bacteria.kraken.svg)
 	
 	Here you see that very little is identified, indicating that the organism is not in the
 	database. As a result, the other organisms it has identified are likely to be false positives.
@@ -174,7 +174,7 @@ title:  'Exercise: K-mer and contamination analysis'
 	/sw/apps/bioinfo/Krona/2.7/src/KronaTools-2.7/scripts/ImportTaxonomy.pl Ecoli.krona.in -o Ecoli.krona.html
 	```
 	
-	[Krona display of the Kraken contamination report](images/Ecoli.kraken.svg)
+	![Krona display of the Kraken contamination report](images/Ecoli.kraken.svg)
 	
 	Here you see quite a lot of the sequences identified as E. coli, however due to
 	the increased error rate per base of the subreads, less reads are accurately classified.  
