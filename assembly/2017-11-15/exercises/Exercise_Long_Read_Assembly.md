@@ -20,7 +20,7 @@ cp -vr /sw/courses/assembly/PacBio_assembly/Ecoli_Data .
 ```bash
 module load bioinfo-tools
 module load miniasm minimap
-PATH="/proj/g2017025/tools/racon/bin:$PATH"
+export PATH="/proj/g2017025/tools/racon/bin:$PATH"
 ```
 
 Use miniasm to assemble the **p6_25x_ecoli.fastq.gz**.
