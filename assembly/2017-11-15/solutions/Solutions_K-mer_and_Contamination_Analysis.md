@@ -125,9 +125,9 @@ title:  'Exercise: K-mer and contamination analysis'
 	rm read1.fastq read2.fastq
 	```
 	
-	![KAT k-mer comp density plot](images/bacteria_R1vsR1.cmp-main.mx.density.png)
+	![KAT k-mer comp density plot](images/bacteria_R1vR2.cmp-main.mx.density.png)
 	
-	![KAT k-mer comp spectra-mx plot](images/bacteria_R1vsR2.cmp-main.mx.spectra-mx.png)
+	![KAT k-mer comp spectra-mx plot](images/bacteria_R1vR2.cmp-main.mx.spectra-mx.png)
 	
 	The difference in the distribution means between the two datasets is due to the lower quality
 	of the second read file. The increased number of reads with N's reduces the k-mer count frequency
