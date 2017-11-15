@@ -259,7 +259,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	bacteria_R2.clean_pair.fastq.gz bacteria_R2.clean_unpair.fastq.gz \
 	ILLUMINACLIP:$TRIMMOMATIC_HOME/adapters/TruSeq3-PE.fa:2:30:10
 	  TrimmomaticPE: Started with arguments:
- bacteria_R1.fastq.gz bacteria_R2.fastq.gz bacteria_R1.clean_pair.fastq.gz bacteria_R1.clean_unpair.fastq.gz bacteria_R2.clean_pair.fastq.gz bacteria_R2.clean_unpair.fastq.gz ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.36/milou/adapters/TruSeq3-PE.fa:2:30:10
+ 	  bacteria_R1.fastq.gz bacteria_R2.fastq.gz bacteria_R1.clean_pair.fastq.gz bacteria_R1.clean_unpair.fastq.gz bacteria_R2.clean_pair.fastq.gz bacteria_R2.clean_unpair.fastq.gz ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.36/milou/adapters/TruSeq3-PE.fa:2:30:10
 	  Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
 	  ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
 	  Quality encoding detected as phred33
@@ -275,7 +275,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	ILLUMINACLIP:$TRIMMOMATIC_HOME/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 \
 	TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
 	  TrimmomaticPE: Started with arguments:
- bacteria_R1.fastq.gz bacteria_R2.fastq.gz bacteria_R1.clean_qc_pair.fastq.gz bacteria_R1.clean_qc_unpair.fastq.gz bacteria_R2.clean_qc_pair.fastq.gz bacteria_R2.clean_qc_unpair.fastq.gz ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.36/milou/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+ 	  bacteria_R1.fastq.gz bacteria_R2.fastq.gz bacteria_R1.clean_qc_pair.fastq.gz bacteria_R1.clean_qc_unpair.fastq.gz bacteria_R2.clean_qc_pair.fastq.gz bacteria_R2.clean_qc_unpair.fastq.gz ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.36/milou/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
 	  Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
 	  ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
 	  Quality encoding detected as phred33
