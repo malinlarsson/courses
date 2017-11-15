@@ -111,5 +111,10 @@ $ rm sequence.fastq
 	cut -f2,3 <kraken.out> > <krona.in>
 	ktImportTaxonomy <krona.in> -o <krona.html>
 	```
+	
+	**note**: `ktImportTaxonomy` is now a broken link. Use this file instead:
+	```bash
+	/sw/apps/bioinfo/Krona/2.7/src/KronaTools-2.7/scripts/ImportTaxonomy.pl
+	```
 
 10. Run Kraken on `Ecoli/E01_1_135x.fastq.gz`. What do you find here and how does the error rate influence this finding?
