@@ -8,10 +8,13 @@ title:  'Exercise: K-mer and contamination analysis'
 ## Exercises:
 
 1. What is a k-mer?
+
 	**solution**
+	
 	A k-mer is a sequence of length k.
 
 2. Use the following set of commands to extract the list of k-mers in `Bacteria/bacteria_R{1,2}.fastq.gz`.
+	
 	```bash
 	mkfifo <named_pipe.fastq> && zcat <reads.fastq.gz> > <named_pipe.fastq> & # Make a named pipe and run in the background
 	kat hist -t 4 -d -o <output.hist> <named_pipe.fastq> # Run KAT reading from the named pipe
@@ -26,6 +29,7 @@ title:  'Exercise: K-mer and contamination analysis'
 	How many distinct k-mers were found? Use the line count command `wc -l` to find out.
 
 	**solution**
+	
 	```bash
 	mkfifo sequences.fastq && zcat bacteria_R{1,2}.fastq.gz > sequences.fastq &
 	kat hist -t 4 -d -o bacteria.hist sequences.fastq
@@ -42,18 +46,24 @@ title:  'Exercise: K-mer and contamination analysis'
 	# cut -c2- : prints from the second character up to the last character in a line.
 	# awk '$1 == 1 { sum++ } END { print sum+0 }' : if column 1 has a frequency of 1, increase the variable "sum". Print the value of "sum" at the end.
 	```
+	
 	**solution**
+	
 	35701246
 
 4. How many k-mers have a frequency greater than 5?
+	
 	**solution**
+	
 	```bash
 	paste - - < kmer.lst | cut -c2- | awk '$1 > 5 { sum++ } END { print sum+0 }'
 	  4969071
 	```
 
 5. A k-mer histogram was plotted using `kat hist` in a file `*.hist.png`. Open the image using `display` and estimate the mean k-mer frequency.
+	
 	**solution**
+	
 	[KAT k-mer histogram](images/bacteria.hist.png)
 	The mean k-mer frequency appears to be around 25.
 
@@ -67,7 +77,9 @@ title:  'Exercise: K-mer and contamination analysis'
 	# 	Then for each frequency in sum print the value of sum[frequency] at the end.
 	# sort -k1,1n : Perform a numerical sort on the data sorted only by column 1
 	```
+	
 	**solution**
+	
 	The mean k-mer frequency is the k-mer frequency (column 1) with the highest count (column 2), which is 26.
 
 7. Use `kat gcp` to plot the gc content vs k-mer frequency.
@@ -79,11 +91,13 @@ title:  'Exercise: K-mer and contamination analysis'
 	Open the plot of GC vs coverage. On what scale is the GC content measured and how is this converted to GC%?
 
 	**solution**
+	
 	```bash
 	mkfifo sequences.fastq && zcat bacteria_R{1,2}.fastq.gz > sequences.fastq &
 	kat gcp -t 4 -o bacteria.gcp sequences.fastq
 	rm sequences.fastq
 	```
+	
 	[KAT k-mer gcp histogram](images/bacteria.gcp.mx.png)
 	The scale of GC content is the k-mer size, which is in this case 27 (Note: The image
 	does not go all the way to 27 since the y-axis has been cropped for some reason).
@@ -102,6 +116,7 @@ title:  'Exercise: K-mer and contamination analysis'
 	Why is there a difference in the distribution means between the two datasets?
 
 	**solution**
+	
 	```bash
 	mkfifo read1.fastq && zcat bacteria_R1.fastq.gz > read1.fastq &
 	mkfifo read2.fastq && zcat bacteria_R2.fastq.gz > read2.fastq &
@@ -109,8 +124,11 @@ title:  'Exercise: K-mer and contamination analysis'
 	kat plot spectra-mx -x 50 -y 500000 -i -o bacteria_R1vR2.cmp-main.mx.spectra-mx.png bacteria_R1vR2.cmp-main.mx
 	rm read1.fastq read2.fastq
 	```
+	
 	[KAT k-mer comp density plot](images/bacteria_R1vsR1.cmp-main.mx.density.png)
+	
 	[KAT k-mer comp spectra-mx plot](images/bacteria_R1vsR2.cmp-main.mx.spectra-mx.png)
+	
 	The difference in the distribution means between the two datasets is due to the lower quality
 	of the second read file. The increased number of reads with N's reduces the k-mer count frequency
 	as k-mers with N are not included in the plot. This increases the number of k-mers with
@@ -131,13 +149,16 @@ title:  'Exercise: K-mer and contamination analysis'
 	```
 
 	**solution**
+	
 	```bash
 	kraken --threads 4 -db $KRAKEN_DB --fastq-input --gzip-compressed --paired bacteria_R{1,2}.fastq.gz > bacteria.kraken.out
 	kraken-report -db $KRAKEN_DB bacteria.kraken.out > bacteria.kraken.rpt
 	cut -f2,3 bacteria.kraken.out > bacteria.krona.in
 	/sw/apps/bioinfo/Krona/2.7/src/KronaTools-2.7/scripts/ImportTaxonomy.pl bacteria.krona.in -o bacteria.krona.html
 	```
+	
 	[Krona display of Kraken contamination report](images/bacteria.kraken.svg)
+	
 	Here you see that very little is identified, indicating that the organism is not in the
 	database. As a result, the other organisms it has identified are likely to be false positives.
 	One could make this better by using the full database.
@@ -145,12 +166,15 @@ title:  'Exercise: K-mer and contamination analysis'
 10. Run Kraken on `Ecoli/E01_1_135x.fastq.gz`. What do you find here and how does the error rate influence this finding?
 
 	**solution**
+	
 	```bash
 	kraken --threads 4 -db $KRAKEN_DB --fastq-input --gzip-compressed E01_1_135x.fastq.gz > Ecoli.kraken.out
 	kraken-report -db $KRAKEN_DB Ecoli.kraken.out > Ecoli.kraken.rpt
 	cut -f2,3 Ecoli.kraken.out > Ecoli.krona.in
 	/sw/apps/bioinfo/Krona/2.7/src/KronaTools-2.7/scripts/ImportTaxonomy.pl Ecoli.krona.in -o Ecoli.krona.html
 	```
+	
 	[Krona display of the Kraken contamination report](images/Ecoli.kraken.svg)
+	
 	Here you see quite a lot of the sequences identified as E. coli, however due to
 	the increased error rate per base of the subreads, less reads are accurately classified.  
