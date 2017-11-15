@@ -134,6 +134,36 @@ ATATGCATATATTAATACATATATATTTAAGTTGATGGAGAGTATAACAGAGTTAGGCTG
 CTTATT
 ```
 
+### SAM/BAME-files
+
+SAM is a text-based file type used to represent alignments, usually used for NGS-mappers, when one aligns many short reads to a reference.
+
+It is normally composed of a header indicated by lines starting with the `@` character (which also indicated comment lines, e.g. information that does not correspond to the SAM-format), followed by often many many many lines, one per sequence to be aligned. Each line is split into columns with tabulations and each valuer corresponds to some info. From wikipedia:
+
+| Col | Field | Type | Brief Description |
+| --- | ----- | ---- | ----------------- |
+|1|QNAME|String|Query template NAME|
+|2|FLAG|Int|bitwise FLAG |
+|3|RNAME|String|References sequence NAME|
+|4|POS|Int|1- based leftmost mapping POSition|
+|5|MAPQ|Int|MAPping Quality|
+|6|CIGAR|String|CIGAR String|
+|7|RNEXT|String|Ref. name of the mate/next read|
+|8|PNEXT |Int|Position of the mate/next read|
+|9|TLEN|Int|observed Template LENgth|
+|10|SEQ|String|segment SEQuence|
+|11|QUAL|String|ASCII of Phred-scaled base QUALity+33|
+
+or for meore detail : [SAM/BAM format specification](https://samtools.github.io/hts-specs/SAMv1.pdf).
+
+These files can be massive so they are often compressed using `samtools` (available trough `module` on UPPMAX), and are then often called BAM-files. An example :
+
+```
+2167:2:1101:11949:2366  16      contig_99_631734_length_1867_multi_8_in_2_out_1 1493    42      180M    *       0       0       ACCTTACTAGTCGCTGTTGCGAAAGATAATTTTTAGTTGCTAATAATCGGAGCCCTGCATGGCCATCACTTTATACCCTGTTAAACCAGATTTTATGGCTGAAATCGGTGATGTCGACTTGAGTATGCCGCTCTCTGACGAAGACCGCGCCGCCATAAAAGCCGCTTTCTTTAAATACAG    bbbeeeeegggggiigfhiiifhhiiihiiiiiiiiiiiiiiiiiiefhiefhihiiggggfeeeeebbbdddddccbcccccbccccaaccbb`bccccccab`bb_^^^bc_^`^bba`bbbaaaa`aa]]`bc_^ZZb`^]edfffiiiiiiiiiiiiiiiiiigggggeeeecbbb    AS:i:0  XN:i:0  XM:i:0  XO:i:0  XG:i:0  NM:i:0  MD:Z:180        YT:Z:UU
+2167:2:1101:11897:2252  4       *       0       0       *       *       0       0       TTTAAATTTCTACATACATACTTTTCTAAATAAACCTGGACGCAATTTAAAAATTTCAAATTAATTTTATTTAATAAAAGCTTTTATTAATTTACGAAAGCGTCTAAAATACTAAAAAAAATACAAAAATATTTAAACTGTGTCTTCATTTAAAAAATCCAAATCAGTAAAATGTGAAATTGTATTTTTTTT        ^__ec`ccgggcefg_cdhhaegggdghhhfcb^gae^eghdf#af`cfd^a_eeeehbbbeghae`fccdgfbgdgedb_bbcbddb_cacd`bac_[ca`aadcdcddb`bcaabdeccccb`ZZ^gg`bbbgfgggebefggffffhgffbfccdhgebe_ihfhhhfhfgahhgf]gcgceceec__^        YT:Z:UU
+2167:2:1101:10183:2426  0       contig_99_3998773_length_1078_multi_3_in_1_out_1        849     42      212M    *       0       0       AACTAACCTTAACAAGCCTTAGCAAGATGTATTTTTGCTTTGTAATAAGCTAGAGTGTTTCTTCCTGGCAAACTTTTTCTAACTAGCTATGACTTCGAAGCTTGTTTGGTTCTAAAAACAATGTAAGCATCGTAGCATTTAAAGAACCAATTGTCAATTTTACTACCTCTTAAAAAACAATTAAAGCATCGTAGCATTTAAAGAACCAATTG    bbbeeeeegggfgiiiihhiiiifhiiiihiiiiiihiiihfgihiiihihf^cgghiiiiiiiiiihigghfhhhiggggggeeeeeeddcdddccbb`acccccccb``ccddccccddcccdcbcccceeeeeggggeggcc\hgfhhihhiihiiiihgfahfageeiiihgeihiiiiiiiifgiiiiiiiiihgggggeeeeebbb    AS:i:0  XN:i:0  XM:i:0  XO:i:0  XG:i:0  NM:i:0  MD:Z:212        YT:Z:UU
+```
+
 ## AMPLICON-ANALYSES
 
 ### Tools
@@ -369,10 +399,107 @@ The taxonomic and functional annotations here have now been done for each sample
 
 ### Assembly
 
-The other road for analysis of metagenomic data is to assemble the reads into longer continguous pieces of DNA (contigs). This will simplify annotation of the sequences with the downside of risking chimeric sequences (e.g. assembling things that do not belong to each other). Assembling (meta)genomes can be a 
+The other road for analysis of metagenomic data is to assemble the reads into longer continguous pieces of DNA (contigs). This will simplify annotation of the sequences with the downside of risking chimeric sequences (e.g. assembling things that do not belong to each other). Assembling (meta)genomes can take numerous steps and numerous tries. The usual way is to perform a variety of assemblies using different tools and combinations of samples, and to evaulate them to find the ones that seam more useful/good.
+
+There are no one solution fits all, but we will try to look at some of the way to do and to judge assemblies.
+
+For the purpouse of this tutorial we will only use the `megahit`-assembler. This is mostly due to practical considerations, it is both fast and memory-efficient, additionally it actually is a very good assembler. However it does not necessarily produce the best assembly, so for your personal project consider using other assemblers on as well as `megahit` (for example `metaSPAdes`).
 
 #### Assemble
 
-We will start with an ob
+We will start with simple assemblies of our libraries, meaning that we consider our libraries all independent and assemble them as such.
+
+> Using the `megahit`-assembler, loaded with `module`
+
+> Assemble your library of choice
+
+> Optional : How would you run a different assembly?
 
 
+#### QC the assembly
+
+A variety of tools is available to QC genomic assemblies, however many of them are appropriate for metagenomic data, as they presuppose a single organism. However for most metagenomic applications, a few factors will already be indicative of the quality of the assembly.
+
+One if the first factors is the amount of reads that align to the assembly. The proportion of reads mapping our assembly gives us a good idea of how representative of the sampled environment the assembly is.
+
+To get this information we will need a mapping tool. We will use `BBmap`. Mappers, like `BBmap`, don't only return the proportion of mapping reads, but also the specific alignments, these are output as SAM-files, a particularily horrible and wasteful file type.
+
+> Using `bbmap.sh` loaded with `module`
+>
+> Map your library to your assembly. What proportion of your reads map to your assembly?
+>
+> Optional : map subsets of the other samples to your assembly, how does it look like? (checkout the `reads` option, and also the  `showprogress` one , mostly because I like it)
+
+However this does not say anything about the quality of the `contigs` directly, only about how much of the data has been assembled, but it could all just have assembled into very small contigs!
+
+We need to look at how the contigs "look-like". A first simple way of looking at this is to simply do some stats on contig lengths. There are many ways probably to do this, but we will use a script that has been written by yours truly. We will use this to learn a bit about scripting and packages.
+
+You can find the script in [script-folder], this is a very simple python script, make a copy in your working directory.
+
+To run a spython script, normally you'd just have to do:
+
+ ```bash
+ python my_script.py
+ ```
+
+ Let's try to run the script you just obtained from a friendly collaborator.
+
+ > run the script
+
+Hmmm, you probably got an error. Many scripting languages have systems to load additional packages of functions. The system used in python is called `pip`. So you can install packages for `python` doing:
+
+```bash
+pip install my_package
+```
+
+However this normally needs superuser permisssion, so you will have to run this with the `--user` option, which will install the package into your `home`
+
+> Using `pip`
+
+> install the missing packages and run the script, use it to get some basic info about your assembly
+
+> Optional : Personalize the script a bit. And run the script with all the assemblies.
+
+We have now some basic data about our few simple assemblies.
+
+> Any particular feelings about the obtained assemblies?
+
+Some of the assemblies as you can see have decent mapping rate, however, the contigs composing them are not very good. Often, mostly if sequencing depth, things assemble well, but the lack of coverage breaks the assembly in many places. Also certain assemblers output also very small contigs which are often not useable for downstream analyses, but give an impression of high-mapping rates. Hence, assemblies are often length filtered. I am sure there are plenty of tools to do that, we however provided a home made script again, it also cleans up the names of the contigs a bit.
+
+> Using the `fasta_filter.py` script
+
+> Filter out small contigs from your assembly
+
+> Optional : ammend the script to give personalised names to your contigs
+
+Now, we just have to see how the characteristics of this 'new'-assembly are.
+
+> Re-compute mapping rate and metagenome-characteristics
+
+
+#### Alternate assembly.
+
+So some assemblies are OK, some are not ... we can now make some other assemblies. We could normalise the reads to remove micro-diversity and errors. We could split the reads into different subsets (e.g. eukaryotic and prokarotic for example). Or coassemble multiple libraries together.
+
+> Discuss some strategies, and make an other assembly.
+> Run the mapping and the `python`-script once it is done
+
+### Post-assembly strategies
+
+#### Gene-atlas approach
+
+This is an approach commonly used when assembly is difficult, and we do not want actual genomes. In this case we simply use the contigs for gene prediction, and afterwards use the predicted genes as reference for diverse 'omics analyses. One of the upsides of these approaches is that they allow to merge many assemblies. This approach has been used in the  [Tara ocean project] (http://ocean-microbiome.embl.de)
+
+> Simply using the linux `cat` command
+
+> Collect all the assemblies you like from your comrades, and concatenate them!
+
+We now have a big assembly with many contigs! This is our raw merged assembly. The next step will be to predict genes on this. Gene prediction for microbes is not particularily hard as they do not have many intron! We will use the classic tool called `prodigal` for this purpose, fundamentally it will just look for long open reading frames starting with a `ATG`, but it has a few more tricks in it, anyhow.
+
+> Using `prodigal`
+
+> Predict genes on your concatenated metagenome. Output them as nucleotide FASTA-file
+
+> Optional :
+
+Now we have a large FASTA-file with all the genes in all the concatenated metagenomes! But obviously there is redundancy in this. The next step will be to remove it. We will cluster all the genes in this gene-assembly to remove highly similar sequences. The tool commonly used to fastly cluster a large amount of genes is `CD-hit`.
