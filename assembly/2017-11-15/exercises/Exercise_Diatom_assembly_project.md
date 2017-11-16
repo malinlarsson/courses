@@ -42,7 +42,7 @@ The reads can be found in the folder:
 
 ### Aim:
 
-Your task is, as a team, to quality check the data and then assemble it as best you can. How useful are these data for assembly? Which assembler give you the best result?
+Your task is, as a team, to quality check the data and then assemble it as best you can. How useful are these data for assembly? Which assembler gives you the best result?
 
 ### Data:
 
