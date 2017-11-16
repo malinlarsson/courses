@@ -44,7 +44,7 @@ Room: E10:1309
 **Friday 17th**
 
 Room: E10:1309  
-**09.00-09.30** Discussion of last day's exercises (Mahesh Binzer-Panchal)  
+**09.00-09.30** Discussion of last day's exercises (Henrik Lantz, Mahesh Binzer-Panchal)  
 **09.30-10.15** Lecture: [Assembly validation](lectures/Assembly_Validation.pdf) (Mahesh Binzer-Panchal)  
 **10.15-10.30** Coffee break  
 **10.30-12.00** Exercise: [Assembly validation](exercises/Exercise_Assembly_Validation.md)  
