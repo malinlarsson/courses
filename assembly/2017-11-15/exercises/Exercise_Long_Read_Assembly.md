@@ -63,8 +63,53 @@ echo $PWD/p6_25x_ecoli.fasta > input.fofn
 fc_run.py falcon.cfg
 ```
 
-This is what an example Falcon config might look like, including an explanation of the parameters. A more up to date explanation
-can be found in the [Falcon Documentation](http://pb-falcon.readthedocs.io/en/latest/).
+This is what an example Falcon config might look like, including an explanation of the parameters. 
+```
+[General]
+job_type = local
+input_fofn = input.fofn
+input_type = raw
+
+length_cutoff = 5000
+
+length_cutoff_pr = 5000
+
+# grid settings for...
+# daligner step of raw reads
+sge_option_da = -pe smp 8
+# las-merging of raw reads
+sge_option_la = -pe smp 8
+# consensus calling for preads
+sge_option_cns = -pe smp 8
+# daligner on preads
+sge_option_pda = -pe smp 8
+# las-merging on preads
+sge_option_pla = -pe smp 8
+# final overlap/assembly 
+sge_option_fc = -pe smp 8
+
+# concurrency settings
+pa_concurrent_jobs = 8
+ovlp_concurrent_jobs = 8
+cns_concurrent_jobs = 8
+
+# overlapping options for Daligner 
+pa_HPCdaligner_option = -B4 -t16 -e.70 -l1000 -s1000 
+ovlp_HPCdaligner_option = -B4 -t32 -h60 -e.96 -l500 -s1000
+
+# How the database is split up for making comparison blocks
+pa_DBsplit_option = -x1000 -s50 -a
+ovlp_DBsplit_option = -x1000 -s50 -a
+
+# error correction consensus option 
+falcon_sense_option = --output_multi --min_idt 0.70 --min_cov 4 --max_n_read 200 --n_core 6
+
+# overlap filtering options 
+overlap_filtering_setting = --max_diff 100 --max_cov 100 --min_cov 20 --bestn 10
+
+```
+
+A more up to date explanation can be found in the [Falcon Documentation](http://pb-falcon.readthedocs.io/en/latest/), but I try to explain the parameters below.
 ```
 [General]
 jobtype = local             # other values sge, slurm
