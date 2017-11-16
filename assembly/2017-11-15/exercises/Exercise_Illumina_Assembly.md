@@ -171,10 +171,10 @@ module load samtools/1.5
 Use Pilon to polish the assemblies. Do they improve? Does running Pilon again on the polished assemblies make any improvements?
 
 ```bash
-bwa index $ASSEMBLY
-bwa mem -t 4 $ASSEMBLY $READ1 $READ2 | samtools sort -@ 4 -T ${ASSEMBLY/.fasta/} -O BAM -o ${ASSEMBLY/.fasta/_bwa_alignment.bam} -
-samtools index ${ASSEMBLY/.fasta/_bwa_alignment.bam}
-java -jar $PILON_HOME/pilon.jar --genome $ASSEMBLY --frags ${ASSEMBLY/.fasta/_bwa_alignment.bam} --threads 4 --outdir ${ASSEMBLY/.fasta/}_polished --output ${ASSEMBLY/.fasta/}_polished --changes
+bwa index <assembly>
+bwa mem -t 4 <assembly> <read1> <read2> | samtools sort -@ 4 -T <temp_file_name> -O BAM -o <assembly>_bwa_alignment.bam -
+samtools index <assembly>_bwa_alignment.bam
+java -jar $PILON_HOME/pilon.jar --genome <assembly> --frags <assembly>_bwa_alignment.bam --threads 4 --outdir <assembly>_polished --output <assembly>_polished --changes
 ```
 
 #### Finding the best k
