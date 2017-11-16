@@ -32,7 +32,7 @@ We will not spend much time on the login node. we just want to know which comput
 
 Rackham, as most UPPMAX computer systems, runs a queuing tool called SLURM (Simple Linux Utility for Resource Management, https://slurm.schedmd.com/). This tool is used to distribute computing ressources to all users. A computer has been booked for each participant, SLURM knows 'it's name'.
 
-On Rackham, to know which ressources you have requested (or somenoe else requested for you) the `jobinfo` command is used.
+On Rackham, to know which ressources you have requested (or someone else requested for you) the `jobinfo` command is used.
 
 > Use the jobinfo command to find the name of your dedicated computer
 
@@ -134,7 +134,7 @@ ATATGCATATATTAATACATATATATTTAAGTTGATGGAGAGTATAACAGAGTTAGGCTG
 CTTATT
 ```
 
-### SAM/BAME-files
+### SAM/BAM-files
 
 SAM is a text-based file type used to represent alignments, usually used for NGS-mappers, when one aligns many short reads to a reference.
 
@@ -163,6 +163,10 @@ These files can be massive so they are often compressed using `samtools` (availa
 2167:2:1101:11897:2252  4       *       0       0       *       *       0       0       TTTAAATTTCTACATACATACTTTTCTAAATAAACCTGGACGCAATTTAAAAATTTCAAATTAATTTTATTTAATAAAAGCTTTTATTAATTTACGAAAGCGTCTAAAATACTAAAAAAAATACAAAAATATTTAAACTGTGTCTTCATTTAAAAAATCCAAATCAGTAAAATGTGAAATTGTATTTTTTTT        ^__ec`ccgggcefg_cdhhaegggdghhhfcb^gae^eghdf#af`cfd^a_eeeehbbbeghae`fccdgfbgdgedb_bbcbddb_cacd`bac_[ca`aadcdcddb`bcaabdeccccb`ZZ^gg`bbbgfgggebefggffffhgffbfccdhgebe_ihfhhhfhfgahhgf]gcgceceec__^        YT:Z:UU
 2167:2:1101:10183:2426  0       contig_99_3998773_length_1078_multi_3_in_1_out_1        849     42      212M    *       0       0       AACTAACCTTAACAAGCCTTAGCAAGATGTATTTTTGCTTTGTAATAAGCTAGAGTGTTTCTTCCTGGCAAACTTTTTCTAACTAGCTATGACTTCGAAGCTTGTTTGGTTCTAAAAACAATGTAAGCATCGTAGCATTTAAAGAACCAATTGTCAATTTTACTACCTCTTAAAAAACAATTAAAGCATCGTAGCATTTAAAGAACCAATTG    bbbeeeeegggfgiiiihhiiiifhiiiihiiiiiihiiihfgihiiihihf^cgghiiiiiiiiiihigghfhhhiggggggeeeeeeddcdddccbb`acccccccb``ccddccccddcccdcbcccceeeeeggggeggcc\hgfhhihhiihiiiihgfahfageeiiihgeihiiiiiiiifgiiiiiiiiihgggggeeeeebbb    AS:i:0  XN:i:0  XM:i:0  XO:i:0  XG:i:0  NM:i:0  MD:Z:212        YT:Z:UU
 ```
+
+### GFF-files
+
+GFF-files are text-files that contain annotation information for sequence data. Basically these are tab-delimited tables, where each line corresponds to an annotation. You can get more information [here](https://www.ensembl.org/info/website/upload/gff.html).
 
 ## AMPLICON-ANALYSES
 
@@ -503,3 +507,78 @@ We now have a big assembly with many contigs! This is our raw merged assembly. T
 > Optional :
 
 Now we have a large FASTA-file with all the genes in all the concatenated metagenomes! But obviously there is redundancy in this. The next step will be to remove it. We will cluster all the genes in this gene-assembly to remove highly similar sequences. The tool commonly used to fastly cluster a large amount of genes is `CD-hit`.
+
+> Using `cd-hit-est`
+
+> Cluster the gene-assembly, and assess the mapping rate of some samples on the resulting assembly!
+
+> Optional : explore the similarity threshold
+
+#### Binning Approaches
+
+If we are more interested in extracting genomes and having a stronger genomic link in our analysis we can use a binning approach with our assembly. For more information see Anders' lecture. To extract genomic bins, or Metagenome Assembled Genomes (MAGs), or Genomes From Metagenomes (GFMs), we will use the `MetaBAT` tool.
+
+This tool will need sorted BAM-files to run.
+
+> Pick a genomic-assembly. Collect sorted indexed BAM-files corresponding to that assembly in a folder. (Remember the `bamscript=` option of `bbmap`)
+
+> Using `runMetaBat.sh`, loaded with `module load MetaBaT`. Have a look at the FASTA-files generated.
+
+> Optional : run the binning on an other assembly!
+
+##### Evaluating bins
+
+Now we each hopefully got a number of bins. Meaning that the assembly has been split into bags of contigs that somehow look/vary similarily. This process is however far from perfect, some bins will be-merged MAGs, others will cointain viral data, or Eukaryotic choromose, or simply trash.
+
+We need to evaulate the bins for that. A very simple first filter is to remove bins that are too small or too large.
+
+> compute rough size estimates of your bins (hint, the file size correlate well with the genome size), and pic a bin that has a size more or less corresponding to a microbial genome.
+
+> optional : compute other stats on these bins, let your imagination run wild (or maybe use the script I provided earlier)
+
+Now we should all have a bin we hope is a genome! To check this we will use a tool called `checkm`, fundamentally it uses single copy marker genes to check if a bin/MAG is complete, and if it is contaminated.
+
+> Install and get `checkm` to work. You will need once again `pip install --user`
+> It might ask at some point for a path with the data, I have already downloaded it, just put `/proj/g2017026/tool_data`
+
+Once it seams like it is running we want to run the `lineage_wf`, the documentation of `checkm` is a bit more confusing than other tools... So I advice you to look at [this specific page](https://github.com/Ecogenomics/CheckM/wiki/Quick-Start) and don't get lost in the others!
+
+> Using the `lineage_wf` of `checkm`
+
+> Compute completness/comntamination for your MAG of choice. Did you get any bonus information?
+
+> Optional : compute this for more MAGs, and try the [taxon_wf](https://github.com/Ecogenomics/CheckM/wiki/Workflows)
+
+> Collect all 'good' MAGs into a shared folder
+
+##### Bin annotation
+
+Now we should have a collection of MAGs that we can further analyse. The first step is to predict genes again, as right now we only have raw genomic sequences. We will use a different tool this time, one of my all-time-favorites : `prokka`.
+
+This tool does gene prediction as well as some quiet good annotations, and is actually quiet easy to run!
+
+> Use `prokka` loaded with `module`
+
+> Predict genes and annotate your MAG!
+
+> Optional : use `prokka` on some of the bins that did not pass the previous quality checks!
+
+`prokka` produces a number of output files that all kind of represent similar things. Mostly variants of FASTA-files, one with the genome again, one with the predicted proteins, one with the genes of the predicted proteins. Also it renames all the sequence with nicer IDs! Additionally a very useful file generated is a GFF-file, which gives more information about the annotations then just the names you can see in the FASTA-files.
+
+> Using the linux `grep`-command
+>
+> look for all [EC-numbers](https://en.wikipedia.org/wiki/Enzyme_Commission_number) in the GFF-file
+
+> Optional : use [the KEGG pathway mapper](http://www.genome.jp/kegg/tool/map_pathway1.html) to analyse the metabolism of your organism, or look for your favorite genes in the annotations.
+
+We now know more about the genes your MAG contains, however we do not really know who we have?! `checkm` might have given us an indication but it is only approximative.
+
+Taxonomical classification for full genomes is not always easy for MAGs, often the 16S gene is missing as it assembles badly, and which other genes to use to for taxonomy is not always evident. One option is to take many genes and to make a tree.
+
+This solution is proposed by `phylophlan`, it has a reference tree based on a concatenation of reference genes, tries to find homolgues of these genes in your bin, and then to fit  them into the reference tree.
+
+> Install `phylophlan`
+
+> Use it to identify your MAG(s)
+
+##### A bit of phylogenomics
