@@ -26,7 +26,7 @@ Room: E10:1309
 **12.00-13.00** Lunch  
 **13.00-14.00** Exercise: Quality control and read trimming contd.  
 **14.00-14.30** Lecture: [K-mer and contamination analysis](lectures/K-mer_Contaminant_Analysis.pdf) (Mahesh Binzer-Panchal)  
-**14.30-17.00** Exercise (incl. coffee break): [K-mer and contamination analysis](exercises/Exercise_K-mer_and_Contamination_Analysis.md)   
+**14.30-17.00** Exercise: [K-mer and contamination analysis](exercises/Exercise_K-mer_and_Contamination_Analysis.md) (inc. coffee break)   
 
 **Thursday 16th**
 
