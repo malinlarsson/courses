@@ -12,7 +12,7 @@ For this exercise we will focus on assembling an E. coli dataset sequenced using
 Copy the data to your working directory.
 
 ```bash
-cp -vr /sw/courses/assembly/PacBio_assembly/Ecoli_Data .
+cp -vr /sw/courses/assembly/PacBio_Assembly/Ecoli_Data .
 ```
 
 ### Miniasm
