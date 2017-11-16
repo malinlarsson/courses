@@ -201,7 +201,7 @@ Use quast to compare the assemblies with the E. coli reference.
 Compare the draft assemblies and the reference to each other using Gepard.
 
 ```bash
-GEPARD_HOME=/sw/course/assembly/Tools
+GEPARD_HOME=/sw/courses/assembly/Tools
 java -cp $GEPARD_HOME/Gepard-1.40.jar org.gepard.client.cmdline.CommandLine -seq1 <fasta1> -seq2 <fasta2> -outfile <comparison.png> -matrix $GEPARD_HOME/matrices/edna.mat
 ```
 
