@@ -216,7 +216,8 @@ As we pointed out before, occasionally classification might not be informative a
 we can get a better idea of what is in the assembly as long as the classification database contains that information.
 
 6. Run Kraken on each assembly.
- 	```bash
+
+	```bash
 	mkdir Kraken
 	cd Kraken
 	ln -s ../*.fasta .
