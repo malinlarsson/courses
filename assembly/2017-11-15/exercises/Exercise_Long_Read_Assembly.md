@@ -29,7 +29,7 @@ Use miniasm to assemble the **p6_25x_ecoli.fastq.gz**.
 minimap -Sw5 -L100 -m0 -t4 p6_25x_ecoli.fastq.gz p6_25x_ecoli.fastq.gz | gzip -1 > minimap_ecoli_overlaps.paf.gz
 miniasm -f p6_25x_ecoli.fastq.gz minimap_ecoli_overlaps.paf.gz > miniasm_ecoli_contigs.gfa
 awk '/^S/ {print ">"seq++"\n"$3}' miniasm_ecoli_contigs.gfa > contigs.fasta
-minimap -t 4 contigs.fasta reads.fq | racon -t 4 reads.fq - contigs.fasta consensus_contigs.fasta
+minimap -t 4 contigs.fasta p6_25x_ecoli.fastq.gz | racon -t 4 p6_25x_ecoli.fastq.gz - contigs.fasta consensus_contigs.fasta
 ```
 
 ### Canu
