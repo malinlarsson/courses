@@ -14,9 +14,7 @@ Keep a record of what you have done, and present the results of your analysis at
 
 ### Aim:
 
-Your task is, as a team, to assemble the genome of the diatom within these reads as best you can.
-Use the tools you have been presented with to evaluate the quality of the reads, perform any necessary
-filtering, assembly, assembly validation, and any additional exploration. 
+Your task is, as a team, to do quality control of the reads. Beacuse of the size of the genome, it is unlikely that you will have time assemble the genome, but you are welcome to try if you find the time. Do you find any problems with the data?
 
 ### Data:
 
@@ -30,7 +28,7 @@ The reads can be found in the folder:
 
 ### Aim:
 
-Your task is, as a team, to investigate the data and find out why the Yeast is not assembled well.
+Your task is, as a team, to investigate the data and find out why the Yeast is not assembled well. Focus on quality control, but if you have time you can try to assemble the genome also.
 
 ### Data:
 
@@ -44,7 +42,7 @@ The reads can be found in the folder:
 
 ### Aim:
 
-Your task is, as a team, to quality check the data and then assemble it as best you can.
+Your task is, as a team, to quality check the data and then assemble it as best you can. How useful are these data for assembly? Which assembler give you the best result?
 
 ### Data:
 
