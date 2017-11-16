@@ -111,7 +111,7 @@ Are there any improvements?
 #### MaSuRCA
 
 MaSuRCA takes quite some time to run, so start it over lunch! (...or if you're not into waiting,
-there are finished results in `/proj/g2017025/exercises/illumina_assembly/assemblies/`).
+there are finished results in `/sw/courses/assembly/illumina_assembly/assemblies`).
 Make an directory called masurca and load the necessary modules:
 
 ```bash
