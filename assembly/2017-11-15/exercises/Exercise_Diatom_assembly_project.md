@@ -14,7 +14,7 @@ Keep a record of what you have done, and present the results of your analysis at
 
 ### Aim:
 
-Your task is, as a team, to do quality control of the reads. Beacuse of the size of the genome, it is unlikely that you will have time assemble the genome, but you are welcome to try if you find the time. Do you find any problems with the data?
+Your task is, as a team, to do quality control of the reads. Start off by subsampling the reads to a managable size, say 10%, of the total reads. Because of the size of the genome, it is unlikely that you will have time assemble the genome, but you are welcome to try if you find the time. Do you find any problems with the data?
 
 ### Data:
 
