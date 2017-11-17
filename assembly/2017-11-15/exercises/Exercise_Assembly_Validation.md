@@ -183,7 +183,7 @@ taxonomically classified, providing further evidence for contaminants.
 	function apply_Blast {
 		ASSEMBLY=$1 # The assembly is the first parameter to this function
 		echo "Blast: $ASSEMBLY"
-		blastn -task megablast -query $ASSEMBLY -db $BLASTDB -outfmt '6 qseqid staxids bitscore std sscinames sskingdoms stitle' \
+		blastn -task megablast -query $ASSEMBLY -db $BLASTDB/nt -outfmt '6 qseqid staxids bitscore std sscinames sskingdoms stitle' \
                 -culling_limit 5 -num_threads 4 -evalue 1e-25 -out ${ASSEMBLY/.fasta/_blast_alignment.blast.out}
 	}
 	cd ..
