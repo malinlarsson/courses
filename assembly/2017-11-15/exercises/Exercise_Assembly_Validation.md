@@ -61,7 +61,7 @@ QUAST is a good starting point to help evaluate the quality of assemblies. It pr
 ### Read alignment statistics
 
 ```bash
-module load bwa/0.7.17 samtools/1.5
+module load bwa/0.7.17 samtools/1.5 gnuplot
 export PATH="/proj/g2017025/tools/FRC_align/bin:$PATH"
 ```
 
