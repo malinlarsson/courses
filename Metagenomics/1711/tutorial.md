@@ -52,7 +52,7 @@ To start `screen` you just run the command:
 screen
 ```
 
-You can leave the 'screen' without closing it by doing `ctrl-A ctrl-D` (careful doing `ctrl-D` closes the 'screen' completly). With this you are back to the normal terminal. To reconnect to your screen, you first need to find out the name of the screen, `screen -list` will give you a list of screens available on this computer (yes, you can have many screens), and to reconnect simply run `screen -r NAME_OF_SCREEN` or if there is only one detached screen `screen -r`.
+You can leave the 'screen' without closing it by doing `ctrl-A ctrl-D` (careful doing `ctrl-D` closes the 'screen' completely). With this you are back to the normal terminal. To reconnect to your screen, you first need to find out the name of the screen, `screen -list` will give you a list of screens available on this computer (yes, you can have many screens), and to reconnect simply run `screen -r NAME_OF_SCREEN` or if there is only one detached screen `screen -r`.
 
 Now that we are comfortably in our screen and nothing can happen to anything running lets start.
 
@@ -72,7 +72,7 @@ module load bioinfo-tools
 
 ### FASTQ-files
 
-Sequencing facilty might provide data from different technologies in a variety of formats, but most probably one of the formats the data will be delivered in will be the FASTQ format. We will start this tutorial with data in this format. It is a wide text-based format for sequencesm, they are related to the FASTA format which will see too.
+Sequencing facility might provide data from different technologies in a variety of formats, but most probably one of the formats the data will be delivered in will be the FASTQ format. We will start this tutorial with data in this format. It is a wide text-based format for sequences, they are related to the FASTA format which will see too.
 
 A FASTQ-file can contain many many sequences, each sequence is represented by two data-types, the actual sequence and the quality scores:
 
@@ -85,7 +85,7 @@ BBBBBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFFF/FFFBFFBFFFFFFFFFFFFFFFFFFFFF
 
 Normally each entry in a FASTQ-file is composed of exactly four lines.
 
-The quality scores are related the quality of sequencing. They are `Q = -10 log<sub>10</sub> p` where `p`is the probabilty of a wrong base-call, and each letter corresponds to an integer value of Q. These letter can differ a bit depending on the sequencing platform, for recent illumina we have this correspondance table (courtecy of wikipedia):
+The quality scores are related the quality of sequencing. They are `Q = -10 log<sub>10</sub> p` where `p` is the probability of a wrong base-call, and each letter corresponds to an integer value of Q. These letter can differ a bit depending on the sequencing platform, for recent illumina we have this correspondence table (courtesy of wikipedia):
 
 ```
   BCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghi
@@ -94,17 +94,15 @@ The quality scores are related the quality of sequencing. They are `Q = -10 log<
  ```
 
 
- As mentioned, the raw-data we will use is available in the `/proj/g2017026/raw_data`. This is publicly availble data from a number of microbioal saples from a single subject of the human microbiome project (https://hmpdacc.org/).
+ As mentioned, the raw-data we will use is available in the `/proj/g2017026/raw_data`. This is publicly available data from a number of microbial samples from a single subject of the human microbiome project (https://hmpdacc.org/).
 
- > Use the linux commanda `ls`, `wc`, and `du` :
+ > Use the linux command  `ls`, `wc`, and `du` :
  >
  > What is the content of this folder?
  >
  > Optional : What is the difference between the files in the two folders?
 
  I preprocessed some of these files a little bit already, so now each file corresponds to one sample (I simply concatenated some files together as they where from the same samples). For each samples (library) we have two files, this is due to the way the illumina technology sequences, it would be different for PacBio for example.
-
- [FIND A FIGURE]
 
  > Using `wc`, the bash redirect (e.g. `wc -l my_lib.fastq > txt_file `, for example), combined with your data manipulation tool of choice (`R`, `python`, `bash`, `excel`, `pen&paper`)
  >
@@ -113,7 +111,7 @@ The quality scores are related the quality of sequencing. They are `Q = -10 log<
  > Optional : Is there a relationship between number of reads and sampling-site or sampling-time (the number in the file is a the number of the visit)
 > Very optional : Anything to say about the diversity of the reads in the libraries?
 
-A very common tool to analyse reads is `fastqc`.
+A very common tool to analyze reads is `fastqc`.
 
 > load `fastqc` using UPPMAX' `module load`
 >
@@ -191,7 +189,7 @@ Other:
 
 Most analyses of 16s rRNA gene amplicons rely on an OTU-table, e.g. a table of counts of microbial-types in your samples. For this we need to cluster the reads into 'OTUs' (Operational Taxonomical Units), these are then counted.
 
-We will use the `usearch` software to do the necessary computations (https://www.drive5.com/usearch/manual/). We are going to be fancy and we are going to use the latest version of `usearch` which is not on uppmax. We have it however locally in our project folder in `/proj/g2017026/bin/` (as well as some other software we will use later). For ease of use we will put this folder in our `PATH` environment variable (this contains all the folders which have excutables readily available).
+We will use the `usearch` software to do the necessary computations (https://www.drive5.com/usearch/manual/). We are going to be fancy and we are going to use the latest version of `usearch` which is not on UPPMAX. We have it however locally in our project folder in `/proj/g2017026/bin/` (as well as some other software we will use later). For ease of use we will put this folder in our `PATH` environment variable (this contains all the folders which have executables readily available).
 
 ```bash
 PATH=/proj/g2017026/bin/:$PATH
@@ -199,7 +197,7 @@ PATH=/proj/g2017026/bin/:$PATH
 
 > Optional : which other folders are in the `PATH`
 
-From now one for a few exercice you will pic one of the amplicon libraries to process. We will call it MY_LIBRARY for the next few questions!
+From now one for a few exercise you will pic one of the amplicon libraries to process. We will call it MY_LIBRARY for the next few questions!
 
 #### Merging reads
 
@@ -211,7 +209,7 @@ As we saw, each library has pairs of reads. In the case of a well designed ampli
 >
 > Optional : play with the parameters to increase/decrease merging rate
 
-<!-- One sample is nice and fine, but for a good analysis of the data we will need to analyse all the reads as one. If we just concatenate the files we will lose the information of which samples the reads came for. Luckily `usearch` can make our life a bit easier!
+<!-- One sample is nice and fine, but for a good analysis of the data we will need to analyze all the reads as one. If we just concatenate the files we will lose the information of which samples the reads came for. Luckily `usearch` can make our life a bit easier!
 
 > Using the `--relabel` and `-fastq_mergepairs` options of `usearch10`
 >
@@ -222,7 +220,7 @@ As we saw, each library has pairs of reads. In the case of a well designed ampli
 
 #### QC-ing the reads
 
-The reads have now been merged into pseudo-reads, but we have not done any quality-check yes. For merged paired reads it is convinient to do it after merging, as the mergin can increase the quality of the overlapping bases! In all sequencing runs there will be some bad reads, this can be due to many reasons, but usually mostly to the quality of the DNA, e.g. extraction and PCRs, or interactions between spots on the sequencing array. We will use the quality scores from the fastq files to remove reads below as certain quality.
+The reads have now been merged into pseudo-reads, but we have not done any quality-check yes. For merged paired reads it is convenient to do it after merging, as the merging can increase the quality of the overlapping bases! In all sequencing runs there will be some bad reads, this can be due to many reasons, but usually mostly to the quality of the DNA, e.g. extraction and PCRs, or interactions between spots on the sequencing array. We will use the quality scores from the fastq files to remove reads below as certain quality.
 
 > Using the `-fastq_filter` option of `usearch10`
 >
@@ -233,7 +231,7 @@ The reads have now been merged into pseudo-reads, but we have not done any quali
 
 #### Dereplicating
 
-All clustering algorithms can be sensistive to the number of reads, however amplicon data has huge amounts of duplicates du to the PCRs, so one way to help the clustering is to remove these duplicates. Also, as there it is very reasonable to expect duplicates, any reads that appear only once is probably due to either PCR- or sequencing errors. In `usearch` both of these steps are done together.
+All clustering algorithms can be sensitive to the number of reads, however amplicon data has huge amounts of duplicates due to the PCRs, so one way to help the clustering is to remove these duplicates. Also, as there it is very reasonable to expect duplicates, any reads that appear only once is probably due to either PCR- or sequencing errors. In `usearch` both of these steps are done together.
 
 > Using the `-fastx_uniques` option of `usearch10`
 >
@@ -253,7 +251,7 @@ We are finally ready to do the clustering. The clustering heuristic of `usearch`
 
 #### Mapping back
 
-Now the whole data of MY_LIBRARY has been reduced to a small number of sequence-clusters (OTUs). Each of them represented by the most abundand read of that cluster. However the information of the total amount of reads has been lost along the way. For this reason we need to map the reads back to the OTUs, which means we need to find for each read the OTU that matches it best and that is more similar then the identity threshold. This will also allow us to recruit back reads lost during QC!
+Now the whole data of MY_LIBRARY has been reduced to a small number of sequence-clusters (OTUs). Each of them represented by the most abundant read of that cluster. However the information of the total amount of reads has been lost along the way. For this reason we need to map the reads back to the OTUs, which means we need to find for each read the OTU that matches it best and that is more similar then the identity threshold. This will also allow us to recruit back reads lost during QC!
 
 > Using the `-usearch_global` option of `usearch`
 > Get some help from : https://www.drive5.com/usearch/manual/cmd_otutab.html
@@ -263,18 +261,18 @@ Now the whole data of MY_LIBRARY has been reduced to a small number of sequence-
 
 #### Putting it all together
 
-Well, this is all nice and fine,  but this is only one sample, so not really a table, just a vector. We could run the same thing for every sample seperatley but we would just get many separate vectors, we could not connect the OTUs easily to each other. What we need to do is to run the clustering step with all the reads of all the sample at the same time!
+Well, this is all nice and fine,  but this is only one sample, so not really a table, just a vector. We could run the same thing for every sample separately but we would just get many separate vectors, we could not connect the OTUs easily to each other. What we need to do is to run the clustering step with all the reads of all the sample at the same time!
 
 > Using all the options of `usearch10` that you have used until now,
 > Have a look at the `-relabel` option of the `-fastq_mergepairs` function
 
-> Make an OTU-table with all the samples, e.g. run the merging, QC for every sample seperately, concatenate the resulting FASTA-files, and follow then with the rest of the script.
+> Make an OTU-table with all the samples, e.g. run the merging, QC for every sample separately, concatenate the resulting FASTA-files, and follow then with the rest of the script.
 
 > Optional : quantify the read-losses. Are there any experimental factors influencing the loss of reads?
 
 #### New Age Clustering
 
-In recent years there have been many discussions about OTUs and there meaning and the issues linked to them. Hence new modern methods of clustering amplicon reads have been developped. Much talked about recently has been the `dada2`-tool running with `R`, this tool does not use sequence identity to cluster reads, but build a noise model to clean reads from variation that is not biologically relevant. `usearch` also released recenlty a similar heuristic, the `unoise` algorithm.
+In recent years there have been many discussions about OTUs and there meaning and the issues linked to them. Hence new modern methods of clustering amplicon reads have been developed. Much talked about recently has been the `dada2`-tool running with `R`, this tool does not use sequence identity to cluster reads, but build a noise model to clean reads from variation that is not biologically relevant. `usearch` also released recently a similar heuristic, the `unoise` algorithm.
 
 > Using the `-unoise3` option of `usearch10`
 
@@ -305,9 +303,9 @@ Now you have the data in a good shape to start doing some proper data-analysis.
 
 ## Shotgun Data
 
-Shotgun amplicon data is much more diverse and versatile than amplicon data. For this tutrial, we will run together a number of more or less complicated workflows using the 4 shotgun libraries we have in store for us on `/proj/g2017026/raw_data/shotgun`.
+Shotgun amplicon data is much more diverse and versatile than amplicon data. For this tutrial, we will run together a number of more or less complicated workflows using the shotgun libraries we have in store for us on `/proj/g2017026/raw_data/shotgun`.
 
-As mentioned before, the principal of shotgunm metagenomics is pretty straight forward. Take a sample, extract all the DNA, sequence the hell out of it. This leaves us often with a lot of data and many things we might want to know.
+As mentioned before, the principal of shotgun metagenomics is pretty straight forward. Take a sample, extract all the DNA, sequence the hell out of it. This leaves us often with a lot of data and many things we might want to know.
 
 ### Pre-processing
 
@@ -354,26 +352,58 @@ The `Mash` tool has been developed to compute MinHashes and MinHash distances fo
 > Exchange these with other students so you have the set for each library
 > Compute the MinHash distance between the libraries
 
-> Optional : run MinHash some more libraries in [FOLDER] and then use my script [SCRIPT] to make a pretty plot.
+> Optional : run MinHash on some more libraries in  `data/additional_libraries`
+
+Right now we just used `mash` to compute the Hash-vector, but if we want to use these we actually need to compare them to each other to get some distances. 
+
+> Let’s share all of our hashes, so copy them all to the `common/mash_hashes/`-folder but check first if the hash you computed is already there or not.
+
+> run this little code snippet to compute the distances and make a table from them
+```bash
+ls common/mash_hashes/*.msh > mashes.txt
+for f in `cat mashes.txt`;
+do
+  mash dist -p 20 -l $f mashes.txt
+done > mash_distances.txt
+```
+
+Often in bioinformatics you get to use other people scripts to do a variety of tasks, they might come in a variety of languages. In this case I provide you with an R-script to make a little plot with these distances! It is called `mashplot.R` and you can find it in the `scripts`-folder.
+`R` is already install on rackham so to run an `R` script, you normally just need to do `Rscript name_of_script.R`.
+
+> Have a look at the `R`-script
+> Try to run it!
+
+You might notice that it complains about an abscent package. This is common when running scripts of other people. However, installing scripts in R is pretty easy. The easiest is to open `R` in the terminal, e.g. type `R`. You will see a prompt, and now run the command:
+
+```R
+install.packages(“reshape2”)
+quit()
+```
+
+Answer all the questions with yes.
+
+> Try running the script again!
+>
+> Optional: change the plot so you can see if the fwd and reverse libraries are close to each other
 
 #### Taxonomic annotation
 
-We have all these reads now, but who are they from?! This is much more complicated then for 16s amplicons. Many tools have been developped, and most have the problem that they are only as good as the database they use, and as raw reads can be very numerous, often databases are limited to make computations tractable.
+We have all these reads now, but who are they from?! This is much more complicated then for 16s amplicons. Many tools have been developed, and most have the problem that they are only as good as the database they use, and as raw reads can be very numerous, often databases are limited to make computations tractable.
 
 One recent tool that deserves mention is `kaiju`. The interesting aspect is that it uses a `blast`-index to do the classification, this is reasonably compact and easy to compute meaning that a much more exhaustive database can be used to classify as opposed to other methods.
 
-> Get `kaiju` from github, compile it
+> Check the [manual](https://github.com/bioinformatics-centre/kaiju), jump straight to the ‘Running Kaiju’ section
 > Using `kaiju` and the `krona` tools (available through `module`)
 >
-> Make a Krona plot of the taxonomies of your library of choice using with the database found in [/proj/g2017026/data/]
+> Make a Krona plot of the taxonomies of your library of choice using with the database found in `data/kaijudb/proGenome’
 
 > Optional : Compare the taxonomy results with the 16s rRNA data of the same sample
-> Super-optional : Make a new database for kaiju using which also includes a human reference and reannotate
+> Super-optional : Run kaiju on the the other database in `data/kaijudb`
 
 
 #### Functional annotation
 
-What is meant by functional annotation, name the reads base on known genes, or funtional ontongenies. For example, assign them PFAMs or EC-numbers. Functional annotation for reads is often mapping-based, meaning the reads are aligned to a reference database which has 'known'-functional annotations.
+What is meant by functional annotation, name the reads base on known genes, or functional ontogenies. For example, assign them PFAMs or EC-numbers. Functional annotation for reads is often mapping-based, meaning the reads are aligned to a reference database which has 'known'-functional annotations.
 
 Most of these tools are pretty slow, so we will at first subset our libraries.
 
@@ -381,9 +411,16 @@ Most of these tools are pretty slow, so we will at first subset our libraries.
 
 Then we will use a tool called HUMAnN2 to annotate our reads.
 
-> Install `HUMAnN2`, setting it us with the database in [/proj/g2017026/data/]
->
-> Using HUMAn2
+> Use the `pip install` option for [installing](https://bitbucket.org/biobakery/humann2/wiki/Home#markdown-header-initial-installation) `HUMAnN2`, you will need to add the `--user` option as you do not have `sudo` permissions, and to add `~/.local/bin/` to your $PATH.
+To set it up run:
+
+```
+humann2_config --update database_folders protein /crex2/proj/sllstore2017039/2017_MG_course/data/humann2/uniref
+humann2_config --update database_folders nucleotide /crex2/proj/sllstore2017039/2017_MG_course/data/humann2/chocophlan
+
+mpa_dir=/proj/g2017026/2017_MG_course/share/metaphlan/
+```
+> Using HUMAnN2
 
 > Annotate the subset of your library of choice!
 
@@ -393,7 +430,7 @@ Then we will use a tool called HUMAnN2 to annotate our reads.
 
 #### Compiling the data
 
-The taxonomic and functional annotations here have now been done for each sample separatly, however if we want to compare the samples, we need to compile these to be able to compare them.
+The taxonomic and functional annotations here have now been done for each sample separately, however if we want to compare the samples, we need to compile these to be able to compare them.
 
 > Using your data-processing tools of choice
 
@@ -403,17 +440,17 @@ The taxonomic and functional annotations here have now been done for each sample
 
 ### Assembly
 
-The other road for analysis of metagenomic data is to assemble the reads into longer continguous pieces of DNA (contigs). This will simplify annotation of the sequences with the downside of risking chimeric sequences (e.g. assembling things that do not belong to each other). Assembling (meta)genomes can take numerous steps and numerous tries. The usual way is to perform a variety of assemblies using different tools and combinations of samples, and to evaulate them to find the ones that seam more useful/good.
+The other road for analysis of metagenomic data is to assemble the reads into longer contiguous pieces of DNA (contigs). This will simplify annotation of the sequences with the downside of risking chimeric sequences (e.g. assembling things that do not belong to each other). Assembling (meta)genomes can take numerous steps and numerous tries. The usual way is to perform a variety of assemblies using different tools and combinations of samples, and to evaluate them to find the ones that seam more useful/good.
 
 There are no one solution fits all, but we will try to look at some of the way to do and to judge assemblies.
 
-For the purpouse of this tutorial we will only use the `megahit`-assembler. This is mostly due to practical considerations, it is both fast and memory-efficient, additionally it actually is a very good assembler. However it does not necessarily produce the best assembly, so for your personal project consider using other assemblers on as well as `megahit` (for example `metaSPAdes`).
+For the purpose of this tutorial we will only use the `megahit`-assembler. This is mostly due to practical considerations, it is both fast and memory-efficient, additionally it actually is a very good assembler. However it does not necessarily produce the best assembly, so for your personal project consider using other assemblers on as well as `megahit` (for example `metaSPAdes`).
 
 #### Assemble
 
 We will start with simple assemblies of our libraries, meaning that we consider our libraries all independent and assemble them as such.
 
-> Using the `megahit`-assembler, loaded with `module`
+> Using the `megahit`-assembler 
 
 > Assemble your library of choice
 
@@ -426,7 +463,7 @@ A variety of tools is available to QC genomic assemblies, however many of them a
 
 One if the first factors is the amount of reads that align to the assembly. The proportion of reads mapping our assembly gives us a good idea of how representative of the sampled environment the assembly is.
 
-To get this information we will need a mapping tool. We will use `BBmap`. Mappers, like `BBmap`, don't only return the proportion of mapping reads, but also the specific alignments, these are output as SAM-files, a particularily horrible and wasteful file type.
+To get this information we will need a mapping tool. We will use `BBmap`. Mappers, like `BBmap`, don't only return the proportion of mapping reads, but also the specific alignments, these are output as SAM-files, a particularly horrible and wasteful file type.
 
 > Using `bbmap.sh` loaded with `module`
 >
@@ -440,7 +477,7 @@ We need to look at how the contigs "look-like". A first simple way of looking at
 
 You can find the script in [script-folder], this is a very simple python script, make a copy in your working directory.
 
-To run a spython script, normally you'd just have to do:
+To run a python script, normally you'd just have to do:
 
  ```bash
  python my_script.py
@@ -456,7 +493,7 @@ Hmmm, you probably got an error. Many scripting languages have systems to load a
 pip install my_package
 ```
 
-However this normally needs superuser permisssion, so you will have to run this with the `--user` option, which will install the package into your `home`
+However this normally needs superuser permission, so you will have to run this with the `--user` option, which will install the package into your `home`
 
 > Using `pip`
 
@@ -468,7 +505,7 @@ We have now some basic data about our few simple assemblies.
 
 > Any particular feelings about the obtained assemblies?
 
-Some of the assemblies as you can see have decent mapping rate, however, the contigs composing them are not very good. Often, mostly if sequencing depth, things assemble well, but the lack of coverage breaks the assembly in many places. Also certain assemblers output also very small contigs which are often not useable for downstream analyses, but give an impression of high-mapping rates. Hence, assemblies are often length filtered. I am sure there are plenty of tools to do that, we however provided a home made script again, it also cleans up the names of the contigs a bit.
+Some of the assemblies as you can see have decent mapping rate, however, the contigs composing them are not very good. Often, mostly if sequencing depth, things assemble well, but the lack of coverage breaks the assembly in many places. Also certain assemblers output also very small contigs which are often not usable for downstream analyses, but give an impression of high-mapping rates. Hence, assemblies are often length filtered. I am sure there are plenty of tools to do that, we however provided a home made script again, it also cleans up the names of the contigs a bit.
 
 > Using the `fasta_filter.py` script
 
@@ -483,7 +520,7 @@ Now, we just have to see how the characteristics of this 'new'-assembly are.
 
 #### Alternate assembly.
 
-So some assemblies are OK, some are not ... we can now make some other assemblies. We could normalise the reads to remove micro-diversity and errors. We could split the reads into different subsets (e.g. eukaryotic and prokarotic for example). Or coassemble multiple libraries together.
+So some assemblies are OK, some are not ... we can now make some other assemblies. We could normalize the reads to remove micro-diversity and errors. We could split the reads into different subsets (e.g. eukaryotic and prokarotic for example). Or coassemble multiple libraries together.
 
 > Discuss some strategies, and make an other assembly.
 > Run the mapping and the `python`-script once it is done
@@ -498,7 +535,7 @@ This is an approach commonly used when assembly is difficult, and we do not want
 
 > Collect all the assemblies you like from your comrades, and concatenate them!
 
-We now have a big assembly with many contigs! This is our raw merged assembly. The next step will be to predict genes on this. Gene prediction for microbes is not particularily hard as they do not have many intron! We will use the classic tool called `prodigal` for this purpose, fundamentally it will just look for long open reading frames starting with a `ATG`, but it has a few more tricks in it, anyhow.
+We now have a big assembly with many contigs! This is our raw merged assembly. The next step will be to predict genes on this. Gene prediction for microbes is not particularly hard as they do not have many intron! We will use the classic tool called `prodigal` for this purpose, fundamentally it will just look for long open reading frames starting with a `ATG`, but it has a few more tricks in it, anyhow.
 
 > Using `prodigal`
 
@@ -528,9 +565,9 @@ This tool will need sorted BAM-files to run.
 
 ##### Evaluating bins
 
-Now we each hopefully got a number of bins. Meaning that the assembly has been split into bags of contigs that somehow look/vary similarily. This process is however far from perfect, some bins will be-merged MAGs, others will cointain viral data, or Eukaryotic choromose, or simply trash.
+Now we each hopefully got a number of bins. Meaning that the assembly has been split into bags of contigs that somehow look/vary similarly. This process is however far from perfect, some bins will be-merged MAGs, others will contain viral data, or Eukaryotic chromosome, or simply trash.
 
-We need to evaulate the bins for that. A very simple first filter is to remove bins that are too small or too large.
+We need to evaluate the bins for that. A very simple first filter is to remove bins that are too small or too large.
 
 > compute rough size estimates of your bins (hint, the file size correlate well with the genome size), and pic a bin that has a size more or less corresponding to a microbial genome.
 
@@ -545,7 +582,7 @@ Once it seams like it is running we want to run the `lineage_wf`, the documentat
 
 > Using the `lineage_wf` of `checkm`
 
-> Compute completness/comntamination for your MAG of choice. Did you get any bonus information?
+> Compute completeness/contamination for your MAG of choice. Did you get any bonus information?
 
 > Optional : compute this for more MAGs, and try the [taxon_wf](https://github.com/Ecogenomics/CheckM/wiki/Workflows)
 
@@ -553,7 +590,7 @@ Once it seams like it is running we want to run the `lineage_wf`, the documentat
 
 ##### Bin annotation
 
-Now we should have a collection of MAGs that we can further analyse. The first step is to predict genes again, as right now we only have raw genomic sequences. We will use a different tool this time, one of my all-time-favorites : `prokka`.
+Now we should have a collection of MAGs that we can further analyze. The first step is to predict genes again, as right now we only have raw genomic sequences. We will use a different tool this time, one of my all-time-favorites : `prokka`.
 
 This tool does gene prediction as well as some quiet good annotations, and is actually quiet easy to run!
 
@@ -569,13 +606,13 @@ This tool does gene prediction as well as some quiet good annotations, and is ac
 >
 > look for all [EC-numbers](https://en.wikipedia.org/wiki/Enzyme_Commission_number) in the GFF-file
 
-> Optional : use [the KEGG pathway mapper](http://www.genome.jp/kegg/tool/map_pathway1.html) to analyse the metabolism of your organism, or look for your favorite genes in the annotations.
+> Optional : use [the KEGG pathway mapper](http://www.genome.jp/kegg/tool/map_pathway1.html) to analyze the metabolism of your organism, or look for your favorite genes in the annotations.
 
 We now know more about the genes your MAG contains, however we do not really know who we have?! `checkm` might have given us an indication but it is only approximative.
 
 Taxonomical classification for full genomes is not always easy for MAGs, often the 16S gene is missing as it assembles badly, and which other genes to use to for taxonomy is not always evident. One option is to take many genes and to make a tree.
 
-This solution is proposed by `phylophlan`, it has a reference tree based on a concatenation of reference genes, tries to find homolgues of these genes in your bin, and then to fit  them into the reference tree.
+This solution is proposed by `phylophlan`, it has a reference tree based on a concatenation of reference genes, tries to find homologues of these genes in your bin, and then to fit  them into the reference tree.
 
 > Install `phylophlan`
 
