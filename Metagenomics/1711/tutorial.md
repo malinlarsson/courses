@@ -16,7 +16,7 @@ All the exercices here will be done using UPPMAX (https://www.uppmax.uu.se/) mor
 
 The rackham-cluster of uppmax is a distributed HPC cluster, meaning it is a lot of powerful computers networked together. It has 4 login-nodes and many more computing nodes.
 
-[MAKE A FIGURE]
+### SSH
 
 We will use `ssh` (Secure SHell) to connect to this cluster, use you ssh-client of choice. To start, we have to log into the login node.
 
@@ -56,16 +56,37 @@ You can leave the 'screen' without closing it by doing `ctrl-A ctrl-D` (careful 
 
 Now that we are comfortably in our screen and nothing can happen to anything running lets start.
 
-The data we are gonna use for this course is in our common project folder, e.g. `/proj/g2017026/`), more specifically in  `/proj/g2017026/raw_data`.
+The data we are gonna use for this course is in our common project folder, e.g. `/proj/g2017026/2017_MG_course/`), more specifically in  `/proj/g2017026/2017_MG_course/raw_data`.
 
+> Using the `ls`-  or even better `tree`-function
 > How many fastq-files can you find in this folder, and list all of them?!
 
 > INTERNET INTERUPTIONNNNNNNNNN
 
-Rackham uses a module system for programs (http://www.uppmax.uu.se/resources/software/installed-software/), so many bioinformatic programs are available without installing anything. We will use this as much as possible during this course. You can list all available module with `module list`. Let's load the `bioinfo-tools`-module:
+Let's spontaneously break our internet connection. Your terminal to uppmax should be unresponsive now ....
+
+> Reconnect to your `screen`
+
+### The module system and other software prerequisites
+
+Rackham uses a module system for programs (http://www.uppmax.uu.se/resources/software/installed-software/). So many bioinformatic programs are available without installing anything. We will use this as much as possible during this course. You can list all available module with `module list`. Let's load the `bioinfo-tools`-module, which is a prerequisite for most of the tools we will use in the next couple of days:
 
 ```bash
 module load bioinfo-tools
+```
+
+Additionally, we will need for a few of our tools python. Let's load python3 whith the module system (if you have your own install of python3 you should be able to keep it):
+
+```bash
+module load python3
+```
+
+Python is a scripting language, we will use some scripts made in it and other tools need it too. Modules are loaded on Rackham until you disconnect from your terminal, so one you loaded them and your `screen` is still alive you do not need to rerun these commands. But if you disconnect (e.g. you see `screen terminated`), they will not be loaded anymore, so you will need to reload on you next connect, or when you make a new screen!
+
+Python has it's own package management system which is used to install more libraries. We will need it at some point too. It is called `pip`. Let's install a very usefull python package:
+
+```bash
+pip3 install --user biopython
 ```
 
 ## Data-types
@@ -296,9 +317,30 @@ We have not a table with OTUs and their abundances in each samples, as well as r
 
 ### Let's make some plots : or where the real game starts!
 
-Now you have the data in a good shape to start doing some proper data-analysis.
+We won't really have time to dwelve into diverse quantification methods and statistaical analyses, that would need many more prerequisites and much more time.
 
-[TBD]
+However, often in bioinformatics you get to use other people scripts to do a variety of tasks, they might come in a variety of languages. In this case I provide you with an R-script to make a little plot with this! It is called `ampliconplot.R` and you can find it in the `scripts`-folder.
+`R` is already install on rackham so to run an `R` script, you normally just need to do `Rscript name_of_script.R`.
+
+> Have a look at the `R`-script
+> Try to run it!
+
+You might notice that it complains about an abscent package. This is common when running scripts of other people. However, installing scripts in R is pretty easy. The easiest is to open `R` in the terminal, e.g. type `R`. You will see a prompt, and now run the command:
+
+```R
+install.packages(“reshape2”) # installs the package
+quit() # leaves R
+```
+
+Answer all the questions with yes.
+
+> Try running the script again
+> Add any other package possibly needed.
+> Make sure the filenames match!
+> Edit the script if needed, but make a personal copy first!
+>
+> Optional : Why did I make separate plots for nasal and fecal data?
+>            Make barstacks with other taxonomical levels
 
 
 ## Shotgun Data
@@ -354,7 +396,7 @@ The `Mash` tool has been developed to compute MinHashes and MinHash distances fo
 
 > Optional : run MinHash on some more libraries in  `data/additional_libraries`
 
-Right now we just used `mash` to compute the Hash-vector, but if we want to use these we actually need to compare them to each other to get some distances. 
+Right now we just used `mash` to compute the Hash-vector, but if we want to use these we actually need to compare them to each other to get some distances.
 
 > Let’s share all of our hashes, so copy them all to the `common/mash_hashes/`-folder but check first if the hash you computed is already there or not.
 
@@ -367,30 +409,24 @@ do
 done > mash_distances.txt
 ```
 
-Often in bioinformatics you get to use other people scripts to do a variety of tasks, they might come in a variety of languages. In this case I provide you with an R-script to make a little plot with these distances! It is called `mashplot.R` and you can find it in the `scripts`-folder.
-`R` is already install on rackham so to run an `R` script, you normally just need to do `Rscript name_of_script.R`.
+Here again I provide you with an R-script to make a some little plots with these distances! It is called `mashplot.R` and you can find it in the `scripts`-folder.
 
 > Have a look at the `R`-script
 > Try to run it!
 
-You might notice that it complains about an abscent package. This is common when running scripts of other people. However, installing scripts in R is pretty easy. The easiest is to open `R` in the terminal, e.g. type `R`. You will see a prompt, and now run the command:
-
-```R
-install.packages(“reshape2”)
-quit()
-```
-
-Answer all the questions with yes.
-
-> Try running the script again!
->
-> Optional: change the plot so you can see if the fwd and reverse libraries are close to each other
+> Optional: change the plot so you spot better the differences between the forward and the reverse
 
 #### Taxonomic annotation
 
 We have all these reads now, but who are they from?! This is much more complicated then for 16s amplicons. Many tools have been developed, and most have the problem that they are only as good as the database they use, and as raw reads can be very numerous, often databases are limited to make computations tractable.
 
 One recent tool that deserves mention is `kaiju`. The interesting aspect is that it uses a `blast`-index to do the classification, this is reasonably compact and easy to compute meaning that a much more exhaustive database can be used to classify as opposed to other methods.
+
+Most of these tools are pretty slow, so we will at first subset our libraries.
+
+> Using the `head`-linux function
+>
+> Subset your library of choice to 500000 reads
 
 > Check the [manual](https://github.com/bioinformatics-centre/kaiju), jump straight to the ‘Running Kaiju’ section
 > Using `kaiju` and the `krona` tools (available through `module`)
@@ -405,21 +441,20 @@ One recent tool that deserves mention is `kaiju`. The interesting aspect is that
 
 What is meant by functional annotation, name the reads base on known genes, or functional ontogenies. For example, assign them PFAMs or EC-numbers. Functional annotation for reads is often mapping-based, meaning the reads are aligned to a reference database which has 'known'-functional annotations.
 
-Most of these tools are pretty slow, so we will at first subset our libraries.
-
-> Subset your library of choice to 500000 reads
-
-Then we will use a tool called HUMAnN2 to annotate our reads.
+We will use a tool called HUMAnN2 to annotate our reads.
 
 > Use the `pip install` option for [installing](https://bitbucket.org/biobakery/humann2/wiki/Home#markdown-header-initial-installation) `HUMAnN2`, you will need to add the `--user` option as you do not have `sudo` permissions, and to add `~/.local/bin/` to your $PATH.
-To set it up run:
+
+To set it up properly:
 
 ```
 humann2_config --update database_folders protein /crex2/proj/sllstore2017039/2017_MG_course/data/humann2/uniref
 humann2_config --update database_folders nucleotide /crex2/proj/sllstore2017039/2017_MG_course/data/humann2/chocophlan
 
 mpa_dir=/proj/g2017026/2017_MG_course/share/metaphlan/
+PATH=$PATH:/proj/g2017026/2017_MG_course/share/metaphlan/
 ```
+
 > Using HUMAnN2
 
 > Annotate the subset of your library of choice!
@@ -450,9 +485,9 @@ For the purpose of this tutorial we will only use the `megahit`-assembler. This 
 
 We will start with simple assemblies of our libraries, meaning that we consider our libraries all independent and assemble them as such.
 
-> Using the `megahit`-assembler 
+> Using the `megahit`-assembler
 
-> Assemble your library of choice
+> Assemble your (full) library of choice
 
 > Optional : How would you run a different assembly?
 
@@ -465,11 +500,19 @@ One if the first factors is the amount of reads that align to the assembly. The 
 
 To get this information we will need a mapping tool. We will use `BBmap`. Mappers, like `BBmap`, don't only return the proportion of mapping reads, but also the specific alignments, these are output as SAM-files, a particularly horrible and wasteful file type.
 
-> Using `bbmap.sh` loaded with `module`
+> Using `bbmap.sh` loaded with `module`, use the `bamscript=`-option
 >
-> Map your library to your assembly. What proportion of your reads map to your assembly?
+> Map your library to your assembly. What proportion of your reads map to your assembly? Any comments about the size of the SAM-file?
 >
 > Optional : map subsets of the other samples to your assembly, how does it look like? (checkout the `reads` option, and also the  `showprogress` one , mostly because I like it)
+
+SAM-files are HUUUUUGE, we do not like that, BAM-files, the compressed version of SAM is a bit better.
+
+> Use the script written by the `bamscript=` option of `bbmap.sh`.
+>
+> What are the generated files?
+>
+> Copy the BAM-file and its index to the appropriate place in the `common`-folder
 
 However this does not say anything about the quality of the `contigs` directly, only about how much of the data has been assembled, but it could all just have assembled into very small contigs!
 
@@ -576,7 +619,7 @@ We need to evaluate the bins for that. A very simple first filter is to remove b
 Now we should all have a bin we hope is a genome! To check this we will use a tool called `checkm`, fundamentally it uses single copy marker genes to check if a bin/MAG is complete, and if it is contaminated.
 
 > Install and get `checkm` to work. You will need once again `pip install --user`
-> It might ask at some point for a path with the data, I have already downloaded it, just put `/proj/g2017026/tool_data`
+> It might ask at some point for a path with the data, I have already downloaded it, just put `data/checkm/`
 
 Once it seams like it is running we want to run the `lineage_wf`, the documentation of `checkm` is a bit more confusing than other tools... So I advice you to look at [this specific page](https://github.com/Ecogenomics/CheckM/wiki/Quick-Start) and don't get lost in the others!
 
@@ -612,7 +655,7 @@ We now know more about the genes your MAG contains, however we do not really kno
 
 Taxonomical classification for full genomes is not always easy for MAGs, often the 16S gene is missing as it assembles badly, and which other genes to use to for taxonomy is not always evident. One option is to take many genes and to make a tree.
 
-This solution is proposed by `phylophlan`, it has a reference tree based on a concatenation of reference genes, tries to find homologues of these genes in your bin, and then to fit  them into the reference tree.
+One tool implementing such a thing is `phylophlan`, it has a reference tree based on a concatenation of reference genes, tries to find homologues of these genes in your bin, and then to fit  them into the reference tree.
 
 > Install `phylophlan`
 
