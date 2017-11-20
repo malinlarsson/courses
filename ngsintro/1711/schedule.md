@@ -12,8 +12,8 @@ Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)
 **10.00-12.00** Exercise: Introduction to Linux (Valentin Georgiev + Nina Norgren, Markus Mayrhofer,
 Anders Sjölander)  
 **12.00-13.00** Lunch at BMC restaurant  
-**13.00-14.00** [Lecture: Introduction to UPPMAX/UPPNEX](slides/dahlo-uppmax.pdf) (Valentin Georgiev)  
-**14.00-17.00** [Exercise: Introduction to UPPMAX/UPPNEX](labs/uppmax-intro) (alentin Georgiev + Nina Norgren, Per
+**13.00-14.00** Lecture: Introduction to UPPMAX/UPPNEX (Valentin Georgiev)  
+**14.00-17.00** Exercise: Introduction to UPPMAX/UPPNEX (alentin Georgiev + Nina Norgren, Per
 Unneberg, Anders Sjölander)  
 
 **Tuesday 28th**  
