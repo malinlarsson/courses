@@ -8,8 +8,8 @@ title:  'Schedule'
 **Monday 27th**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
 **09.00-09.15** [Registration and Welcome, presentation of SciLifeLab](slides/Staaf_Intro_NGS_data_Ua_VT17_170123.pdf) (Elina Staaf)  
-**09.15-10.00** [Lecture: Introduction to Linux](slides/linux-tutorial.pdf) (Valentin Georgiev)  
-**10.00-12.00** [Exercise: Introduction to Linux](labs/linux-intro) (Valentin Georgiev + Nina Norgren, Markus Mayrhofer,
+**09.15-10.00** Lecture: Introduction to Linux (Valentin Georgiev)  
+**10.00-12.00** Exercise: Introduction to Linux (Valentin Georgiev + Nina Norgren, Markus Mayrhofer,
 Anders Sjölander)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13.00-14.00** [Lecture: Introduction to UPPMAX/UPPNEX](slides/dahlo-uppmax.pdf) (Valentin Georgiev)  
