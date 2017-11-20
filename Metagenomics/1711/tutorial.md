@@ -89,6 +89,10 @@ Python has it's own package management system which is used to install more libr
 pip3 install --user biopython
 ```
 
+```
+CHECKPOINT
+```
+
 ## Data-types
 
 ### FASTQ-files
@@ -187,6 +191,10 @@ These files can be massive so they are often compressed using `samtools` (availa
 
 GFF-files are text-files that contain annotation information for sequence data. Basically these are tab-delimited tables, where each line corresponds to an annotation. You can get more information [here](https://www.ensembl.org/info/website/upload/gff.html).
 
+```
+CHECKPOINT
+```
+
 ## AMPLICON-ANALYSES
 
 ### Tools
@@ -280,6 +288,11 @@ Now the whole data of MY_LIBRARY has been reduced to a small number of sequence-
 
 > Optional : what are the reads that did not map?
 
+```
+CHECKPOINT
+```
+
+
 #### Putting it all together
 
 Well, this is all nice and fine,  but this is only one sample, so not really a table, just a vector. We could run the same thing for every sample separately but we would just get many separate vectors, we could not connect the OTUs easily to each other. What we need to do is to run the clustering step with all the reads of all the sample at the same time!
@@ -290,6 +303,8 @@ Well, this is all nice and fine,  but this is only one sample, so not really a t
 > Make an OTU-table with all the samples, e.g. run the merging, QC for every sample separately, concatenate the resulting FASTA-files, and follow then with the rest of the script.
 
 > Optional : quantify the read-losses. Are there any experimental factors influencing the loss of reads?
+
+
 
 #### New Age Clustering
 
