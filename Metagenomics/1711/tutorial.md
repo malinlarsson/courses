@@ -75,10 +75,10 @@ Rackham uses a module system for programs (http://www.uppmax.uu.se/resources/sof
 module load bioinfo-tools
 ```
 
-Additionally, we will need for a few of our tools python. Let's load python3 whith the module system (if you have your own install of python3 you should be able to keep it):
+Additionally, we will need for a few of our tools python. Let's load python3 whith the module system (if you have your own install of python you should be able to keep it):
 
 ```bash
-module load python3
+module load python
 ```
 
 Python is a scripting language, we will use some scripts made in it and other tools need it too. Modules are loaded on Rackham until you disconnect from your terminal, so one you loaded them and your `screen` is still alive you do not need to rerun these commands. But if you disconnect (e.g. you see `screen terminated`), they will not be loaded anymore, so you will need to reload on you next connect, or when you make a new screen!
@@ -662,3 +662,5 @@ One tool implementing such a thing is `phylophlan`, it has a reference tree base
 > Use it to identify your MAG(s)
 
 ##### A bit of phylogenomics
+
+If we have time!
