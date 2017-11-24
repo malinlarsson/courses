@@ -262,7 +262,7 @@ Moving files might be one of the more common things you do, after cd and ls.
 You might want to organize your files in a better way, or move important result files to the project folder, who knows?
 
 We will start with moving our important result to a backed up folder.
-When months of analysis is done, that last thing you want is to lose your files.
+When months of analysis is done, the last thing you want is to lose your files.
 Typically this would mean that you move the final results to your project folder.
 
 In this example we want to move the result file only, located in the folder `important_results`, to our fake project folder, called `backed_up_proj_folder`.
