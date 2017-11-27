@@ -18,11 +18,11 @@ Held in Uppsala November 27 - December 1, 2017.
 [Travel Info](travel)  
 
 ## Helpful Things
-[Linux cheat sheet](../common/images/linux-cheat-sheet.pdf)
-[Bash cheat sheet level1](files/Bash_cheat_sheet_level1.pdf)
-[Bash cheat sheet level2](files/Bash_cheat_sheet_level2.pdf) 
-[Bash cheat sheet level3](files/Bash_cheat_sheet_level3.pdf) 
-[UPPMAX cheat sheet](../common/images/uppmax-cheat-sheet.png)  
+[Linux cheat sheet](../common/images/linux-cheat-sheet.pdf)  
+[Bash cheat sheet level1](files/Bash_cheat_sheet_level1.pdf)  
+[Bash cheat sheet level2](files/Bash_cheat_sheet_level2.pdf)  
+[Bash cheat sheet level3](files/Bash_cheat_sheet_level3.pdf)  
+[UPPMAX cheat sheet](../common/images/uppmax-cheat-sheet.png)   
 [Mac keyboard layout](../common/mac-keyboard)  
 
 ## External Resources
