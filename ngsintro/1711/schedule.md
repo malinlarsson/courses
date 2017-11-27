@@ -23,7 +23,7 @@ Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)
 Mayhofer, Anders Sjölander)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13:00-14:00** [Lecture: Advanced Linux usage](slides/advanced_linux.pdf) (Jacques Dainat)  
-**14:00-17:00** [Exercise: Advanced Linux usage](labs/loops-lab) (Jacques Dainat + Nina Norgren, Bengt Sennblad,
+**14:00-17:00** [Exercise: Advanced Linux usage](labs/loops_lab) (Jacques Dainat + Nina Norgren, Bengt Sennblad,
 Anders Sjölander)  
 
 **Wednesday 29th**  
