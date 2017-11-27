@@ -18,11 +18,11 @@ Unneberg, Anders Sjölander)
 
 **Tuesday 28th**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
-**09.00-09.30** [Lecture: File types in bioinformatics](slides/dahlo-filetypes.pdf) (Jacques Dainat)  
+**09.00-09.30** [Lecture: File types in bioinformatics](slides/file_types.pdf) (Jacques Dainat)  
 **09.30-12.00** [Exercise: File types in bioinformatics](labs/filetypes) (Jacques Dainat + Nina Norgren, Markus
 Mayhofer, Anders Sjölander)  
 **12.00-13.00** Lunch at BMC restaurant  
-**13:00-14:00** [Lecture: Advanced Linux usage](slides/dahlo-advanced_linux_usage.pdf) (Jacques Dainat)  
+**13:00-14:00** [Lecture: Advanced Linux usage](slides/advanced_linux.pdf) (Jacques Dainat)  
 **14:00-17:00** [Exercise: Advanced Linux usage](labs/loops_lab) (Jacques Dainat + Nina Norgren, Bengt Sennblad,
 Anders Sjölander)  
 
