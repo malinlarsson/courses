@@ -37,6 +37,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	When these checksums are checked, they check the files in `/sw/courses/assembly/QC_Data/` rather
 	than the files in your directory.
 
+
 2. Make a copy of the data in your workspace (note the `.` at the end of the command):
 
 	```bash
@@ -57,6 +58,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	  Ecoli/E01_1_135x.fastq.gz: OK
 	```
 
+
 3. Use `file` to get the properties of the data files. In which format are they compressed?
 
 	**solution:**
@@ -68,6 +70,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	  Ecoli/E01_1_135x.fastq.gz:     gzip compressed data, was "E01_1_135x.fastq", from Unix, last modified: Wed Oct  5 14:15:05 2016
 	```
 	This tells you all the files are gzip compressed.
+
 
 4. Use `zcat` and `head` to inspect the contents of the data files. From which sequencing technology is:
 
@@ -93,6 +96,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	b. Inspecting the headers of `Ecoli/E01_1_135x.fastq.gz` indicates the sequences come from
 	the PacBio platform. This is further supported by the long sequences in the file.
 
+
 5. Identify the different parts of the Illumina header information:
 	```
 	@HWI-ST486:212:D0C8BACXX:6:1101:2365:1998 1:N:0:ATTCCT
@@ -114,6 +118,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	* Control bit
 	* Barcode index sequence/ID
 
+
 6. Identify the different parts of the Pacific Biosciences header information:
 	```
 	@m151121_235646_42237_c100926872550000001823210705121647_s1_p0/81/22917_25263
@@ -131,6 +136,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	* ZMW hole number
 	* Subread region (start _ end)
 
+
 7. What does each tool in this compound command do, and what is the purpose of this command?
 	```bash
 	zcat *.fastq.gz | seqtk seq -A - | grep -v "^>" | tr -dc "ACGTNacgtn" | wc -m
@@ -147,6 +153,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	```
 	The purpose of the command is to count the total number of bases in your files.
 
+
 8. How many bases are in:
 
 	a. `Bacteria/bacteria_R{1,2}.fastq.gz`?
@@ -156,16 +163,19 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	**solution:**
 	
 	a. The number of bases in `Bacteria/bacteria_R{1,2}.fastq.gz` is:
-		```bash
-		zcat Bacteria/bacteria_R{1,2}.fastq.gz | seqtk seq -A - | grep -v "^>" | tr -dc "ACGTNacgtn" | wc -m
-	  	  225890464
-		```
+	
+	```bash
+	zcat Bacteria/bacteria_R{1,2}.fastq.gz | seqtk seq -A - | grep -v "^>" | tr -dc "ACGTNacgtn" | wc -m
+	  225890464
+	```
 
 	b. The number of bases in `Ecoli/E01_1_135x.fastq.gz` is:
-		```bash
-		zcat Ecoli/E01_1_135x.fastq.gz | seqtk seq -A - | grep -v "^>" | tr -dc "ACGTNacgtn" | wc -m
-		  748508257
-		```
+
+	```bash
+	zcat Ecoli/E01_1_135x.fastq.gz | seqtk seq -A - | grep -v "^>" | tr -dc "ACGTNacgtn" | wc -m
+	  748508257
+	```
+
 
 9. In the data set `Ecoli/E01_1_135x.fastq.gz`, how many bases are in reads of size 10kb or longer?
 	
@@ -176,6 +186,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	  510546313
 	```
 
+
 10. Run FastQC on the data sets. How many sequences are in each file?
 	
 	**solution:**
@@ -184,8 +195,8 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	fastqc -t 6 */*.fastq.gz
 	firefox */*.html
 	```
-
- 	* There are 766616 sequences in `Bacteria/bacteria_R{1,2}.fastq.gz`.
+	
+	* There are 766616 sequences in `Bacteria/bacteria_R{1,2}.fastq.gz`.
 	* There are 87217 sequences in `Ecoli/E01_1_135x.fastq.gz`.
 
 11. What is the average GC% in each data set?
@@ -195,11 +206,13 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	* Bacteria/bacteria_R{1,2}.fastq.gz: 40%
 	* E01/E01_1_135x.fastq.gz: 49%
 
+
 12. Which quality score encoding is used?
 	
 	**solution:**
 	
 	All files use the Sanger / Illumina 1.9 quality score encoding.
+
 
 13. What does a quality score of 20 mean?
 	
@@ -207,11 +220,13 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	
 	An expectation of 1 error in 100bp.
 
+
 14. What does a quality score of 40 mean?
 	
 	**solution:**
 	
 	An expectation of 1 error in 10000bp.
+
 
 15. Which distribution should the **per base sequence** plot be similar to in the FastQC output for Illumina data?
 	
@@ -219,11 +234,13 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	
 	A Uniform distribution.
 
+
 16. Which distribution should the **per sequence GC** plot be similar to in the FastQC output for Illumina data?
 	
 	**solution:**
 	
 	A Normal/Gaussian distribution.
+
 
 17. Which value should the **per sequence GC** distribution be centered on?
 	
@@ -231,17 +248,20 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	
 	The average GC content.
 
+
 18. How much duplication is present in `Bacteria/bacteria_R{1,2}.fastq.gz`?
 	
 	**solution:**
 	
 	24% in R1 and 15% in R2.
 
+
 19. What is adapter read-through?
 	
 	**solution:**
 	
 	When the read sequence continues past the end of the DNA insert/fragment into the adapter sequence on the other end.
+
 
 20. Use `trimmomatic` to trim adapters from the data set `Bacteria/bacteria_R{1,2}.fastq.gz`. The `trimmomatic` jar file
 	can be found in `$TRIMMOMATIC_HOME`, and the adapter files can be found in `$TRIMMOMATIC_HOME/adapters/`.
