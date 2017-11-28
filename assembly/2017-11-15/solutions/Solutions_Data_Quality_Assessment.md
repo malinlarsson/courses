@@ -145,7 +145,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	**solution:**
 	
 	```bash
-	zcat *.fastq.gz     # concatenates compressed files to one output stream
+	zcat *.fastq.gz      # concatenates compressed files to one output stream
 	seqtk seq -A -       # seqtk is a toolkit for manipulating sequence data. The -A converts input to fasta output.
 	grep -v "^>"         # grep searches for lines beginning (^) with the string > and excludes them (-v).
 	tr -dc "ACGTNacgtn"  # tr translates characters from one set to another. The -dc deletes characters not in the "ACGTNacgtn" set.
