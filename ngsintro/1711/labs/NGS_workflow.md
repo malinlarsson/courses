@@ -162,7 +162,7 @@ java -Xmx16g -jar $PICARD_HOME/picard.jar CreateSequenceDictionary R=~/ngsworkfl
 
 We are skipping the quality control and trimming of reads for this exercise due to the origin of the data. But please feel free to read up on these two excellent tools after the exercise, [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) & [MultiQC](http://multiqc.info/).
 
-Let's start with aligning a chunk of whole genome shotgun data from individual NA06984. The command used is bwa mem, the ```-t 8``` signifies that we want it to use 8 threads/cores, which is what we have booked. This is followed by our reference genome and the forward and reverse read fastq files.
+The data we will be aligning is in /sw/courses/ngsintro/gatk/fastq/wgs/. Let's start with aligning a chunk of whole genome shotgun data from individual NA06984. The command used is bwa mem, the ```-t 8``` signifies that we want it to use 8 threads/cores, which is what we have booked. This is followed by our reference genome and the forward and reverse read fastq files.
 
 ```bash
 bwa mem -t 8 ~/ngsworkflow/human_17_v37.fasta /sw/courses/ngsintro/gatk/fastq/wgs/NA06984.ILLUMINA.low_coverage.17q_1.fq /sw/courses/ngsintro/gatk/fastq/wgs/NA06984.ILLUMINA.low_coverage.17q_2.fq > ~/ngsworkflow/NA06984.ILLUMINA.low_coverage.17q.sam
@@ -178,13 +178,13 @@ The file name has 6 parts, separated by . or \_:
 1. NA06984 - this is the individuals name
 1. ILLUMINA - these reads came from the Illumina platform
 1. low_coverage - these are relatively low coverage reads
-1. 17q - I have sampled these reads from one region of 17q
+1. 17q - the reads are sampled from one region of 17q
 1. 1 - these are the forward reads in their paired sets
 1. 2 - these are the reverse reads in their paired sets
 1. fq - this is a fastq file
 
 Before we go on to the next step, take a minute and look at the fastq files and understand the format and contents of these files.
-Use _less_ to read one of the .fq files in the project directory.
+Use _less_ to view one of the .fq files in the project directory.
 
 ## Creating a BAM file and adding Read Group information
 
@@ -194,17 +194,18 @@ We want to convert our SAM into BAM before proceeding downstream.
 Typically the BAM has the same name as the SAM but with the .sam extension replaced with .bam.
 
 We need to add something called read groups which adds information about the sequencing run to our BAM file, because GATK is going to need this information later on.
-Normally, you would do this one sequencing run at a time, but because of the way this data was downloaded from 1000 Genomes, our data is pulled from multiple runs and merged.
+Normally, you would do this one sequencing run at a time, but because this data was downloaded from 1000 Genomes, our data is pulled from multiple runs and merged.
 We will pretend that we have one run for each sample, but on real data, you should not do this.
 
 We will use Picard to add read group information.
 As a benefit, it turns out that Picard is a very smart program, and we can start with the SAM file and ask it to simultaneously add read groups, sort the file, and output as BAM. If you only wanted to sort the file you could use for example [picard SortSam](https://broadinstitute.github.io/picard/command-line-overview.html#SortSam).
 
 ```bash
-java -Xmx16g -jar $PICARD_HOME/picard.jar AddOrReplaceReadGroups INPUT=<sam file> OUTPUT=<bam file> SORT_ORDER=coordinate RGID=<sample>-id RGLB=<sample>-lib RGPL=ILLUMINA RGPU=<sample>-01 RGSM=<sample>
+java -Xmx16g -jar $PICARD_HOME/picard.jar AddOrReplaceReadGroups
+INPUT=<sam file> OUTPUT=<bam file> SORT_ORDER=coordinate RGID=<sample>-id RGLB=<sample>-lib RGPL=ILLUMINA RGPU=<sample>-01 RGSM=<sample>
 ```
 
-Note that the arguments to Picard are parsed (read by the computer) as single words, so it is important that there is no whitespace between the upper case keyword, the equals, and the value specified, and that you quote ('write like this') any arguments that contain whitespace.
+Note that the arguments to Picard are parsed (read by the computer) as single words, so it is important that there is no whitespace between the upper case keyword, the equals, and the value specified, and that you quote ('like this') any arguments that contain whitespace.
 
 We specify the INPUT, the OUTPUT (assumed to be BAM), the SORT_ORDER, meaning we want Picard to sort the reads according to their genomic coordinates, and a lot of sample information.
 The &lt;sample&gt; names for each of these 1000 Genomes runs is the Coriell identifier which is made up of the two letters and five numbers at the start of the file names (e.g., NA11932). This is sufficient to add for our read groups with suffixes such as -id and -lib as shown above.
