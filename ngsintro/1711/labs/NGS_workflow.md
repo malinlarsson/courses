@@ -152,7 +152,9 @@ samtools faidx ~/ngsworkflow/human_17_v37.fasta
 ```
 
 ```bash
-java -Xmx16g -jar $PICARD_HOME/picard.jar CreateSequenceDictionary R=~/ngsworkflow/human_17_v37.fasta O=~/ngsworkflow/human_17_v37.dict
+java -Xmx16g -jar $PICARD_HOME/picard.jar CreateSequenceDictionary \
+  R=~/ngsworkflow/human_17_v37.fasta \
+  O=~/ngsworkflow/human_17_v37.dict
 ```
 
 <img src="files/NGS_workflow/wf_align.png" style="width: 100%"/>
@@ -165,7 +167,10 @@ We are skipping the quality control and trimming of reads for this exercise due 
 The data we will be aligning is in /sw/courses/ngsintro/gatk/fastq/wgs/. Let's start with aligning a chunk of whole genome shotgun data from individual NA06984. The command used is bwa mem, the ```-t 8``` signifies that we want it to use 8 threads/cores, which is what we have booked. This is followed by our reference genome and the forward and reverse read fastq files.
 
 ```bash
-bwa mem -t 8 ~/ngsworkflow/human_17_v37.fasta /sw/courses/ngsintro/gatk/fastq/wgs/NA06984.ILLUMINA.low_coverage.17q_1.fq /sw/courses/ngsintro/gatk/fastq/wgs/NA06984.ILLUMINA.low_coverage.17q_2.fq > ~/ngsworkflow/NA06984.ILLUMINA.low_coverage.17q.sam
+bwa mem -t 8 ~/ngsworkflow/human_17_v37.fasta \
+  /sw/courses/ngsintro/gatk/fastq/wgs/NA06984.ILLUMINA.low_coverage.17q_1.fq \
+  /sw/courses/ngsintro/gatk/fastq/wgs/NA06984.ILLUMINA.low_coverage.17q_2.fq \
+  > ~/ngsworkflow/NA06984.ILLUMINA.low_coverage.17q.sam
 ```
 
 Note that you have to use a file redirect ( &gt;) for your output, otherwise bwa will print the output directly to stdout, i.e. your screen.
@@ -201,8 +206,9 @@ We will use Picard to add read group information.
 As a benefit, it turns out that Picard is a very smart program, and we can start with the SAM file and ask it to simultaneously add read groups, sort the file, and output as BAM. If you only wanted to sort the file you could use for example [picard SortSam](https://broadinstitute.github.io/picard/command-line-overview.html#SortSam).
 
 ```bash
-java -Xmx16g -jar $PICARD_HOME/picard.jar AddOrReplaceReadGroups
-INPUT=<sam file> OUTPUT=<bam file> SORT_ORDER=coordinate RGID=<sample>-id RGLB=<sample>-lib RGPL=ILLUMINA RGPU=<sample>-01 RGSM=<sample>
+java -Xmx16g -jar $PICARD_HOME/picard.jar AddOrReplaceReadGroups \
+  INPUT=<sam file> OUTPUT=<bam file> SORT_ORDER=coordinate \
+  RGID=<sample>-id RGLB=<sample>-lib RGPL=ILLUMINA RGPU=<sample>-01 RGSM=<sample>
 ```
 
 Note that the arguments to Picard are parsed (read by the computer) as single words, so it is important that there is no whitespace between the upper case keyword, the equals, and the value specified, and that you quote ('like this') any arguments that contain whitespace.
@@ -237,7 +243,8 @@ This is done in two steps.
 First, we identify possible sites to realign using the GATK tool RealignerTargetCreator:
 
 ```bash
-java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T RealignerTargetCreator -I <input bam file> -R <reference> -o <intervals file>
+java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T RealignerTargetCreator \
+  -I <input bam file> -R <reference> -o <intervals file>
 ```
 
 The &lt;bam file&gt; should be your sorted and indexed BAM with read groups added from before.
@@ -250,7 +257,8 @@ Using this speeds up the process of identifying potential realignment sites, but
 Now we feed our intervals file back into a different GATK tool called IndelRealigner to perform the realignments:
 
 ```bash
-java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T IndelRealigner -I <input bam> -R <reference> -o <realigned bam> -targetIntervals <intervals file>
+java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T IndelRealigner \
+  -I <input bam> -R <reference> -o <realigned bam> -targetIntervals <intervals file>
 ```
 
 Note that we need to give it the intervals file we just made, and also specify a new output BAM (&lt;realigned bam&gt;).
@@ -264,7 +272,8 @@ GATK is also clever and automatically indexes that BAM for us (you can give the 
 Next, we're going to go back to Picard and mark duplicate reads:
 
 ```bash
-java -Xmx16g -jar $PICARD_HOME/picard.jar MarkDuplicates INPUT=<input bam> OUTPUT=<marked bam> METRICS_FILE=<metrics file>
+java -Xmx16g -jar $PICARD_HOME/picard.jar MarkDuplicates \
+  INPUT=<input bam> OUTPUT=<marked bam> METRICS_FILE=<metrics file>
 ```
 
 The &lt;input bam&gt; should now be your realigned BAM from before, and you need to specify an output, the &lt;marked bam&gt; which will be a new file used in the following steps.
@@ -302,7 +311,10 @@ Like the local realignment this is performed in two steps.
 First, we compute all the covariation of quality with various other factors using BaseRecalibrator:
 
 ```bash
-java -Xmx62g -jar $GATK_HOME/GenomeAnalysisTK.jar -T BaseRecalibrator -I <input bam> -R <reference> -knownSites /sw/courses/ngsintro/gatk/ALL.chr17.phase1_integrated_calls.20101123.snps_indels_svs.genotypes.vcf -o <calibration table>
+java -Xmx62g -jar $GATK_HOME/GenomeAnalysisTK.jar -T BaseRecalibrator \
+  -I <input bam> -R <reference> \
+  -knownSites /sw/courses/ngsintro/gatk/ALL.chr17.phase1_integrated_calls.20101123.snps_indels_svs.genotypes.vcf \
+  -o <calibration table>
 ```
 
 Note: This can take about 20 minutes.
@@ -317,7 +329,8 @@ The calibration table output file has the covariation data written to it.
 It is used in the next step where GATKs PrintReads applies the recalibration:
 
 ```bash
-java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T PrintReads -BQSR <calibration table> -I <input bam> -R <reference> -o <output bam>
+java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T PrintReads \
+  -BQSR <calibration table> -I <input bam> -R <reference> -o <output bam>
 ```
 
 The &lt;input bam&gt; in this step is the same as the last step. As we have not changed the latest created BAM file. The &lt;calibration table&gt; is the file we created in the previous step using BaseRecalibrator. The &lt;output bam&gt; is new and will have the recalibrated qualities.
@@ -333,7 +346,9 @@ A good method article describing [BQSR](https://software.broadinstitute.org/gatk
 Now we'll run the GATK HaplotypeCaller on our BAM and output a gVCF file that will later be used for joint genotyping.
 
 ```bash
-java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T HaplotypeCaller -R <reference> -I <input bam> --emitRefConfidence GVCF --variant_index_type LINEAR --variant_index_parameter 128000 -o <output>
+java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T HaplotypeCaller \
+  -R <reference> -I <input bam> --emitRefConfidence GVCF --variant_index_type LINEAR \
+  --variant_index_parameter 128000 -o <output>
 ```
 
 The &lt;reference&gt; is our reference fasta again.
@@ -349,13 +364,15 @@ As mentioned in [General tips nr 5](https://github.com/SciLifeLab/courses/blob/g
 Now you will call genotypes from all the gVCF-files produced in the previous step by using GenotypeGVCFs. This takes the output from the HaplotypeCaller that was run on each sample to create raw SNP and indel VCFs.
 
 ```bash
-java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T GenotypeGVCFs -R <ref file> --variant <sample1>.g.vcf --variant <sample2>.g.vcf ... -o <output>.vcf
+java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T GenotypeGVCFs \
+  -R <ref file> --variant <sample1>.g.vcf --variant <sample2>.g.vcf ... -o <output>.vcf
 ```
 
 As an alternative try to run the same thing but with all the gVCF for all low_coverage files in the course directory. A gVCF file where these have been merged can be found in the course directory at /sw/courses/ngsintro/gatk/vcfs/ILLUMINA.low_coverage.17q.g.vcf. In the next step when viewing the data in IGV, look at both and try to see if there is a difference for your sample.
 
 ```bash
-java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T GenotypeGVCFs -R <ref file> --variant /sw/courses/ngsintro/gatk/vcfs/ILLUMINA.low_coverage.17q.g.vcf -o <output>
+java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T GenotypeGVCFs \
+  -R <ref file> --variant /sw/courses/ngsintro/gatk/vcfs/ILLUMINA.low_coverage.17q.g.vcf -o <output>
 ```
 
 ## Filtering Variants
@@ -369,7 +386,10 @@ Why do you think that some of these parameters are different between the two typ
 An example command line with SNP filters is:
 
 ```bash
-java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T VariantFiltration -R <reference> -V <input vcf> -o <output vcf> --filterExpression "QD<2.0" --filterName QDfilter --filterExpression "MQ<40.0" --filterName MQfilter --filterExpression "FS>60.0" --filterName FSfilter
+java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T VariantFiltration \
+  -R <reference> -V <input vcf> -o <output vcf> --filterExpression "QD<2.0" \
+  --filterName QDfilter --filterExpression "MQ<40.0" --filterName MQfilter \
+  --filterExpression "FS>60.0" --filterName FSfilter
 ```
 
 Note two things:
@@ -474,7 +494,7 @@ Try to browse around in your data and get a feeling for the called variants. Can
 
 If you have more time there are a couple of extra exercises where you will perform downstream analysis of the called variants in your .vcf file. [Click here](resequencing-extra) to be taken to them.
 
-## More info Quality Scores
+## More info on Quality Scores
 Here is a technical documentation of Illumina Quality Scores: [technote_Q-Scores.pdf](technote_Q-Scores.pdf)
 
 ## Tools used or referenced
