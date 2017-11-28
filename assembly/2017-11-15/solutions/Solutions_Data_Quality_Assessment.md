@@ -10,7 +10,7 @@ title:  'Exercise: Data Quality Assessment'
 1. Use `md5sum` to calculate the checksums of the data files in the folder `/sw/courses/assembly/QC_Data/`.
 Redirect (`>` operator) the output into a file called `checksums.txt` in your workspace.
 
-	**solution**
+	**solution:**
 	
 	The correct solution requires you to change to the directory the data is in. The
 	file paths must reflect the directory structure you want to check.
@@ -25,7 +25,8 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	  9a5a3305130fe3e53785ac4fbf0e0584  Ecoli/E01_1_135x.fastq.gz
 	```
 
-	Incorrect solution:
+	**Incorrect solution:**
+	
 	```bash
 	md5sum /sw/courses/assembly/QC_Data/*/* > checksums.txt
 	cat checksums.txt
@@ -44,7 +45,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 
 	Use `md5sum -c` to check the checksums are complete.
 
-	**solution**
+	**solution:**
 	
 	When you check the checksums of the transferred files, make sure the files you check are correct.
 	```bash
@@ -58,7 +59,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 
 3. Use `file` to get the properties of the data files. In which format are they compressed?
 
-	**solution**
+	**solution:**
 	
 	```bash
 	file */*
@@ -74,7 +75,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 
 	b. `Ecoli/E01_1_135x.fastq.gz`?
 
-	**solution**
+	**solution:**
 	
 	```bash
 	zcat Bacteria/bacteria_R1.fastq.gz | head
@@ -97,7 +98,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	@HWI-ST486:212:D0C8BACXX:6:1101:2365:1998 1:N:0:ATTCCT
 	```
 
-	**solution**
+	**solution:**
 	
 	Each part is:
 	* Machine number
@@ -118,7 +119,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	@m151121_235646_42237_c100926872550000001823210705121647_s1_p0/81/22917_25263
 	```
 
-	**solution**
+	**solution:**
 	
 	Each part is:
 	* m = movie
@@ -135,7 +136,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	zcat *.fastq.gz | seqtk seq -A - | grep -v "^>" | tr -dc "ACGTNacgtn" | wc -m
 	```
 	
-	**solution**
+	**solution:**
 	
 	```bash
 	zcat *.fastq.gz     # concatenates compressed files to one output stream
@@ -152,7 +153,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 
 	b. `Ecoli/E01_1_135x.fastq.gz`?
 
-	**solution**
+	**solution:**
 	
 	a. The number of bases in `Bacteria/bacteria_R{1,2}.fastq.gz` is:
 		```bash
@@ -168,7 +169,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 
 9. In the data set `Ecoli/E01_1_135x.fastq.gz`, how many bases are in reads of size 10kb or longer?
 	
-	**solution**
+	**solution:**
 	
 	```bash
 	zcat Ecoli/E01_1_135x.fastq.gz | seqtk seq -A -L 10000 - | grep -v "^>" | tr -dc "ACGTNacgtn" | wc -m
@@ -177,7 +178,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 
 10. Run FastQC on the data sets. How many sequences are in each file?
 	
-	**solution**
+	**solution:**
 	
 	```bash
 	fastqc -t 6 */*.fastq.gz
@@ -189,56 +190,56 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 
 11. What is the average GC% in each data set?
 	
-	**solution**
+	**solution:**
 	
 	* Bacteria/bacteria_R{1,2}.fastq.gz: 40%
 	* E01/E01_1_135x.fastq.gz: 49%
 
 12. Which quality score encoding is used?
 	
-	**solution**
+	**solution:**
 	
 	All files use the Sanger / Illumina 1.9 quality score encoding.
 
 13. What does a quality score of 20 mean?
 	
-	**solution**
+	**solution:**
 	
 	An expectation of 1 error in 100bp.
 
 14. What does a quality score of 40 mean?
 	
-	**solution**
+	**solution:**
 	
 	An expectation of 1 error in 10000bp.
 
 15. Which distribution should the **per base sequence** plot be similar to in the FastQC output for Illumina data?
 	
-	**solution**
+	**solution:**
 	
 	A Uniform distribution.
 
 16. Which distribution should the **per sequence GC** plot be similar to in the FastQC output for Illumina data?
 	
-	**solution**
+	**solution:**
 	
 	A Normal/Gaussian distribution.
 
 17. Which value should the **per sequence GC** distribution be centered on?
 	
-	**solution**
+	**solution:**
 	
 	The average GC content.
 
 18. How much duplication is present in `Bacteria/bacteria_R{1,2}.fastq.gz`?
 	
-	**solution**
+	**solution:**
 	
 	24% in R1 and 15% in R2.
 
 19. What is adapter read-through?
 	
-	**solution**
+	**solution:**
 	
 	When the read sequence continues past the end of the DNA insert/fragment into the adapter sequence on the other end.
 
@@ -249,7 +250,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 
 	b. Quality trim the reads as well. How much is filtered out?
 
-	**solution**
+	**solution:**
 	
 	a.
 	```bash
