@@ -26,7 +26,7 @@ salloc -A g2017029 -t 04:00:00 -p core -n 8 --no-shell --reservation=g2017029_WE
 ```
 
 Make sure you only do this once, otherwise other course participants will have a hard time booking theirs!
-Once your job allocation has been granted you can connect to the node using ssh, just like in the [Uppmax Introduction exercise](uppmax-intro) yesterday.
+Once your job allocation has been granted you can connect to the node using ssh, just like in the [Uppmax Introduction exercise](uppmax-intro).
 
 I.e. Use
 
@@ -127,7 +127,7 @@ which should show you something similar to:
 -rwxrwxr-x 1 zberg uppmax 82548517 Jan 25 14:00 human_17_v37.fasta
 ```
 
-except with your username. The size of the file in bytes is the number before the date.
+except with your username.
 
 <!-- If your file is not there or if it's the wrong size, something went wrong with your copy and you need to figure out what before you move on.
 Checking the existence and size of files from each step in a process before performing the next step is a good practice that saves a lot of time.
@@ -139,7 +139,7 @@ Now we need to build the Burrows-Wheeler transform
 bwa index -a bwtsw ~/ngsworkflow/human_17_v37.fasta
 ```
 
-BWA is a single program that takes a series of different commands as the first argument.
+BWA is a program that takes a series of different commands as the first argument.
 This command says to index the specified reference and use the bwtsw algorithm (BWA also has another indexing method for small genomes that we will not use).
 
 This command will take about 2 minutes to run and should create 5 new files in your ngsworkflow directory with the same base name as the reference and different extensions.
