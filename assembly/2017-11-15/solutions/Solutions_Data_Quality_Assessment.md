@@ -72,7 +72,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	This tells you all the files are gzip compressed.
 
 
-4. Use `zcat` and `head` to inspect the contents of the data files. From which sequencing technology is:
+4. Use `zcat` and `less` to inspect the contents of the data files. From which sequencing technology is:
 
 	a. `Bacteria/bacteria_R{1,2}.fastq.gz`?
 
@@ -81,11 +81,11 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	**solution:**
 	
 	```bash
-	zcat Bacteria/bacteria_R1.fastq.gz | head
+	zcat Bacteria/bacteria_R1.fastq.gz | less
 	  - result omitted -
-	zcat Bacteria/bacteria_R2.fastq.gz | head
+	zcat Bacteria/bacteria_R2.fastq.gz | less
 	  - result omitted -
-	zcat Ecoli/E01_1_135x.fastq.gz | head
+	zcat Ecoli/E01_1_135x.fastq.gz | less -S
 	  -- result omitted -
 	```
 
