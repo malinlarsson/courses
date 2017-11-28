@@ -42,11 +42,11 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 
 3. Use `file` to get the properties of the data files. In which format are they compressed?
 
-4. Use `zcat` and `head` to inspect the contents of the data files. From which sequencing technology is:
+4. Use `zcat` and `less` to inspect the contents of the data files. From which sequencing technology are the following files and do you notice anything else?
 
-	a. `Bacteria/bacteria_R{1,2}.fastq.gz`?
+	a. `Bacteria/bacteria_R{1,2}.fastq.gz`
 
-	b. `Ecoli/E01_1_135x.fastq.gz`?
+	b. `Ecoli/E01_1_135x.fastq.gz`
 
 5. Identify the different parts of the Illumina header information:
 ```
