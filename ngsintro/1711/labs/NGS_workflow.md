@@ -246,7 +246,7 @@ java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T RealignerTargetCreator \
   -I <input bam file> -R <reference> -o <intervals file>
 ```
 
-The &lt;bam file&gt; should be your sorted and indexed BAM with read groups added from before.
+The &lt;bam file&gt; should be your sorted BAM with read groups added from before.
 <!-- Note that the option flag preceding the input bam is a capital I (as in Input), not a lower case l. -->
 The &lt;reference&gt; is the reference you used for alignment, and the &lt;intervals file&gt; is an output text file that will contain the regions GATK thinks should be realigned.
 Give it the extension ".intervals".
