@@ -22,7 +22,7 @@ We have reserved half a node for each student during this course.
 By now, you are probably already familiar with the procedure:
 
 ```bash
-salloc -A g2017029 -t 04:00:00 -p core -n 8 --no-shell --reservation=g2017029_WED &
+salloc -A g2017029 -t 04:00:00 -p core -n 5 --no-shell --reservation=g2017029_WED &
 ```
 
 Make sure you only do this once, otherwise other course participants will have a hard time booking theirs!
@@ -163,10 +163,10 @@ java -Xmx16g -jar $PICARD_HOME/picard.jar CreateSequenceDictionary \
 
 We are skipping the quality control and trimming of reads for this exercise due to the origin of the data. But please feel free to read up on these two excellent tools after the exercise, [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) & [MultiQC](http://multiqc.info/).
 
-The data we will be aligning is in /sw/courses/ngsintro/gatk/fastq/wgs/. Let's start with aligning a chunk of whole genome shotgun data from individual NA06984. The command used is bwa mem, the ```-t 8``` signifies that we want it to use 8 threads/cores, which is what we have booked. This is followed by our reference genome and the forward and reverse read fastq files.
+The data we will be aligning is in /sw/courses/ngsintro/gatk/fastq/wgs/. Let's start with aligning a chunk of whole genome shotgun data from individual NA06984. The command used is bwa mem, the ```-t 5``` signifies that we want it to use 8 threads/cores, which is what we have booked. This is followed by our reference genome and the forward and reverse read fastq files.
 
 ```bash
-bwa mem -t 8 ~/ngsworkflow/human_17_v37.fasta \
+bwa mem -t 5 ~/ngsworkflow/human_17_v37.fasta \
   /sw/courses/ngsintro/gatk/fastq/wgs/NA06984.ILLUMINA.low_coverage.17q_1.fq \
   /sw/courses/ngsintro/gatk/fastq/wgs/NA06984.ILLUMINA.low_coverage.17q_2.fq \
   > ~/ngsworkflow/NA06984.ILLUMINA.low_coverage.17q.sam
@@ -310,7 +310,7 @@ Like the local realignment this is performed in two steps.
 First, we compute all the covariation of quality with various other factors using BaseRecalibrator:
 
 ```bash
-java -Xmx62g -jar $GATK_HOME/GenomeAnalysisTK.jar -T BaseRecalibrator \
+java -Xmx40g -jar $GATK_HOME/GenomeAnalysisTK.jar -T BaseRecalibrator \
   -I <input bam> -R <reference> \
   -knownSites /sw/courses/ngsintro/gatk/ALL.chr17.phase1_integrated_calls.20101123.snps_indels_svs.genotypes.vcf \
   -o <calibration table>
