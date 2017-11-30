@@ -35,7 +35,7 @@ Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)
 **14.00-17.00** [Exercise: NGS workflow part I](labs/NGS_workflow) (Sebastian DiLorenzo + Nina Norgren, Verena
 Kutschera, John Sundh)  
 
-**18:00-** Course dinner at TBA  
+**18:00-** Course dinner at Koh Phangan, Övre Slottsgatan 12, Uppsala
 
 **Thursday 30th**  
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
