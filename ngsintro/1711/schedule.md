@@ -44,7 +44,7 @@ Panchal, Lucile Soler)
 **12.00-13.00** Lunch at BMC restaurant  
 **13.00-14:00** [Lecture: RNA sequencing, transcriptome and expression quantification](slides/rnaseq.pdf) (Olga
 Dethlefsen)  
-**14.00-15:00** [Lecture: Data management](slides/Data%20Management%20for%20NGS%20course.pdf) (Niclas Jareborg)  
+**14.00-15:00** [Lecture: Data management](https://github.com/SciLifeLab/courses/blob/gh-pages/ngsintro/1711/slides/Data%20management%20for%20NGS%20course.pdf) (Niclas Jareborg)  
 **15.00-17:00** [Exercise: RNA sequencing, transcriptome and expression quantification part I](labs/rnaseq_161129) (Olga
 Dethlefsen + Sebastian DiLorenzo, Jacques Dainat)  
 
