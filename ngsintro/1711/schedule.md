@@ -42,7 +42,7 @@ Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)
 **09:00-12.00** [Exercise: NGS workflow part II](labs/NGS_workflow) (Sebastian DiLorenzo + Jacques Dainat, Mahesh Binzer-
 Panchal, Lucile Soler)  
 **12.00-13.00** Lunch at BMC restaurant  
-**13.00-14:00** [Lecture: RNA sequencing, transcriptome and expression quantification](slides/RNAseq2017) (Olga
+**13.00-14:00** [Lecture: RNA sequencing, transcriptome and expression quantification](slides/rnaseq) (Olga
 Dethlefsen)  
 **14.00-15:00** Lecture: Data management (Niclas Jareborg)  
 **15.00-17:00** [Exercise: RNA sequencing, transcriptome and expression quantification part I](labs/rnaseq_161129) (Olga
