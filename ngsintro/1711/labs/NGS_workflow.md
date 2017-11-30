@@ -78,7 +78,7 @@ This makes it possible to load the individual programs we need:
 module load bwa
 module load samtools
 module load GATK/3.7
-module load picard/2.0.1
+module load picard/2.10.3
 ```
 Picard and GATK are java programs, which means that we need to explicitly invoke java each time we run them and we need to know the path to the program file. Luckily, UPPMAX has a variable set when you load their modules. Notice the $GATK_HOME and $PICARD_HOME when we run those programs later on.
 
