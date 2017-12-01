@@ -55,13 +55,13 @@ To get going, let's book a node, create a working directory named _transcriptome
 <details>
 <summary>:key: Click to see how to book a node on Thursday</summary>
 {% highlight bash %}
-salloc -A g2016035 -t 08:00:00 -p core -n 8 --no-shell --reservation=g2016035_4 &
+salloc -A g2016035 -t 08:00:00 -p core -n 5 --no-shell --reservation=g2016035_4 &
 {% endhighlight %} 
 </details>  
 <details>
 <summary>:key: Click to see how to book a node on Friday</summary>
 {% highlight bash %}
-salloc -A g2016035 -t 08:00:00 -p core -n 8 --no-shell --reservation=g2016035_5 &
+salloc -A g2016035 -t 08:00:00 -p core -n 5 --no-shell --reservation=g2016035_5 &
 {% endhighlight %} 
 </details>  
 <br />
