@@ -53,6 +53,6 @@ Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)
 **09:00-12:00** [Exercise: RNA sequencing, transcriptome and expression quantification part II](labs/rnaseq_161129) (Diana
 Ekman, John Sundh, Lucile Soler)  
 **12.00-13.00** Lunch at BMC restaurant  
-**13.00-13.20** [Lecture: The Bioinformatics Infrastructure in Sweden](slides/Nystedt_NBIS_27_Jan_NGScourse.pdf) (Björn Nystedt)    
+**13.00-13.20** [Lecture: The Bioinformatics Infrastructure in Sweden](slides/NBIS.pdf) (Björn Nystedt)    
 **13:20-15.00** Open discussions (Manfred Grabherr, Diana Ekman, John Sundh)  
 
