@@ -9,8 +9,8 @@ title:  'Exercise: Data Quality Assessment'
 
 1. Use `md5sum` to calculate the checksums of the data files in the folder `/sw/courses/assembly/QC_Data/`.
 Redirect (`>` operator) the output into a file called `checksums.txt` in your workspace.
-
-	**solution:**
+	<details>
+	<summary> Solution: (click here) </summary>
 	
 	The correct solution requires you to change to the directory the data is in. The
 	file paths must reflect the directory structure you want to check.
@@ -25,7 +25,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	  9a5a3305130fe3e53785ac4fbf0e0584  Ecoli/E01_1_135x.fastq.gz
 	```
 
-	**Incorrect solution:**
+	Incorrect Solution:
 	
 	```bash
 	md5sum /sw/courses/assembly/QC_Data/*/* > checksums.txt
@@ -36,7 +36,7 @@ Redirect (`>` operator) the output into a file called `checksums.txt` in your wo
 	```
 	When these checksums are checked, they check the files in `/sw/courses/assembly/QC_Data/` rather
 	than the files in your directory.
-
+	</details>
 
 2. Make a copy of the data in your workspace (note the `.` at the end of the command):
 
