@@ -57,14 +57,14 @@ Start your terminal, log onto UPPMAX (check with squeue which core you had and s
 
 ```bash
 # ONLY IF YOU DON'T ALREADY HAVE AN ACTIVE ALLOCATION SINCE BEFORE
-$ salloc -A g2017029 -t 04:30:00 -p core --no-shell --reservation=g2017029_MON &
+$ salloc -A g2018002 -t 04:30:00 -p core --no-shell --reservation=g2018002_MON &
 
 ```
 
 make an empty directory we can work in and make a file.
 
 ```bash
-$ cd /proj/g2017029/nobackup/<username>
+$ cd /proj/g2018002/nobackup/<username>
 $ mkdir advlinux
 $ cd advlinux
 $ touch  filename
