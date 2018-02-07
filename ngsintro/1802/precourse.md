@@ -11,7 +11,7 @@ title:  'Precourse Material'
 * [**Chapter 1**](../../ngsintro/common/unixtut/unix1.html)  
 * [**Chapter 2**](../../ngsintro/common/unixtut/unix2.html)  
 
-You must use [http://uppnex.se/emu/](http://uppnex.se/emu/) [(or this mirror)](http://bellard.org/jslinux/) to try the commands in the tutorial, otherwise the commands will not work.
+You must use [http://uppnex.se/emu/](http://uppnex.se/emu/) [(or this mirror)](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg) to try the commands in the tutorial, otherwise the commands will not work.
 If you any questions regarding this tutorial contact: martin.dahlo@scilifelab.uu.se
 
 Using Linux is often the hardest part of the course, so being familiar with writing things on a command-line will help.
