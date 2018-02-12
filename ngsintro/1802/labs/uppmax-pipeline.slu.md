@@ -10,7 +10,7 @@ The dollar sign is usually an indicator that the text following it should be typ
 ## 1. Copying files needed for laboratory
 To be able to do this lab, you will need some files.
 To avoid all the course participants editing the same file all at once, undoing each other's edits, each participant will get their own copy of the needed files.
-The files are located in the folder `/sw/courses/ngsintro/uppmax_pipeline_exercise/data`
+The files are located in the folder `/sw/share/compstore/courses/ngsintro/uppmax_pipeline_exercise/data`
 
 Next, copy the lab files from this folder.
 -r means recursively, which means all the files including sub-folders of the source folder.
@@ -23,7 +23,7 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/courses/ngsintro/uppmax_pipeline_exercise/data /proj/g2018002/nobackup/<username>/uppmax_pipeline_exercise
+$ cp -r /sw/share/compstore/courses/ngsintro/uppmax_pipeline_exercise/data /proj/g2018002/nobackup/<username>/uppmax_pipeline_exercise
 ```
 
 Have a look in `/proj/g2018002/nobackup/<username>/uppmax_pipeline_exercise`:
@@ -84,7 +84,7 @@ $ echo $PATH
 To pretend that we are loading a module, instead of actually loading a module for them, we'll manually do what the module system would have done. We will just add a the directory containing my dummy scripts to the $PATH variable, and it will be like we loaded the module for them. Now, when we type the name of one of my scripts, the computer will look in all the directories specified in the $PATH variable, which now includes the location where i keep my scripts. The computer will now find my scripts when i just type their name and it will run them.
 
 ```bash
-$ export PATH=$PATH:/sw/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
+$ export PATH=$PATH:/sw/share/compstore/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
 ```
 
 This will set the $PATH variable to whatever it is at the moment, and add a directory at the end of it.

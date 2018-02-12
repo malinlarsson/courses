@@ -59,7 +59,7 @@ $ ssh -Y q34
 **Note:** there is a uppmax specific tool called jobinfo that supplies the same kind of information as squeue that you can use as well (```$ jobinfo -u username```).
 
 ## 3. Copying files needed for laboratory
-To be able to do parts of this lab, you will need some files. To avoid all the course participants editing the same file all at once, undoing each other's edits, each participant will get their own copy of the needed files. The files are located in the folder **/sw/courses/ngsintro/uppmax_tutorial**
+To be able to do parts of this lab, you will need some files. To avoid all the course participants editing the same file all at once, undoing each other's edits, each participant will get their own copy of the needed files. The files are located in the folder **/sw/share/compstore/courses/ngsintro/uppmax_tutorial**
 
 Next, copy the lab files from this folder. -r means recursively, which means all the files including sub-folders of the source folder. Without it, only files directly in the source folder would be copied, NOT sub-folders and files in sub-folders.
 
@@ -70,7 +70,7 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/courses/ngsintro/uppmax_tutorial /proj/g2018002/nobackup/<username>
+$ cp -r /sw/share/compstore/courses/ngsintro/uppmax_tutorial /proj/g2018002/nobackup/<username>
 ```
 
 Have a look in **/proj/g2018002/nobackup/\<username\>/uppmax_tutorial**:

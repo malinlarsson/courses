@@ -78,12 +78,12 @@ mkdir transcriptome/DATA
 </details>  
 <br />
 
-:computer: **Sym-link** the .fastq.gz files located in _/sw/courses/ngsintro/rnaseq/DATA/p25_. :bulb: A great chance to practice your bash loop skills.
+:computer: **Sym-link** the .fastq.gz files located in _/sw/share/compstore/courses/ngsintro/rnaseq/DATA/p25_. :bulb: A great chance to practice your bash loop skills.
 <details>
 <summary>:key: Click to see suggested commands</summary>
 {% highlight bash %}
 cd /proj/g2016035/nobackup/transcriptome/DATA/
-for i in /sw/courses/ngsintro/rnaseq/DATA/p25/*
+for i in /sw/share/compstore/courses/ngsintro/rnaseq/DATA/p25/*
   do ln -s $i
 done
 {% endhighlight %} 
@@ -94,10 +94,10 @@ done
 {% highlight bash %}
 ll ~/glob/transcriptome/DATA
 
-SRR3222409_1.fastq.gz -> /sw/courses/ngsintro/rnaseq/DATA/p25/SRR3222409_1.fastq.gz
-SRR3222409_2.fastq.gz -> /sw/courses/ngsintro/rnaseq/DATA/p25/SRR3222409_2.fastq.gz
+SRR3222409_1.fastq.gz -> /sw/share/compstore/courses/ngsintro/rnaseq/DATA/p25/SRR3222409_1.fastq.gz
+SRR3222409_2.fastq.gz -> /sw/share/compstore/courses/ngsintro/rnaseq/DATA/p25/SRR3222409_2.fastq.gz
 ...
-SRR3222414_2.fastq.gz -> /sw/courses/ngsintro/rnaseq/DATA/p25/SRR3222414_2.fastq.gz
+SRR3222414_2.fastq.gz -> /sw/share/compstore/courses/ngsintro/rnaseq/DATA/p25/SRR3222414_2.fastq.gz
 {% endhighlight %}
 <br/>
 <br />
@@ -260,12 +260,12 @@ drwx------ 2 olga olga 4.0K Sep 14 15:53 _STARtmp
 {% endhighlight %}
 <br />
 
-:computer: **Sym-link STAR index** to for the entire genome into the _transcriptome_ directory. The index for the whole genome was prepared for us before class in the very same way as for the chromosome 11 in steps above. It just requires more time (ca. 4h) to run. The index can be found here: */sw/courses/ngsintro/rnaseq/index*
+:computer: **Sym-link STAR index** to for the entire genome into the _transcriptome_ directory. The index for the whole genome was prepared for us before class in the very same way as for the chromosome 11 in steps above. It just requires more time (ca. 4h) to run. The index can be found here: */sw/share/compstore/courses/ngsintro/rnaseq/index*
 <details>
 <summary>:key: Click again to see how to link the index</summary>
 {% highlight bash %}
 cd /proj/g2016035/nobackup/<username>/transcriptome/
-ln -s /sw/courses/ngsintro/rnaseq/index
+ln -s /sw/share/compstore/courses/ngsintro/rnaseq/index
 {% endhighlight %}
 </details>
 <br />
@@ -317,11 +317,11 @@ drwx------ 2 olga olga 4.0K Sep 14 16:04 SRR3222409__STARtmp
 <br/>
 <br/>
 
-:computer: **Map or copy over**. Map the remaining samples in the analogous way. Running short of time? Copy over the results that we have prepared for you before the class. They are here: */sw/courses/ngsintro/rnaseq\_2016/main/Star*
+:computer: **Map or copy over**. Map the remaining samples in the analogous way. Running short of time? Copy over the results that we have prepared for you before the class. They are here: */sw/share/compstore/courses/ngsintro/rnaseq\_2016/main/Star*
 <details>
 <summary>:key: Click to see how to copy results, sample by sample</summary>
 {% highlight bash %}
-cp -r /sw/courses/ngsintro/rnaseq/main/star/SRR3222410/ /proj/g2016035/nobackup/<username>/transcriptome/star/
+cp -r /sw/share/compstore/courses/ngsintro/rnaseq/main/star/SRR3222410/ /proj/g2016035/nobackup/<username>/transcriptome/star/
 {% endhighlight %}
 </details>
 
@@ -330,7 +330,7 @@ cp -r /sw/courses/ngsintro/rnaseq/main/star/SRR3222410/ /proj/g2016035/nobackup/
 {% highlight bash %}
 for i in SRR3222411 SRR3222412 SRR3222413 SRR3222414
 do
-  cp -r /sw/courses/ngsintro/rnaseq/main/star/$i /proj/g2016035/nobackup/<username>/transcriptome/star/
+  cp -r /sw/share/compstore/courses/ngsintro/rnaseq/main/star/$i /proj/g2016035/nobackup/<username>/transcriptome/star/
 done
 {% endhighlight %}
 </details>
@@ -399,18 +399,18 @@ samtools view -bS -o SRR3222409_Aligned.out.bam SRR3222409_Aligned.out.sam
 </details>
 <br />
 
-:computer: **Convert SAM to BAM** for the remaining samples or **copy them over**. You can find the BAMs prepared for your in */sw/courses/ngsintro/rnaseq/main/bams/out*
+:computer: **Convert SAM to BAM** for the remaining samples or **copy them over**. You can find the BAMs prepared for your in */sw/share/compstore/courses/ngsintro/rnaseq/main/bams/out*
 <details>
 <summary>:key: Click to see how to copy over sample by sample</summary>
 {% highlight bash %}
-cp /sw/courses/ngsintro/rnaseq/main/bams/out/SRR3222410_Aligned.out.bam /proj/g2016035/nobackup/<username>/transcriptome/bams/
+cp /sw/share/compstore/courses/ngsintro/rnaseq/main/bams/out/SRR3222410_Aligned.out.bam /proj/g2016035/nobackup/<username>/transcriptome/bams/
 {% endhighlight %}
 </details>
 <details>
 <summary>:key: Click to see how to copy over using a bit more advanced bash loop</summary>
 {% highlight bash %}
 for i in SRR3222411 SRR3222412 SRR3222413 SRR3222414
-  do cp "/sw/courses/ngsintro/rnaseq/main/bams/out/"$i"_Aligned.out.bam" /proj/g2016035/nobackup/<username>/transcriptome/bams/ 
+  do cp "/sw/share/compstore/courses/ngsintro/rnaseq/main/bams/out/"$i"_Aligned.out.bam" /proj/g2016035/nobackup/<username>/transcriptome/bams/ 
 done
 {% endhighlight %}
 </details>
@@ -436,18 +436,18 @@ samtools sort -o /proj/g2016035/nobackup/<username>/transcriptome/bams/SRR322240
 </details>
 <br />
 
-:computer: **Sort BAM files** for the remaining samples or **copy them over**. You can find the BAMs prepared for your in */sw/courses/ngsintro/rnaseq/main/bams/out*, ending with *sorted.bam*
+:computer: **Sort BAM files** for the remaining samples or **copy them over**. You can find the BAMs prepared for your in */sw/share/compstore/courses/ngsintro/rnaseq/main/bams/out*, ending with *sorted.bam*
 <details>
 <summary>:key: Click to see how to copy over sample by sample</summary>
 {% highlight bash %}
-cp /sw/courses/ngsintro/rnaseq/main/bams/out/SRR3222410_Aligned.out.sorted.bam /proj/g2016035/nobackup/<username>/transcriptome/bams/
+cp /sw/share/compstore/courses/ngsintro/rnaseq/main/bams/out/SRR3222410_Aligned.out.sorted.bam /proj/g2016035/nobackup/<username>/transcriptome/bams/
 {% endhighlight %}
 </details>
 <details>
 <summary>:key: Click to see how to copy over using a bit more advanced bash loop. It is the same as above, just the file extension is different. </summary>
 {% highlight bash %}
 for i in SRR3222411 SRR3222412 SRR3222413 SRR3222414 
-  do cp "/sw/courses/ngsintro/rnaseq/main/bams/out/"$i"_Aligned.out.sorted.bam" /proj/g2016035/nobackup/<username>/transcriptome/bams/
+  do cp "/sw/share/compstore/courses/ngsintro/rnaseq/main/bams/out/"$i"_Aligned.out.sorted.bam" /proj/g2016035/nobackup/<username>/transcriptome/bams/
 done
 {% endhighlight %}
 </details>
@@ -534,18 +534,18 @@ drwxrwxr-x 2 olga olga 4.0K Sep 14 17:24 raw_data_qualimapReport
 <br/>
 
 
-:computer: **Run QualiMap** for the remaining sorted BAM files or **copy the results over**. These can be found */sw/courses/ngsintro/rnaseq\_2016/main/qualimap*
+:computer: **Run QualiMap** for the remaining sorted BAM files or **copy the results over**. These can be found */sw/share/compstore/courses/ngsintro/rnaseq\_2016/main/qualimap*
 <details>
 <summary>:key: Click to see how to copy over the results, sample by sample</summary>
 {% highlight bash %}
-cp -r /sw/courses/ngsintro/rnaseq/main/qualimap/SRR3222410 /proj/g2016035/nobackup/<username>/transcriptome/qualimap/
+cp -r /sw/share/compstore/courses/ngsintro/rnaseq/main/qualimap/SRR3222410 /proj/g2016035/nobackup/<username>/transcriptome/qualimap/
 {% endhighlight %}
 </details>
 <details>
 <summary>:key: Click to see how to copy over the results, using bash loop</summary>
 {% highlight bash %}
 for i in SRR3222409 SRR3222410 SRR3222411 SRR3222412 SRR3222413 SRR3222414
-  do cp -r "/sw/courses/ngsintro/rnaseq/main/qualimap"/$i /proj/g2016035/nobackup/<username>/transcriptome/qualimap/
+  do cp -r "/sw/share/compstore/courses/ngsintro/rnaseq/main/qualimap"/$i /proj/g2016035/nobackup/<username>/transcriptome/qualimap/
 done
 {% endhighlight %}
 </details>
@@ -681,13 +681,13 @@ module load R_packages/3.3.0
 </details>
 <br />
 
-:computer: **Sym-link** _tableCounts_ as created by featureCounts and **sym-link** the prepared gene annotation file *tableCounts_annotation.txt* prepared by us before the class and located: */sw/courses/ngsintro/rnaseq/main/DE* as well as **sym-link** R script located in the same directory
+:computer: **Sym-link** _tableCounts_ as created by featureCounts and **sym-link** the prepared gene annotation file *tableCounts_annotation.txt* prepared by us before the class and located: */sw/share/compstore/courses/ngsintro/rnaseq/main/DE* as well as **sym-link** R script located in the same directory
 <details>
 <summary>:key: Click to see how </summary>
 {% highlight bash %}
 ln -s /proj/g2016035/nobackup/<username>/transcriptome/featurecounts/tableCounts
-ln -s /sw/courses/ngsintro/rnaseq/main/DE/tableCounts_annotations.txt
-ln -s /sw/courses/ngsintro/rnaseq/main/DE/diffExp.R
+ln -s /sw/share/compstore/courses/ngsintro/rnaseq/main/DE/tableCounts_annotations.txt
+ln -s /sw/share/compstore/courses/ngsintro/rnaseq/main/DE/diffExp.R
 {% endhighlight %}
 </details>
 <br />
@@ -797,11 +797,11 @@ R CMD BATCH diffExp.R
 ll -h /proj/g2016035/nobackup/<username>/transcriptome/DE
 
 -rw-rw-r-- 1 olga olga 8.9M Nov 29 16:31 DEdata.RData
-lrwxrwxrwx 1 olga olga   50 Nov 29 16:30 diffExp.R -> /sw/courses/ngsintro/rnaseq/main/DE/diffExp.R
+lrwxrwxrwx 1 olga olga   50 Nov 29 16:30 diffExp.R -> /sw/share/compstore/courses/ngsintro/rnaseq/main/DE/diffExp.R
 -rw-rw-r-- 1 olga olga 3.4K Nov 29 16:31 diffExp.Rout
 -rw-rw-r-- 1 olga olga 2.6M Nov 29 16:31 results_DE.txt
 lrwxrwxrwx 1 olga olga   55 Nov 29 16:30 tableCounts -> /proj/g2016035/nobackup/<username>/transcriptome/featurecounts/tableCounts
-lrwxrwxrwx 1 olga olga   68 Nov 29 16:30 tableCounts_annotations.txt -> /sw/courses/ngsintro/rnaseq/main/DE/tableCounts_annotations.txt
+lrwxrwxrwx 1 olga olga   68 Nov 29 16:30 tableCounts_annotations.txt -> /sw/share/compstore/courses/ngsintro/rnaseq/main/DE/tableCounts_annotations.txt
 {% endhighlight %}
 <br/>
 
@@ -854,7 +854,7 @@ R
 <br />
 :computer: :floppy_disk: To perform the exercise you will need data included in the following location at Uppmax:
 <br />
- `/sw/courses/ngsintro/rnaseq/bonus/funannot`
+ `/sw/share/compstore/courses/ngsintro/rnaseq/bonus/funannot`
 <br />
 <br />
 
@@ -862,7 +862,7 @@ R
 <details>
  <summary>:key: Click to see an example of a command</summary>
  {% highlight bash %}
- scp -r <your_username>@milou.uppmax.uu.se:/sw/courses/ngsintro/rnaseq/bonus/funannot ./
+ scp -r <your_username>@milou.uppmax.uu.se:/sw/share/compstore/courses/ngsintro/rnaseq/bonus/funannot ./
  {% endhighlight %}
 </details>
 <br />
@@ -871,7 +871,7 @@ R
 <details>
 <summary>:key: Click to see an example of a command</summary>
 {% highlight bash %}
-cp -r /sw/courses/ngsintro/rnaseq/bonus/funannot/ /proj/g2016035/nobackup/<username>/transcriptome/
+cp -r /sw/share/compstore/courses/ngsintro/rnaseq/bonus/funannot/ /proj/g2016035/nobackup/<username>/transcriptome/
 {% endhighlight %}
 </details>
 <br />
@@ -1127,14 +1127,14 @@ Libraries to install and load if exercise is performed locally
 <br />
 :computer: :floppy_disk: To perform the exercise you will need data included in the following location at Uppmax:
 
-  `/sw/courses/ngsintro/rnaseq/bonus/exon`
+  `/sw/share/compstore/courses/ngsintro/rnaseq/bonus/exon`
 
 <br />
 :computer: **Copy over** the directory _transcriptome_ folder
 <details>
 <summary>:key: Click to see an example of a command</summary>
 {% highlight bash %}
-cp -r /sw/courses/ngsintro/rnaseq/bonus/exon /proj/g2016035/nobackup/<username>/transcriptome
+cp -r /sw/share/compstore/courses/ngsintro/rnaseq/bonus/exon /proj/g2016035/nobackup/<username>/transcriptome
 {% endhighlight %}
 </details>
 <br />
@@ -1143,7 +1143,7 @@ cp -r /sw/courses/ngsintro/rnaseq/bonus/exon /proj/g2016035/nobackup/<username>/
 <details>
 <summary>:key: Click to see an example of a command</summary>
 {% highlight bash %}
-scp -r YOUR_LOGIN@milou.uppmax.uu.se:/sw/courses/ngsintro/rnaseq/bonus/exon ./
+scp -r YOUR_LOGIN@milou.uppmax.uu.se:/sw/share/compstore/courses/ngsintro/rnaseq/bonus/exon ./
 {% endhighlight %}
 </details>
 <br />
@@ -1406,7 +1406,7 @@ Start by copying the scripts from the course folder to your DE directory.
 <summary>:key: Click to see how to copy the files to your DE folder</summary>
 {% highlight bash %}
 cd /proj/g2016035/nobackup/<username>/transcriptome/DE
-cp /sw/courses/ngsintro/rnaseq/bonus/visual/*.R .
+cp /sw/share/compstore/courses/ngsintro/rnaseq/bonus/visual/*.R .
 {% endhighlight %}
 </details>
 
@@ -1422,7 +1422,7 @@ for this gene.
 
 :computer: Make a script named genePlot.R
 {% highlight R %}
-.libPaths(c("/sw/courses/ngsintro/rnaseq_2016/R-packages/3.3.0", "/pica/sw/apps/R_packages/3.3.0/milou", "/pica/sw/apps/R/x86_64/3.3.0/milou/lib64/R/library"))
+.libPaths(c("/sw/share/compstore/courses/ngsintro/rnaseq_2016/R-packages/3.3.0", "/pica/sw/apps/R_packages/3.3.0/milou", "/pica/sw/apps/R/x86_64/3.3.0/milou/lib64/R/library"))
 
 # For running as command line script and parsing options from command line
 args = commandArgs(trailingOnly=TRUE)
@@ -1702,7 +1702,7 @@ Trinity --seqType (fq for fastq or fa for fast) --left ~/path/to/reads_1.fq --ri
 In the following exercise you will have chance to run trinity on a data set that is suitable to be finished within a short lab session. Note that for many larger data sets and/or complex transcriptomes running times and memory requirements might be much larger than in this example. The actual commands to run trinity is very easy and the manual at <https://github.com/trinityrnaseq/trinityrnaseq/wiki> answers most questions related to running the program. The major challenge with running _de-novo_ assembly projects is not to get the programs to run. but rather to evaluate the results after the run. In many cases a very large number of potential transcripts are generated and often try to use sequence properties to filter the initial data. In addition one often tries to compare the obtained sequences to closely related species, try to predict open reading frames to get a feeling for how the experiment has turned out. In order to get a feeling for this we will in the exercise assemble two data sets and use simple unix tool to calculate basics stats on the assembled sequences. For this to be a meaningful exercise you should not look at the hints prior to trying some commands your self. The key to get going with these types of analysis is to realize that one does not need a specialised program to collect basic summary statistics from text files (note that fasta files are simple text files of a specified structure).
 
 Have a look at the example data used in this exercise.
-The data is obtained from mouse dendritic cells (mouse\_left.fasta and mouse\_right.fasta and) and a whitefly (whitefly_both.fasta), and the files are located in `/sw/courses/ngsintro/rnaseq/bonus/denovo/`.
+The data is obtained from mouse dendritic cells (mouse\_left.fasta and mouse\_right.fasta and) and a whitefly (whitefly_both.fasta), and the files are located in `/sw/share/compstore/courses/ngsintro/rnaseq/bonus/denovo/`.
 The mouse data is strand-specific (RF), the whitefly data is unstranded.
 For strand-specific data, specify the library type.
 There are four library types:
@@ -1725,7 +1725,7 @@ By default, reads are treated as not strand-specific.
 {% highlight bash %}
 module load bioinfo-tools trinity/2.2.1
 mkdir /proj/g2016035/nobackup/<username>/transcriptome/trinity
-cp /sw/courses/ngsintro/rnaseq/bonus/assembly/*.fasta /proj/g2016035/nobackup/<username>/transcriptome/trinity/
+cp /sw/share/compstore/courses/ngsintro/rnaseq/bonus/assembly/*.fasta /proj/g2016035/nobackup/<username>/transcriptome/trinity/
 {% endhighlight %}
 </details>
 <br />

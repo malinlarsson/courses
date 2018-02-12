@@ -101,9 +101,9 @@ $ mkdir results
 * sym-link the required files and folders (this will create a symbolic link to the original folders/files and saves you the trouble of always typing the full path - BUT: Do not write into these linked folders, because that data is shared across everyone working with these folders...)
 
 ```bash
-ln -s /sw/courses/ngsintro/transcriptome_map/reads/PE
-ln -s /sw/courses/ngsintro/transcriptome_map/reads/SE
-ln -s /sw/courses/ngsintro/transcriptome_map/reference
+ln -s /sw/share/compstore/courses/ngsintro/transcriptome_map/reads/PE
+ln -s /sw/share/compstore/courses/ngsintro/transcriptome_map/reads/SE
+ln -s /sw/share/compstore/courses/ngsintro/transcriptome_map/reference
 ```
 
 Your directory structure should look like this:
@@ -343,7 +343,7 @@ To give you a feel of running one of such scripts for a very basic results summa
 
 ```bash
 $ cd ~glob/transcriptome
-$ cp /sw/courses/ngsintro/transcriptome_map/extras/summarizeDE.R ~/glob/transcriptome
+$ cp /sw/share/compstore/courses/ngsintro/transcriptome_map/extras/summarizeDE.R ~/glob/transcriptome
 $ Rscript summarizeDE.R ~/glob/transcriptome/cuffdiff.brain_vs_kidney/gene_exp.diff 0.1 1
 ```
 where,

@@ -342,7 +342,7 @@ This example would perhaps be more real if we had several text files with differ
 Copy the file sample_1.sam to your folder using the command below
 
 ```bash
-$ cp /sw/courses/ngsintro/linux_additional-files/sample_1.sam .
+$ cp /sw/share/compstore/courses/ngsintro/linux_additional-files/sample_1.sam .
 ```
 
 Use grep to search in the file for a specific string of nucleotides, for example:
