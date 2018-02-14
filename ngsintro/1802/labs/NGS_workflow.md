@@ -22,7 +22,7 @@ We have reserved half a node for each student during this course.
 By now, you are probably already familiar with the procedure:
 
 ```bash
-interactive -A g2018002 -t 04:00:00 -p core -n 5 &
+interactive -A g2018002 -t 04:00:00 -p core -n 1 &
 ```
 
 Make sure you only do this once, otherwise other course participants will have a hard time booking theirs!
