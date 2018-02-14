@@ -166,7 +166,7 @@ $ ll ~/
 To be able to do parts of this lab, you will need some files.
 To avoid all the course participants editing the same file all at once, undoing each other's edits, each participant will get their own copy of the needed files.
 
-The files are located in the folder **/sw/share/compstore/courses/ngsintro/linux_tutorial**
+The files are located in the folder **/sw/courses/ngsintro/linux_tutorial**
 
 or they can be downloaded if you are not on uppmax at the moment, [files.tar.gz](files/linux-intro/files.tar.gz) (instruction on how to download further down)
 
@@ -197,7 +197,7 @@ Without it, only files directly in the source folder would be copied, NOT sub-fo
 ```bash
 Ex: cp -r <source folder> <destination folder>
 
-$ cp -r /sw/share/compstore/courses/ngsintro/linux_tutorial/* /proj/g2018002/nobackup/<username>/linux_tutorial
+$ cp -r /sw/courses/ngsintro/linux_tutorial/* /proj/g2018002/nobackup/<username>/linux_tutorial
 ```
 
 If you are unable to copy the files on uppmax, you can download the files instead of copying them.
@@ -495,7 +495,7 @@ Syntax:
 ```bash
 $ nano <filename>
 
-$ nano /sw/share/compstore/courses/ngsintro/linux_additional-files/large_file
+$ nano /sw/courses/ngsintro/linux_additional-files/large_file
 ```
 
 **(press ctrl+x to close it down, user arrows to scroll up/down)**
@@ -513,7 +513,7 @@ Syntax:
 ```bash
 $ head <filename>
 
-$ head /sw/share/compstore/courses/ngsintro/linux_additional-files/large_file
+$ head /sw/courses/ngsintro/linux_additional-files/large_file
 ```
 
 Remember how to view an arbitrary number of first rows in a file?
@@ -521,7 +521,7 @@ Remember how to view an arbitrary number of first rows in a file?
 ```bash
 $ head -n <number of rows to view> <filename>
 
-$ head -n 23 /sw/share/compstore/courses/ngsintro/linux_additional-files/large_file
+$ head -n 23 /sw/courses/ngsintro/linux_additional-files/large_file
 ```
 
 The same syntax for viewing the last rows of a file with tail:
@@ -529,11 +529,11 @@ The same syntax for viewing the last rows of a file with tail:
 ```bash
 $ tail <filename>
 
-$ tail /sw/share/compstore/courses/ngsintro/linux_additional-files/large_file
+$ tail /sw/courses/ngsintro/linux_additional-files/large_file
 
 $ tail -n <number of rows to view> <filename>
 
-$ tail -n 23 /sw/share/compstore/courses/ngsintro/linux_additional-files/large_file
+$ tail -n 23 /sw/courses/ngsintro/linux_additional-files/large_file
 ```
 
 ## 9. Wildcards

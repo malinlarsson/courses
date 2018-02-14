@@ -64,7 +64,7 @@ $ ssh -Y q34
 ## 3. Copying files needed for this laboratory
 To be able to do parts of this lab, you will need some files.
 To avoid all the course participants editing the same file all at once, undoing each other's edits, each participant will get their own copy of the needed files.
-The files are located in the folder `/sw/share/compstore/courses/ngsintro/loops/`
+The files are located in the folder `/sw/courses/ngsintro/loops/`
 
 If you for some reason have problems copying the files, or if you are not on uppmax when running this lab, you can download these files [here](../files/loops.tar.gz). You can unpack the file using the command `tar -xzvf loops.tar.gz` once you have downloaded it. After unpacking, continue the lab from step 4.
 
@@ -79,7 +79,7 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/share/compstore/courses/ngsintro/loops/ /proj/g2018002/nobackup/<username>/loops
+$ cp -r /sw/courses/ngsintro/loops/ /proj/g2018002/nobackup/<username>/loops
 ```
 
 Have a look in `/proj/g2018002/nobackup/<username>/loops`:
@@ -443,7 +443,7 @@ Basic solution:
 <details>
 <summary>:key: Click to see how</summary> 
 <pre>{% highlight bash %}# make the dummy pipeline available
-export PATH=$PATH:/sw/share/compstore/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
+export PATH=$PATH:/sw/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
 
 # index the reference genome
 reference_indexer -r /proj/g2018002/nobackup/\<username\>/filetypes/0_ref/ad2.fa
@@ -485,7 +485,7 @@ Advanced solution:
 <summary>:key: Click to see how</summary> 
 <pre>
 # make the dummy pipeline available in this script
-export PATH=$PATH:/sw/share/compstore/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
+export PATH=$PATH:/sw/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
 
 # index the reference genome once, only if needed
 if [ ! -f /proj/g2018002/nobackup/\<username\>/filetypes/0_ref/ad2.fa.idx ];
@@ -526,7 +526,7 @@ do
 
 # make the dummy pipeline available on the calculation node
 echo "Loading modules"
-export PATH=\$PATH:/sw/share/compstore/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
+export PATH=\$PATH:/sw/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
 
 # copy the reference genome, index and sample file to the nodes local hard drive.
 # You have to escape the dollar sign in SNIC_TMP to keep bash from resolving
