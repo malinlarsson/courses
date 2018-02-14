@@ -36,7 +36,7 @@ Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)
 Room: [Trippelrummet, E10, ground floor](../common/images/bmc_map.jpg)  
 **09:00-12.00** [Exercise: NGS workflow part II](labs/NGS_workflow) (Sebastian DiLorenzo + Markus Mayrhofer, Malin Larsson, Diana Ekman)  
 **12.00-13.00** Lunch at BMC restaurant  
-**13.00-14:00** [Lecture: Data management](slides/Data%20management%20for%20NGS%20course.pdf) (Niclas Jareborg)  
+**13.00-14:00** [Lecture: Data management](slides/2018-02-15%20Data%20management%20for%20NGS%20course.pdf) (Niclas Jareborg)  
 **14.00-15:00** [Lecture: RNA sequencing, transcriptome and expression quantification](slides/rnaseq.pdf) (Anna Johansson)  
 **15.00-17:00** [Exercise: RNA sequencing, transcriptome and expression quantification part I](labs/rnaseq_161129) (Anna Johansson + Per Unneberg, Jakub Orzechowski Westholm, Marcel Martin)  
 
