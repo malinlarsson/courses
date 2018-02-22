@@ -31,10 +31,12 @@ title:  'Welcome'
 
 [2015 April - Uppsala](annotation/2015/)  
 [2016 April - Uppsala](annotation/2016/)
+[2017 April - Uppsala](annotation/2017/)
 
 ### De Novo Genome Assembly 
 
 [2016 November - Uppsala](assembly/1611/)
+[2017 November - Uppsala](assembly/17-11-15/)
 
 ### RNA-seq course ###
 
