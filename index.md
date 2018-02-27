@@ -37,7 +37,7 @@ title:  'Welcome'
 ### De Novo Genome Assembly 
 
 [2016 November - Uppsala](assembly/1611/)  
-[2017 November - Uppsala](assembly/17-11-15/)
+[2017 November - Uppsala](assembly/2017-11-15/)
 
 ### RNA-seq course ###
 
