@@ -25,7 +25,7 @@ Room: E10:1309
 **10.00-10.15** Coffee break  
 **10.15-12.00** [Practical 2: Gathering and preparation of data](practical_session/ExcerciseEvidence) (Lucile Soler, Jacques Dainat, Mahesh Binzer-Panchal)  
 **12.00-13.00** Lunch  
-**13.00-14.30** Lecture : Structural annotation part 1  (Jacques Dainat)
+**13.00-14.30** Lecture : Structural annotation part 1  (Jacques Dainat)  
 **14.30-17.00** [Practical 2: Gathering and preparation of data](practical_session/ExcerciseEvidence) (incl. coffee break) (Lucile Soler, Jacques Dainat, Mahesh Binzer-Panchal)  
 
 <hr>
@@ -39,7 +39,7 @@ Room: E10:1309
 **10.15-12.00** [Practical 3: Structural annotation of eukaryote genomes](practical_session/ExerciseGeneBuilding) (Lucile Soler, Jacques Dainat, Mahesh Binzer-Panchal)  
 **12.00-13.00** Lunch   
 **13.00-15.00** Practical 3: Structural annotation of eukaryote genomes (Lucile Soler, Jacques Dainat, Mahesh Binzer-Panchal)  
-**15.00-15.15** Lecture: Introduction to manual curation (Henrik Lantz)  
+**15.00-15.15** Lecture: Introduction to manual curation (Jacques Dainat)  
 **15.15-17.00** [Practical 4: Manual curation](practical_session/ExerciseManCuration) (incl. coffee break) (Lucile Soler, Jacques Dainat, Mahesh Binzer-Panchal)  
 
 <hr>
