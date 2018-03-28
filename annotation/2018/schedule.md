@@ -1,8 +1,8 @@
 # Introduction to genome annotation
 
 **Teachers:**    
-Jacques Dainat, Ph.D.
-Lucile Soler, Ph. D.
+Jacques Dainat, Ph.D.  
+Lucile Soler, Ph. D. 
 NBIS (National Bioinformatics Infrastructure Sweden)    
 Genome Annotation Service   
 <http://nbis.se/about/staff/jacques-dainat/>    
