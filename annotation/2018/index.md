@@ -23,7 +23,7 @@ Held in Uppsala May 9th-11th, 2017.
 ## Helpful Things
 [Unix cheat sheet level1](other/cheat_sheet/bash_cheat_sheet_level1.pdf)  
 [Unix cheat sheet level2](other/cheat_sheet/bash_cheat_sheet_level2.pdf)  
-[Unix cheat sheet level3](other/cheat_sheet/bash_cheat_sheet_level3.pdf) 
+[Unix cheat sheet level3](other/cheat_sheet/bash_cheat_sheet_level3.pdf)  
 [UPPMAX cheat sheet](other/cheat_sheet/uppmax-cheat-sheet.png)  
 [Mac keyboard layout](../../Metagenomics/1511/common/mac-keyboard)  
 
