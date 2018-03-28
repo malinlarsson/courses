@@ -33,7 +33,7 @@ Room: E10:1309
 **Wednesday 16th**
 
 Room: E10:1309  
-**09.00-9.15** Summary of yesterday’s exercise (Lucile Soler)  
+**09.00-9.15** Summary of yesterday’s exercise (Lucile Soler, Jacques Dainat)  
 **09.15-10.00** [Lecture: Structural annotation part 2 Maker](slides/Structural_annotation_Jacques_HL.pptx) (Jacques Dainat)  
 **10.00-10.15** Coffee break  
 **10.15-12.00** [Practical 3: Structural annotation of eukaryote genomes](practical_session/ExerciseGeneBuilding) (Lucile Soler, Jacques Dainat, Mahesh Binzer-Panchal)  
@@ -47,7 +47,7 @@ Room: E10:1309
 **Thursday 17th** 
 
 Room: E10:1309  
-**09.00-9.15** Summary of yesterday’s exercise (Lucile Soler)  
+**09.00-9.15** Summary of yesterday’s exercise (Lucile Soler, Jacques Dainat)  
 **09.15-10.00** [Lecture: Functional annotation](slides/FunctionalAnnot_LS_11_05_2017.pdf) (Lucile Soler)  
 **10.00-10.15** Coffee break  
 **10.15-12.00** [Practical 5: Functional annotation and annotation analysis contd. ](practical_session/ExerciseFuncAnnotInterp) (Lucile Soler, Jacques Dainat, Mahesh Binzer-Panchal)  
