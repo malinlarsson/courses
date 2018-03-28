@@ -32,8 +32,8 @@ title:  'Welcome'
 
 [2015 April - Uppsala](annotation/2015/)  
 [2016 April - Uppsala](annotation/2016/)  
-[2017 April - Uppsala](annotation/2017/)
-[2018 May - Uppsala](annotation/2018/)
+[2017 April - Uppsala](annotation/2017/)  
+[2018 May - Uppsala](annotation/2018/)  
 
 ### De Novo Genome Assembly 
 
