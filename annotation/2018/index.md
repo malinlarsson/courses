@@ -6,7 +6,7 @@ title:  'Introduction to Genome Annotation - May 2017'
 
 # Introduction to Genome Annotation
 
-Held in Uppsala May 9th-11th, 2017.
+Held in Uppsala May 15th-17th, 2017.
 
 ## Important Links
 [Pre-course material](precourse)  
