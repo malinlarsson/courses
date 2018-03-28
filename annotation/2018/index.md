@@ -10,7 +10,7 @@ Held in Uppsala May 9th-11th, 2017.
 
 ## Important Links
 [Pre-course material](precourse)  
-[Uppmax login instructions](practical_session/LoginInstructions)  
+[Uppmax login instructions](other/loginInstructions)  
 [Schedule](schedule)
 
 ## Maps & Travel Info
@@ -21,8 +21,10 @@ Held in Uppsala May 9th-11th, 2017.
 [Restaurant Meza](http://meza.nu/)
 
 ## Helpful Things
-[Linux cheat sheet](files/linux-cheat-sheet.pdf)  
-[UPPMAX cheat sheet](files/uppmax-cheat-sheet.png)  
+[Unix cheat sheet level1](other/cheat_sheet/bash_cheat_sheet_level1.pdf)  
+[Unix cheat sheet level2](other/cheat_sheet/bash_cheat_sheet_level2.pdf)  
+[Unix cheat sheet level3](other/cheat_sheet/bash_cheat_sheet_level3.pdf) 
+[UPPMAX cheat sheet](other/cheat_sheet/uppmax-cheat-sheet.png)  
 [Mac keyboard layout](../../Metagenomics/1511/common/mac-keyboard)  
 
 ## External Resources
