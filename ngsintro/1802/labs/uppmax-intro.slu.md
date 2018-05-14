@@ -100,7 +100,7 @@ $ mkdir -p /proj/g2018002/nobackup/<username>/uppmax_tutorial
 ```
 
 The reason for this is that Linux will not like it if you try to create the folder uppmax_tutorial inside a folder (the one named like your username) that does not exist yet.
-Then you have the choice to either first create the one named like your username (the first way), or to tell Linux to create it for you by giving it the **-p** option (the second way). Next, copy the lab files to this folder. The files needed for the lab are located in the folder **/sw/share/compstore/courses/ngsintro/uppmax_tutorial**
+Then you have the choice to either first create the one named like your username (the first way), or to tell Linux to create it for you by giving it the **-p** option (the second way). Next, copy the lab files to this folder. The files needed for the lab are located in the folder **/sw/courses/ngsintro/uppmax_tutorial**
 
 **NOTE: Remember to tab-complete to avoid typos and too much writing.**
 
@@ -109,7 +109,7 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/share/compstore/courses/ngsintro/uppmax_tutorial/* /proj/g2018002/nobackup/<username>/uppmax_tutorial
+$ cp -r /sw/courses/ngsintro/uppmax_tutorial/* /proj/g2018002/nobackup/<username>/uppmax_tutorial
 ```
 
 -r means recursively, which means all the files including sub-folders of the source folder. Without it, only files directly in the source folder would be copied, NOT sub-folders and files in sub-folders.

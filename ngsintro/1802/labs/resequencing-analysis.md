@@ -69,7 +69,7 @@ You need to know where your input data are and where your output will go.
 All input data for the first steps of these exercises is located in this folder:
 
 ```bash
-/sw/share/compstore/courses/ngsintro/gatk
+/sw/courses/ngsintro/gatk
 ```
 
 Since we're all sharing the same data, we've made these file read-only so that no one accidentally deletes them or writes over the raw data or someone else's output.
@@ -137,7 +137,7 @@ You can copy this from the project directory to your workspace.
 (Normally copying references is a bad thing, but this is so that everyone can see the full BWA process.)
 
 ```bash
-cp /sw/share/compstore/courses/ngsintro/gatk/refs/human_17_v37.fasta ~/glob/gatk
+cp /sw/courses/ngsintro/gatk/refs/human_17_v37.fasta ~/glob/gatk
 ```
 
 Check to see that this worked.
@@ -187,7 +187,7 @@ First we align each set of reads, then we combine the paired alignments together
 Let's start with one chunk of whole genome shotgun data from individual NA06984.
 
 ```bash
-bwa aln ~/glob/gatk/human_17_v37.fasta /sw/share/compstore/courses/ngsintro/gatk/fastq/wgs/NA06984.ILLUMINA.low_coverage.17q_1.fq > ~/glob/gatk/NA06984.ILLUMINA.low_coverage.17q_1.sai
+bwa aln ~/glob/gatk/human_17_v37.fasta /sw/courses/ngsintro/gatk/fastq/wgs/NA06984.ILLUMINA.low_coverage.17q_1.fq > ~/glob/gatk/NA06984.ILLUMINA.low_coverage.17q_1.sai
 ```
 
 Note that if you have to use a file redirect ( &gt;) for your output, otherwise bwa will print the output directly to stdout, i.e. your screen. Which means that forgetting the redirect can be very disappointing.
@@ -346,7 +346,7 @@ This also happens in two steps.
 First, we compute all the covariation of quality with various other factors:
 
 ```bash
-java -Xmx64g -jar /sw/apps/bioinfo/GATK/3.4-46/GenomeAnalysisTK.jar -T BaseRecalibrator -I <input bam> -R <ref file> -knownSites /sw/share/compstore/courses/ngsintro/gatk/ALL.chr17.phase1_integrated_calls.20101123.snps_indels_svs.genotypes.vcf -o <calibration table>
+java -Xmx64g -jar /sw/apps/bioinfo/GATK/3.4-46/GenomeAnalysisTK.jar -T BaseRecalibrator -I <input bam> -R <ref file> -knownSites /sw/courses/ngsintro/gatk/ALL.chr17.phase1_integrated_calls.20101123.snps_indels_svs.genotypes.vcf -o <calibration table>
 ```
 
 We need to feed it our bam file and our ref file.
@@ -390,10 +390,10 @@ Now you will call variants on all the gvcf-files produced in the previous step b
 java -Xmx16g -jar /sw/apps/bioinfo/GATK/3.4-46/GenomeAnalysisTK.jar -T GenotypeGVCFs -R <ref file> --variant <sample1>.g.vcf --variant <sample2>.g.vcf ... -o <output>.vcf
 ```
 
-As an alternative try also to run the same thing but with all the gvcf for all low_coverage files in the course directory. A gvcf file where these have been merged can be found in the course directory, /sw/share/compstore/courses/ngsintro/gatk/vcfs/ILLUMINA.low_coverage.17q.g.vcf. In the next step when viewing the data in IGV, look at both and try to see if there is a difference for a your sample. 
+As an alternative try also to run the same thing but with all the gvcf for all low_coverage files in the course directory. A gvcf file where these have been merged can be found in the course directory, /sw/courses/ngsintro/gatk/vcfs/ILLUMINA.low_coverage.17q.g.vcf. In the next step when viewing the data in IGV, look at both and try to see if there is a difference for a your sample. 
 
 ```bash
-java -Xmx16g -jar /sw/apps/bioinfo/GATK/3.4-46/GenomeAnalysisTK.jar -T GenotypeGVCFs -R <ref file> --variant /sw/share/compstore/courses/ngsintro/gatk/vcfs/ILLUMINA.low_coverage.17q.g.vcf -o <output>
+java -Xmx16g -jar /sw/apps/bioinfo/GATK/3.4-46/GenomeAnalysisTK.jar -T GenotypeGVCFs -R <ref file> --variant /sw/courses/ngsintro/gatk/vcfs/ILLUMINA.low_coverage.17q.g.vcf -o <output>
 ```
 
 ## Filtering Variants
@@ -449,7 +449,7 @@ We will start with the merged bam files.
 We want to get both the bams and bais for the low coverage and exome data.
 
 ```bash
-scp <username>@milou.uppmax.uu.se:/sw/share/compstore/courses/ngsintro/gatk/processed/MERGED.illumina.\* ./
+scp <username>@milou.uppmax.uu.se:/sw/courses/ngsintro/gatk/processed/MERGED.illumina.\* ./
 ```
 
 Because your uppmax user name is different than the user name on the local machine, you have to put your uppmax user name in front of the @ in the scp so that it knows you want to log in as your uppmax user, not as macuser.
@@ -464,7 +464,7 @@ It will prompt you for your uppmax password, then it should download four files.
 We will also want to load the vcfs into IGV, so you can look at what calls got made.
 
 ```bash
-scp <username>@milou.uppmax.uu.se:/sw/share/compstore/courses/ngsintro/gatk/vcfs/MERGED.illumina.\* ./
+scp <username>@milou.uppmax.uu.se:/sw/courses/ngsintro/gatk/vcfs/MERGED.illumina.\* ./
 ```
 
 Do the same thing for the vcf that you have created in your home directory. 

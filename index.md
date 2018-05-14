@@ -11,6 +11,7 @@ title:  'Welcome'
 
 [2015 November - Uppsala](Metagenomics/1511/)  
 [2016 November - Uppsala](Metagenomics/1611/)  
+[2017 November - Uppsala](Metagenomics/1711/)  
 
 ### Introduction to Bioinformatics Using NGS Data
 [2015 February - Uppsala](ngsintro/1502/)   
@@ -25,16 +26,20 @@ title:  'Welcome'
 [2017 May - Gothenburg](ngsintro/1705/)  
 [2017 September - Lund](ngsintro/1709/)  
 [2017 November - Uppsala](ngsintro/1711/)  
-[2018 February - Uppsala](ngsintro/1802/)
+[2018 February - Uppsala](ngsintro/1802/)  
+[2018 May - Linköping](ngsintro/1805/)  
 
 ### Introduction to Genome Annotation
 
 [2015 April - Uppsala](annotation/2015/)  
-[2016 April - Uppsala](annotation/2016/)
+[2016 April - Uppsala](annotation/2016/)  
+[2017 April - Uppsala](annotation/2017/)  
+[2018 May - Uppsala](annotation/2018/)  
 
 ### De Novo Genome Assembly 
 
-[2016 November - Uppsala](assembly/1611/)
+[2016 November - Uppsala](assembly/1611/)  
+[2017 November - Uppsala](assembly/2017-11-15/)
 
 ### RNA-seq course ###
 

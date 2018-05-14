@@ -111,7 +111,7 @@ To save time and minimise issues with data access, you will use bash scripts whi
 To copy the scripts to your home directory and execute them:
 
 ```bash
-cp /sw/share/compstore/courses/ngsintro/chipseq/scripts/setup/chipseq_data.sh ./
+cp /sw/courses/ngsintro/chipseq/scripts/setup/chipseq_data.sh ./
 
 source chipseq_data.sh
 
@@ -320,9 +320,9 @@ cd ..
 mkdir peak_calling
 cd peak_calling
 
-ln -s /sw/share/compstore/courses/ngsintro/chipseq/data/bam/hela/ENCFF000PED.chr12.rmdup.sort.bam \
+ln -s /sw/courses/ngsintro/chipseq/data/bam/hela/ENCFF000PED.chr12.rmdup.sort.bam \
 ./ENCFF000PED.preproc.bam
-ln -s /sw/share/compstore/courses/ngsintro/chipseq/data/bam/hela/ENCFF000PET.chr12.rmdup.sort.bam \
+ln -s /sw/courses/ngsintro/chipseq/data/bam/hela/ENCFF000PET.chr12.rmdup.sort.bam \
 ./ENCFF000PET.preproc.bam
 ```
 
@@ -468,10 +468,10 @@ mkdir hela
 mkdir hepg2
 mkdir sknsh
 mkdir neural
-ln -s /sw/share/compstore/courses/ngsintro/chipseq/data/bam/hela/* ./hela
-ln -s /sw/share/compstore/courses/ngsintro/chipseq/data/bam/hepg2/* ./hepg2
-ln -s /sw/share/compstore/courses/ngsintro/chipseq/data/bam/sknsh/* ./sknsh
-ln -s /sw/share/compstore/courses/ngsintro/chipseq/data/bam/neural/* ./neural
+ln -s /sw/courses/ngsintro/chipseq/data/bam/hela/* ./hela
+ln -s /sw/courses/ngsintro/chipseq/data/bam/hepg2/* ./hepg2
+ln -s /sw/courses/ngsintro/chipseq/data/bam/sknsh/* ./sknsh
+ln -s /sw/courses/ngsintro/chipseq/data/bam/neural/* ./neural
 
 module load deepTools/2.0.1
 
@@ -590,10 +590,10 @@ mkdir hela
 mkdir hepg2
 mkdir sknsh
 mkdir neural
-ln -s /sw/share/compstore/courses/ngsintro/chipseq/data/bam/hela/* ./hela
-ln -s /sw/share/compstore/courses/ngsintro/chipseq/data/bam/hepg2/* ./hepg2
-ln -s /sw/share/compstore/courses/ngsintro/chipseq/data/bam/sknsh/* ./sknsh
-ln -s /sw/share/compstore/courses/ngsintro/chipseq/data/bam/neural/* ./neural
+ln -s /sw/courses/ngsintro/chipseq/data/bam/hela/* ./hela
+ln -s /sw/courses/ngsintro/chipseq/data/bam/hepg2/* ./hepg2
+ln -s /sw/courses/ngsintro/chipseq/data/bam/sknsh/* ./sknsh
+ln -s /sw/courses/ngsintro/chipseq/data/bam/neural/* ./neural
 
 ```
 
@@ -631,7 +631,7 @@ Before you start using R, you need to set the environmental variable that holds 
 echo $R_LIBS
 ```
 
-The result should be `/sw/share/compstore/courses/ngsintro/chipseq/software/R_lib`. If it is not, source the `chipseq_env.sh` script.
+The result should be `/sw/courses/ngsintro/chipseq/software/R_lib`. If it is not, source the `chipseq_env.sh` script.
 
 
 You will start in directory `/analysis/R`. The file `REST_samples.txt` contains information on files location, and the paths are given in relation to `/analysis/R`; if you choose to start in another directory, please modify the paths in `REST_samples.txt`. This script takes a while to run.
@@ -651,7 +651,7 @@ Before you start using R, you need to set the environmental variable that holds 
 echo $R_LIBS
 ```
 
-The result should be `/sw/share/compstore/courses/ngsintro/chipseq/software/R_lib`. If it is not, source the `chipseq_env.sh` script.
+The result should be `/sw/courses/ngsintro/chipseq/software/R_lib`. If it is not, source the `chipseq_env.sh` script.
 
 Please note that normally three biological replicates are required for statistical analysis of factor occupancy. There are only two replicates each in the ENCODE data sets used in this class - hence you use duplicates for demonstration sake. This script uses the same sample information file as the previous one; the paths are all relative to the `/analysis/R directory`.
 
