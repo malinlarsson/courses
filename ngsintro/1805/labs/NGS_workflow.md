@@ -197,9 +197,7 @@ We want to convert our SAM into BAM before proceeding downstream.
 
 Typically the BAM has the same name as the SAM but with the .sam extension replaced with .bam.
 
-We need to add something called read groups which adds information about the sequencing run to our BAM file, because GATK is going to need this information later on.
-Normally, you would do this one sequencing run at a time, but because this data was downloaded from 1000 Genomes, our data is pulled from multiple runs and merged.
-We will pretend that we have one run for each sample, but on real data, you should not do this.
+We need to add something called read groups which links information about the sequencing run to our BAM file, because GATK is going to need this information later on. Normally, if a sample is sequenced multiple times you would set a separate read group for each sequencing run. In this lab the data was downloaded from 1000 Genomes, and we dont have information about sequencing runs. We will pretend that we have one run for each sample, but on real data you should use read groups that match your experimental setup.
 
 We will use Picard to add read group information.
 As a benefit, it turns out that Picard is a very smart program, and we can start with the SAM file and ask it to simultaneously add read groups, sort the file, and output as BAM. If you only wanted to sort the file you could use for example [picard SortSam](https://broadinstitute.github.io/picard/command-line-overview.html#SortSam).
@@ -377,10 +375,9 @@ java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T GenotypeGVCFs \
 ## Filtering Variants
 
 The last thing we will do is filter the variants.
-We do not have enough data that the VQSR technique for training filter thresholds on our data is likely to work, so instead we're going to use the [parameters suggested by the GATK team at Broad.](https://software.broadinstitute.org/gatk/documentation/article?id=2806)
+For a large dataset with many variants it is recommened to use GATKS VQSR technique for training filter thresholds on known variants. Since we are working with a small data set we're going to use the [parameters suggested by the GATK team at Broad.](https://software.broadinstitute.org/gatk/documentation/article?id=2806)
 
-The parameters are slightly different for SNPs and INDELs, which we have called together and are both in our gVCF.
-Why do you think that some of these parameters are different between the two types of variants?
+The parameters are slightly different for SNPs and INDELs, which we have called together and are both in our gVCF. You therefore need to perform the filtering in two separate steps: first select all SNPs and filter them, then select all indels and filter them. Why do you think that some of these parameters are different between the two types of variants?
 
 An example command line with SNP filters is:
 
