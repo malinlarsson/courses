@@ -233,8 +233,7 @@ Syntax: reference_indexer -r <name of the fasta file you want to index>
 ```
 $ reference_indexer -r 0_ref/ad2.fa
 ```
-</p></details>
-
+</p></details><br>
 
 Since the genome is so small this should only take a second or so.
 The human genome will probably take a couple of hours.
@@ -285,7 +284,7 @@ Syntax: align_reads -r <reference genome> -i <fastq file with reads> -o <name of
 ```
 $ align_reads -r 0_ref/ad2.fa -i 0_seq/ad2.fq -o 1_alignment/ad2.sam
 ```
-</p></details>
+</p></details><br>
 
 This will create a SAM file in **1_alignment** called **ad2.sam**.
 Have a look at it with less.
@@ -316,7 +315,7 @@ Syntax: sambam_tool -f bam -i <sam file> -o <bam>
 ```
 $ sambam_tool -f bam -i 1_alignment/ad2.sam -o 2_bam/ad2.bam
 ```
-</p></details>
+</p></details><br>
 
 Have a look in the **2_bam** folder.
 
@@ -359,7 +358,7 @@ Syntax: sambam_tool -f sort -i <unsorted bam file> -o <sorted bam file>
 ```
 $ sambam_tool -f sort -i 2_bam/ad2.bam -o 3_sorted/ad2.sorted.bam
 ```
-</p></details>
+</p></details><br>
 
 This will sort the ad2.bam file and create a new BAM file which is sorted, called **ad2.sorted.bam**.
 
@@ -376,7 +375,7 @@ Syntax: sambam_tool -f index -i <sorted bam file>
 ```
 $ sambam_tool -f index -i 3_sorted/ad2.sorted.bam
 ```
-</p></details>
+</p></details><br>
 
 This will create an index named **ad2.sorted.bam.bai** in the same folder as the ad2.sorted.bam file is located.
 It's nicer to have the .bam and .bai named to the same "prefix", so rename the .bai file to not have the .bam in its name.
@@ -471,7 +470,7 @@ Syntax: samtools view -C -T <reference genome> -o <name of cram file> <bam file 
 ```
 $ samtools view -C -T 0_ref/ad2.fa -o 4_cram/ad2.cram 3_sorted/ad2.sorted.bam
 ```
-</p></details>
+</p></details><br>
 
 Compare the sizes of the convered BAM file and the newly created CRAM file:
 
