@@ -610,13 +610,13 @@ But not only .docx files..
 There are a couple of **.txt** files in there as well.
 Find out which numbers they have.
 Try to figure out the solution on your own.
-I have written the answer below, with white text.
-Mark the text with the mouse, or press **ctrl+a** (cmd+a for the fruitarians) to mark everything on the page to see the answer.
 
-<font color='white'>$ ll many_files/*.txt</font>
 <details> 
-  <summary>Q1: What is the best Language in the World? </summary>
-   A1: JavaScript 
+  <summary>I give up, tell me how to do it!</summary>
+```
+$ ll many_files/*.txt
+```
+   
 </details>
 
 ## 10. Utility Commands
