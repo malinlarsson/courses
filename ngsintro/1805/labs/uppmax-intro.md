@@ -129,26 +129,70 @@ $ less data.bam
 őa"^L<C4>z<BB>^^<95>K<
 ```
 
-Not so pretty.. Luckily for us, there is a program called **samtools**  (http://sourceforge.net/apps/mediawiki/samtools/index.php?title=SAM_FAQ) that is made for reading bam files.
+Not so pretty.. Luckily for us, there is a program called **samtools**  (http://www.htslib.org/) that is made for reading bam files.
 
 To use it on uppmax we must first load the module for **samtools**. Try starting samtools before loading the module:
 
 ```bash
 $ samtools
-```
+-bash: samtools: command not found
+$ 
 
-![](files/uppmax-intro/samtools_1.png)
+```
 
 That did not work, try it again after loading the module:
 
 ```bash
 $ module load bioinfo-tools samtools
 $ samtools
+
+Program: samtools (Tools for alignments in the SAM format)
+Version: 1.6 (using htslib 1.6)
+
+Usage:   samtools <command> [options]
+
+Commands:
+  -- Indexing
+     dict           create a sequence dictionary file
+     faidx          index/extract FASTA
+     index          index alignment
+
+  -- Editing
+     calmd          recalculate MD/NM tags and '=' bases
+     fixmate        fix mate information
+     reheader       replace BAM header
+     rmdup          remove PCR duplicates
+     targetcut      cut fosmid regions (for fosmid pool only)
+     addreplacerg   adds or replaces RG tags
+     markdup        mark duplicates
+
+  -- File operations
+     collate        shuffle and group alignments by name
+     cat            concatenate BAMs
+     merge          merge sorted alignments
+     mpileup        multi-way pileup
+     sort           sort alignment file
+     split          splits a file by read group
+     quickcheck     quickly check if SAM/BAM/CRAM file appears intact
+     fastq          converts a BAM to a FASTQ
+     fasta          converts a BAM to a FASTA
+
+  -- Statistics
+     bedcov         read depth per BED region
+     depth          compute the depth
+     flagstat       simple stats
+     idxstats       BAM index stats
+     phase          phase heterozygotes
+     stats          generate stats (former bamcheck)
+
+  -- Viewing
+     flags          explain BAM flags
+     tview          text alignment viewer
+     view           SAM<->BAM<->CRAM conversion
+     depad          convert padded BAM to unpadded BAM
 ```
 
 **NOTE: All modules are unloaded when you disconnect from UPPMAX, so you will have to load the modules again every time you log in. If you load a module in a terminal window, it will not affect the modules you have loaded in another terminal window, even if both terminals are connected to UPPMAX. Each terminal is independent of the others.**
-
-![](files/uppmax-intro/samtools_2.png)
 
 To use samtools to view a bam file, use the following line:
 
