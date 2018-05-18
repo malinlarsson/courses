@@ -226,8 +226,14 @@ Have a look at each of them with less, just to see how they look inside. To do t
 ```bash
 Syntax: reference_indexer -r <name of the fasta file you want to index>
 ```
-Answer below in white text:
-<font color="white">$ reference_indexer -r 0_ref/ad2.fa</font>
+
+<details>
+  <summary>I give up, tell me how to do it!</summary><p>
+ 
+```
+$ reference_indexer -r 0_ref/ad2.fa
+```
+</p></details>
 
 Since the genome is so small this should only take a second or so.
 The human genome will probably take a couple of hours.
@@ -271,9 +277,14 @@ Do that using **align_reads**, naming the output file **ad2.sam**, placed in the
 ```bash
 Syntax: align_reads -r <reference genome> -i <fastq file with reads> -o <name of the output file>
 ```
-Answer below in white text:
-<font color="white">$ align_reads -r 0_ref/ad2.fa -i 0_seq/ad2.fq -o 1_alignment/ad2.sam
-</font>
+
+<details>
+  <summary>I give up, tell me how to do it!</summary><p>
+ 
+```
+$ align_reads -r 0_ref/ad2.fa -i 0_seq/ad2.fq -o 1_alignment/ad2.sam
+```
+</p></details>
 
 This will create a SAM file in **1_alignment** called **ad2.sam**.
 Have a look at it with less.
@@ -297,8 +308,14 @@ To do that we will use the dummy program **sambam_tools**, telling it we want to
 ```bash
 Syntax: sambam_tool -f bam -i <sam file> -o <bam>
 ```
-Answer below in white text:
-<font color="white">$ sambam_tool -f bam -i 1_alignment/ad2.sam -o 2_bam/ad2.bam</font>
+
+<details>
+  <summary>I give up, tell me how to do it!</summary><p>
+ 
+```
+$ sambam_tool -f bam -i 1_alignment/ad2.sam -o 2_bam/ad2.bam
+```
+</p></details>
 
 Have a look in the **2_bam** folder.
 
@@ -334,8 +351,14 @@ To sort the BAM file we'll use the **sambam_tool** again, but specifying a diffe
 ```bash
 Syntax: sambam_tool -f sort -i <unsorted bam file> -o <sorted bam file>
 ```
-Answer below in white text:
-<font color="white">$ sambam_tool -f sort -i 2_bam/ad2.bam -o 3_sorted/ad2.sorted.bam</font>
+
+<details>
+  <summary>I give up, tell me how to do it!</summary><p>
+ 
+```
+$ sambam_tool -f sort -i 2_bam/ad2.bam -o 3_sorted/ad2.sorted.bam
+```
+</p></details>
 
 This will sort the ad2.bam file and create a new BAM file which is sorted, called **ad2.sorted.bam**.
 
@@ -345,8 +368,14 @@ Use the command
 ```bash
 Syntax: sambam_tool -f index -i <sorted bam file>
 ```
-Answer below in white text:
-<font color="white">$ sambam_tool -f index -i 3_sorted/ad2.sorted.bam</font>
+
+<details>
+  <summary>I give up, tell me how to do it!</summary><p>
+ 
+```
+$ sambam_tool -f index -i 3_sorted/ad2.sorted.bam
+```
+</p></details>
 
 This will create an index named **ad2.sorted.bam.bai** in the same folder as the ad2.sorted.bam file is located.
 It's nicer to have the .bam and .bai named to the same "prefix", so rename the .bai file to not have the .bam in its name.
