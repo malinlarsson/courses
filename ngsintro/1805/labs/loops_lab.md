@@ -7,7 +7,8 @@ title:  'Advanced Linux Usage - Variables and Loops'
 **NOTE:** in syntax examples, the dollar sign ($) is not to be printed. The dollar sign is usually an indicator that the text following it should be typed in a terminal window.
 
 ## 1. Connecting to UPPMAX
-The first step of this lab is to open a ssh connection to UPPMAX. You will need a ssh program to do this:
+The first step of this lab is to open a ssh connection to UPPMAX.
+You will need a ssh program to do this:
 
 On Linux: it is included by default, named **Terminal**.
 
@@ -15,50 +16,74 @@ On OSX: it is included by default, named **Terminal**.
 
 On Windows: [Google MobaXterm](http://bit.ly/19yaQOM) and download it.
 
-Fire up the available ssh program and enter the following (replace **username** with your uppmax user name). -Y means that X-forwarding is activated on the connection, which means graphical data can be transmitted if a program requests it, i.e. programs can use a graphical user interface (GUI) if they want to.
+Fire up the available ssh program and enter the following (replace **username** with your uppmax user name).
+-Y means that X-forwarding is activated on the connection, which means graphical data can be transmitted if a program requests it, i.e. programs can use a graphical user interface (GUI) if they want to.
 
-```bash
+```
 $ ssh -Y username@milou.uppmax.uu.se
 ```
 
-and give your password when prompted. As you type, nothing will show on screen. No stars, no dots. It is supposed to be that way. Just type the password and press enter, it will be fine.
+and give your password when prompted.
+As you type, nothing will show on screen.
+No stars, no dots.
+It is supposed to be that way.
+Just type the password and press enter, it will be fine.
 
 Now your screen should look something like this:
+```
+uppnex-47-19:~ valentingeorgiev$ ssh -Y valent@milou.uppmax.uu.se
+Last login: Sun Sep 24 12:06:48 2017 from host-95-195-219-154.mobileonline.telia.com
+ _   _ ____  ____  __  __    _    __  __
+| | | |  _ \|  _ \|  \/  |  / \   \ \/ /   | System:    milou1
+| | | | |_) | |_) | |\/| | / _ \   \  /    | User:      valent
+| |_| |  __/|  __/| |  | |/ ___ \  /  \    | Jobs:      0 running
+ \___/|_|   |_|   |_|  |_/_/   \_\/_/\_\   | Queue:     0 pending
 
-![](files/uppmax-intro/just-logged-in.jpg)
+###############################################################################
 
+        User Guides: http://www.uppmax.uu.se/support/user-guides
+        FAQ: http://www.uppmax.uu.se/support/faq
+
+        Write to support@uppmax.uu.se, if you have questions or comments.
+
+
+[valent@milou1 ~]$
+```
 ## 2. Getting a node of your own (only if you canceled your job before lunch)
 
-Usually you would do most of the work in this lab directly on one of the login nodes at uppmax, but we have arranged for you to have one core each to avoid disturbances. This was covered briefly in the lecture notes.
+Usually you would do most of the work in this lab directly on one of the login nodes at uppmax, but we have arranged for you to have one core each to avoid disturbances.
+This was covered briefly in the lecture notes.
 
-<font color='red'>Check with squeue -u username if you still have your reservation since before lunch running. If it is running, skip this step and connect to that reservation.</font>
-
-(We only have 30 reserved cores, so if someone has two, someone else will not get one..)
-
-```bash
-# ONLY IF YOU DON'T ALREADY HAVE AN ACTIVE ALLOCATION SINCE BEFORE
-$ salloc -A g2018002 -t 04:30:00 -p core -n 1 --no-shell --reservation=g2018002_TUE &
+```
+$ salloc -A g2018002 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2018002_MON &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
 
-```bash
+```
 $ squeue -u username
 ```
 
 should look something like this
 
-![](files/uppmax-intro/allocation.png)
+```
+dahlo@rackham2 work $ squeue -u dahlo
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+           3132376      core       sh    dahlo  R       0:04      1 r292
+dahlo@rackham2 work $ 
+```
 
-where **q34** is the name of the node I got (yours will probably be different). Note the numbers in the Time column. They show for how long the job has been running. When it reaches the time limit you requested (4.5 hours in this case) the session will shut down, and you will lose all unsaved data. Connect to this node from within uppmax.
+where **r292** is the name of the node I got (yours will probably be different).
+Note the numbers in the Time column.
+They show for how long the job has been running.
+When it reaches the time limit you requested (7 hours in this case) the session will shut down, and you will lose all unsaved data.
+Connect to this node from within uppmax.
 
-```bash
-$ ssh -Y q34
+```
+$ ssh -Y r292 
 ```
 
 **Note:** there is a uppmax specific tool called jobinfo that supplies the same kind of information as squeue that you can use as well (```$ jobinfo -u username```).
-
-
 
 
 ## 3. Copying files needed for this laboratory
