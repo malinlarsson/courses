@@ -108,18 +108,26 @@ Have a look in **/proj/g2018002/nobackup/\<username\>/uppmax_tutorial**:
 $ cd /proj/g2018002/nobackup/<username>/uppmax_tutorial
 
 $ ll
-```
+total 128K
+drwxrwxr-x 2 dahlo dahlo 2,0K May 18 16:21 .
+drwxrwxr-x 4 dahlo dahlo 2,0K May 18 15:34 ..
+-rwxrwxr-x 1 dahlo dahlo 1,2K May 18 16:21 data.bam
+-rw-rw-r-- 1 dahlo dahlo  232 May 18 16:21 job_template
+$ 
 
-![](files/uppmax-intro/newly_copied_folder.png)
+```
 
 ## 4. Running a program
 Among the files that were copied is data.bam. Bam is a popular format to store aligned sequence data, but since it is a, so called, binary format it doesn't look that good if you are human. Try it using less:
 
 ```bash
 $ less data.bam
-```
 
-![](files/uppmax-intro/bam_binary.png)
+^_<8B>^H^D^@^@^@^@^@<FF>^F^@BC^B^@<AA>^Bm<92><BD>k^Sa^\<C7>^?6<B6><F6><AA>
+<EB>g<8E>2^@<F9>բ<B3><B9><91><C3>,qJwrU<DF><EF><D5><DA>]<AF>_<9F>˗<EE>9<A5
+<A0>°<85>H<FB>kE<89>`xA<A6><A5><B4><EF>^Q%<82>\2<C9><C3><FD><96>0<B1>@<8A>
+őa"^L<C4>z<BB>^^<95>K<
+```
 
 Not so pretty.. Luckily for us, there is a program called **samtools**  (http://sourceforge.net/apps/mediawiki/samtools/index.php?title=SAM_FAQ) that is made for reading bam files.
 
