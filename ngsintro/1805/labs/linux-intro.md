@@ -20,7 +20,7 @@ On Windows: [Google MobaXterm](http://bit.ly/19yaQOM) and download it.
 Fire up the available ssh program and enter the following (replace **username** with your uppmax user name).
 -Y means that X-forwarding is activated on the connection, which means graphical data can be transmitted if a program requests it, i.e. programs can use a graphical user interface (GUI) if they want to.
 
-```bash
+```
 $ ssh -Y username@milou.uppmax.uu.se
 ```
 
@@ -55,19 +55,19 @@ Last login: Sun Sep 24 12:06:48 2017 from host-95-195-219-154.mobileonline.telia
 Usually you would do most of the work in this lab directly on one of the login nodes at uppmax, but we have arranged for you to have one core each to avoid disturbances.
 This was covered briefly in the lecture notes.
 
-```bash
+```
 $ salloc -A g2018002 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2018002_MON &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
 
-```bash
+```
 $ squeue -u username
 ```
 
 should look something like this
 
-```bash
+```
 [11:11:10] dahlo@rackham2 work $ squeue -u dahlo
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
            3132376      core       sh    dahlo  R       0:04      1 r292
@@ -80,7 +80,7 @@ They show for how long the job has been running.
 When it reaches the time limit you requested (7 hours in this case) the session will shut down, and you will lose all unsaved data.
 Connect to this node from within uppmax.
 
-```bash
+```
 $ ssh -Y q34 
 ```
 
@@ -97,13 +97,13 @@ The absolute path to your home folder is usually **/home/\<username\>**
 Start with looking at what you have in your home folder.
 The command for this ls, and it stand for **L**i**S**t (list).
 
-```bash
+```
 $ ls -l
 ```
 
 You should see something similar to:
 
-```bash
+```
 [12:56:32] dahlo@rackham1 ~ $ ls -l
 total 4384
 drwxr-xr-x  3 dahlo b2014068    2048 Apr 27  2017 archive
@@ -137,7 +137,7 @@ The command stands for **C**hange **D**irectory and does exactly that.
 It is the equivalent of double clicking a folder in a GUI.
 To enter the course project's proj folder, simply type
 
-```bash
+```
 $ cd /proj/g2018002
 ```
 
@@ -146,7 +146,7 @@ This is the folder where all the unreplacable files belonging to a project would
 Since we'll be creating a bunch of temporary files during these labs, we will have to do that in the nobackup folder.
 Go there using the cd command.
 
-```bash
+```
 $ cd nobackup
 ```
 
@@ -169,7 +169,7 @@ Now we have practiced moving around and looking at what we have in folders.
 The next step will show you how to do the same thing, but without the moving around part.
 If we want to look at what we have in our home folder, while standing in the course's project folder, we type ```$ ll /home/<username>/``` and remember to substitute **\<username\>** with your own user name.
 
-```bash
+```
 $ ll /home/valent/
 ```
 
@@ -177,13 +177,13 @@ Since most programmers are lazy (efficient), there is a shortcut to your home fo
 If you write **~/** it means the same as if you would write **/home/\<username\>/**
 Try using it with ls:
 
-```bash
+```
 $ ll /home/<username>
 ```
 
 or
 
-```bash
+```
 $ ll ~/
 ```
 
@@ -199,14 +199,14 @@ For structures sake, first create a folder named as your username in the course'
 
 This can be done in 2 ways:
 
-```bash
+```
 $ mkdir /proj/g2018002/nobackup/<username>
 $ mkdir /proj/g2018002/nobackup/<username>/linux_tutorial
 ```
 
 or
 
-```bash
+```
 $ mkdir -p /proj/g2018002/nobackup/<username>/linux_tutorial
 ```
 
@@ -219,7 +219,7 @@ Without it, only files directly in the source folder would be copied, NOT sub-fo
 
 **NOTE:** Remember to tab-complete to avoid typos and too much writing.
 
-```bash
+```
 Ex: cp -r <source folder> <destination folder>
 
 $ cp -r /sw/courses/ngsintro/linux_tutorial/* /proj/g2018002/nobackup/<username>/linux_tutorial
@@ -230,7 +230,7 @@ This is done with the command **wget** (web get).
 It works kind of the same way as the cp command, but you give it a source URL instead of a source file, and you specify the destination by giving it a prefix, a path that will be appended in front on the file name when it's downloaded.
 I.e. if you want to download the file http://somewhere.com/my.file and you give it the prefix ~/analysis/, the downloaded file will be saved as ~/analysis/my.file
 
-```bash
+```
 Ex: wget -P <destination prefix> <source URL>
 
 $ wget -P /proj/g2018002/nobackup/<username>/linux_tutorial {{site.url}}/ngsintro/1502/labs/files/linux-intro/files.tar.gz
@@ -241,7 +241,7 @@ Go to the folder you just copied and see what is in it.
 
 **NOTE: Remember to tab-complete to avoid typos and too much writing.**
 
-```bash
+```
 $ cd /proj/g2018002/nobackup/<username>/linux_tutorial
 
 $ ll
@@ -253,7 +253,7 @@ This is both convenient for the person downloading and speeds up the transfer mo
 
 To unpack the **files.tar.gz** file use the following line while standing in the newly copied linux_tutorial folder.
 
-```bash
+```
 $ tar -xzvf files.tar.gz
 ```
 
@@ -261,7 +261,7 @@ The command will always be the same for all tar.gz files you want to unpack.
 -xzvf means e<b>X</b>tract from a **Z**ipped file, **V**erbose (prints the name of the file being unpacked), from the specified **F**ile (f must always be the last of the letters).
 
 Look in the folder again and see what we just unpacked:
-```bash
+```
 [valent@milou2 linux_tutorial]$ ll -la
 total 512
 drwxrwsr-x 12 valent g2018002   2048 Sep 24 13:19 .
@@ -293,13 +293,13 @@ Typically this would mean that you move the final results to your project folder
 In this example we want to move the result file only, located in the folder `important_results`, to our fake project folder, called `backed_up_proj_folder`.
 The syntax for the move command is:
 
-```bash
+```
 $ mv <source> <destination>
 ```
 
 First, take a look inside the important_results folder:
 
-```bash
+```
 [valent@milou2 linux_tutorial]$ ll important_results/
 total 0
 -rwxrwxr-x 1 valent g2018002 0 Sep 19  2012 dna_data_analysis_result_file_that_is_important-you_should_really_use_tab_completion_for_file_names.bam
@@ -310,7 +310,7 @@ total 0
 You see that there are some unimportant temporary files that you have no interest in.
 Just to demonstrate the move command, I will show you how to move one of these temporary files to your backed up project folder:
 
-```bash
+```
 $ mv important_results/temp_file-1 backed_up_proj_folder/
 ```
 
@@ -318,7 +318,7 @@ $ mv important_results/temp_file-1 backed_up_proj_folder/
 
 Look in the backed up project folder to make sure you moved the file correctly.
 
-```bash
+```
 [valent@milou2 linux_tutorial]$ ll backed_up_proj_folder/
 total 0
 -rwxrwxr-x 1 valent g2018002 0 Sep 19  2012 dna_data_analysis_result_file_that_is_important-you_should_really_use_tab_completion_for_file_names.bam
@@ -332,13 +332,13 @@ You move the file to a location and give the file a new name in the process.
 The location you move the file **to** can of very well be the same folder the file already is in.
 To give this a try, we will rename the folder `a_strange_name` to a better name.
 
-```bash
+```
 $ mv a_strange_name a_better_name
 ```
 
 Look around to see that the name change worked.
 
-```bash
+```
 [valent@milou2 linux_tutorial]$ mv a_strange_name a_better_name
 [valent@milou2 linux_tutorial]$ ll
 total 448
@@ -366,14 +366,14 @@ The file you want to give to your friend is data from last years project, which 
 
 As with the move command, the syntax is
 
-```bash
+```
 $ cp <source> <destination>
 
 $ cp backed_up_proj_folder/last_years_data external_hdd/
 ```
 
 Take a look in the external_hdd to make sure the file got copied.
-```bash
+```
 [valent@milou2 linux_tutorial]$ cp backed_up_proj_folder/last_years_data external_hdd/
 [valent@milou2 linux_tutorial]$ ll external_hdd/
 total 0
@@ -386,13 +386,13 @@ Usually this is when you know that the file or files are useless to you, and the
 To delete a file, we use the **R**e<b>M</b>ove command, **rm**.
 Syntax:
 
-```bash
+```
 $ rm <file to remove>
 ```
 
 If you want, you can also specify multiple files a once, as many as you want!
 
-```bash
+```
 $ rm <file to remove> <file to remove> <file to remove> <file to remove> <file to remove>
 ```
 
@@ -403,7 +403,7 @@ So be careful when deleting stuff..**
 Try it out by deleting the useless file in the folder you are standing in.
 First, look around in the folder to see the file.
 
-```bash
+```
 [valent@milou2 linux_tutorial]$ ll
 total 448
 drwxrwsr-x 2 valent g2018002   2048 Sep 19  2012 a_better_name
@@ -423,7 +423,7 @@ drwxrwsr-x 2 valent g2018002   2048 Jan 28  2012 this_is_empty
 ```
 Now remove it:
 
-```bash
+```
 $ rm useless_file
 ```
 
@@ -433,7 +433,7 @@ There is even a special command for removing folders, **rmdir**.
 They work similar to **rm**, except that they can't remove files.
 There are two folders, `this_is_empty` and `this_has_a_file`, that we now will delete.
 
-```bash
+```
 $ rmdir this_is_empty
 
 $ rmdir this_has_a_file
@@ -441,7 +441,7 @@ $ rmdir this_has_a_file
 
 If you look inside `this_has_a_file`:
 
-```bash
+```
 [valent@milou2 linux_tutorial]$ ll this_has_a_file
 total 0
 -rwxrwxr-x 1 valent g2018002 0 Jan 28  2012 file
@@ -451,7 +451,7 @@ total 0
 you will see there is a file in there! Only directories that are completely empty can be deleted using rmdir.
 To be able to delete `this_has_a_file`, either delete the file manually and then remove the folder
 
-```bash
+```
 $ rm this_has_a_file/file
 
 $ rmdir this_has_a_file
@@ -459,7 +459,7 @@ $ rmdir this_has_a_file
 
 or delete the directory recursively, which will remove `this_has_a_file` and everything inside:
 
-```bash
+```
 $ rm -r this_has_a_file
 ```
 
@@ -472,7 +472,7 @@ Then the only way out is to look at the contents of the files and try to figure 
 Now, we are looking for that really good script we wrote a couple of months ago in that other project.
 Look in the project's folder, **old_project**, and find the script.
 
-```bash
+```
 [valent@milou2 linux_tutorial]$ ll old_project/
 total 96
 -rwxrwxr-x 1 valent g2018002 39904 Sep 19  2012 a
@@ -485,13 +485,13 @@ Not so easy with those names..
 We will have to use less to look at the files and figure out which is which.
 Syntax for less:
 
-```bash
+```
 $ less <filename>
 ```
 
 Have a look at **the_best**, that must be our script, right?
 
-```bash
+```
 $ less old_project/the_best
 ```
 
@@ -517,7 +517,7 @@ Normal sequencing files can easily be 100-1000 times larger than this.
 First, open the file with nano.
 Syntax:
 
-```bash
+```
 $ nano <filename>
 
 $ nano /sw/courses/ngsintro/linux_additional-files/large_file
@@ -535,7 +535,7 @@ They don't load the whole file into RAM, they just take what they need.
 To view the first rows of the large file, use head.
 Syntax:
 
-```bash
+```
 $ head <filename>
 
 $ head /sw/courses/ngsintro/linux_additional-files/large_file
@@ -543,7 +543,7 @@ $ head /sw/courses/ngsintro/linux_additional-files/large_file
 
 Remember how to view an arbitrary number of first rows in a file?
 
-```bash
+```
 $ head -n <number of rows to view> <filename>
 
 $ head -n 23 /sw/courses/ngsintro/linux_additional-files/large_file
@@ -551,7 +551,7 @@ $ head -n 23 /sw/courses/ngsintro/linux_additional-files/large_file
 
 The same syntax for viewing the last rows of a file with tail:
 
-```bash
+```
 $ tail <filename>
 
 $ tail /sw/courses/ngsintro/linux_additional-files/large_file
@@ -572,7 +572,7 @@ Then you could use the wildcard to represent the rest of the name:
 
 **(don't run this command, it's just an example)**
 
-```bash
+```
 $ mv  sample_1_*  my_other_folder
 ```
 
@@ -581,7 +581,7 @@ There are two folder called **part_1** and **part_2**.
 We want to collect all the **.txt** files from both these folders in one of the folders.
 Look around in both the folders to see what they contain.
 
-```bash
+```
 [valent@milou2 linux_tutorial]$ ll part_1/
 total 0
 -rwxrwxr-x 1 valent g2018002 0 Sep 19  2012 file_1.txt
@@ -598,7 +598,7 @@ total 0
 We see that **part_1** only contains .txt files, and that **part_2** contains some other files as well.
 The best option seem to be to move all .txt files from **part_2** info **part_1**.
 
-```bash
+```
 $ mv part_2/*.txt part_1/
 ```
 
@@ -623,7 +623,7 @@ Ok, the last 2 commands now.
 Top can be useful when you want to look at which programs are being run on the computer, and how hard the computer is working.
 Type **top** and have a look.
 
-```bash
+```
 $ top
 ```
 
@@ -668,7 +668,7 @@ You might remember ls, but was it -l or -a you should use to see hidden files? Y
 Good news everyone, there is a manual! To get all the nitty-gritty details about ls, you use the **man** command.
 Syntax:
 
-```bash
+```
 $ man <command you want to look at>
 
 $ man ls
