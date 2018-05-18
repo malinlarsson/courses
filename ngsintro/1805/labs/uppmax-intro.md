@@ -321,9 +321,29 @@ Rewrite the previous sbatch file so that you book 3 days of time, and to use a n
 
 ```bash
 $ jobinfo -u <username>
-```
 
-![](files/uppmax-intro/jobinfo.png)
+CLUSTER: rackham
+Running jobs:
+   JOBID PARTITION                      NAME     USER        ACCOUNT ST          START_TIME  TIME_LEFT  NODES CPUS NODELIST(REASON)
+ 3134399   devcore              _interactive    dahlo       g2018009  R 2018-05-18T16:32:54      59:25      1    1 r483
+
+Nodes in use:                            462
+Nodes in devel, free to use:               2
+Nodes in other partitions, free to use:    4
+Nodes available, in total:               468
+
+Nodes in test and repair:                 13
+Nodes, otherwise out of service:           5
+Nodes, all in total:                     486
+
+Waiting jobs:
+   JOBID    POS PARTITION                      NAME     USER        ACCOUNT ST          START_TIME   TIME_LEFT PRIORITY CPUS NODELIST(REASON)     FEATURES DEPENDENCY
+ 3134401    221      core           Template_script    dahlo       g2018009 PD                 N/A     1:00:00   100000    1           (None)       (null)
+
+Waiting bonus jobs:
+[16:33:30] dahlo@r483 uppmax_tutorial $ 
+
+```
 
 If you look under the heading **"Waiting jobs:"** you'll see a list of all the jobs you have in the queue that have not started yet. The most interesting column here is the **POS** column, which tells you which position in the queue you have (12 in my example). When you reach the first place, your job will start as soon as there are the resources you have asked for.
 
