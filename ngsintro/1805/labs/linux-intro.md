@@ -613,6 +613,7 @@ Try to figure out the solution on your own.
 
 <details>
   <summary>I give up, tell me how to do it!</summary><p>
+ 
 ```java
 $ ll many_files/*.txt
 ```
