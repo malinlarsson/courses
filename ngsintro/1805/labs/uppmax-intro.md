@@ -325,7 +325,7 @@ $ jobinfo -u <username>
 CLUSTER: rackham
 Running jobs:
    JOBID PARTITION                      NAME     USER        ACCOUNT ST          START_TIME  TIME_LEFT  NODES CPUS NODELIST(REASON)
- 3134399   devcore              _interactive    dahlo       g2018009  R 2018-05-18T16:32:54      59:25      1    1 r483
+ 3134399   devcore                               dahlo       g2018009  R 2018-05-18T16:32:54      59:25      1    1 r483
 
 Nodes in use:                            462
 Nodes in devel, free to use:               2
@@ -341,7 +341,7 @@ Waiting jobs:
  3134401    221      core           Template_script    dahlo       g2018009 PD                 N/A     1:00:00   100000    1           (None)       (null)
 
 Waiting bonus jobs:
-[16:33:30] dahlo@r483 uppmax_tutorial $ 
+$ 
 
 ```
 
@@ -356,7 +356,7 @@ $ scancel <job id>
 You see the job id number in the output from jobinfo or squeue.
 
 ```bash
-$ scancel 2226987
+$ scancel 3134401
 ```
 
 ## 8. Interactive
