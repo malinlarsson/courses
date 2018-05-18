@@ -32,13 +32,13 @@ Just type the password and press enter, it will be fine.
 
 Now your screen should look something like this:
 ```
-uppnex-47-19:~ valentingeorgiev$ ssh -Y valent@milou.uppmax.uu.se
-Last login: Sun Sep 24 12:06:48 2017 from host-95-195-219-154.mobileonline.telia.com
+dahlo@dahlo-xps ~ $ ssh -Y dahlo@rackham.uppmax.uu.se
+Last login: Fri May 18 15:03:59 2018 from micro046.icm.uu.se
  _   _ ____  ____  __  __    _    __  __
-| | | |  _ \|  _ \|  \/  |  / \   \ \/ /   | System:    milou1
-| | | | |_) | |_) | |\/| | / _ \   \  /    | User:      valent
-| |_| |  __/|  __/| |  | |/ ___ \  /  \    | Jobs:      0 running
- \___/|_|   |_|   |_|  |_/_/   \_\/_/\_\   | Queue:     0 pending
+| | | |  _ \|  _ \|  \/  |  / \   \ \/ /   | System:    rackham4
+| | | | |_) | |_) | |\/| | / _ \   \  /    | User:      dahlo
+| |_| |  __/|  __/| |  | |/ ___ \  /  \    | 
+ \___/|_|   |_|   |_|  |_/_/   \_\/_/\_\   | 
 
 ###############################################################################
 
@@ -48,7 +48,7 @@ Last login: Sun Sep 24 12:06:48 2017 from host-95-195-219-154.mobileonline.telia
         Write to support@uppmax.uu.se, if you have questions or comments.
 
 
-[valent@milou1 ~]$
+dahlo@rackham4 ~ $ 
 ```
 ## 2. Getting a node of your own
 
