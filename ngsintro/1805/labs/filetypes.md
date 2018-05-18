@@ -168,14 +168,18 @@ $ echo $PATH
 
 It should give you something like this, a list of directories, separated by colon signs:
 
-![](files/uppmax-pipeline/echoPath.png)
+```bash
+dahlo@rackham2 work $ echo $PATH
+/home/dahlo/perl//bin/:/home/dahlo/.pyenv/shims:/home/dahlo/.pyenv/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/thinlinc/bin:/sw/uppmax/bin:/home/dahlo/usr/bin
+```
 
 Try loading a module, and then look at the $PATH variable again.
 You'll see that there are a few extra directories there now, after the module has been loaded.
 
 ```bash
-$ module load bioinfo-tools samtools/1.3
-$ echo $PATH
+dahlo@rackham2 work $ module load bioinfo-tools samtools/1.6
+dahlo@rackham2 work $ echo $PATH
+/sw/apps/bioinfo/samtools/1.6/rackham/bin:/home/dahlo/perl/bin:/home/dahlo/.pyenv/shims:/home/dahlo/.pyenv/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/thinlinc/bin:/sw/uppmax/bin:/home/dahlo/usr/bin
 ```
 
 ![](files/uppmax-pipeline/echoPathPostModuleLoad.png)
