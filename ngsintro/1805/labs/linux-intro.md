@@ -68,20 +68,20 @@ $ squeue -u username
 should look something like this
 
 ```
-[11:11:10] dahlo@rackham2 work $ squeue -u dahlo
+dahlo@rackham2 work $ squeue -u dahlo
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
            3132376      core       sh    dahlo  R       0:04      1 r292
-[11:11:12] dahlo@rackham2 work $ 
+dahlo@rackham2 work $ 
 ```
 
-where **q34** is the name of the node I got (yours will probably be different).
+where **r292** is the name of the node I got (yours will probably be different).
 Note the numbers in the Time column.
 They show for how long the job has been running.
 When it reaches the time limit you requested (7 hours in this case) the session will shut down, and you will lose all unsaved data.
 Connect to this node from within uppmax.
 
 ```
-$ ssh -Y q34 
+$ ssh -Y r292 
 ```
 
 **Note:** there is a uppmax specific tool called jobinfo that supplies the same kind of information as squeue that you can use as well (```$ jobinfo -u username```).
