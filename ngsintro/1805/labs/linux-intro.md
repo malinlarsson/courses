@@ -613,28 +613,9 @@ Try to figure out the solution on your own.
 
 <details>
   <summary>I give up, tell me how to do it!</summary><p>
-  
 ```java
 $ ll many_files/*.txt
 ```
-</p></details>
-
-  <details>
-    <summary><small>nested</small> stuff</summary><p>
-<!-- alternative placement of p shown above -->
-
-* list
-* with
-
- 1. nested
- 1. items
-
-    ```java
-    // including code
-    ```
- 1. blocks
-
-
 </p></details>
 
 ## 10. Utility Commands
