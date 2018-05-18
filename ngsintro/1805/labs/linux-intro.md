@@ -614,6 +614,10 @@ I have written the answer below, with white text.
 Mark the text with the mouse, or press **ctrl+a** (cmd+a for the fruitarians) to mark everything on the page to see the answer.
 
 <font color='white'>$ ll many_files/*.txt</font>
+<details> 
+  <summary>Q1: What is the best Language in the World? </summary>
+   A1: JavaScript 
+</details>
 
 ## 10. Utility Commands
 Ok, the last 2 commands now.
