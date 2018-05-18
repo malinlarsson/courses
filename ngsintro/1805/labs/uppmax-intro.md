@@ -198,9 +198,16 @@ To use samtools to view a bam file, use the following line:
 
 ```bash
 $ samtools view -h data.bam
+@HD	VN:1.0	SO:coordinate
+@SQ	SN:chr1	LN:249250621
+@SQ	SN:chr10	LN:135534747
+@SQ	SN:chr11	LN:135006516
+@SQ	SN:chr12	LN:133851895
+@SQ	SN:chr13	LN:115169878
+@SQ	SN:chr14	LN:107349540
+@SQ	SN:chr15	LN:102531392
+@SQ	SN:chr16	LN:90354753
 ```
-
-![](files/uppmax-intro/sam.png)
 
 **-h** also print the bam file's **header**, which is the rows starting with **@ signs** in the beginning of the file. These lines contain so called **metadata**; information about the data stored in the file. It contain things like which program was used to generate the bam file and which chromosomes are present in the file. Try running the command without the **-h** to see the difference.
 
@@ -245,11 +252,12 @@ To view which module you have loaded at the moment, type
 
 ```bash
 $ module list
+
+Currently Loaded Modules:
+  1) uppmax   2) bioinfo-tools   3) samtools/1.6
 ```
 
-![](files/uppmax-intro/module-list.png)
-
-Let's say that you want to make sure you are using the latest version samtools. Look at which version you have loaded at the moment (samtools/0.1.12-10).
+Let's say that you want to make sure you are using the latest version samtools. Look at which version you have loaded at the moment (samtools/1.6).
 
 Now type 
 
@@ -277,9 +285,24 @@ Have a look at **job_template.txt** in your **uppmax_tutorial** folder.
 
 ```bash
 $ less job_template.txt
-```
 
-![](files/uppmax-intro/job_template.png)
+
+#! /bin/bash -l
+#SBATCH -A g2013052
+#SBATCH -p core
+#SBATCH -J Template_script
+#SBATCH -t 01:00:00
+
+# load some modules
+module load bioinfo-tools
+
+# go to some directory
+cd /proj/g2013052/nobackup/
+
+# do something
+echo Hello world!
+job_template (END)
+```
 
 Edit this file to make the job convert **data.bam** to a sam file named **jobData.sam**. Remember how the queue works? Try to approximate the runtime of the job (almost instant in this case) and increase it by ~50%, and use that time approximation when writing your script file. Longer jobs will wait longer in the queue because it is harder to fit them into gaps in the queue! Also remember to change the project ID to match this course occasion.
 
