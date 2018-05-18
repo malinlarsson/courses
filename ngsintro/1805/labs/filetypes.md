@@ -170,7 +170,9 @@ It should give you something like this, a list of directories, separated by colo
 
 ```bash
 dahlo@rackham2 work $ echo $PATH
-/home/dahlo/perl//bin/:/home/dahlo/.pyenv/shims:/home/dahlo/.pyenv/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/thinlinc/bin:/sw/uppmax/bin:/home/dahlo/usr/bin
+/home/dahlo/perl//bin/:/home/dahlo/.pyenv/shims:/home/dahlo/.pyenv/bin:
+/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:
+/sbin:/opt/thinlinc/bin:/sw/uppmax/bin:/home/dahlo/usr/bin
 ```
 
 Try loading a module, and then look at the $PATH variable again.
@@ -179,10 +181,10 @@ You'll see that there are a few extra directories there now, after the module ha
 ```bash
 dahlo@rackham2 work $ module load bioinfo-tools samtools/1.6
 dahlo@rackham2 work $ echo $PATH
-/sw/apps/bioinfo/samtools/1.6/rackham/bin:/home/dahlo/perl/bin:/home/dahlo/.pyenv/shims:/home/dahlo/.pyenv/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/thinlinc/bin:/sw/uppmax/bin:/home/dahlo/usr/bin
+/sw/apps/bioinfo/samtools/1.6/rackham/bin:/home/dahlo/perl/bin:/home/dahlo/.pyenv/shims:
+/home/dahlo/.pyenv/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:
+/usr/sbin:/sbin:/opt/thinlinc/bin:/sw/uppmax/bin:/home/dahlo/usr/bin
 ```
-
-![](files/uppmax-pipeline/echoPathPostModuleLoad.png)
 
 To pretend that we are loading a module, we will just add a the directory containing my dummy scripts to the $PATH variable, and it will be like we loaded the module for them.
 
@@ -432,8 +434,14 @@ Tell samtools that you want CRAM output (**-C**) and specify which reference gen
 ```bash
 Syntax: samtools view -C -T <reference genome> -o <name of cram file> <bam file to convert>
 ```
-Answer below in white text:
-<font color="white">$ samtools view -C -T 0_ref/ad2.fa -o 4_cram/ad2.cram 3_sorted/ad2.sorted.bam</font>
+
+<details>
+  <summary>I give up, tell me how to do it!</summary><p>
+ 
+```
+$ samtools view -C -T 0_ref/ad2.fa -o 4_cram/ad2.cram 3_sorted/ad2.sorted.bam
+```
+</p></details>
 
 Compare the sizes of the convered BAM file and the newly created CRAM file:
 
