@@ -235,6 +235,7 @@ $ reference_indexer -r 0_ref/ad2.fa
 ```
 </p></details>
 
+
 Since the genome is so small this should only take a second or so.
 The human genome will probably take a couple of hours.
 
