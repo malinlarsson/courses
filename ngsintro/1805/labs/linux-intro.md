@@ -21,7 +21,7 @@ Fire up the available ssh program and enter the following (replace **username** 
 -Y means that X-forwarding is activated on the connection, which means graphical data can be transmitted if a program requests it, i.e. programs can use a graphical user interface (GUI) if they want to.
 
 ```
-$ ssh -Y username@milou.uppmax.uu.se
+$ ssh -Y username@rackham.uppmax.uu.se
 ```
 
 and give your password when prompted.
