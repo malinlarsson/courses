@@ -674,7 +674,7 @@ $ man <command you want to look at>
 $ man ls
 ```
 
-```bash
+```
 LS(1)                            User Commands                            LS(1)
 
 NAME
