@@ -67,7 +67,12 @@ $ squeue -u username
 
 should look something like this
 
-![](files/linux-intro/allocation.png)
+```bash
+[11:11:10] dahlo@rackham2 work $ squeue -u dahlo
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+           3132376      core       sh    dahlo  R       0:04      1 r292
+[11:11:12] dahlo@rackham2 work $ 
+```
 
 where **q34** is the name of the node I got (yours will probably be different).
 Note the numbers in the Time column.
