@@ -611,12 +611,13 @@ There are a couple of **.txt** files in there as well.
 Find out which numbers they have.
 Try to figure out the solution on your own.
 
-<details> 
+<details>
   <summary>I give up, tell me how to do it!</summary>
+  <p>
 ```
 $ ll many_files/*.txt
 ```
-   
+ </p>
 </details>
 
 ## 10. Utility Commands
