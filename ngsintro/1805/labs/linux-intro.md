@@ -103,7 +103,27 @@ $ ls -l
 
 You should see something similar to:
 
-![](files/linux-intro/home-ls.jpg)
+```bash
+[12:56:32] dahlo@rackham1 ~ $ ls -l
+total 4384
+drwxr-xr-x  3 dahlo b2014068    2048 Apr 27  2017 archive
+-rw-rw-r--  1 dahlo dahlo      49042 Sep 23  2016 bad.png
+-rw-r--r--  1 dahlo root     1704126 Feb 16  2015 CORRUPTED_FILE_LIST.20150216
+drwxr-xr-x  2 dahlo dahlo       2048 Mar 18  2016 data
+drwxr-x---  3 dahlo dahlo       2048 Feb 15  2017 glob
+drwxrwxr-x  3 dahlo dahlo       2048 Feb 10  2015 glob2
+-rw-rw-r--  1 dahlo dahlo      60944 Sep 23  2016 good.png
+drwxr-xr-x  4 dahlo b2014209    2048 Oct 30  2014 igv
+drwxrwxr-x  5 dahlo dahlo       2048 Sep 20  2016 ngsintro
+drwxr-xr-x  5 dahlo dahlo       2048 Jun  3  2014 perl
+drwxrwxr-x  5 dahlo dahlo       2048 Nov 22  2012 perl5
+drwx--S---  2 dahlo dahlo       2048 May  4  2010 private
+drwxr-xr-x  6 dahlo dahlo       2048 May 17  2016 R
+lrwxrwxrwx  1 dahlo dahlo         41 Nov 14  2013 thindrives -> /var/opt/thinlinc/sessions/dahlo/6/drives
+drwxr-xr-x 26 dahlo dahlo       4096 May 18 10:43 uppmaxScripts
+drwxrwxr-x  5 dahlo dahlo    2201600 May 14 14:02 work
+[12:57:36] dahlo@rackham1 ~ $ 
+```
 
 We can start off with moving to the course's **proj folder**.
 Each project has its own **proj folder** and **nobackup folder** that contains all the files that belong to the project.
@@ -654,7 +674,38 @@ $ man <command you want to look at>
 $ man ls
 ```
 
-![](files/linux-intro/man.jpg)
+```bash
+LS(1)                            User Commands                            LS(1)
+
+NAME
+       ls - list directory contents
+
+SYNOPSIS
+       ls [OPTION]... [FILE]...
+
+DESCRIPTION
+       List  information  about  the  FILEs (the current directory by default).
+       Sort entries alphabetically if none of -cftuvSUX nor  --sort  is  speci‐
+       fied.
+
+       Mandatory arguments to long options are mandatory for short options too.
+
+       -a, --all
+              do not ignore entries starting with .
+
+       -A, --almost-all
+              do not list implied . and ..
+
+       --author
+              with -l, print the author of each file
+
+       -b, --escape
+              print C-style escapes for nongraphic characters
+
+       --block-size=SIZE
+              scale  sizes by SIZE before printing them; e.g., '--block-size=M'
+ Manual page ls(1) line 1 (press h for help or q to quit)
+```
 
 This will open a less window (remember, q to close it down, arrows to scroll) with the manual page about ls.
 Here you will be able to read everything about ls.
