@@ -34,7 +34,25 @@ Just type the password and press enter, it will be fine.
 
 Now your screen should look something like this:
 
-![](files/linux-intro/just-logged-in.jpg)
+```
+uppnex-47-19:~ valentingeorgiev$ ssh -Y valent@milou.uppmax.uu.se
+Last login: Sun Sep 24 12:06:48 2017 from host-95-195-219-154.mobileonline.telia.com
+ _   _ ____  ____  __  __    _    __  __
+| | | |  _ \|  _ \|  \/  |  / \   \ \/ /   | System:    milou1
+| | | | |_) | |_) | |\/| | / _ \   \  /    | User:      valent
+| |_| |  __/|  __/| |  | |/ ___ \  /  \    | Jobs:      0 running
+ \___/|_|   |_|   |_|  |_/_/   \_\/_/\_\   | Queue:     0 pending
+
+###############################################################################
+
+        User Guides: http://www.uppmax.uu.se/support/user-guides
+        FAQ: http://www.uppmax.uu.se/support/faq
+
+        Write to support@uppmax.uu.se, if you have questions or comments.
+
+
+[valent@milou1 ~]$
+```
 
 ## 2. Getting a node of your own
 
@@ -53,16 +71,21 @@ $ squeue -u username
 
 should look something like this
 
-![](files/linux-intro/allocation.png)
+```
+dahlo@rackham2 work $ squeue -u dahlo
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+           3132376      core       sh    dahlo  R       0:04      1 r292
+dahlo@rackham2 work $ 
+```
 
-where **q34** is the name of the node I got (yours will probably be different).
+where **r292** is the name of the node I got (yours will probably be different).
 Note the numbers in the Time column.
 They show for how long the job has been running.
 When it reaches the time limit you requested (3 hours in this case) the session will shut down, and you will lose all unsaved data.
 Connect to this node from within uppmax.
 
 ```bash
-$ ssh -Y q34
+$ ssh -Y r292
 ```
 
 **Note:** there is a uppmax specific tool called jobinfo that supplies the same kind of information as squeue that you can use as well (```$ jobinfo -u username```).
