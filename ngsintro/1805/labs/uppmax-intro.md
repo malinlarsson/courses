@@ -122,12 +122,9 @@ Among the files that were copied is data.bam. Bam is a popular format to store a
 
 ```bash
 $ less data.bam
-
-^_<8B>^H^D^@^@^@^@^@<FF>^F^@BC^B^@<AA>^Bm<92><BD>k^Sa^\<C7>^?6<B6><F6><AA>
-<EB>g<8E>2^@<F9>բ<B3><B9><91><C3>,qJwrU<DF><EF><D5><DA>]<AF>_<9F>˗<EE>9<A5
-<A0>°<85>H<FB>kE<89>`xA<A6><A5><B4><EF>^Q%<82>\2<C9><C3><FD><96>0<B1>@<8A>
-őa"^L<C4>z<BB>^^<95>K<
 ```
+
+![](files/uppmax-intro/bam_binary.png)
 
 Not so pretty.. Luckily for us, there is a program called **samtools**  (http://www.htslib.org/) that is made for reading bam files.
 
