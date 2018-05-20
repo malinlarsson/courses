@@ -60,7 +60,7 @@ Usually you would do most of the work in this lab directly on one of the login n
 This was covered briefly in the lecture notes.
 
 ```bash
-$ salloc -A g2018002 -t 02:00:00 -p core -n 1 --no-shell --reservation=g2018002_TUE &
+$ salloc -A g2018009 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2018009_2 &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
@@ -94,7 +94,7 @@ $ ssh -Y r292
 
 To be able to do parts of this lab, you will need some files.
 To avoid all the course participants editing the same file all at once, undoing each other's edits, each participant will get their own copy of the needed files.
-The files are located in the folder `/sw/courses/ngsintro/filetypes`
+The files are located in the folder `/sw/share/compstore/courses/ngsintro/filetypes`
 
 Next, copy the lab files from this folder.
 -r means recursively, which means all the files including sub-folders of the source folder.
@@ -107,13 +107,13 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/courses/ngsintro/filetypes /proj/g2018002/nobackup/<username>/
+$ cp -r /sw/share/compstore/courses/ngsintro/filetypes /proj/g2018009/nobackup/<username>/
 ```
 
-Have a look in **/proj/g2018002/nobackup/\<username\>/:**
+Have a look in **/proj/g2018009/nobackup/\<username\>/:**
 
 ```bash
-$ cd /proj/g2018002/nobackup/<username>/filetypes
+$ cd /proj/g2018009/nobackup/<username>/filetypes
 $ tree
 ```
 
@@ -189,7 +189,7 @@ dahlo@rackham2 work $ echo $PATH
 To pretend that we are loading a module, we will just add a the directory containing my dummy scripts to the $PATH variable, and it will be like we loaded the module for them.
 
 ```bash
-$ export PATH=$PATH:/sw/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
+$ export PATH=$PATH:/sw/share/compstore/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
 ```
 
 This will set the $PATH variable to whatever it is at the moment, and add a directory at the end of it.

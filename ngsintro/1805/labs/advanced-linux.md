@@ -57,14 +57,14 @@ Start your terminal, log onto UPPMAX (check with squeue which core you had and s
 
 ```bash
 # ONLY IF YOU DON'T ALREADY HAVE AN ACTIVE ALLOCATION SINCE BEFORE
-$ salloc -A g2018002 -t 04:30:00 -p core --no-shell --reservation=g2018002_MON &
+$ salloc -A g2018009 -t 04:30:00 -p core --no-shell --reservation=g2018009_1 &
 
 ```
 
 make an empty directory we can work in and make a file.
 
 ```bash
-$ cd /proj/g2018002/nobackup/<username>
+$ cd /proj/g2018009/nobackup/<username>
 $ mkdir advlinux
 $ cd advlinux
 $ touch  filename
@@ -342,7 +342,7 @@ This example would perhaps be more real if we had several text files with differ
 Copy the file sample_1.sam to your folder using the command below
 
 ```bash
-$ cp /sw/courses/ngsintro/linux_additional-files/sample_1.sam .
+$ cp /sw/share/compstore/courses/ngsintro/linux_additional-files/sample_1.sam .
 ```
 
 Use grep to search in the file for a specific string of nucleotides, for example:

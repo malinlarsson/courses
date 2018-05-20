@@ -56,7 +56,7 @@ Usually you would do most of the work in this lab directly on one of the login n
 This was covered briefly in the lecture notes.
 
 ```
-$ salloc -A g2018002 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2018002_MON &
+$ salloc -A g2018009 -t 04:00:00 -p core -n 1 --no-shell --reservation=g2018009_1 &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
@@ -88,7 +88,7 @@ $ ssh -Y r292
 
 
 ## 3. Copying files needed for laboratory
-To be able to do parts of this lab, you will need some files. To avoid all the course participants editing the same file all at once, undoing each other's edits, each participant will get their own copy of the needed files. The files are located in the folder **/sw/courses/ngsintro/uppmax_tutorial**
+To be able to do parts of this lab, you will need some files. To avoid all the course participants editing the same file all at once, undoing each other's edits, each participant will get their own copy of the needed files. The files are located in the folder **/sw/share/compstore/courses/ngsintro/uppmax_tutorial**
 
 Next, copy the lab files from this folder. -r means recursively, which means all the files including sub-folders of the source folder. Without it, only files directly in the source folder would be copied, NOT sub-folders and files in sub-folders.
 
@@ -99,13 +99,13 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/courses/ngsintro/uppmax_tutorial /proj/g2018002/nobackup/<username>
+$ cp -r /sw/share/compstore/courses/ngsintro/uppmax_tutorial /proj/g2018009/nobackup/<username>
 ```
 
-Have a look in **/proj/g2018002/nobackup/\<username\>/uppmax_tutorial**:
+Have a look in **/proj/g2018009/nobackup/\<username\>/uppmax_tutorial**:
 
 ```bash
-$ cd /proj/g2018002/nobackup/<username>/uppmax_tutorial
+$ cd /proj/g2018009/nobackup/<username>/uppmax_tutorial
 
 $ ll
 total 128K
@@ -114,7 +114,6 @@ drwxrwxr-x 4 dahlo dahlo 2,0K May 18 15:34 ..
 -rwxrwxr-x 1 dahlo dahlo 1,2K May 18 16:21 data.bam
 -rw-rw-r-- 1 dahlo dahlo  232 May 18 16:21 job_template
 $ 
-
 ```
 
 ## 4. Running a program
@@ -368,7 +367,7 @@ This will create a booking for you which has a higher priority than the jobs sub
 Try closing down your current session on the reserved node you connected to in the beginning of the lab by typing exit. Then make a new booking using interactive:
 
 ```bash
-$ interactive -A g2018002 -t 02:00:00 -p core
+$ interactive -A g2018009 -t 02:00:00 -p core
 ```
 
 Congratulations, you are now ready to be let loose on the cluster!
