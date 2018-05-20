@@ -304,7 +304,7 @@ mkdir /proj/g2018009/nobackup/<username>/transcriptome/star/SRR3222409
 
 :white_check_mark: You should now have .sam file in the _SRR3222409_ as well as a series of log files. Have a look how the mapping went.
 {% highlight bash %}
-ll -h ~/transcriptome/star/SRR3222409
+ll -h /proj/g2018009/nobackup/<username>/transcriptome/star/SRR3222409
 
 total 3.0G
 -rw-rw-r-- 1 olga olga 3.0G Sep 14 16:05 SRR3222409_Aligned.out.sam
@@ -372,7 +372,7 @@ ln -s /proj/g2018009/nobackup/<username>/transcriptome/star/SRR3222409/SRR322240
 <details>
 <summary>:key: Click to see the suggested commands, using bash loop</summary>
 {% highlight bash %}
-for i in /proj/g2018009/nobackup/<username>/transcriptome/star/**/*.sam 
+for i in /proj/g2018009/nobackup/<username>/transcriptome/star/*/*.sam 
   do ln -s $i
 done
 {% endhighlight %}
@@ -497,7 +497,7 @@ ll -h  /proj/g2018009/nobackup/<username>/transcriptome/bams/*.bai
 ### <a name="qualimap"></a> QualiMap: post-alignment quality control
 Some important quality aspects, such as saturation of sequencing depth, read distribution between different genomic features or coverage uniformity along transcripts, can be measured only after mapping reads to the reference genome. One of the tools to perform this post-alignment quality control is QualiMap. QualiMap examines sequencing alignment data in SAM/BAM files according to the features of the mapped reads and provides an overall view of the data that helps to the detect biases in the sequencing and/or mapping of the data and eases decision-making for further analysis.
 
-:mag: **Read** through [QuliMap](http://qualimap.bioinfo.cipf.es/doc_html/intro.html) documentation and see if you can figure it out how to run it to assess post-alignment quality on the RNA-seq mapped samples. The tool is already installed on Uppmax and available as QuliMap module  
+:mag: **Read** through [QualiMap](http://qualimap.bioinfo.cipf.es/doc_html/intro.html) documentation and see if you can figure it out how to run it to assess post-alignment quality on the RNA-seq mapped samples. The tool is already installed on Uppmax and available as QuliMap module  
 <br />
 
 :computer: **Create QualiMap** sub-folder in _transcriptome_ directory, **navigate to _qualimap_ sub-folder** and **load QualiMap/2.2 module**
@@ -612,7 +612,7 @@ featureCounts -p -a /proj/g2018009/nobackup/<username>/transcriptome/reference/M
 
 :white_check_mark: Check if featureCounts run. You should have two files now:
 {% highlight bash %}
-ll -h /proj/g2018009/nobackup/<username>/transcriptome/DE/table*
+ll -h /proj/g2018009/nobackup/<username>/transcriptome/table*
 
 -rw-rw-r-- 1 olga olga 2.8M Sep 15 11:05 tableCounts
 -rw-rw-r-- 1 olga olga  658 Sep 15 11:05 tableCounts.summary
@@ -636,7 +636,7 @@ ll -h /proj/g2018009/nobackup/<username>/transcriptome/DE/table*
 <summary>:key: Click to see how </summary>
 {% highlight bash %}
 cd /proj/g2018009/nobackup/<username>/transcriptome
-module load MultiQC/0.6
+module load MultiQC/1.5
 {% endhighlight %}
 </details>
 <br />
@@ -675,8 +675,8 @@ cd /proj/g2018009/nobackup/<username>/transcriptome/DE
 <details>
 <summary>:key: Click to see how </summary>
 {% highlight bash %}
-module load R/3.3.0
-module load R_packages/3.3.0
+module load R/3.3.2
+module load R_packages/3.3.2
 {% endhighlight %}
 </details>
 <br />
@@ -786,7 +786,7 @@ save.image(file = "DEdata.RData")
 <details>
 <summary>:key: Click to see how </summary>
 {% highlight bash %}
-R CMD BATCH diffExp.R
+Rscript diffExp.R
 {% endhighlight %}
 </details>
 <br />
@@ -796,12 +796,12 @@ R CMD BATCH diffExp.R
 {% highlight bash %}
 ll -h /proj/g2018009/nobackup/<username>/transcriptome/DE
 
--rw-rw-r-- 1 olga olga 8.9M Nov 29 16:31 DEdata.RData
-lrwxrwxrwx 1 olga olga   50 Nov 29 16:30 diffExp.R -> /sw/share/compstore/courses/ngsintro/rnaseq/main/DE/diffExp.R
--rw-rw-r-- 1 olga olga 3.4K Nov 29 16:31 diffExp.Rout
--rw-rw-r-- 1 olga olga 2.6M Nov 29 16:31 results_DE.txt
-lrwxrwxrwx 1 olga olga   55 Nov 29 16:30 tableCounts -> /proj/g2018009/nobackup/<username>/transcriptome/featurecounts/tableCounts
-lrwxrwxrwx 1 olga olga   68 Nov 29 16:30 tableCounts_annotations.txt -> /sw/share/compstore/courses/ngsintro/rnaseq/main/DE/tableCounts_annotations.txt
+-rw-rw-r-- 1 dagah g2018009 8.9M May 20 22:43 DEdata.RData  
+lrwxrwxrwx 1 dagah g2018009   61 May 20 22:22 diffExp.R -> /sw/share/compstore/courses/ngsintro/rnaseq/main/DE/diffExp.R  
+-rw-rw-r-- 1 dagah g2018009 2.6M May 20 22:43 results_DE.txt  
+lrwxrwxrwx 1 dagah g2018009   69 May 20 22:22 tableCounts -> /proj/g2018009/nobackup/dagah/transcriptome/featurecounts/tableCounts  
+lrwxrwxrwx 1 dagah g2018009   79 May 20 22:22 tableCounts_annotations.txt -> /sw/share/compstore/courses/ngsintro/rnaseq/main/DE/tableCounts_annotations.txt  
+
 {% endhighlight %}
 <br/>
 
