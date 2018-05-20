@@ -114,7 +114,6 @@ drwxrwxr-x 4 dahlo dahlo 2,0K May 18 15:34 ..
 -rwxrwxr-x 1 dahlo dahlo 1,2K May 18 16:21 data.bam
 -rw-rw-r-- 1 dahlo dahlo  232 May 18 16:21 job_template
 $ 
-
 ```
 
 ## 4. Running a program
