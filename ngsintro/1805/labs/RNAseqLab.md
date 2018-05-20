@@ -883,8 +883,8 @@ cp -r /sw/share/compstore/courses/ngsintro/rnaseq/bonus/funannot/ /proj/g2018009
  <summary>:key: Click to see an example of a command</summary>
  {% highlight bash %}
  module purge
- module load R/3.3.0
- module load R_packages/3.3.0
+ module load R/3.3.2
+ module load R_packages/3.3.2
  {% endhighlight %}
  </details>
 <br />
@@ -1155,8 +1155,8 @@ scp -r YOUR_LOGIN@rackham.uppmax.uu.se:/sw/share/compstore/courses/ngsintro/rnas
 <summary>:key: Click to see how</summary>
  {% highlight bash %}
  module purge
- module load R/3.3.0
- module load R_packages/3.3.0
+ module load R/3.3.2
+ module load R_packages/3.3.2
  {% endhighlight %}
 </details>
 <br />
@@ -1390,8 +1390,8 @@ node.
 <details>
 <summary>:key: Click to see how </summary>
 {% highlight bash %}
-module load R/3.3.0
-module load R_packages/3.3.0
+module load R/3.3.2
+module load R_packages/3.3.2
 {% endhighlight %}
 </details>
 <br />
@@ -1422,7 +1422,7 @@ for this gene.
 
 :computer: Make a script named genePlot.R
 {% highlight R %}
-.libPaths(c("/sw/share/compstore/courses/ngsintro/rnaseq_2016/R-packages/3.3.0", "/pica/sw/apps/R_packages/3.3.0/rackham", "/pica/sw/apps/R/x86_64/3.3.0/rackham/lib64/R/library"))
+.libPaths(c("/sw/share/compstore/courses/ngsintro/rnaseq_2016/R-packages/3.3.2", "/pica/sw/apps/R_packages/3.3.2/rackham", "/pica/sw/apps/R/x86_64/3.3.2/rackham/lib64/R/library"))
 
 # For running as command line script and parsing options from command line
 args = commandArgs(trailingOnly=TRUE)
