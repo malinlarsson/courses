@@ -10,17 +10,17 @@ Lunches at Universitetsklubben, Olaus Magnus väg 29, 583 30 Linköping
 
 **Monday 21st**  
 Room: Odén, B-huset, Campus Valla  
-**09.00-09.15** [Registration and Welcome, presentation of SciLifeLab](slides/Staaf_Intro_NGS_data_Ua_VT17_170123.pdf) (Alice Sollazzo)  
-**09.15-10.00** [Lecture: Introduction to Linux](slides/linux-tutorial.pdf) (Valentin Georgiev)  
-**10.00-12.00** [Exercise: Introduction to Linux](labs/linux-intro) (Valentin Georgiev + Martin Dahlö, Anders Sjölander)  
+**09.00-09.15** Registration and Welcome, presentation of SciLifeLab (Alice Sollazzo)  
+**09.15-10.00** [Lecture: Introduction to Linux](slides/linux-tutorial.pdf) (Martin Dahlö)  
+**10.00-12.00** [Exercise: Introduction to Linux](labs/linux-intro) (Martin Dahlö + Valentin Georgiev, Anders Sjölander)  
 **12.00-13.00** Lunch at Universitetsklubben  
 **13.00-14.00** [Lecture: Introduction to UPPMAX](slides/UPPMAX-tutorial.pdf) (Valentin Georgiev)  
 **14.00-17.00** [Exercise: Introduction to UPPMAX](labs/uppmax-intro) (Valentin Georgiev + Martin Dahlö, Anders Sjölander)  
 
 **Tuesday 22nd**  
 Room: Odén, B-huset, Campus Valla  
-**09.00-09.30** [Lecture: File types in bioinformatics](slides/file_types.pdf) (Valentin Georgiev)  
-**09.30-12.00** [Exercise: File types in bioinformatics](labs/filetypes) (Valentin Georgiev + Martin Dahlö, Anders Sjölander)  
+**09.00-09.30** [Lecture: File types in bioinformatics](slides/file_types.pdf) (Martin Dahlö)  
+**09.30-12.00** [Exercise: File types in bioinformatics](labs/filetypes) (Martin Dahlö + Valentin Georgiev, Anders Sjölander)  
 **12.00-13.00** Lunch at Universitetsklubben  
 **13:00-14:00** [Lecture: Advanced Linux usage](slides/advanced_linux.pdf) (Valentin Georgiev)  
 **14:00-17:00** [Exercise: Advanced Linux usage](labs/loops_lab) (Valentin Georgiev + Martin Dahlö, Anders Sjölander)  
