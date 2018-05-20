@@ -1723,7 +1723,7 @@ By default, reads are treated as not strand-specific.
 <details>
 <summary>:key: Click to see how to do this</summary>
 {% highlight bash %}
-module load bioinfo-tools trinity/2.2.1
+module load bioinfo-tools trinity/2.4.0
 mkdir /proj/g2018009/nobackup/<username>/transcriptome/trinity
 cp /sw/share/compstore/courses/ngsintro/rnaseq/bonus/assembly/*.fasta /proj/g2018009/nobackup/<username>/transcriptome/trinity/
 {% endhighlight %}
@@ -1764,7 +1764,7 @@ grep ">" -c
 <br />
 :computer: Get basic information about the assembly with TrinityStats.
 {% highlight bash %}
-/sw/apps/bioinfo/trinity/2.1.0/milou/util/TrinityStats.pl Trinity.fasta
+/sw/apps/bioinfo/trinity/2.4.0/rackham/util/TrinityStats.pl Trinity.fasta
 {% endhighlight %}
 
 - How many "genes" did Trinity assemble? 
