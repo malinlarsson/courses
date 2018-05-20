@@ -20,8 +20,8 @@ On Windows: [Google MobaXterm](http://bit.ly/19yaQOM) and download it.
 Fire up the available ssh program and enter the following (replace **username** with your uppmax user name).
 -Y means that X-forwarding is activated on the connection, which means graphical data can be transmitted if a program requests it, i.e. programs can use a graphical user interface (GUI) if they want to.
 
-```bash
-$ ssh -Y username@milou.uppmax.uu.se
+```
+$ ssh -Y username@rackham.uppmax.uu.se
 ```
 
 and give your password when prompted.
@@ -31,42 +31,58 @@ It is supposed to be that way.
 Just type the password and press enter, it will be fine.
 
 Now your screen should look something like this:
+```
+dahlo@dahlo-xps ~ $ ssh -Y dahlo@rackham.uppmax.uu.se
+Last login: Fri May 18 15:03:59 2018 from micro046.icm.uu.se
+ _   _ ____  ____  __  __    _    __  __
+| | | |  _ \|  _ \|  \/  |  / \   \ \/ /   | System:    rackham4
+| | | | |_) | |_) | |\/| | / _ \   \  /    | User:      dahlo
+| |_| |  __/|  __/| |  | |/ ___ \  /  \    | 
+ \___/|_|   |_|   |_|  |_/_/   \_\/_/\_\   | 
 
-![](files/uppmax-pipeline/just-logged-in.jpg)
+###############################################################################
 
+        User Guides: http://www.uppmax.uu.se/support/user-guides
+        FAQ: http://www.uppmax.uu.se/support/faq
+
+        Write to support@uppmax.uu.se, if you have questions or comments.
+
+
+dahlo@rackham4 ~ $ 
+
+```
 ## 2. Getting a node of your own (only if you canceled your job before lunch)
 
 Usually you would do most of the work in this lab directly on one of the login nodes at uppmax, but we have arranged for you to have one core each to avoid disturbances.
 This was covered briefly in the lecture notes.
 
-<font color='red'>Check with squeue -u username if you still have your reservation since before lunch running.
-If it is running, skip this step and connect to that reservation.</font>
-
-(We only have 30 reserved cores, so if someone has two, someone else will not get one..)
-
-```bash
-# ONLY IF YOU DON'T ALREADY HAVE AN ACTIVE ALLOCATION SINCE BEFORE
-$ salloc -A g2018002 -t 04:30:00 -p core -n 1 --no-shell --reservation=g2018002_MON &
+```
+$ salloc -A g2018002 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2018002_MON &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
 
-```bash
+```
 $ squeue -u username
 ```
 
 should look something like this
 
-![](files/uppmax-pipeline/allocation.png)
+```
+dahlo@rackham2 work $ squeue -u dahlo
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+           3132376      core       sh    dahlo  R       0:04      1 r292
+dahlo@rackham2 work $ 
+```
 
-where **q34** is the name of the node I got (yours will probably be different).
+where **r292** is the name of the node I got (yours will probably be different).
 Note the numbers in the Time column.
 They show for how long the job has been running.
-When it reaches the time limit you requested (4.5 hours in this case) the session will shut down, and you will lose all unsaved data.
+When it reaches the time limit you requested (7 hours in this case) the session will shut down, and you will lose all unsaved data.
 Connect to this node from within uppmax.
 
-```bash
-$ ssh -Y q34
+```
+$ ssh -Y r292 
 ```
 
 **Note:** there is a uppmax specific tool called jobinfo that supplies the same kind of information as squeue that you can use as well (```$ jobinfo -u username```).
@@ -133,22 +149,28 @@ $ echo $PATH
 
 It should give you something like this, a list of directories, separated by colon signs:
 
-![](files/uppmax-pipeline/echoPath.png)
+```bash
+$ echo $PATH
+/home/dahlo/perl//bin/:/home/dahlo/.pyenv/shims:/home/dahlo/.pyenv/bin:
+/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:
+/sbin:/opt/thinlinc/bin:/sw/uppmax/bin:/home/dahlo/usr/bin
+```
 
 Try loading a module, and then look at the $PATH variable again.
 You'll see that there are a few extra directories there now, after the module has been loaded.
 
 ```bash
-$ module load bioinfo-tools samtools
+$ module load bioinfo-tools samtools/1.6
 $ echo $PATH
+/sw/apps/bioinfo/samtools/1.6/rackham/bin:/home/dahlo/perl/bin:/home/dahlo/.pyenv/shims:
+/home/dahlo/.pyenv/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:
+/usr/sbin:/sbin:/opt/thinlinc/bin:/sw/uppmax/bin:/home/dahlo/usr/bin
 ```
-
-![](files/uppmax-pipeline/echoPathPostModuleLoad.png)
 
 To pretend that we are loading a module, instead of actually loading a module for them, we'll manually do what the module system would have done. We will just add a the directory containing my dummy scripts to the $PATH variable, and it will be like we loaded the module for them. Now, when we type the name of one of my scripts, the computer will look in all the directories specified in the $PATH variable, which now includes the location where i keep my scripts. The computer will now find programs named as my scripts are and it will run them.
 
 ```bash
-$ export PATH=$PATH:/sw/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
+$ export PATH=$PATH:/sw/share/compstore/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
 ```
 
 This will set the $PATH variable to whatever it is at the moment, and add a directory at the end of it.
@@ -191,7 +213,34 @@ $ <program name> --help
 This is useful to remember, since most programs has this function.
 If you do this for the filter program, you get
 
-![](files/uppmax-pipeline/filterHelp.png)
+```bash
+$ filter_reads -h
+Usage: filter_reads -i <input file> -o <output file> [-c <cutoff>]
+
+Example runs:
+
+# Filter the reads in <input> using the default cutoff value. Save filtered reads to <output>
+filter_reads -i <input> -o <output>
+Ex.
+filter_reads -i my_reads.rawdata.fastq -o my_reads.filtered.fastq
+
+# Filter the reads in <input> using a more relaxed cutoff value. Save filtered reads to <output>
+filter_reads --input <input> --output <output> --cutoff 30
+Ex.
+filter_reads --input ../../my_reads.rawdata.fastq --output /home/dahlo/results/my_reads.filtered.fastq --cutoff 30
+
+
+Options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input=INPUT
+                        The path to your unfiltered reads file.
+  -o OUTPUT, --output=OUTPUT
+                        The path where to put the results of the filtering.
+  -c CUTOFF, --cutoff=CUTOFF
+                        The cutoff value for quality. Reads below this value
+                        will be filtered (default: 35).
+
+```
 
 This help text tells you that the program has to be run a certain way.
 The options -i and -o are mandatory, since they are explicitly written.
