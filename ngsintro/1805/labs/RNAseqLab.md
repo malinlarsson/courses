@@ -1,5 +1,5 @@
 ---
-layout: defaultmilou
+layout: default
 title:  'RNAseq'
 ---
 
