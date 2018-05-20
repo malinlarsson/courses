@@ -71,7 +71,7 @@ salloc -A g2018009 -t 08:00:00 -p core -n 5 --no-shell --reservation=g2018009_5 
 <details>
 <summary>:key: Click to see suggested commands</summary>
 {% highlight bash %}
-cd /proj/g2018009/nobackup/<username>/<username>
+cd /proj/g2018009/nobackup/<username>/
 mkdir transcriptome
 mkdir transcriptome/DATA
 {% endhighlight %} 
@@ -82,7 +82,7 @@ mkdir transcriptome/DATA
 <details>
 <summary>:key: Click to see suggested commands</summary>
 {% highlight bash %}
-cd /proj/g2018009/nobackup/transcriptome/DATA/
+cd /proj/g2018009/nobackup/<username>/transcriptome/DATA/
 for i in /sw/share/compstore/courses/ngsintro/rnaseq/DATA/p25/*
   do ln -s $i
 done
@@ -92,7 +92,7 @@ done
 
 :white_check_mark: **Check** if you linked the files correctly. You now should be able to see 12 links to the .fastq.gz files.
 {% highlight bash %}
-ll ~/glob/transcriptome/DATA
+ll /proj/g2018009/nobackup/<username>/transcriptome/DATA
 
 SRR3222409_1.fastq.gz -> /sw/share/compstore/courses/ngsintro/rnaseq/DATA/p25/SRR3222409_1.fastq.gz
 SRR3222409_2.fastq.gz -> /sw/share/compstore/courses/ngsintro/rnaseq/DATA/p25/SRR3222409_2.fastq.gz
