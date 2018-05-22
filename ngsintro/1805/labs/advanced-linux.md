@@ -399,7 +399,7 @@ Here is an example where we convert the samfile to a bamfile (**-Sb** literally 
 Notice that samtools is made to take the single "-" after samtools sort as the position of the piped data from samtools view.
 
 ```bash
-$ samtools view -bS sample_1.sam | samtools sort - outbam
+$ samtools view -bS sample_1.sam | samtools sort - -o outbam
 ```
 
 This should have generated a file called "outbam.bam" in your current folder.
