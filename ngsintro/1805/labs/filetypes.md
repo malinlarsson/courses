@@ -250,7 +250,7 @@ Try viewing the index file with `less` and see how it looks.
 The samtools type of index contains one row per fasta record in the reference file.
 In this case there is only one record for the adenovirus genome, and it's called `ad2` in the fasta file.
 The human reference genome typically have one record per chromosome, so a index of the human genome would then have 24 rows.
-
+://github.com/SciLifeLab/courses.git
 The numbers after the record name specifies how many bases the record has, how far into the file (in bytes) the record starts, the number of bases on each line in the record, and how many bytes each line takes up in the file.
 Using this information the program can quickly jump to the start location of each record, without having to read the file from the first row every time.
 
@@ -411,7 +411,7 @@ Before we can do this, we have to load the module for IGV.
 **NOTE**: If you are using a Mac you might have to install the program [XQuartz](https://www.xquartz.org/), if you have not already installed that program. By using -Y in your ssh command you enable graphical transfer over ssh, but you will also have to have a program able to receive the graphics in order to display it. This used to be included in OSX, but it was removed for some unclear reason..
 
 ```bash
-$ module load bioinfo-tools IGV/2.3.17
+$ module load bioinfo-tools IGV/2.4.2
 ```
 
 Start it by typing the following command (now we'll find out if you used -Y in all your ssh connections!):
