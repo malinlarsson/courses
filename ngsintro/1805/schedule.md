@@ -38,7 +38,7 @@ Room: Odén, B-huset, Campus Valla
 Room: Odén, B-huset, Campus Valla  
 **09:00-12.00** [Exercise: NGS workflow part II](labs/NGS_workflow) (Malin Larsson + Diana Ekman, Dag Ahrén)  
 **12.00-13.00** Lunch at Universitetsklubben  
-**13.00-14:00** [Lecture: RNA sequencing, transcriptome and expression quantification](slides/rnaseq.pdf) (Dag Ahrén)  
+**13.00-14:00** [Lecture: RNA sequencing, transcriptome and expression quantification](slides/RNAseqMay2018.html) (Dag Ahrén)  
 **14.00-17:00** [Exercise: RNA sequencing, transcriptome and expression quantification part I](labs/RNAseqLab.md) (Dag Ahrén, Jakub Orzechowski Westholm, Roy Francis)  
 
 **Friday 25th**  
