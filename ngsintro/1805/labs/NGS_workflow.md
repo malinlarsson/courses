@@ -22,7 +22,7 @@ We have reserved half a node for each student during this course.
 By now, you are probably already familiar with the procedure:
 
 ```bash
-salloc -A g2018009 -t 04:00:00 -p core -n 5 --no-shell --reservation=g2018009_3
+salloc -A g2018009 -t 04:00:00 -p core -n 8 --no-shell --reservation=g2018009_3
 ```
 
 Make sure you only do this once, otherwise other course participants will have a hard time booking theirs!
@@ -319,7 +319,7 @@ Note: This can take about 20 minutes.
 As usual we give it our latest BAM file and the reference file.
 Additionaly we supply a list of known sites.
 If we had not done this GATK will think all the real SNPs in our data are errors since we are using low coverage calls from 1000 Genomes.
-If you are sequencing an organism with few known sites, you could try variant calling once before base quality score recalibration and then using the most confident variants as known sites (which should remove most of the non-erroneous bases).
+If you are sequencing an organism with few known sites, you could try variant calling once before base quality score recalibration and then using the most confident variants as known sites.
 Failure to supply known SNPs to the recalibration will result in globally lower quality scores. <!-- Is this true generally or of this dataset? Why exactly is this? shouldnt it even out around overconfident or underconfident snps depending on mapping quality and sequencing quality? -->
 
 The calibration table output file has the covariation data written to it.
