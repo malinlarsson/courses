@@ -27,7 +27,7 @@ Room: Odén, B-huset, Campus Valla
 
 **Wednesday 23rd**  
 Room: Odén, B-huset, Campus Valla  
-**10.00-12.00** [Lecture: NGI Stockholm](slides/Phil Ewels - NBIS Intro to NGS Bioinfo.pdf.pdf) (Phil Ewels)
+**10.00-12.00** [Lecture: NGI Stockholm](slides/Phil%20Ewels%20-%20NBIS%20Intro%20to%20NGS%20Bioinfo.pdf) (Phil Ewels)
 **12.00-13.00** Lunch at Universitetsklubben  
 **13.00-14.00** [Lecture: NGS workflow](slides/NGS_workflow.pdf) (Malin Larsson)  
 **14.00-17.00** [Exercise: NGS workflow part I](labs/NGS_workflow) (Malin Larsson + Diana Ekman, Dag Ahrén)  
