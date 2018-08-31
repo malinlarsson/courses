@@ -10,7 +10,7 @@ title:  'Schedule'
 
 **Monday 10th**  
 Room: Trippelrummet, E10, ground floor  
-**09.00-09.15** [Registration and Welcome, presentation of SciLifeLab](slides/Staaf_Intro_NGS_data_Ua_VT17_170123.pdf) (Björn Nystedt)  
+**09.00-09.15** [Registration and Welcome, presentation of SciLifeLab]() (Björn Nystedt)  
 **09.15-10.00** [Lecture: Introduction to Linux](slides/linux-tutorial.pdf) (Martin Dahlö)  
 **10.00-12.00** [Exercise: Introduction to Linux](labs/linux-intro) (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
 **12.00-13.00** Lunch  
