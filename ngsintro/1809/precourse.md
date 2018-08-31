@@ -11,17 +11,16 @@ title:  'Precourse Material'
 * [**Chapter 1**](../../ngsintro/common/unixtut/unix1.html)  
 * [**Chapter 2**](../../ngsintro/common/unixtut/unix2.html)  
 
-You must use [http://uppnex.se/emu/](http://uppnex.se/emu/) [(or this mirror)](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg) to try the commands in the tutorial, otherwise the commands will not work.
+You must use [https://scilifelab.github.io/courses/ngsintro/common/emu/](https://scilifelab.github.io/courses/ngsintro/common/emu/) [(or this mirror)](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg) to try the commands in the tutorial, otherwise the commands will not work.
 If you any questions regarding this tutorial contact: martin.dahlo@scilifelab.uu.se
 
 Using Linux is often the hardest part of the course, so being familiar with writing things on a command-line will help.
-**You should at least go through the exercises (1+2) in the tutorial, no need to know it by heart.**
+**You should at least go through the exercises (1+2) in the tutorial, but no need to know it by heart.**
 
 Here are links to some manuals.
 You don't have to read through all of it, but you should get a glimps of what it will be like to use the software.
 The top three are discussion fora, which could be useful to answer questions that are not covered by the manuals.
 
-Biosupport.se: [http://biosupport.se/](http://biosupport.se/)  
 Biostar: [http://www.biostars.org/](http://www.biostars.org/)  
 SeqAnswers: [http://seqanswers.com/](http://seqanswers.com/)  
 Utbildningsradion: [https://www.youtube.com/watch?v=zQ-e9SuoWXo](https://www.youtube.com/watch?v=zQ-e9SuoWXo)
