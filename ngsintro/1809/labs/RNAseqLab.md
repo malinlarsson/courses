@@ -106,7 +106,7 @@ SRR3222414_2.fastq.gz -> /sw/share/compstore/courses/ngsintro/rnaseq/DATA/p25/SR
 ## <a name="fastqc"></a> FastQC: quality check of the raw sequencing reads
 After receiving raw reads from a high throughput sequencing centre it is essential to check their quality. Why waste your time on data analyses of the poor quality data? FastQC provide a simple way to do some quality control check on raw sequence data. It provides a modular set of analyses which you can use to get a quick impression of whether your data has any problems of which you should be aware before doing any further analysis.
 
-:mag: **Read** more on [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/). Can you figure out how to run it on Uppmax?  
+:mag: **Read** more on [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and also check the [FastQC README file](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/README.txt). Can you figure out how to run it on Uppmax?  
 <br />
 
 :computer: **Create** _fastqc_ folder in your _transcriptome_ directory. **Navigate to _fastqc_ folder**.
