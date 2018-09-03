@@ -31,13 +31,13 @@ Room: Trippelrummet, E10, ground floor
 **11.00-12.00** [Lecture: NGS and bioinformatics analysis pipelines]() (Olga Vinnere Petterson)  
 **12.00-13.00** Lunch  
 **13.00-14.00** [Lecture: NGS workflow]() (Anna Johansson)  
-**14.00-17.00** [Exercise: NGS workflow part I]() (Anna Johansson + Markus Mayrhofer, Diana Ekman, Sebastian DiLorenzo)  
+**14.00-17.00** [Exercise: NGS workflow part I]() (Anna Johansson + Markus Mayrhofer, Diana Ekman, Mahesh Panchal)  
 
 **18:00-** Course dinner 
 
 **Thursday 13th**  
 Room: Trippelrummet, E10, ground floor  
-**09:00-12.00** [Exercise: NGS workflow part II]() (Anna Johansson + Markus Mayrhofer, Diana Ekman, Sebastian DiLorenzon)  
+**09:00-12.00** [Exercise: NGS workflow part II]() (Anna Johansson + Markus Mayrhofer, Diana Ekman, Mahesh Panchal)  
 **12.00-13.00** Lunch  
 **13.00-14:00** [Lecture: Data management]() (Niclas Jareborg)  
 **14.00-15:00** [Lecture: RNA sequencing, transcriptome and expression quantification]() (Roy Francis)  
