@@ -60,7 +60,7 @@ Usually you would do most of the work in this lab directly on one of the login n
 This was covered briefly in the lecture notes.
 
 ```bash
-$ salloc -A g2018018 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2018018_2 &
+$ salloc -A g2018018 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2018018_11_9 &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
@@ -420,7 +420,7 @@ Start it by typing the following command (now we'll find out if you used -Y in a
 $ igv.sh
 ```
 
-If you notice that IGV over Xforwarding is excruciatingly slow, you can try to use tha web based ThinLinc client instead. Go to the address [https://milou-gui.uppmax.uu.se](https://milou-gui.uppmax.uu.se) and login with your normal UPPMAX username and password. This will get you a remote desktop on one of the login nodes, and you can open a terminal and run IGV there instead.
+If you notice that IGV over Xforwarding is excruciatingly slow, you can try to use the web based ThinLinc client instead. Unfortunately this requires you to have set up a two factor authentification (2FA) with UPPMAX, so it's something you can try on your own. [Instructions for setting up the 2FA at UPPMAX.](https://www.uppmax.uu.se/support/user-guides/setting-up-two-factor-authentication/) When you are all set up, go to the address [https://rackham-gui.uppmax.uu.se](https://rackham-gui.uppmax.uu.se) and login with your normal UPPMAX username and password together with your 2FA (described at the login screen). This will get you a remote desktop on one of the login nodes, and you can open a terminal and run IGV there instead.
 
 Once IGV is started, either using Xforwarding or the remote desktop in your web browser, we are ready to go.
 There are 3 files we have to load in IGV.

@@ -55,7 +55,7 @@ Usually you would do most of the work in this lab directly on one of the login n
 This was covered briefly in the lecture notes.
 
 ```
-$ salloc -A g2018018 -t 04:00:00 -p core -n 1 --no-shell --reservation=g2018018_2 &
+$ salloc -A g2018018 -t 04:00:00 -p core -n 1 --no-shell --reservation=g2018018_11_9 &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
@@ -223,7 +223,7 @@ done
 ```
 **Exercise 1**  
 Now that we know how to use variables and create loops, it's time we start doing something with them.
-Let's say it's New Year's Eve and you want to impress your friends with a computerized countdown of the last 10 seconds of the year (haven't we all?).
+Let's say it's New Year's Eve and you want to impress your friends with a computerized countdown of the last 10 seconds of the year (don't we all?).
 Start off with getting a loop to count down from 10 to 0 first.
 
 Notice how fast the computer counts?

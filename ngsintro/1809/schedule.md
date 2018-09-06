@@ -11,19 +11,19 @@ title:  'Schedule'
 **Monday 10th**  
 Room: Trippelrummet, E10, ground floor  
 **09.00-09.15** [Registration and Welcome, presentation of SciLifeLab]() (Björn Nystedt)  
-**09.15-10.00** [Lecture: Introduction to Linux]() (Martin Dahlö)  
-**10.00-12.00** [Exercise: Introduction to Linux]() (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
+**09.15-10.00** [Lecture: Introduction to Linux]() (Anders Sjölander)  
+**10.00-12.00** [Exercise: Introduction to Linux]() (Anders Sjölander, Maritn Dahlö, Jacques Dainat)  
 **12.00-13.00** Lunch  
-**13.00-14.00** [Lecture: Introduction to UPPMAX]() (Martin Dahlö)  
-**14.00-17.00** [Exercise: Introduction to UPPMAX]() (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
+**13.00-14.00** [Lecture: Introduction to UPPMAX]() (Anders Sjölander)  
+**14.00-17.00** [Exercise: Introduction to UPPMAX]() (Anders Sjölander, Martin Dahlö, Jacques Dainat)  
 
 **Tuesday 11th**  
 Room: Datorsal A6:003, BMC  
 **09.00-09.30** [Lecture: File types in bioinformatics]() (Martin Dahlö)  
-**09.30-12.00** [Exercise: File types in bioinformatics]() (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
+**09.30-12.00** [Exercise: File types in bioinformatics]() (Martin Dahlö, Anders Sjölander, Jacques Dainat)  
 **12.00-13.00** Lunch  
 **13:00-14:00** [Lecture: Advanced Linux usage]() (Martin Dahlö)  
-**14:00-17:00** [Exercise: Advanced Linux usage]() (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
+**14:00-17:00** [Exercise: Advanced Linux usage]() (Martin Dahlö, Anders Sjölander, Jacques Dainat)  
 
 **Wednesday 12th**  
 Room: Trippelrummet, E10, ground floor  
