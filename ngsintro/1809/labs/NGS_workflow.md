@@ -29,6 +29,7 @@ This signifies that you should replace &lt;parameter&gt; with the correct parame
 1. If you change the node you are working on you will need to reload the tool modules. (See 'Accessing programs' below)
 1. Check that the output file exists and is a reasonable size (use ls -l) after a command is completed as a quick way to see that nothing is wrong. A common mistake people make is to attempt to load input files that do not exist or create output files where they cannot write.
 1. Giving good names to your outfiles that describes what has been done will help you.
+1. For some of the steps in this exercise additional information is available if you click on the arrows below the commands.
 1. Google errors, someone in the world has run into EXACTLY the same problem you had and asked about it on a forum somewhere.
 
 
@@ -176,7 +177,7 @@ This creates an index file similarly named to the input BAM file, except with a 
 ```bash
 java -Xmx16g -jar $PICARD_HOME/picard.jar BuildBamIndex INPUT=<bam file>
 ```
-* Comapre the size of the sam and bam files using ls -l
+* Compare the sizes of the sam and bam files using ls -l
 
 ## From alignments to variant calls
 The reads have now been aligend to the reference, but these files can still be improved a bit before we use them for variant calling. Genome Analysis Tool Kit (GATK) is a popular set of tools used for this and for variant calling. GATK comes with a "best practise", which gives a suggestion on how to get from raw bam to filtered variants. 
