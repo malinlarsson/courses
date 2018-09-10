@@ -39,7 +39,7 @@ Room: Trippelrummet, E10, ground floor
 Room: Trippelrummet, E10, ground floor  
 **09:00-12.00** [Exercise: NGS workflow part II]() (Anna Johansson + Markus Mayrhofer, Diana Ekman, Mahesh Panchal)  
 **12.00-13.00** Lunch  
-**13.00-14:00** [Lecture: Data management]() (Niclas Jareborg)  
+**13.00-14:00** [Lecture: Data management](slides/2018-09-13_Data_Management_for_NGS_course.pdf) (Niclas Jareborg)  
 **14.00-15:00** [Lecture: RNA sequencing, transcriptome and expression quantification]() (Roy Francis)  
 **15.00-17:00** [Exercise: RNA sequencing, transcriptome and expression quantification part I]() (Roy Francis + Per Unneberg, Bengt Sennblad, Adnan Niazis)  
 
