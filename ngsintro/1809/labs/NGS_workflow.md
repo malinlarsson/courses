@@ -488,7 +488,7 @@ http://www.genome.ucsc.edu/training/ucscGeneFishing.pdf
  
 1. Zoom in to the relevant part of the genome. We only have data for a small region on chromosome 2 surrounding the *LCT* gene. An easy way to find the relevant region is to type *"LCT"* in the search window on the top of the page, press "go", and then select "LCT (uc002tuu.1) at chr2:136545415-136594750 - Homo sapiens lactase (LCT), mRNA." under "UCSC Genes".Then use the zoom out buttons to view both the *LCT* gene and the *MCM6* gene.
 
-1. Look at the "Multiz Alignment of 100 Vertebrates" track that shows evolutionary conservation of this genomic region across 100 vertebrates (it should be displayed by default). Note how well conserved the gene is across the listed mammals, and compare with the non-mammals.
+1. Look at the "Multiz Alignment of 100 Vertebrates" track that shows evolutionary conservation of this genomic region across 100 vertebrates (it should be displayed by default). Note how well-conserved the gene is across the listed mammals, and compare with the non-mammals. 
 
 1. Zoom in to the variant that leads to retained lactase activity in adults (rs4988235). You can type the rs-id in the search window. Again look at the "Multiz Alignment of 100 Vertebrates" track that shows evolutionary conservation across 100 vertebrates. The default view show only 10 out of the 100 species in the alignment, but by clicking on the "Conservation" header under "Comparative Genomics" you can configure the track so that all species are shown. Question: What alleles do the different species have?
 
