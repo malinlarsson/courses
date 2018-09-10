@@ -139,7 +139,7 @@ $
 That did not work, try it again after loading the module:
 
 ```bash
-$ module load bioinfo-tools samtools
+$ module load bioinfo-tools samtools/1.6
 $ samtools
 
 Program: samtools (Tools for alignments in the SAM format)
