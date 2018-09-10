@@ -490,7 +490,7 @@ http://www.genome.ucsc.edu/training/ucscGeneFishing.pdf
 
 1. Look at the "Multiz Alignment of 100 Vertebrates" track that shows evolutionary conservation of this genomic region across 100 vertebrates (it should be displayed by default). Note how well conserved the gene is across the listed mammals, and compare with the non-mammals.
 
-1. Zoom in to the variant that leads to retained lactase activity in adults (rs4988235). You can type the rs-id in the search window. Again look at the "Multiz Alignment of 100 Vertebrates" track that shows evolutionary conservation across 100 vertebrates. The default view show only 10 out of the 100 species in the alignment. By clicking on the "Conservation" header under "Comparative Genomics" you can configure the track so that all species are listed. Question: What allele do the different species have?
+1. Zoom in to the variant that leads to retained lactase activity in adults (rs4988235). You can type the rs-id in the search window. Again look at the "Multiz Alignment of 100 Vertebrates" track that shows evolutionary conservation across 100 vertebrates. The default view show only 10 out of the 100 species in the alignment, but by clicking on the "Conservation" header under "Comparative Genomics" you can configure the track so that all species are shown. Question: What alleles do the different species have?
 
 1. Play around with the various annotations tracks that are available in the UCSC genome browser and explore what is known about this particular region of the human genome. All tracks can be displayed in different modes, from "full" to "hide" and this regulates at what detail the track will be displayed.
 
