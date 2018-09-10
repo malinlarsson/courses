@@ -177,7 +177,7 @@ This creates an index file similarly named to the input BAM file, except with a 
 ```bash
 java -Xmx16g -jar $PICARD_HOME/picard.jar BuildBamIndex INPUT=<bam file>
 ```
-* Compare the size of the sam and bam files using ls -l
+* Compare the sizes of the sam and bam files using ls -l
 
 ## From alignments to variant calls
 The reads have now been aligend to the reference, but these files can still be improved a bit before we use them for variant calling. Genome Analysis Tool Kit (GATK) is a popular set of tools used for this and for variant calling. GATK comes with a "best practise", which gives a suggestion on how to get from raw bam to filtered variants. 
