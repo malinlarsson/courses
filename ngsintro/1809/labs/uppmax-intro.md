@@ -280,7 +280,7 @@ Not all jobs are as small as converting this tiny bam file to a sam file. Usuall
 Have a look at **job_template.txt** in your **uppmax_tutorial** folder.
 
 ```bash
-$ less job_template.txt
+$ less job_template
 
 
 #! /bin/bash -l
@@ -297,7 +297,7 @@ cd /proj/g2013052/nobackup/
 
 # do something
 echo Hello world!
-job_template (END)
+
 ```
 
 Edit this file to make the job convert **data.bam** to a sam file named **jobData.sam**. Remember how the queue works? Try to approximate the runtime of the job (almost instant in this case) and increase it by ~50%, and use that time approximation when writing your script file. Longer jobs will wait longer in the queue because it is harder to fit them into gaps in the queue! Also remember to change the project ID to match this course occasion.
@@ -307,7 +307,7 @@ Remember, just write the command you would run if you were sitting by the comput
 Submit your job using sbatch:
 
 ```bash
-$ sbatch job_template.txt
+$ sbatch job_template
 ```
 
 ## 7. Viewing the queue
