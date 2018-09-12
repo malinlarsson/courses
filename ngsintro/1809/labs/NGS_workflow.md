@@ -29,7 +29,6 @@ This signifies that you should replace &lt;parameter&gt; with the correct parame
 1. If you change the node you are working on you will need to reload the tool modules. (See 'Accessing programs' below)
 1. Check that the output file exists and is a reasonable size (use ls -l) after a command is completed as a quick way to see that nothing is wrong. A common mistake people make is to attempt to load input files that do not exist or create output files where they cannot write.
 1. Giving good names to your outfiles that describes what has been done will help you.
-1. For some of the steps in this exercise additional information is available if you click on the arrows below the commands.
 1. Google errors, someone in the world has run into EXACTLY the same problem you had and asked about it on a forum somewhere.
 
 
@@ -214,8 +213,7 @@ Again, we need to index the new bam file before proceeding.
 java -Xmx16g -jar $PICARD_HOME/picard.jar BuildBamIndex INPUT=<marked_bam>
 ```
 
-<details>
-<summary>Viewing duplicates and understanding the bit flag</summary> 
+#### Addition details: Viewing duplicates and understanding the bit flag 
 
 Now we can look at the duplicates we marked with Picard, using a filter on the bit flag.
 The mark for duplicates is the bit for 1024, we can use samtools view to look at them. First go to [this online utility](https://broadinstitute.github.io/picard/explain-flags.html) that is helpful for decoding sam flags. Notice that it can also be used in reverse to find the appropriate flag. Now look at your data.
@@ -224,12 +222,12 @@ The mark for duplicates is the bit for 1024, we can use samtools view to look at
 # We can count the marked reads, with samtools and the -c option.
 samtools view -f 1024 -c <bam_file>
 
- Or if we want to look at these reads:
+#Or if we want to look at these reads:
+
 samtools view -f 1024 <bam_file> | less
-```
+``` 
 * Do you get the same number of duplicates as in the metrics file?
 * Why do we use samtools to look at the BAM file? Could we have looked at it with just less?
-</details>
 
 <img src="files/NGS_workflow/wf_bqsr.png" style="width: 100%"/>
 <!-- ![](files/NGS_workflow/wf_bqsr.png) -->
@@ -377,14 +375,6 @@ Annovar uses downloaded annotation tracks to annotate the input file. These can 
 ls $ANNOVAR_HOME/humandb/
 
 ```
-<details>
-<summary>Downloading additional annovar datasets</summary>
-The datasets available through Annovar can be found [here](http://annovar.openbioinformatics.org/en/latest/user-guide/download/). 
-```bash
-# Download additional datasets
-annotate_variation.pl -buildver <hg19> -downdb -webfrom annovar <dataset> humandb/
-```
-</details>
 
 #### Input format
 Annovar can use a vcf file as input and also output the results as a vcf file. However, to make the results easier to read we will first create an annovar formatted file and produce tab delimited results. 
@@ -428,14 +418,13 @@ scp <username>@rackham.uppmax.uu.se:/proj/g2018018/nobackup/<username>/ngsworkfl
 scp <username>@rackham.uppmax.uu.se:/proj/g2018018/nobackup/<username>/ngsworkflow/<my_filtered_variants>.vcf ./
 ```
 
-<details>
-<summary>If you are missing either bam files or the filtered vcf you can do this instead</summary>
+If you are missing either bam files or the filtered vcf you can do this instead
+
 ```bash
 # Copy the files from the course directory:
 scp <username>@rackham.uppmax.uu.se:/sw/share/compstore/courses/ngsintro/reseq/data/bam/HG*recal.ba* ./
 scp <username>@rackham.uppmax.uu.se:/sw/share/compstore/courses/ngsintro/reseq/data/vcf/my_variants_filtered.vcf ./
 ```
-</details>
 
 ### Ready to view data
 
