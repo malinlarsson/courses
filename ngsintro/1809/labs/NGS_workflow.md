@@ -29,6 +29,7 @@ This signifies that you should replace &lt;parameter&gt; with the correct parame
 1. If you change the node you are working on you will need to reload the tool modules. (See 'Accessing programs' below)
 1. Check that the output file exists and is a reasonable size (use ls -l) after a command is completed as a quick way to see that nothing is wrong. A common mistake people make is to attempt to load input files that do not exist or create output files where they cannot write.
 1. Giving good names to your outfiles that describes what has been done will help you.
+1. For some of the steps in this exercise additional information is available if you click on the arrows below the commands.
 1. Google errors, someone in the world has run into EXACTLY the same problem you had and asked about it on a forum somewhere.
 
 
@@ -176,7 +177,7 @@ This creates an index file similarly named to the input BAM file, except with a 
 ```bash
 java -Xmx16g -jar $PICARD_HOME/picard.jar BuildBamIndex INPUT=<bam file>
 ```
-* Comapre the size of the sam and bam files using ls -l
+* Compare the sizes of the sam and bam files using ls -l
 
 ## From alignments to variant calls
 The reads have now been aligend to the reference, but these files can still be improved a bit before we use them for variant calling. Genome Analysis Tool Kit (GATK) is a popular set of tools used for this and for variant calling. GATK comes with a "best practise", which gives a suggestion on how to get from raw bam to filtered variants. 
@@ -488,9 +489,9 @@ http://www.genome.ucsc.edu/training/ucscGeneFishing.pdf
  
 1. Zoom in to the relevant part of the genome. We only have data for a small region on chromosome 2 surrounding the *LCT* gene. An easy way to find the relevant region is to type *"LCT"* in the search window on the top of the page, press "go", and then select "LCT (uc002tuu.1) at chr2:136545415-136594750 - Homo sapiens lactase (LCT), mRNA." under "UCSC Genes".Then use the zoom out buttons to view both the *LCT* gene and the *MCM6* gene.
 
-1. Look at the "Multiz Alignment of 100 Vertebrates" track that shows evolutionary conservation of this genomic region across 100 vertebrates (it should be displayed by default). Note how well conserved the gene is across the listed mammals, and compare with the non-mammals.
+1. Look at the "Multiz Alignment of 100 Vertebrates" track that shows evolutionary conservation of this genomic region across 100 vertebrates (it should be displayed by default). Note how well-conserved the gene is across the listed mammals, and compare with the non-mammals. 
 
-1. Zoom in to the variant that leads to retained lactase activity in adults (rs4988235). You can type the rs-id in the search window. Again look at the "Multiz Alignment of 100 Vertebrates" track that shows evolutionary conservation across 100 vertebrates. The default view show only 10 out of the 100 species in the alignment. By clicking on the "Conservation" header under "Comparative Genomics" you can configure the track so that all species are listed. Question: What allele do the different species have?
+1. Zoom in to the variant that leads to retained lactase activity in adults (rs4988235). You can type the rs-id in the search window. Again look at the "Multiz Alignment of 100 Vertebrates" track that shows evolutionary conservation across 100 vertebrates. The default view show only 10 out of the 100 species in the alignment, but by clicking on the "Conservation" header under "Comparative Genomics" you can configure the track so that all species are shown. Question: What alleles do the different species have?
 
 1. Play around with the various annotations tracks that are available in the UCSC genome browser and explore what is known about this particular region of the human genome. All tracks can be displayed in different modes, from "full" to "hide" and this regulates at what detail the track will be displayed.
 
