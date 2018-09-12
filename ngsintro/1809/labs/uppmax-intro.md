@@ -56,7 +56,7 @@ Usually you would do most of the work in this lab directly on one of the login n
 This was covered briefly in the lecture notes.
 
 ```
-$ salloc -A g2018018 -t 04:00:00 -p core -n 1 --no-shell --reservation=g2018018_1 &
+$ salloc -A g2018018 -t 04:00:00 -p core -n 1 --no-shell --reservation=g2018018_10_9 &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
@@ -139,7 +139,7 @@ $
 That did not work, try it again after loading the module:
 
 ```bash
-$ module load bioinfo-tools samtools
+$ module load bioinfo-tools samtools/1.6
 $ samtools
 
 Program: samtools (Tools for alignments in the SAM format)
@@ -280,7 +280,7 @@ Not all jobs are as small as converting this tiny bam file to a sam file. Usuall
 Have a look at **job_template.txt** in your **uppmax_tutorial** folder.
 
 ```bash
-$ less job_template.txt
+$ less job_template
 
 
 #! /bin/bash -l
@@ -297,7 +297,7 @@ cd /proj/g2013052/nobackup/
 
 # do something
 echo Hello world!
-job_template (END)
+
 ```
 
 Edit this file to make the job convert **data.bam** to a sam file named **jobData.sam**. Remember how the queue works? Try to approximate the runtime of the job (almost instant in this case) and increase it by ~50%, and use that time approximation when writing your script file. Longer jobs will wait longer in the queue because it is harder to fit them into gaps in the queue! Also remember to change the project ID to match this course occasion.
@@ -307,7 +307,7 @@ Remember, just write the command you would run if you were sitting by the comput
 Submit your job using sbatch:
 
 ```bash
-$ sbatch job_template.txt
+$ sbatch job_template
 ```
 
 ## 7. Viewing the queue
@@ -341,7 +341,7 @@ $
 
 ```
 
-If you look under the heading **"Waiting jobs:"** you'll see a list of all the jobs you have in the queue that have not started yet. The most interesting column here is the **POS** column, which tells you which position in the queue you have (12 in my example). When you reach the first place, your job will start as soon as there are the resources you have asked for.
+If you look under the heading **"Waiting jobs:"** you'll see a list of all the jobs you have in the queue that have not started yet. The most interesting column here is the **POS** column, which tells you which position in the queue you have (221 in my example). When you reach the first place, your job will start as soon as there are the resources you have asked for.
 
 In our case, we are not really interested in running this job at all. Let's cancel it instead. This can be done with the command **scancel**. Syntax:
 

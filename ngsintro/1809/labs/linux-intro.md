@@ -56,7 +56,7 @@ Usually you would do most of the work in this lab directly on one of the login n
 This was covered briefly in the lecture notes.
 
 ```
-$ salloc -A g2018018 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2018018_1 &
+$ salloc -A g2018018 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2018018_10_9 &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
@@ -233,7 +233,7 @@ I.e. if you want to download the file http://somewhere.com/my.file and you give 
 ```
 Ex: wget -P <destination prefix> <source URL>
 
-$ wget -P /proj/g2018018/nobackup/<username>/linux_tutorial {{site.url}}/ngsintro/1502/labs/files/linux-intro/files.tar.gz
+$ wget -P /proj/g2018018/nobackup/<username>/linux_tutorial {{site.url}}/ngsintro/common/linux_additional-files.zip
 ```
 
 ## 5. Unpack Files
