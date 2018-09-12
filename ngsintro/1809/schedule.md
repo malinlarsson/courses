@@ -27,7 +27,7 @@ Room: Datorsal A6:003, BMC
 
 **Wednesday 12th**  
 Room: Trippelrummet, E10, ground floor  
-**09.00-11.00** [Lecture: Lecture: Next Generation Sequencing Overview]() (Olga Vinnere Petterson)  
+**09.00-11.00** [Lecture: Next Generation Sequencing Overview]() (Olga Vinnere Petterson)  
 **11.00-12.00** [Lecture: NGS and bioinformatics analysis pipelines]() (Olga Vinnere Petterson)  
 **12.00-13.00** Lunch  
 **13.00-14.00** [Lecture: NGS workflow](slides/NGS_workflow.pdf) (Anna Johansson)  
@@ -41,11 +41,11 @@ Room: Trippelrummet, E10, ground floor
 **12.00-13.00** Lunch  
 **13.00-14:00** [Lecture: Data management](slides/2018-09-13_Data_Management_for_NGS_course.pdf) (Niclas Jareborg)  
 **14.00-15:00** [Lecture: RNA sequencing, transcriptome and expression quantification]() (Roy Francis)  
-**15.00-17:00** [Exercise: RNA sequencing, transcriptome and expression quantification part I]() (Roy Francis + Per Unneberg, Bengt Sennblad, Adnan Niazis)  
+**15.00-17:00** [Exercise: RNA sequencing, transcriptome and expression quantification part I]() (Roy Francis + Per Unneberg, Bengt Sennblad, Adnan Niazi)  
 
 **Friday 14th**  
 Room: Trippelrummet, E10, ground floor  
-**09:00-12:00** [Exercise: RNA sequencing, transcriptome and expression quantification part II]() (Roy Francis + Per Unneberg, Bengt Sennblad, Adnan Niaz)  
+**09:00-12:00** [Exercise: RNA sequencing, transcriptome and expression quantification part II]() (Roy Francis + Per Unneberg, Bengt Sennblad, Adnan Niazi)  
 **12.00-13.00** Lunch  
 **13.00-13.20** [Lecture: The Bioinformatics Infrastructure in Sweden]() (Björn Nystedt)    
 **13:20-15.00** Open discussions (Olga Vinnere Pettersson, Manfred Grabherr, Björn Nystedt, Anna Johansson, Roy Francis)  
